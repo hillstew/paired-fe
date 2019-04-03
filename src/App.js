@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/main.scss';
+import Sidebar from './containers/Sidebar';
 
 class App extends Component {
   render() {
-    return <div className="App">App is running</div>;
+    return (
+      <div className="App">
+        <Sidebar />
+        App is running
+      </div>
+    );
   }
 }
 
