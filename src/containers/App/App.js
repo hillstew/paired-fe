@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import './styles/main.scss';
+import '../../styles/main.scss';
 import { withRouter, Route, Switch } from 'react-router-dom';
-import gql from 'graphql-tag';
-import { Query } from 'react-apollo';
-import Sidebar from './containers/Sidebar';
+import Sidebar from '../Sidebar';
+import { connect } from 'react-redux';
 
-class App extends Component {
+export class App extends Component {
   render() {
     return (
       <div className="App">
@@ -27,4 +26,9 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export const mapStateToProps = (state) => ({
+  isLoading: state.isLoading,
+  hasError: state.hasError
+});
+
+export default withRouter(connect(mapStateToProps)(App));
