@@ -3,8 +3,18 @@ import '../../styles/main.scss';
 import { withRouter, Route, Switch } from 'react-router-dom';
 import Sidebar from '../Sidebar';
 import { connect } from 'react-redux';
+import * as gql from '../../queries';
+import { fetchData } from '../../utils';
+import { setUser } from '../../actions';
 
 export class App extends Component {
+
+  async componentDidMount() {
+    const body = gql.getUser('Hillary');
+    const response = await fetchData(body);
+    this.props.setUser(response.getUser);
+  }
+
   render() {
     return (
       <div className="App">
@@ -31,4 +41,8 @@ export const mapStateToProps = (state) => ({
   hasError: state.hasError
 });
 
-export default withRouter(connect(mapStateToProps)(App));
+export const mapDispatchToProps = (dispatch) => ({
+  setUser: (user) => dispatch(setUser(user))
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
