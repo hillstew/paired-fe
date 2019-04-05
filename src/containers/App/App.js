@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../styles/main.scss';
 import { withRouter, Route, Switch } from 'react-router-dom';
 import Sidebar from '../Sidebar';
 import { connect } from 'react-redux';
