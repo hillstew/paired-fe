@@ -5,12 +5,17 @@ export const getAvailablePairings = (program, mod, date) => ({
         name
         module
         program
+        id
+        pronouns
+        skills
+        slack
       }
       date
       time
+      id
     }
   }`
-});
+       });
 
 export const getUser = (name) => ({
   query: `{
