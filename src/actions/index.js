@@ -12,3 +12,13 @@ export const setUser = user => ({
   type: 'SET_USER',
   user
 });
+
+export const setPairingId = id => ({
+  type: 'SET_ID',
+  id
+});
+
+export const setAvailPairings = pairings => ({
+  type: 'SET_PAIRINGS',
+  pairings
+});
