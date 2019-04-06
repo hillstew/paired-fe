@@ -1,0 +1,35 @@
+.StudentCard {
+  display: flex;
+  justify-content: center;
+  .StudentCard--div--cols {
+    display: flex;
+    flex-direction: column;
+    p, h3 {
+      margin: 5px;
+    }
+
+    h3 {
+      display: inline-block
+    }
+    img{
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      margin: auto;
+      display: block;
+    }
+  }
+
+  .StudentCard--div--rows {
+    display: flex;
+    width: 400px;
+    justify-content: space-around;
+    align-items: center;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+
