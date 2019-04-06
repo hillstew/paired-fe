@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import * as gql from '../../queries';
 import { fetchData } from '../../utils';
 import { setUser } from '../../actions';
+import Controls from '../Controls';
 
 export class App extends Component {
 
@@ -16,17 +17,21 @@ export class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className='App'>
         <Sidebar />
         <div>
-          <header>hi</header>
+          <header>Paired</header>
           <Switch>
-            <Route path="/schedule" render={() => <div>path: /schedule</div>} />
             <Route
-              path="/avail-pairings"
-              render={() => <div>path: /avail-pairings</div>}
+              path='/schedule'
+              render={() => <div>path: /schedule</div>}
             />
-            <Route exact path="/" render={() => <div>path: /</div>} />
+            <Route path='/book-pairing' component={Controls} />
+            <Route
+              path='/confirm'
+              render={() => <div>path: /confirm</div>}
+            />
+            <Route exact path='/' render={() => <div>path: /</div>} />
             <Route render={() => <div>ERRORRRRRRRR</div>} />
           </Switch>
         </div>

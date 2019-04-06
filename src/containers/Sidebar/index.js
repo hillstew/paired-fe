@@ -6,7 +6,7 @@ export default class Sidebar extends Component {
     return (
       <aside className="Sidebar">
         <NavLink to="/schedule">View Schedule</NavLink>
-        <NavLink to="/avail-pairings">Available Pairings</NavLink>
+        <NavLink to="/book-pairing">Book a Pairing</NavLink>
       </aside>
     );
   }
