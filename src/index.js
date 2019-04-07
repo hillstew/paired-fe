@@ -9,6 +9,12 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import { rootReducer } from './reducers';
 import './styles/main.scss';
+import firebase from 'firebase/app';
+
+firebase.initializeApp({
+  apiKey: "AIzaSyBZztEJm_KxmHfMGaxYgLIFah2XAdS5mh0",
+  authDomain: "paired-turing.firebaseapp.com"
+});
 
 const devTools = composeWithDevTools(applyMiddleware(thunk));
 const store = createStore(rootReducer, devTools);
