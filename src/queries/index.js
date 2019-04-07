@@ -15,9 +15,9 @@ export const getAvailablePairings = (program, mod, date) => ({
       id
     }
   }`
-       });
+});
 
-export const getUser = (name) => ({
+export const getUser = name => ({
   query: `{
   getUser(name: "${name}") {
     name
@@ -26,4 +26,28 @@ export const getUser = (name) => ({
     id
   }
 }`
+});
+
+export const getUserPairings = userId => ({
+  query: `{
+    getUserPairings(
+      id: "${userId}"
+    ) {
+      pairer {
+        name
+        module
+        program
+        id
+      }
+      pairee {
+        name
+        module
+        program
+      }
+      date
+      time
+      id
+      notes
+    }
+  }`
 });
