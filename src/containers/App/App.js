@@ -6,32 +6,26 @@ import * as gql from '../../queries';
 import { fetchData } from '../../utils';
 import { setUser } from '../../actions';
 import Controls from '../Controls';
+import Schedule from '../Schedule';
+import { getUserAndSchedule } from '../../thunks/getUserAndSchedule';
 
 export class App extends Component {
-
   async componentDidMount() {
-    const body = gql.getUser('Hillary');
-    const response = await fetchData(body);
-    this.props.setUser(response.getUser);
+    const { getUserAndSchedule } = this.props;
+    getUserAndSchedule();
   }
 
   render() {
     return (
-      <div className='App'>
+      <div className="App">
         <Sidebar />
         <div>
           <header>Paired</header>
           <Switch>
-            <Route
-              path='/schedule'
-              render={() => <div>path: /schedule</div>}
-            />
-            <Route path='/book-pairing' component={Controls} />
-            <Route
-              path='/confirm'
-              render={() => <div>path: /confirm</div>}
-            />
-            <Route exact path='/' render={() => <div>path: /</div>} />
+            <Route path="/schedule" component={Schedule} />
+            <Route path="/book-pairing" component={Controls} />
+            <Route path="/confirm" render={() => <div>path: /confirm</div>} />
+            <Route exact path="/" render={() => <div>path: /</div>} />
             <Route render={() => <div>ERRORRRRRRRR</div>} />
           </Switch>
         </div>
@@ -40,13 +34,20 @@ export class App extends Component {
   }
 }
 
-export const mapStateToProps = (state) => ({
+export const mapStateToProps = state => ({
   isLoading: state.isLoading,
-  hasError: state.hasError
+  hasError: state.hasError,
+  user: state.user
 });
 
-export const mapDispatchToProps = (dispatch) => ({
-  setUser: (user) => dispatch(setUser(user))
+export const mapDispatchToProps = dispatch => ({
+  setUser: user => dispatch(setUser(user)),
+  getUserAndSchedule: () => dispatch(getUserAndSchedule())
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(App)
+);
