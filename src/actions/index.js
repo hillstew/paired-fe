@@ -22,3 +22,8 @@ export const setAvailPairings = pairings => ({
   type: 'SET_PAIRINGS',
   pairings
 });
+
+export const setSchedule = schedule => ({
+  type: 'SET_SCHEDULE',
+  schedule
+});
