@@ -8,6 +8,7 @@ import { setUser } from '../../actions';
 import Controls from '../Controls';
 import Schedule from '../Schedule';
 import { getUserAndSchedule } from '../../thunks/getUserAndSchedule';
+import Confirmation from '../Confirmation';
 
 export class App extends Component {
   async componentDidMount() {
@@ -24,7 +25,7 @@ export class App extends Component {
           <Switch>
             <Route path="/schedule" component={Schedule} />
             <Route path="/book-pairing" component={Controls} />
-            <Route path="/confirm" render={() => <div>path: /confirm</div>} />
+            <Route path="/confirm" component={Confirmation}/>
             <Route exact path="/" render={() => <div>path: /</div>} />
             <Route render={() => <div>ERRORRRRRRRR</div>} />
           </Switch>
