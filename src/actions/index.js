@@ -27,3 +27,13 @@ export const setSchedule = schedule => ({
   type: 'SET_SCHEDULE',
   schedule
 });
+
+export const deletePairing = id => ({
+  type: 'DELETE_PAIRING',
+  id
+});
+
+export const addToSchedule = pairing => ({
+  type: 'ADD_TO_SCHEDULE',
+  pairing
+});
