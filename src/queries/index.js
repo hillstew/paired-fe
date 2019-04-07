@@ -38,16 +38,60 @@ export const getUserPairings = userId => ({
         module
         program
         id
+        pronouns
+        slack
       }
       pairee {
         name
         module
         program
+        pronouns
+        slack
       }
       date
       time
       id
       notes
+    }
+  }`
+});
+
+export const updatePairing = (pairingId, paireeId, notes) => ({
+  query: `mutation {
+    updatePairing(pairing: {
+        id: "${pairingId}"
+        pairee: "${paireeId}"
+        notes: "${notes}"
+    }) {
+      pairer {
+        name
+        module
+        program
+        id
+        pronouns
+        slack
+      }
+      pairee {
+        name
+        module
+        program
+        id
+        pronouns
+        slack
+      }
+      date
+      time
+      id
+      notes
+    }
+  }`
+});
+
+
+export const deletePairing = (pairingId) => ({
+  query: `mutation {
+    deletePairing(id: "${pairingId}") {
+      date
     }
   }`
 });
