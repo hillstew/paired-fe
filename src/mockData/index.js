@@ -273,3 +273,18 @@ export const mockQueryFromdeletePairing = {
     }
   }`
        };
+
+export const mockPairingForConfirmCard = {
+  pairer: {
+    name: 'Tiffany',
+    mod: 4,
+    program: 'FE',
+    prnouns: 'she/her',
+    slack: '@tiffany'
+  },
+  pairee: null,
+  date: 'Fri Apr 07 2019',
+  time: 'lunch',
+  id: '49fgskljvs',
+  notes: null
+}
