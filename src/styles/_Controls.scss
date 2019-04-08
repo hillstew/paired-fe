@@ -1,4 +1,22 @@
+.Controls {
+  h2 {
+    font-family: $font-bold;
+    text-transform: uppercase;
+  }
+
+  .Controls--avail-btn {
+    background-color: $color-primary;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: $font-bold;
+    height: 40px;
+    margin-top: 10px;
+    width: 220px;
+  }
+}
+
 .Controls--section {
   display: flex;
+  font-family: $font-light;
   justify-content: center;
 }
