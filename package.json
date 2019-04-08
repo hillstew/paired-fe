@@ -38,7 +38,8 @@
       "!src/reducers/index.js",
       "!src/serviceWorker.js",
       "!src/registerServiceWorker.js",
-      "!src/setupTests.js"
+      "!src/setupTests.js",
+      "!src/mockData/index.js"
     ]
   },
   "browserslist": [
