@@ -4,6 +4,9 @@ exports[`Sidebar should match the snapshot 1`] = `
 <aside
   className="Sidebar"
 >
+  <h1>
+    Paired
+  </h1>
   <NavLink
     to="/schedule"
   >
