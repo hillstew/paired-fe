@@ -1,0 +1,13 @@
+.ScheduleCard {
+  font-family: $font-medium;
+  border: 2px solid $color-primary;
+  box-shadow: 1px 1px 1px 1px #aeaeae;
+  margin: 10px 0;
+  padding: 0 15px;
+  text-align: left;
+
+  p {
+    font-family: $font-light;
+    margin: 10px 0;
+  }
+}
