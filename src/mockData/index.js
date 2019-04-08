@@ -2,45 +2,50 @@ export const mockUser = {
   name: "Hillary",
   program: "FE",
   module: 4,
-  id: "5caa7eebfdebb8348e53a48e"
+  id: "5caa7eebfdebb8348e53a48e",
+  image: "https://avatars1.githubusercontent.com/u/40586291?v="
 }
 
 export const mockSchedule = [
   {
     pairer: {
-      name: "Hillary",
+      name: 'Hillary',
       module: 4,
-      program: "FE",
-      id: "5caa7eebfdebb8348e53a48e",
-      pronouns: "she/her",
-      slack: "@hillstew"
+      program: 'FE',
+      id: '5caa7eebfdebb8348e53a48e',
+      pronouns: 'she/her',
+      slack: '@hillstew',
+      image: "https://avatars1.githubusercontent.com/u/40586291?v="
     },
     pairee: null,
-    date: "Mon Apr 15 2019",
-    time: "lunch",
-    id: "5caa7eebfdebb8348e53a490",
+    date: 'Mon Apr 15 2019',
+    time: 'lunch',
+    id: '5caa7eebfdebb8348e53a490',
     notes: null
   },
   {
     pairer: {
-      name: "Hillary",
+      name: 'Hillary',
       module: 4,
-      program: "FE",
-      id: "5caa7eebfdebb8348e53a48e",
-      pronouns: "she/her",
-      slack: "@hillstew"
+      program: 'FE',
+      id: '5caa7eebfdebb8348e53a48e',
+      pronouns: 'she/her',
+      slack: '@hillstew',
+      image: "https://avatars1.githubusercontent.com/u/40586291?v="
     },
-    paireee: {
-      name: "Jeo",
+    pairee: {
+      name: 'Jeo',
       module: 4,
-      program: "FE",
-      pronouns: "he/him",
-      slack: "@jeo",
+      program: 'FE',
+      pronouns: 'he/him',
+      slack: '@jeo',
+      id: '5caa7eebfdebb8348e53a48f',
+      image: "https://avatars1.githubusercontent.com/u/40586291?v="
     },
-    date: "Wed Apr 17 2019",
-    time: "afternoon",
-    id: "5caa7eebfdebb8348e53a49d",
-    notes: null,
+    date: 'Wed Apr 17 2019',
+    time: 'afternoon',
+    id: '5caa7eebfdebb8348e53a49d',
+    notes: null
   }
 ];
 
@@ -57,6 +62,7 @@ export const mockAvailPairings = [
         "testing"
       ],
       slack: "@tiffany",
+      image: "https://avatars1.githubusercontent.com/u/40586291?v="
     },
     date: "Thu Apr 18 2019",
     time: "morning",
@@ -74,10 +80,28 @@ export const mockAvailPairings = [
         "testing"
       ],
       slack: "@tiffany",
+      image: "https://avatars1.githubusercontent.com/u/40586291?v="
     },
     date: "Thu Apr 18 2019",
     time: "lunch",
     id: "5caa7eebfdebb8348e53a4a5",
+  },
+  {
+    pairer: {
+      name: "Jeo",
+      program: "FE",
+      pronouns: "he/him",
+      id: "5caa7eebfdebb8348e53a48f",
+      skills: [
+        "graphql",
+        "testing"
+      ],
+      slack: "@jeo",
+      image: "https://avatars1.githubusercontent.com/u/40586291?v="
+    },
+    date: "Thu Apr 18 2019",
+    time: "lunch",
+    id: "5caa7eebfdebb8348e58076",
   }
 ]; 
 
@@ -88,7 +112,8 @@ export const mockPairingToDeleteFromSched = {
     program: 'FE',
     id: '5caa7eebfdebb8348e53a48e',
     pronouns: 'she/her',
-    slack: '@hillstew'
+    slack: '@hillstew',
+    image: "https://avatars1.githubusercontent.com/u/40586291?v="
   },
   pairee: null,
   date: 'Mon Apr 15 2019',
@@ -105,14 +130,17 @@ export const mockScheduleAfterDelete = [
       program: "FE",
       id: "5caa7eebfdebb8348e53a48e",
       pronouns: "she/her",
-      slack: "@hillstew"
+      slack: "@hillstew",
+      image: "https://avatars1.githubusercontent.com/u/40586291?v="
     },
-    paireee: {
+    pairee: {
       name: "Jeo",
       module: 4,
       program: "FE",
       pronouns: "he/him",
       slack: "@jeo",
+      id: "5caa7eebfdebb8348e53a48f",
+      image: "https://avatars1.githubusercontent.com/u/40586291?v="
     },
     date: "Wed Apr 17 2019",
     time: "afternoon",
@@ -128,7 +156,8 @@ export const mockPairingToAddToSched = {
     program: 'FE',
     id: '5caa7eebfdebb8348e53a48e',
     pronouns: 'she/her',
-    slack: '@hillstew'
+    slack: '@hillstew',
+    image: "https://avatars1.githubusercontent.com/u/40586291?v="
   },
   pairee: null,
   date: 'Thu Apr 18 2019',
@@ -145,7 +174,8 @@ export const mockScheduleAfterAdd = [
       program: "FE",
       id: "5caa7eebfdebb8348e53a48e",
       pronouns: "she/her",
-      slack: "@hillstew"
+      slack: "@hillstew",
+      image: "https://avatars1.githubusercontent.com/u/40586291?v="
     },
     pairee: null,
     date: "Mon Apr 15 2019",
@@ -160,14 +190,17 @@ export const mockScheduleAfterAdd = [
       program: "FE",
       id: "5caa7eebfdebb8348e53a48e",
       pronouns: "she/her",
-      slack: "@hillstew"
+      slack: "@hillstew",
+      image: "https://avatars1.githubusercontent.com/u/40586291?v="
     },
-    paireee: {
+    pairee: {
       name: "Jeo",
       module: 4,
       program: "FE",
       pronouns: "he/him",
+      id: "5caa7eebfdebb8348e53a48f",
       slack: "@jeo",
+      image: "https://avatars1.githubusercontent.com/u/40586291?v="
     },
     date: "Wed Apr 17 2019",
     time: "afternoon",
@@ -188,6 +221,7 @@ export const mockQueryFromgetAvailablePairings = {
         pronouns
         skills
         slack
+        image
       }
       date
       time
@@ -203,6 +237,7 @@ export const mockQueryFromgetUser = {
     program
     module
     id
+    image
   }
 }`
        };
@@ -219,6 +254,7 @@ export const mockQueryFromgetUserPairings = {
         id
         pronouns
         slack
+        image
       }
       pairee {
         name
@@ -226,6 +262,7 @@ export const mockQueryFromgetUserPairings = {
         program
         pronouns
         slack
+        image
       }
       date
       time
@@ -249,6 +286,7 @@ export const mockQueryFromupdatePairing = {
         id
         pronouns
         slack
+        image
       }
       pairee {
         name
@@ -257,6 +295,7 @@ export const mockQueryFromupdatePairing = {
         id
         pronouns
         slack
+        image
       }
       date
       time
@@ -280,11 +319,54 @@ export const mockPairingForConfirmCard = {
     mod: 4,
     program: 'FE',
     prnouns: 'she/her',
-    slack: '@tiffany'
+    slack: '@tiffany',
+    image: "https://avatars1.githubusercontent.com/u/40586291?v="
   },
   pairee: null,
   date: 'Fri Apr 07 2019',
   time: 'lunch',
   id: '49fgskljvs',
   notes: null
+}
+
+export const mockStudentForStudentCard = {
+  afternoon: "",
+  id: "5cabced6d2c9ebba50f1dfa2",
+  image: "http://www.image.com/hill.jpeg",
+  lunch: "5cabced6d2c9ebba50f1dfb0",
+  module: 4,
+  morning: "",
+  name: "Hillary",
+  program: "FE",
+  pronouns: "she/her",
+  skills: ["react", "redux"],
+  slack: "@hillstew",
+}
+
+export const mockStudForStudentCardNoAvail = {
+  afternoon: "",
+  id: "5cabced6d2c9ebba50f1dfa2",
+  image: "http://www.image.com/hill.jpeg",
+  lunch: "",
+  module: 4,
+  morning: "",
+  name: "Hillary",
+  program: "FE",
+  pronouns: "she/her",
+  skills: ["react", "redux"],
+  slack: "@hillstew",
+}
+
+export const mockStudForStudentCardAllAvail = {
+  afternoon: "rsieowugds890uwefhio",
+  id: "5cabced6d2c9ebba50f1dfa2",
+  image: "http://www.image.com/hill.jpeg",
+  lunch: "epougelknv",
+  module: 4,
+  morning: "oiwgrh9u0wg3",
+  name: "Hillary",
+  program: "FE",
+  pronouns: "she/her",
+  skills: ["react", "redux"],
+  slack: "@hillstew",
 }
