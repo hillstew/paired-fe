@@ -9,6 +9,7 @@ export const getAvailablePairings = (program, mod, date) => ({
         pronouns
         skills
         slack
+        image
       }
       date
       time
@@ -24,6 +25,7 @@ export const getUser = name => ({
     program
     module
     id
+    image
   }
 }`
 });
@@ -40,6 +42,7 @@ export const getUserPairings = userId => ({
         id
         pronouns
         slack
+        image
       }
       pairee {
         name
@@ -47,6 +50,7 @@ export const getUserPairings = userId => ({
         program
         pronouns
         slack
+        image
       }
       date
       time
@@ -70,6 +74,7 @@ export const updatePairing = (pairingId, paireeId, notes) => ({
         id
         pronouns
         slack
+        image
       }
       pairee {
         name
@@ -78,6 +83,7 @@ export const updatePairing = (pairingId, paireeId, notes) => ({
         id
         pronouns
         slack
+        image
       }
       date
       time
