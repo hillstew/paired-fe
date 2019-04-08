@@ -28,7 +28,13 @@ export class Controls extends Component {
       }
       counter += 1;
     }
-    return ['Wed Apr 03 2019', ...dates];
+    return [
+      ...dates,
+      'Tue Apr 16 2019',
+      'Wed Apr 17 2019',
+      'Thu Apr 18 2019',
+      'Fri Apr 19 2019'
+    ];
   };
 
   handleOptionChange = event => {
@@ -46,7 +52,9 @@ export class Controls extends Component {
         this.setState({ message: '' });
         this.props.setAvailPairings(response.getAvailablePairings);
       } else {
-        this.setState({ message: `Sorry no pairings are available for ${program} Mod ${module} on ${date}`});
+        this.setState({
+          message: `Sorry no pairings are available for ${program} Mod ${module} on ${date}`
+        });
       }
     } catch (error) {
       this.props.setError(error.message);
@@ -63,36 +71,41 @@ export class Controls extends Component {
     const { availPairings } = this.props;
     const { message } = this.state;
     return (
-      <div className='Controls'>
+      <div className="Controls">
         <h2>Book a Pairing</h2>
-        <section className='Controls--section'>
+        <section className="Controls--section">
           <Dropdown
             options={['FE', 'BE']}
-            label='Program'
+            label="Program"
             handleOptionChange={this.handleOptionChange}
           />
           <Dropdown
             options={['1', '2', '3', '4']}
-            label='Module'
+            label="Module"
             handleOptionChange={this.handleOptionChange}
           />
           <Dropdown
             options={dates}
-            label='Date'
+            label="Date"
             handleOptionChange={this.handleOptionChange}
           />
         </section>
-        <button onClick={this.handleClick} disabled={this.checkDropdowns()}>
+        <button
+          onClick={this.handleClick}
+          className="Controls--avail-btn"
+          disabled={this.checkDropdowns()}>
           Show Available Pairings
         </button>
-        { message !== '' && <p>{message}</p>}
-        { availPairings.length !== 0 && <Pairings openPairings={availPairings} history={this.props.history}/>}
+        {message !== '' && <p>{message}</p>}
+        {availPairings.length !== 0 && (
+          <Pairings openPairings={availPairings} history={this.props.history} />
+        )}
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   availPairings: state.availPairings
 });
 
