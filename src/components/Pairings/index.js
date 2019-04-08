@@ -1,5 +1,5 @@
 import React from 'react';
-import StudentCard from '../StudentCard';
+import StudentCard from '../../containers/StudentCard';
 
 export const createStudents = openPairings => {
   return openPairings.reduce((acc, curr) => {

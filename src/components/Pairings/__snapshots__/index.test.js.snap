@@ -15,6 +15,7 @@ exports[`Pairings should match the snapshot 1`] = `
       Object {
         "afternoon": "",
         "id": "5caa7eebfdebb8348e53a48d",
+        "image": "https://avatars1.githubusercontent.com/u/40586291?v=",
         "lunch": "5caa7eebfdebb8348e53a4a5",
         "module": 4,
         "morning": "5caa7eebfdebb8348e53a4a4",
@@ -40,6 +41,7 @@ exports[`Pairings should match the snapshot 1`] = `
       Object {
         "afternoon": "",
         "id": "5caa7eebfdebb8348e53a48f",
+        "image": "https://avatars1.githubusercontent.com/u/40586291?v=",
         "lunch": "5caa7eebfdebb8348e58076",
         "morning": "",
         "name": "Jeo",
