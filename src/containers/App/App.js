@@ -4,34 +4,49 @@ import Sidebar from '../../components/Sidebar';
 import { connect } from 'react-redux';
 import Controls from '../Controls';
 import Schedule from '../Schedule';
-import { getUserAndSchedule } from '../../thunks/getUserAndSchedule';
 import Confirmation from '../Confirmation';
 import codeSVG from '../../images/code-typing.svg';
+import { SignIn } from '../SignIn';
+import { signInUser } from '../../thunks/signInUser';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 export class App extends Component {
-  async componentDidMount() {
-    const { getUserAndSchedule } = this.props;
-    getUserAndSchedule();
+  componentDidMount() {
+    this.checkUser();
+  }
+
+  checkUser = () => {
+    firebase.auth().onAuthStateChanged(async ({ uid }) => {
+      if (uid) {
+        this.props.signInUser(uid);
+      }
+    });
   }
 
   render() {
+    const { user } = this.props;
     return (
       <div className="App">
         <Sidebar />
         <div>
           <header>
           </header>
-          <Switch>
-            <Route path="/schedule" component={Schedule} />
-            <Route path="/book-pairing" component={Controls} />
-            <Route path="/confirm" component={Confirmation} />
-            <Route
-              exact
-              path="/"
-              render={() => <img src={codeSVG} alt="two people coding" />}
-            />
-            <Route render={() => <div>ERRORRRRRRRR</div>} />
+          {
+            user &&
+            <Switch>
+              <Route path="/schedule" component={Schedule} />
+              <Route path="/book-pairing" component={Controls} />
+              <Route path="/confirm" component={Confirmation} />
+              <Route
+                exact
+                path="/"
+                render={() => <img src={codeSVG} alt="two people coding" />}
+              />
+              <Route render={() => <div>ERRORRRRRRRR</div>} />
           </Switch>
+          }
+          {!user.id && <SignIn history={this.props.history} />}
         </div>
       </div>
     );
@@ -45,7 +60,7 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  getUserAndSchedule: () => dispatch(getUserAndSchedule())
+  signInUser: (id) => dispatch(signInUser(null, id))
 });
 
 export default withRouter(
