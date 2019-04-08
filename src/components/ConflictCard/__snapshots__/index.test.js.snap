@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConflictCard should match the snapshot 1`] = `
+<div>
+  <h3>
+    Sorry you have a conflict
+  </h3>
+  <p>
+    You already have a pairing scheduled for 
+    Wed Apr 17 2019
+     from 
+    8:00 - 8:50 a.m.
+  </p>
+  <p>
+    Please go back and choose a different date/time or adjust your schedule
+  </p>
+  <button
+    className="ConflictCard--button"
+    onClick={[Function]}
+  >
+    Choose Another Pairing
+  </button>
+  <button
+    className="ConflictCard--button--schedule"
+    onClick={[Function]}
+  >
+    View Schedule
+  </button>
+</div>
+`;

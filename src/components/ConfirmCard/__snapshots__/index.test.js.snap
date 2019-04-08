@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfirmCard should match the snapshot 1`] = `
+<div
+  className="ConfirmCard"
+>
+  <h3>
+    Booking 
+    Tiffany
+    :
+  </h3>
+  <p>
+    Fri Apr 07 2019
+     at 
+    12:00 - 12:50 p.m.
+  </p>
+  <label
+    htmlFor="notes"
+  >
+    Tell 
+    Tiffany
+     what you'd like to pair on:
+     
+  </label>
+  <input
+    name="notes"
+    onChange={[Function]}
+    value=""
+  />
+  <button
+    className="ConfirmCard--button--confirm"
+    onClick={[Function]}
+  >
+    Confirm Booking
+  </button>
+  <button
+    className="ConfirmCard--button--cancel"
+    onClick={[Function]}
+  >
+    Cancel
+  </button>
+</div>
+`;
+
+exports[`ConfirmCard should match the snapshot if the user has an opening already at the same time 1`] = `
+<div
+  className="ConfirmCard"
+>
+  <h3>
+    Booking 
+    Tiffany
+    :
+  </h3>
+  <p>
+    Fri Apr 07 2019
+     at 
+    12:00 - 12:50 p.m.
+  </p>
+  <label
+    htmlFor="notes"
+  >
+    Tell 
+    Tiffany
+     what you'd like to pair on:
+     
+  </label>
+  <input
+    name="notes"
+    onChange={[Function]}
+    value=""
+  />
+  <p>
+    Please note you have an opening on your availability for this date and time
+  </p>
+  <p>
+    Click confirm to continue and your opening will be removed
+  </p>
+  <p>
+    Or click cancel to choose a different pairing
+  </p>
+  <button
+    className="ConfirmCard--button--confirm"
+    onClick={[Function]}
+  >
+    Confirm Booking
+  </button>
+  <button
+    className="ConfirmCard--button--cancel"
+    onClick={[Function]}
+  >
+    Cancel
+  </button>
+</div>
+`;

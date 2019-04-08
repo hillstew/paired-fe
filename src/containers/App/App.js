@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter, Route, Switch } from 'react-router-dom';
-import Sidebar from '../Sidebar';
+import Sidebar from '../../components/Sidebar';
 import { connect } from 'react-redux';
 import Controls from '../Controls';
 import Schedule from '../Schedule';
@@ -20,7 +20,6 @@ export class App extends Component {
         <Sidebar />
         <div>
           <header>
-            <h1>Paired</h1>
           </header>
           <Switch>
             <Route path="/schedule" component={Schedule} />

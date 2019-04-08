@@ -48,18 +48,39 @@ export default class ConfirmCard extends Component {
     return (
       <div className='ConfirmCard'>
         <h3>Booking {name}:</h3>
-        <p>{date} at {determineDisplayTime(time)}</p>
-        <label htmlFor='notes'>Tell {name} what you'd like to pair on: </label>
-        <input name='notes' value={this.state.notes} onChange={this.handleChange}/>
-        { hasOpeningAlready && (
+        <p>
+          {date} at {determineDisplayTime(time)}
+        </p>
+        <label htmlFor='notes'>
+          Tell {name} what you'd like to pair on:{' '}
+        </label>
+        <input
+          name='notes'
+          value={this.state.notes}
+          onChange={this.handleChange}
+        />
+        {hasOpeningAlready && (
           <Fragment>
-            <p>Please note you have an opening on your availability for this date and time</p>
-            <p>Click confirm to continue and your opening will be removed</p>
+            <p>
+              Please note you have an opening on your availability for this
+              date and time
+            </p>
+            <p>
+              Click confirm to continue and your opening will be removed
+            </p>
             <p>Or click cancel to choose a different pairing</p>
           </Fragment>
         )}
-        <button onClick={this.handleConfirm}>Confirm Booking</button>
-        <button onClick={this.handleCancel}>Cancel</button>
+        <button
+          className='ConfirmCard--button--confirm'
+          onClick={this.handleConfirm}>
+          Confirm Booking
+        </button>
+        <button
+          className='ConfirmCard--button--cancel'
+          onClick={this.handleCancel}>
+          Cancel
+        </button>
       </div>
     );
   }

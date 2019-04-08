@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown should match the snapshot 1`] = `
+<div
+  className="Dropdown--div"
+>
+  <label
+    htmlFor="Module"
+  >
+     Choose a 
+    Module
+  </label>
+  <select
+    className="Dropdown--select"
+    name="Module"
+    onChange={[Function]}
+  >
+    <option
+      value=""
+    >
+      Please choose an option
+    </option>
+    <option
+      key="option1"
+      value="1"
+    >
+      1
+    </option>
+    <option
+      key="option2"
+      value="2"
+    >
+      2
+    </option>
+    <option
+      key="option3"
+      value="3"
+    >
+      3
+    </option>
+    <option
+      key="option4"
+      value="4"
+    >
+      4
+    </option>
+  </select>
+</div>
+`;
