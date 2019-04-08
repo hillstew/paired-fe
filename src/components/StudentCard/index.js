@@ -21,46 +21,41 @@ export class StudentCard extends Component {
       lunch
     } = this.props.student;
     return (
-      <section className='StudentCard'>
-        <div className='StudentCard--div--cols'>
+      <section className="StudentCard">
+        <div className="StudentCard--div--cols">
           <h3>{name}</h3>
           <img
-            src='https://user-images.githubusercontent.com/40586291/55676112-122abd00-588b-11e9-9f5d-8bda5cfa35f5.jpg'
+            src="https://user-images.githubusercontent.com/40586291/55676112-122abd00-588b-11e9-9f5d-8bda5cfa35f5.jpg"
             alt={name}
           />
-          <p>Pronouns: {pronouns}</p>
-          <p>Skills: {skills.map(skill => `${skill} `)}</p>
+          <p className="StudentCard-pronouns">Pronouns: {pronouns}</p>
+          <p className="StudentCard-skills">
+            Skills: {skills.map(skill => `${skill} `)}
+          </p>
         </div>
-        <div className='StudentCard--div--rows'>
+        <div className="StudentCard--div--rows">
           <div>
-            <p>8:00 - 8:50 a.m.</p>
-            {morning ? (
-              <button onClick={() => this.handleClick(morning)}>
-                Book It
-              </button>
-            ) : (
-              <p>NOT AVAIL</p>
+            <p classname="StudentCard-time-text">8:00 - 8:50 a.m.</p>
+            {morning && (
+              <button onClick={() => this.handleClick(morning)}>Book It</button>
             )}
+            {!morning && <p>Not available</p>}
           </div>
           <div>
-            <p>12:00 - 12:50 p.m.</p>
-            {lunch ? (
-              <button onClick={() => this.handleClick(lunch)}>
-                Book It
-              </button>
-            ) : (
-              <p>NOT AVAIL</p>
+            <p classname="StudentCard-time-text">12:00 - 12:50 p.m.</p>
+            {lunch && (
+              <button onClick={() => this.handleClick(lunch)}>Book It</button>
             )}
+            {!lunch && <p>Not available</p>}
           </div>
           <div>
-            <p>4:00 - 4:50 p.m.</p>
-            {afternoon ? (
+            <p classname="StudentCard-time-text">4:00 - 4:50 p.m.</p>
+            {afternoon && (
               <button onClick={() => this.handleClick(afternoon)}>
                 Book It
               </button>
-            ) : (
-              <p>NOT AVAIL</p>
             )}
+            {!afternoon && <p>Not available</p>}
           </div>
         </div>
       </section>
