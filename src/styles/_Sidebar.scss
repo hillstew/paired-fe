@@ -1,3 +1,16 @@
 .Sidebar {
-  background-color: tomato;
+  background-color: #12f1fc;
+  display: flex;
+  flex-direction: column;
+  font-family: $font-medium;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:selected {
+    border-right: 2px solid tomato;
+  }
 }
