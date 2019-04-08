@@ -1,5 +1,6 @@
 .Schedule {
   .Schedule-h2 {
+    color: $color-secondary;
     font-family: $font-bold;
     margin-left: 20px;
     text-align: left;
@@ -9,6 +10,7 @@
     justify-content: space-evenly;
 
     h2 {
+      color: $color-secondary;
       font-family: $font-medium;
       text-transform: uppercase;
     }
