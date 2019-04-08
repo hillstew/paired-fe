@@ -17,4 +17,16 @@ describe('ConflictCard', () => {
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should redirect user to /book-pairing when Choose Another Pairing is clicked', () => {
+    const expectedPath = '/book-pairing';
+    wrapper.find('button.ConflictCard--button').simulate('click');
+    expect(mockHistory.push).toHaveBeenCalledWith(expectedPath);
+  });
+
+  it('should redirect user to /schedule when View Schedule is clicked', () => {
+    const expectedPath = '/schedule';
+    wrapper.find('button.ConflictCard--button--schedule').simulate('click');
+    expect(mockHistory.push).toHaveBeenCalledWith(expectedPath);
+  });
 });
