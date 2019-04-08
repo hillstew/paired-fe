@@ -1,0 +1,18 @@
+.CurrentOpenings {
+  margin: 0 auto;
+
+  h4 {
+    font-family: $font-bold;
+  }
+
+  ul {
+    font-family: $font-medium;
+    list-style: none;
+    margin: 10px 0;
+    text-align: left;
+  }
+
+  li {
+    margin: 5px 0;
+  }
+}
