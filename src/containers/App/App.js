@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import { withRouter, Route, Switch } from 'react-router-dom';
 import Sidebar from '../Sidebar';
 import { connect } from 'react-redux';
-import * as gql from '../../queries';
-import { fetchData } from '../../utils';
-import { setUser } from '../../actions';
 import Controls from '../Controls';
 import Schedule from '../Schedule';
 import { getUserAndSchedule } from '../../thunks/getUserAndSchedule';
 import Confirmation from '../Confirmation';
+import codeSVG from '../../images/code-typing.svg';
 
 export class App extends Component {
   async componentDidMount() {
@@ -21,12 +19,18 @@ export class App extends Component {
       <div className="App">
         <Sidebar />
         <div>
-          <header>Paired</header>
+          <header>
+            <h1>Paired</h1>
+          </header>
           <Switch>
             <Route path="/schedule" component={Schedule} />
             <Route path="/book-pairing" component={Controls} />
-            <Route path="/confirm" component={Confirmation}/>
-            <Route exact path="/" render={() => <div>path: /</div>} />
+            <Route path="/confirm" component={Confirmation} />
+            <Route
+              exact
+              path="/"
+              render={() => <img src={codeSVG} alt="two people coding" />}
+            />
             <Route render={() => <div>ERRORRRRRRRR</div>} />
           </Switch>
         </div>
@@ -42,7 +46,6 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  setUser: user => dispatch(setUser(user)),
   getUserAndSchedule: () => dispatch(getUserAndSchedule())
 });
 
