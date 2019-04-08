@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScheduleCard should match the snapshot when there are no notes 1`] = `
+<div
+  className="ScheduleCard"
+>
+  <h3>
+    Tiffany
+  </h3>
+  <p>
+    she/her
+  </p>
+  <p>
+    FE
+     Mod 
+    4
+  </p>
+  <p>
+    Notes: 
+    @tiffany on Slack
+  </p>
+  <p>
+    Thu Apr 18 2019
+     at 
+    8:00 - 8:50 a.m.
+  </p>
+</div>
+`;
+
+exports[`ScheduleCard should match the snapshot when there are notes 1`] = `
+<div
+  className="ScheduleCard"
+>
+  <h3>
+    Tiffany
+  </h3>
+  <p>
+    she/her
+  </p>
+  <p>
+    FE
+     Mod 
+    4
+  </p>
+  <p>
+    Notes: 
+    Help with JSFun problemset
+  </p>
+  <p>
+    Thu Apr 18 2019
+     at 
+    8:00 - 8:50 a.m.
+  </p>
+</div>
+`;
