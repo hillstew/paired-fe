@@ -1,28 +1,23 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { determineDisplayTime } from '../../helpers';
 
-export const ScheduleCard = ({ booking, type, cancelPairing }) => {
-  const { notes, pairee, pairer, time, date } = booking;
+export const ScheduleCard = ({ booking, person }) => {
+  const { notes, time, date } = booking;
   return (
-    <div className={type === 'pairer' ? 'pairer' : 'pairee'}>
-      <p>{date}</p>
-      {time === 'morning' && <p>8:00 - 8:50 a.m.</p>}
-      {time === 'lunch' && <p>12:00 - 12:50 p.m.</p>}
-      {time === 'afternoon' && <p>4:00 - 4:50 p.m.</p>}
-      {type === 'pairer' && (
-        <p>
-          {pairee.name} from {pairee.program} Mod {pairee.module} signed up to
-          pair with you.
-        </p>
+    <div className="ScheduleCard">
+      {person && (
+        <Fragment>
+          <h3>{person.name}</h3>
+          <p>{person.pronouns}</p>
+          <p>
+            {person.program} Mod {person.module}
+          </p>
+          <p>Notes: {notes ? notes : `${person.slack} on Slack`}</p>
+        </Fragment>
       )}
-      {type === 'pairee' && <p>You signed up to pair with {pairer.name}.</p>}
-      {type === 'pairer' && (
-        <p>
-          Notes: {notes ? notes : `${pairee.slack} on Slack for further info`}
-        </p>
-      )}
-      <button onClick={() => cancelPairing(booking.id)}>
-        Cancel this pairing
-      </button>
+      <p>
+        {date} at {determineDisplayTime(time)}
+      </p>
     </div>
   );
 };

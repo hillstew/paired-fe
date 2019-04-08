@@ -1,22 +1,34 @@
 .StudentCard {
   display: flex;
   justify-content: center;
+  margin-top: 15px;
+
   .StudentCard--div--cols {
     display: flex;
     flex-direction: column;
-    p, h3 {
+    margin-right: 20px;
+
+    p,
+    h3 {
       margin: 5px;
     }
 
     h3 {
-      display: inline-block
+      display: inline-block;
+      font-family: $font-medium;
     }
-    img{
+
+    img {
       height: 50px;
       width: 50px;
       border-radius: 50%;
       margin: auto;
       display: block;
+    }
+
+    .StudentCard-pronouns,
+    .StudentCard-skills {
+      font-family: $font-light;
     }
   }
 
@@ -26,10 +38,27 @@
     justify-content: space-around;
     align-items: center;
 
+    .StudentCard-time-text {
+      font-family: $font-light;
+    }
+
+    button,
     p {
-      margin: 0;
+      height: 30px;
+      width: 140px;
+      margin: 0 10px;
+    }
+
+    button {
+      background-color: $color-primary;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: $font-bold;
+    }
+
+    p {
+      font-family: $font-medium;
+      text-transform: uppercase;
     }
   }
 }
-
-

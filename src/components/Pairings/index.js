@@ -1,7 +1,7 @@
 import React from 'react';
 import StudentCard from '../StudentCard';
 
-export const createStudents = (openPairings) => {
+export const createStudents = openPairings => {
   return openPairings.reduce((acc, curr) => {
     let found = false;
     acc.forEach(student => {
@@ -28,12 +28,8 @@ export const createStudents = (openPairings) => {
 
 export const Pairings = ({ openPairings, history }) => {
   const studentRows = createStudents(openPairings).map(student => {
-    return <StudentCard student={student} key={student.id} history={history}/>
+    return <StudentCard student={student} key={student.id} history={history} />;
   });
 
-  return (
-  <div className='Pairings'>
-    {studentRows}
-  </div>
-  )
+  return <div className="Pairings">{studentRows}</div>;
 };

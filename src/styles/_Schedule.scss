@@ -1,0 +1,16 @@
+.Schedule {
+  .Schedule-h2 {
+    font-family: $font-bold;
+    margin-left: 20px;
+    text-align: left;
+  }
+  .ScheduleCards--div {
+    display: flex;
+    justify-content: space-evenly;
+
+    h2 {
+      font-family: $font-medium;
+      text-transform: uppercase;
+    }
+  }
+}

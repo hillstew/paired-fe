@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Cereal-bold';
+  src: url(./AirbnbCereal-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: 'Cereal-light';
+  src: url(./AirbnbCereal-Light.ttf);
+}
+
+@font-face {
+  font-family: 'Cereal-med';
+  src: url(./AirbnbCereal-Medium.ttf);
+}
+
+$font-light: 'Cereal-light';
+$font-medium: 'Cereal-med';
+$font-bold: 'Cereal-bold';
+$color-primary: #12f1fc;
