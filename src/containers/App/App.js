@@ -17,12 +17,17 @@ export class App extends Component {
   }
 
   checkUser = () => {
-    firebase.auth().onAuthStateChanged(async ({ uid }) => {
-      if (uid) {
-        this.props.signInUser(uid);
+    firebase.auth().onAuthStateChanged(async (user) => {
+      if (user) {
+        this.props.signInUser(user.uid);
       }
     });
   }
+
+  handleSignOut = async () => {
+    await firebase.auth().signOut();
+    console.log('signed out')
+  };
 
   render() {
     const { user } = this.props;
@@ -32,6 +37,9 @@ export class App extends Component {
         <div>
           <header>
           </header>
+          <button onClick={this.handleSignOut}>
+            Sign Out
+          </button>
           {
             user &&
             <Switch>

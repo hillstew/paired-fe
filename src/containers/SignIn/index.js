@@ -32,11 +32,6 @@ export class SignIn extends Component {
     }
   };
 
-  handleSignOut = async () => {
-    await firebase.auth().signOut();
-    console.log('signed out')
-  };
-
   render() {
     const { hasAuthorizedWithGitHub, user } = this.state;
     return (
@@ -47,9 +42,6 @@ export class SignIn extends Component {
             Sign In with GitHub
           </button>
         }
-        <button onClick={this.handleSignOut}>
-          Sign Out
-        </button>
         {
           hasAuthorizedWithGitHub &&
           <Profile {...user} />
