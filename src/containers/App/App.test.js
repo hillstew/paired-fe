@@ -6,17 +6,25 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { rootReducer } from '../../Reducers';
 import * as actions from '../../actions';
-import { getUserAndSchedule } from '../../thunks/getUserAndSchedule';
+import { signInUser } from '../../thunks/signInUser';
 import { BrowserRouter } from 'react-router-dom';
+import firebase from 'firebase/app';
 
-jest.mock('../../thunks/getUserAndSchedule');
+jest.mock('../../thunks/signInUser');
+
+beforeAll(() => {
+  firebase.initializeApp({
+    apiKey: "AIzaSyBZztEJm_KxmHfMGaxYgLIFah2XAdS5mh0",
+    authDomain: "paired-turing.firebaseapp.com"
+  });
+});
 
 describe('App', () => {
     const mockProps = {
       hasError: '',
       isLoading: false,
       user: {},
-      getUserAndSchedule: jest.fn()
+      getUser: jest.fn()
     };
 
     it('renders without crashing', () => {
