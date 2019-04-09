@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Dropdown } from '../../components/Dropdown';
-import { signInUser } from '../../thunks/signInUser';
+import { createUser } from '../../thunks/createUser';
 import { connect } from 'react-redux';
 
 export class Profile extends Component {
@@ -28,7 +28,7 @@ export class Profile extends Component {
     const { name, email, image, firebaseID } = this.props;
     const { module, program } = this.state;
     const user = { name, email, image, firebaseID, module, program };
-    await this.props.signInUser(user);
+    await this.props.createUser(user);
   };
 
   render() {
@@ -56,7 +56,7 @@ export class Profile extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  signInUser: (user) => dispatch(signInUser(user, null, true))
+  createUser: (user) => dispatch(createUser(user))
 });
 
 export default connect(null, mapDispatchToProps)(Profile);

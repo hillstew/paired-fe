@@ -3,16 +3,17 @@ import { connect } from 'react-redux';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import { setError } from '../../actions';
+import { signInUser } from '../../thunks/signInUser';
 import Profile from '../Profile';
 
 export class SignIn extends Component {
   constructor() {
     super();
     this.state = {
-      hasAuthorizedWithGitHub: false,
       user: {}
     };
   }
+
 
   handleSignIn = async () => {
     const provider = new firebase.auth.GithubAuthProvider();
@@ -23,27 +24,26 @@ export class SignIn extends Component {
         .signInWithPopup(provider);
       const { name, email, avatar_url: image } = additionalUserInfo.profile;
       const firebaseID = user.uid;
-      this.setState({
-        hasAuthorizedWithGitHub: true,
-        user: { name, email, image, firebaseID }
-      });
+      this.setState({ user: { name, email, image, firebaseID } });
+      await this.props.signInUser(firebaseID);
     } catch (error) {
       this.props.setError(error.message);
     }
   };
 
   render() {
-    const { hasAuthorizedWithGitHub, user } = this.state;
+    const { isNewUser } = this.props.user;
+    const { user } = this.state;
     return (
       <div>
         {
-          !hasAuthorizedWithGitHub &&
+          !user.name &&
           <button onClick={this.handleSignIn}>
             Sign In with GitHub
           </button>
         }
         {
-          hasAuthorizedWithGitHub &&
+          isNewUser && user.name &&
           <Profile {...user} />
         }
       </div>
@@ -51,8 +51,13 @@ export class SignIn extends Component {
   }
 }
 
-export const mapDispatchToProps = (dispatch) => ({
-  setError: (message) => dispatch(setError(message))
+export const mapStateToProps = (state) => ({
+  user: state.user
 });
 
-export default connect(null, mapDispatchToProps)(SignIn);
+export const mapDispatchToProps = (dispatch) => ({
+  setError: (message) => dispatch(setError(message)),
+  signInUser: (id) => dispatch(signInUser(id))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
