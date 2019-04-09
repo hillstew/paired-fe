@@ -105,11 +105,11 @@ export class Controls extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   availPairings: state.availPairings
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   setError: error => dispatch(setError(error)),
   setAvailPairings: pairings => dispatch(setAvailPairings(pairings))
 });

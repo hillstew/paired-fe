@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setSchedule } from '../../actions';
 import { ScheduleCard } from '../../components/ScheduleCard';
 import { deletePairingThunk } from '../../thunks/deletePairingThunk';
 
@@ -80,7 +79,6 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  setSchedule: schedule => dispatch(setSchedule(schedule)),
   deletePairingThunk: id => dispatch(deletePairingThunk(id))
 });
 
