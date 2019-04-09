@@ -30,7 +30,6 @@ export class Controls extends Component {
     }
     return [
       ...dates,
-      'Tue Apr 16 2019',
       'Wed Apr 17 2019',
       'Thu Apr 18 2019',
       'Fri Apr 19 2019'
