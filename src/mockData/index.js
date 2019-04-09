@@ -3,7 +3,9 @@ export const mockUser = {
   program: "FE",
   module: 4,
   id: "5caa7eebfdebb8348e53a48e",
-  image: "https://avatars1.githubusercontent.com/u/40586291?v="
+  image: "https://avatars1.githubusercontent.com/u/40586291?v=",
+  email: "hill@gmail.com",
+  firebaseID: "abc123"
 }
 
 export const mockSchedule = [
@@ -232,7 +234,7 @@ export const mockQueryFromgetAvailablePairings = {
 
 export const mockQueryFromgetUser = {
          query: `{
-  getUser(name: "Hillary") {
+  getUser(id: "Hillary") {
     name
     program
     module
