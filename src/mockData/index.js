@@ -370,3 +370,29 @@ export const mockStudForStudentCardAllAvail = {
   skills: ["react", "redux"],
   slack: "@hillstew",
 }
+
+export const mockParingHillRecievingHelp = {
+  pairer: {
+    name: 'Tiffany',
+    module: 4,
+    program: 'FE',
+    id: '5caa7eebfdebb8348e53a48d',
+    pronouns: 'she/her',
+    skills: ['react', 'testing'],
+    slack: '@tiffany',
+    image: 'https://avatars1.githubusercontent.com/u/40586291?v='
+  },
+  pairee: {
+    name: 'Hillary',
+    module: 4,
+    program: 'FE',
+    id: '5caa7eebfdebb8348e53a48e',
+    pronouns: 'she/her',
+    slack: '@hillstew',
+    image: 'https://avatars1.githubusercontent.com/u/40586291?v='
+  },
+  date: 'Mon Apr 22 2019',
+  time: 'morning',
+  id: '5caa7eebfdebb84098er4',
+  notes: null
+};

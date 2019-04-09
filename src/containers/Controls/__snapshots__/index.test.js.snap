@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls Controls component should match the snapshot 1`] = `
+<div
+  className="Controls"
+>
+  <h2>
+    Book a Pairing
+  </h2>
+  <section
+    className="Controls--section"
+  >
+    <Dropdown
+      handleOptionChange={[Function]}
+      label="Program"
+      options={
+        Array [
+          "FE",
+          "BE",
+        ]
+      }
+    />
+    <Dropdown
+      handleOptionChange={[Function]}
+      label="Module"
+      options={
+        Array [
+          "1",
+          "2",
+          "3",
+          "4",
+        ]
+      }
+    />
+    <Dropdown
+      handleOptionChange={[Function]}
+      label="Date"
+      options={
+        Array [
+          "Wed Apr 10 2019",
+          "Thu Apr 11 2019",
+          "Fri Apr 12 2019",
+          "Mon Apr 15 2019",
+          "Tue Apr 16 2019",
+          "Wed Apr 17 2019",
+          "Thu Apr 18 2019",
+          "Fri Apr 19 2019",
+        ]
+      }
+    />
+  </section>
+  <button
+    className="Controls--avail-btn"
+    disabled={true}
+    onClick={[Function]}
+  >
+    Show Available Pairings
+  </button>
+  <Pairings
+    openPairings={
+      Array [
+        Object {
+          "date": "Thu Apr 18 2019",
+          "id": "5caa7eebfdebb8348e53a4a4",
+          "pairer": Object {
+            "id": "5caa7eebfdebb8348e53a48d",
+            "image": "https://avatars1.githubusercontent.com/u/40586291?v=",
+            "module": 4,
+            "name": "Tiffany",
+            "program": "FE",
+            "pronouns": "she/her",
+            "skills": Array [
+              "react",
+              "testing",
+            ],
+            "slack": "@tiffany",
+          },
+          "time": "morning",
+        },
+        Object {
+          "date": "Thu Apr 18 2019",
+          "id": "5caa7eebfdebb8348e53a4a5",
+          "pairer": Object {
+            "id": "5caa7eebfdebb8348e53a48d",
+            "image": "https://avatars1.githubusercontent.com/u/40586291?v=",
+            "module": 4,
+            "name": "Tiffany",
+            "program": "FE",
+            "pronouns": "she/her",
+            "skills": Array [
+              "react",
+              "testing",
+            ],
+            "slack": "@tiffany",
+          },
+          "time": "lunch",
+        },
+        Object {
+          "date": "Thu Apr 18 2019",
+          "id": "5caa7eebfdebb8348e58076",
+          "pairer": Object {
+            "id": "5caa7eebfdebb8348e53a48f",
+            "image": "https://avatars1.githubusercontent.com/u/40586291?v=",
+            "name": "Jeo",
+            "program": "FE",
+            "pronouns": "he/him",
+            "skills": Array [
+              "graphql",
+              "testing",
+            ],
+            "slack": "@jeo",
+          },
+          "time": "lunch",
+        },
+      ]
+    }
+  />
+</div>
+`;

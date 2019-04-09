@@ -36,7 +36,7 @@ export class StudentCard extends Component {
           <div>
             <p className='StudentCard-time-text'>8:00 - 8:50 a.m.</p>
             {morningId && (
-              <button className='StudentCard--btn' onClick={() => this.handleClick(morningId)}>
+              <button className='StudentCard--btn' id='morning' onClick={() => this.handleClick(morningId)}>
                 Book It
               </button>
             )}
@@ -45,7 +45,7 @@ export class StudentCard extends Component {
           <div>
             <p className='StudentCard-time-text'>12:00 - 12:50 p.m.</p>
             {lunchId && (
-              <button className='StudentCard--btn' onClick={() => this.handleClick(lunchId)}>
+              <button className='StudentCard--btn' id='lunch' onClick={() => this.handleClick(lunchId)}>
                 Book It
               </button>
             )}
@@ -54,7 +54,7 @@ export class StudentCard extends Component {
           <div>
             <p className='StudentCard-time-text'>4:00 - 4:50 p.m.</p>
             {afternoonId && (
-              <button className='StudentCard--btn' onClick={() => this.handleClick(afternoonId)}>
+              <button className='StudentCard--btn' id='afternoon' onClick={() => this.handleClick(afternoonId)}>
                 Book It
               </button>
             )}
@@ -66,7 +66,7 @@ export class StudentCard extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   setPairingId: id => dispatch(setPairingId(id))
 });
 
