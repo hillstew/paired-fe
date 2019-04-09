@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import Controls from '../Controls';
 import Schedule from '../Schedule';
 import Confirmation from '../Confirmation';
-import codeSVG from '../../images/code-typing.svg';
 import SignIn from '../SignIn';
 import { signUserOut } from '../../actions';
 import { signInUser } from '../../thunks/signInUser';
