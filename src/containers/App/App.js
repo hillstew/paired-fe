@@ -6,7 +6,8 @@ import Controls from '../Controls';
 import Schedule from '../Schedule';
 import Confirmation from '../Confirmation';
 import codeSVG from '../../images/code-typing.svg';
-import { SignIn } from '../SignIn';
+import SignIn from '../SignIn';
+import { signUserOut } from '../../actions';
 import { signInUser } from '../../thunks/signInUser';
 import firebase from 'firebase/app';
 import 'firebase/auth';
@@ -26,7 +27,7 @@ export class App extends Component {
 
   handleSignOut = async () => {
     await firebase.auth().signOut();
-    console.log('signed out')
+    this.props.signUserOut();
   };
 
   render() {
@@ -37,22 +38,20 @@ export class App extends Component {
         <div>
           <header>
           </header>
-          <button onClick={this.handleSignOut}>
-            Sign Out
-          </button>
           {
-            user &&
-            <Switch>
-              <Route path="/schedule" component={Schedule} />
-              <Route path="/book-pairing" component={Controls} />
-              <Route path="/confirm" component={Confirmation} />
-              <Route
-                exact
-                path="/"
-                render={() => <img src={codeSVG} alt="two people coding" />}
-              />
-              <Route render={() => <div>ERRORRRRRRRR</div>} />
-          </Switch>
+            user.id &&
+            <React.Fragment>
+              <button onClick={this.handleSignOut}>
+                Sign Out
+              </button>
+              <Switch>
+                <Route path="/schedule" component={Schedule} />
+                <Route path="/book-pairing" component={Controls} />
+                <Route path="/confirm" component={Confirmation}/>
+                <Route exact path="/" render={() => <div>path: /</div>} />
+                <Route render={() => <div>ERRORRRRRRRR</div>} />
+              </Switch>
+            </React.Fragment>
           }
           {!user.id && <SignIn history={this.props.history} />}
         </div>
@@ -68,7 +67,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  signInUser: (id) => dispatch(signInUser(null, id))
+  signInUser: (id) => dispatch(signInUser(id)),
+  signUserOut: () => dispatch(signUserOut())
 });
 
 export default withRouter(

@@ -37,3 +37,7 @@ export const addToSchedule = pairing => ({
   type: 'ADD_TO_SCHEDULE',
   pairing
 });
+
+export const signUserOut = () => ({
+  type: 'SIGN_USER_OUT'
+});
