@@ -110,7 +110,7 @@ export const createUser = ({
   program
 }) => ({
   query: `mutation {
-    data: createUser(
+    user: createUser(
       user: {
         name: "${name}"
         email: "${email}"
@@ -120,18 +120,23 @@ export const createUser = ({
         program: "${program}"
       }
     ) {
+      name
+      program
+      module
       id
+      image
     }
   }`
 });
 
 export const getUserByFirebaseID = id => ({
   query: `{
-  data: getUserByFirebaseID(id: "${id}") {
+  user: getUserByFirebaseID(id: "${id}") {
     name
     program
     module
     id
+    image
   }
 }`
 });
