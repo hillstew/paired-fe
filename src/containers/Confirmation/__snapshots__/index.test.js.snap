@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirmation Confirmation component should match the snapshot 1`] = `
+<section
+  className="Confirmation"
+>
+  <ConfirmCard
+    confirmPairing={[MockFunction]}
+    date="Thu Apr 18 2019"
+    deletePairingThunk={[MockFunction]}
+    hasOpeningAlready={false}
+    name="Tiffany"
+    selectedPairing="5caa7eebfdebb8348e53a4a4"
+    time="morning"
+    userId="5caa7eebfdebb8348e53a48e"
+  />
+</section>
+`;
