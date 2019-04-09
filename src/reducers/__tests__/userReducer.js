@@ -1,5 +1,5 @@
 import { userReducer } from '../userReducer';
-import { setUser } from '../../actions';
+import { setUser, signUserOut } from '../../actions';
 import * as data from '../../mockData';
 
 describe('userReducer', () => {
@@ -13,6 +13,13 @@ describe('userReducer', () => {
     const expected = data.mockUser;
     const initialState = {};
     const result = userReducer(initialState, setUser(data.mockUser));
+    expect(result).toEqual(expected);
+  });
+
+  it('should return an empty object if type is SIGN_USER_OUT', () => {
+    const expected = {};
+    const actionToDispatch = signUserOut();
+    const result = userReducer(undefined, actionToDispatch);
     expect(result).toEqual(expected);
   });
 });
