@@ -18,9 +18,9 @@ export const getAvailablePairings = (program, mod, date) => ({
   }`
 });
 
-export const getUser = name => ({
+export const getUser = id => ({
   query: `{
-  getUser(name: "${name}") {
+  getUser(id: "${id}") {
     name
     program
     module
@@ -93,11 +93,50 @@ export const updatePairing = (pairingId, paireeId, notes) => ({
   }`
 });
 
-
 export const deletePairing = (pairingId) => ({
   query: `mutation {
     deletePairing(id: "${pairingId}") {
       date
     }
   }`
+});
+
+export const createUser = ({
+  name,
+  email,
+  image,
+  firebaseID,
+  module,
+  program
+}) => ({
+  query: `mutation {
+    user: createUser(
+      user: {
+        name: "${name}"
+        email: "${email}"
+        image: "${image}"
+        firebaseID: "${firebaseID}"
+        module: ${module}
+        program: "${program}"
+      }
+    ) {
+      name
+      program
+      module
+      id
+      image
+    }
+  }`
+});
+
+export const getUserByFirebaseID = id => ({
+  query: `{
+  user: getUserByFirebaseID(id: "${id}") {
+    name
+    program
+    module
+    id
+    image
+  }
+}`
 });
