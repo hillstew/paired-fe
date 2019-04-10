@@ -5,6 +5,7 @@ import * as fetch from '../../utils';
 import { setError, setAvailPairings } from '../../actions';
 import { connect } from 'react-redux';
 import { Pairings } from '../../components/Pairings';
+import { getDatesToDisplay } from '../../helpers';
 
 export class Controls extends Component {
   constructor() {
@@ -16,20 +17,6 @@ export class Controls extends Component {
       message: ''
     };
   }
-
-  getDatesToDisplay = () => {
-    let dates = [];
-    let counter = 1;
-    while (dates.length < 5) {
-      let nextDate = new Date();
-      nextDate.setDate(nextDate.getDate() + counter);
-      if (nextDate.getDay() !== 0 && nextDate.getDay() !== 6) {
-        dates.push(nextDate.toString().slice(0, 15));
-      }
-      counter += 1;
-    }
-    return [...dates, 'Wed Apr 17 2019', 'Thu Apr 18 2019', 'Fri Apr 19 2019'];
-  };
 
   handleChange = event => {
     let { value, name } = event.target;
@@ -57,11 +44,11 @@ export class Controls extends Component {
 
   checkDropdowns = () => {
     const { program, module, date } = this.state;
-    return !program || !module || !date ? true : false;
+    return !program || !module || !date;
   };
 
   render() {
-    const dates = this.getDatesToDisplay();
+    const dates = getDatesToDisplay(5);
     const { availPairings } = this.props;
     const { message } = this.state;
     return (

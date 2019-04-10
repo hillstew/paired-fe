@@ -10,3 +10,19 @@ export const determineDisplayTime = time => {
       return;
   }
 };
+
+export const getDatesToDisplay = (num) => {
+         let dates = [];
+         let counter = 1;
+         while (dates.length < num) {
+           let nextDate = new Date();
+           nextDate.setDate(nextDate.getDate() + counter);
+           if (nextDate.getDay() !== 0 && nextDate.getDay() !== 6) {
+             dates.push(nextDate.toString().slice(0, 15));
+           }
+           counter += 1;
+         }
+         return [
+           ...dates,
+         ];
+       };
