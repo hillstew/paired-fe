@@ -47,14 +47,14 @@ export class Schedule extends Component {
   render() {
     const { user } = this.props;
     return (
-      <div className="Schedule">
-        <h2 className="Schedule-h2">
-          {user.name}, here is your pairing schedule{' '}
-          <span role="img" aria-label="rocket ship emoji">
+      <div className='Schedule'>
+        <h2 className='Schedule-h2'>
+          <span>{user.name}</span>, here is your pairing schedule{' '}
+          <span role='img' aria-label='rocket ship emoji'>
             🚀
           </span>
         </h2>
-        <div className="ScheduleCards--div">
+        <div className='ScheduleCards--div'>
           <div>
             <h2>Giving help</h2>
             {this.filterPairerBookings()}
