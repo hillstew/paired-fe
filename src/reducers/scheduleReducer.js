@@ -8,6 +8,8 @@ export const scheduleReducer = (state = [], action) => {
       });
     case 'ADD_TO_SCHEDULE':
       return [...state, action.pairing];
+    case 'SIGN_USER_OUT':
+      return [];
     default:
       return state;
   }
