@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { determineDisplayTime } from '../../helpers';
 
-export const ScheduleCard = ({ booking, person }) => {
+export const ScheduleCard = ({ booking, person, deletePairing }) => {
   const { notes, time, date } = booking;
   return (
     <div className="ScheduleCard">
@@ -18,6 +18,11 @@ export const ScheduleCard = ({ booking, person }) => {
       <p>
         {date} at {determineDisplayTime(time)}
       </p>
+      {!person && (
+        <button onClick={() => deletePairing(booking.id)}>
+          Cancel Availability
+        </button>
+      )}
     </div>
   );
 };
