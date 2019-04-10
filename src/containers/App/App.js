@@ -10,6 +10,7 @@ import { signUserOut } from '../../actions';
 import { signInUser } from '../../thunks/signInUser';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import codesvg from '../../images/code-typing.svg';
 
 export class App extends Component {
   componentDidMount() {
@@ -32,26 +33,37 @@ export class App extends Component {
   render() {
     const { user } = this.props;
     return (
-      <div className="App">
+      <div className='App'>
         <Sidebar />
         <div>
-          <header>
-          </header>
-          {
-            user.id &&
+          <header />
+          {user.id && (
             <React.Fragment>
-              <button onClick={this.handleSignOut}>
+              <button
+                className='App--button--signout'
+                onClick={this.handleSignOut}>
                 Sign Out
               </button>
               <Switch>
-                <Route path="/schedule" component={Schedule} />
-                <Route path="/book-pairing" component={Controls} />
-                <Route path="/confirm" component={Confirmation}/>
-                <Route exact path="/" render={() => <div>path: /</div>} />
-                <Route render={() => <div>ERRORRRRRRRR</div>} />
+                <Route path='/schedule' component={Schedule} />
+                <Route path='/book-pairing' component={Controls} />
+                <Route path='/confirm' component={Confirmation} />
+                <Route
+                  exact
+                  path='/'
+                  render={() => (
+                    <div>
+                      <h2>Welcome {user.name}</h2>
+                      <img className='App--img' src={codesvg} alt='Two people coding'/>
+                    </div>
+                  )}
+                />
+                <Route
+                  render={() => <div>Uh oh! Sorrypage not found</div>}
+                />
               </Switch>
             </React.Fragment>
-          }
+          )}
           {!user.id && <SignIn history={this.props.history} />}
         </div>
       </div>
