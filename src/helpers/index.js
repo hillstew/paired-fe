@@ -27,21 +27,6 @@ export const getDatesToDisplay = (num) => {
          ];
        };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export const getDatesToDisplayFancy = (startDate, num) => {
     let dates = [];
     let counter = 1;
@@ -129,4 +114,3 @@ export const createPairingsForQuery = (chosenAvails, inning, pairerId) => {
     return acc;
   }, []);
 };
-

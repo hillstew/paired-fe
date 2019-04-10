@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Dropdown } from '../../components/Dropdown';
 import { createUser } from '../../thunks/createUser';
 import { connect } from 'react-redux';
+import { Availability } from '../../components/Availability';
 
 export class Profile extends Component {
   constructor(props) {
@@ -14,7 +15,8 @@ export class Profile extends Component {
       pronouns: '',
       slack: '',
       skill1: '',
-      skill2: ''
+      skill2: '',
+      availabilities: Array(15).fill(false)
     };
   }
 
@@ -29,6 +31,15 @@ export class Profile extends Component {
     this.setState({ [name]: value });
   };
 
+  handleClick = (event, i) => {
+    event.preventDefault()
+    const { availabilities } = this.state;
+    const newAvailabilities = availabilities.map((availability, j) => {
+      return i === j ? !availability : availability;
+    });
+    this.setState({ availabilities: newAvailabilities });
+  };
+
   handleSubmit = async event => {
     event.preventDefault();
     const { image, firebaseID } = this.props;
@@ -40,7 +51,8 @@ export class Profile extends Component {
       pronouns,
       slack,
       skill1,
-      skill2
+      skill2,
+      availabilities
     } = this.state;
     let pronounsToSave = pronouns;
 
@@ -60,11 +72,12 @@ export class Profile extends Component {
       skill1,
       skill2
     };
-    await this.props.createUser(user);
+    await this.props.createUser(user, availabilities);
+
   };
 
   render() {
-    const { name, slack, email } = this.state;
+    const { name, slack, email, availabilities } = this.state;
     const skills = [
       'grid',
       'flexbox',
@@ -125,6 +138,7 @@ export class Profile extends Component {
           label='Skill2'
           handleChange={this.handleChange}
         />
+        <Availability availabilities={availabilities} handleClick={this.handleClick}/>
         <button disabled={this.checkDropdowns()}>Submit</button>
       </form>
     );
@@ -132,7 +146,7 @@ export class Profile extends Component {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  createUser: user => dispatch(createUser(user))
+  createUser: (user, availabilities) => dispatch(createUser(user, availabilities))
 });
 
 export default connect(

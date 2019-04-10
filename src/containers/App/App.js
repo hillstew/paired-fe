@@ -11,7 +11,6 @@ import { signInUser } from '../../thunks/signInUser';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import codesvg from '../../images/code-typing.svg';
-import { Availability } from '../Availability';
 
 export class App extends Component {
   componentDidMount() {
@@ -45,8 +44,6 @@ export class App extends Component {
                 onClick={this.handleSignOut}>
                 Sign Out
               </button>
-              <Availability />
-
               <Switch>
                 <Route path='/schedule' component={Schedule} />
                 <Route path='/book-pairing' component={Controls} />
