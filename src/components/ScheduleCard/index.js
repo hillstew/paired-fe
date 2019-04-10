@@ -20,7 +20,7 @@ export const ScheduleCard = ({ booking, person, deletePairing }) => {
       </p>
       {!person && (
         <button onClick={() => deletePairing(booking.id)}>
-          Cancel Availability
+          Cancel
         </button>
       )}
     </div>
