@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import * as helpers from '../../helpers';
 
 export class Availability extends Component {
   constructor() {
@@ -13,6 +14,13 @@ export class Availability extends Component {
     });
     this.setState({ availabilities: newAvailabilities });
   };
+
+  handleSubmit = () => {
+    const { availabilities } = this.state;
+    const startDate = 'Mon Apr 29 2019';
+    const inning = helpers.getDatesToDisplayFancy(startDate, 29);
+    const uglyPairings = helpers.createPairingsForQuery(availabilities, inning, )
+  }
 
   render() {
     const { availabilities } = this.state;
