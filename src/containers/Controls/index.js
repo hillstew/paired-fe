@@ -28,15 +28,10 @@ export class Controls extends Component {
       }
       counter += 1;
     }
-    return [
-      ...dates,
-      'Wed Apr 17 2019',
-      'Thu Apr 18 2019',
-      'Fri Apr 19 2019'
-    ];
+    return [...dates, 'Wed Apr 17 2019', 'Thu Apr 18 2019', 'Fri Apr 19 2019'];
   };
 
-  handleOptionChange = event => {
+  handleChange = event => {
     let { value, name } = event.target;
     name = name.toLowerCase();
     this.setState({ [name]: value });
@@ -70,28 +65,28 @@ export class Controls extends Component {
     const { availPairings } = this.props;
     const { message } = this.state;
     return (
-      <div className="Controls">
+      <div className='Controls'>
         <h2>Book a Pairing</h2>
-        <section className="Controls--section">
+        <section className='Controls--section'>
           <Dropdown
             options={['FE', 'BE']}
-            label="Program"
-            handleOptionChange={this.handleOptionChange}
+            label='Program'
+            handleChange={this.handleChange}
           />
           <Dropdown
             options={['1', '2', '3', '4']}
-            label="Module"
-            handleOptionChange={this.handleOptionChange}
+            label='Module'
+            handleChange={this.handleChange}
           />
           <Dropdown
             options={dates}
-            label="Date"
-            handleOptionChange={this.handleOptionChange}
+            label='Date'
+            handleChange={this.handleChange}
           />
         </section>
         <button
           onClick={this.handleClick}
-          className="Controls--avail-btn"
+          className='Controls--avail-btn'
           disabled={this.checkDropdowns()}>
           Show Available Pairings
         </button>

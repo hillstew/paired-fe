@@ -93,7 +93,7 @@ export const updatePairing = (pairingId, paireeId, notes) => ({
   }`
 });
 
-export const deletePairing = (pairingId) => ({
+export const deletePairing = pairingId => ({
   query: `mutation {
     deletePairing(id: "${pairingId}") {
       date
@@ -107,7 +107,11 @@ export const createUser = ({
   image,
   firebaseID,
   module,
-  program
+  program,
+  pronouns,
+  slack,
+  skill1,
+  skill2
 }) => ({
   query: `mutation {
     user: createUser(
@@ -118,6 +122,9 @@ export const createUser = ({
         firebaseID: "${firebaseID}"
         module: ${module}
         program: "${program}"
+        pronouns: "${pronouns}"
+        slack: "${slack}"
+        skills: ["${skill1}", "${skill2}"]
       }
     ) {
       name

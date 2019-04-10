@@ -4,12 +4,18 @@ import { createUser } from '../../thunks/createUser';
 import { connect } from 'react-redux';
 
 export class Profile extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
+      name: this.props.name || '',
+      email: this.props.email || '',
       program: '',
-      module: ''
-    }
+      module: '',
+      pronouns: '',
+      slack: '',
+      skill1: '',
+      skill2: ''
+    };
   }
 
   checkDropdowns = () => {
@@ -17,37 +23,100 @@ export class Profile extends Component {
     return !program || !module;
   };
 
-  handleOptionChange = event => {
+  handleChange = event => {
     let { value, name } = event.target;
     name = name.toLowerCase();
     this.setState({ [name]: value });
   };
 
-  handleSubmit = async (event) => {
+  handleSubmit = async event => {
     event.preventDefault();
-    const { name, email, image, firebaseID } = this.props;
-    const { module, program } = this.state;
-    const user = { name, email, image, firebaseID, module, program };
+    const { image, firebaseID } = this.props;
+    const {
+      module,
+      program,
+      name,
+      email,
+      pronouns,
+      slack,
+      skill1,
+      skill2
+    } = this.state;
+    const user = {
+      name,
+      email,
+      image,
+      firebaseID,
+      module,
+      program,
+      pronouns,
+      slack,
+      skill1,
+      skill2
+    };
     await this.props.createUser(user);
   };
 
   render() {
+    const { name, slack, email } = this.state;
+    const skills = [
+      'grid',
+      'flexbox',
+      'mythical creatures',
+      'react',
+      'jsFun',
+      'rspec',
+      'rails',
+      'ruby',
+      'jest/enzyme',
+      'docker',
+      'lightning talks',
+      'javascript',
+      'css',
+      'active record',
+      'SQL',
+      'sinatra'
+    ];
     return (
       <div>
+        <label htmlFor='name'>Provide your name</label>
+        <input value={name} name='name' onChange={this.handleChange} />
+        <label htmlFor='email'>Provide your email handle</label>
+        <input value={email} name='email' onChange={this.handleChange} />
+        <label htmlFor='slack'>Provide your slack handle</label>
+        <input value={slack} name='slack' onChange={this.handleChange} />
+        <Dropdown
+          options={[
+            'she/her',
+            'he/him',
+            'they/them',
+            'ze/zir',
+            'prefer not to answer'
+          ]}
+          label='Pronouns'
+          handleChange={this.handleChange}
+        />
         <Dropdown
           options={['FE', 'BE']}
           label='Program'
-          handleOptionChange={this.handleOptionChange}
+          handleChange={this.handleChange}
         />
         <Dropdown
           options={[1, 2, 3, 4]}
           label='Module'
-          handleOptionChange={this.handleOptionChange}
+          handleChange={this.handleChange}
         />
-        <button
-          onClick={this.handleSubmit}
-          disabled={this.checkDropdowns()}
-        >
+        <Dropdown
+          options={skills}
+          label='Skill1'
+          handleChange={this.handleChange}
+        />
+        <Dropdown
+          options={skills}
+          label='Skill2'
+          handleChange={this.handleChange}
+        />
+        <button onClick={this.handleSubmit} disabled={this.checkDropdowns()}>
           submit
         </button>
       </div>
@@ -55,8 +124,11 @@ export class Profile extends Component {
   }
 }
 
-export const mapDispatchToProps = (dispatch) => ({
-  createUser: (user) => dispatch(createUser(user))
+export const mapDispatchToProps = dispatch => ({
+  createUser: user => dispatch(createUser(user))
 });
 
-export default connect(null, mapDispatchToProps)(Profile);
+export default connect(
+  null,
+  mapDispatchToProps
+)(Profile);
