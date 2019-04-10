@@ -14,14 +14,14 @@ export class SignIn extends Component {
     };
   }
 
-
   handleSignIn = async () => {
     const provider = new firebase.auth.GithubAuthProvider();
     provider.addScope('read:user');
     try {
-      const { user, additionalUserInfo } = await firebase
-        .auth()
-        .signInWithPopup(provider);
+      const {
+        user,
+        additionalUserInfo
+      } = await firebase.auth().signInWithPopup(provider);
       const { name, email, avatar_url: image } = additionalUserInfo.profile;
       const firebaseID = user.uid;
       this.setState({ user: { name, email, image, firebaseID } });
@@ -36,28 +36,25 @@ export class SignIn extends Component {
     const { user } = this.state;
     return (
       <div>
-        {
-          !user.name &&
-          <button onClick={this.handleSignIn}>
-            Sign In with GitHub
-          </button>
-        }
-        {
-          isNewUser && user.name &&
-          <Profile {...user} />
-        }
+        {!user.name && (
+          <button onClick={this.handleSignIn}>Sign In with GitHub</button>
+        )}
+        {isNewUser && user.firebaseID && <Profile {...user} />}
       </div>
     );
   }
 }
 
-export const mapStateToProps = (state) => ({
+export const mapStateToProps = state => ({
   user: state.user
 });
 
-export const mapDispatchToProps = (dispatch) => ({
-  setError: (message) => dispatch(setError(message)),
-  signInUser: (id) => dispatch(signInUser(id))
+export const mapDispatchToProps = dispatch => ({
+  setError: message => dispatch(setError(message)),
+  signInUser: id => dispatch(signInUser(id))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SignIn);
