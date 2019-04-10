@@ -1,0 +1,7 @@
+button {
+  @include button-style();
+  background-color: $color-primary;
+  font-family: $font-bold;
+  height: 30px;
+  width: 200px;
+}

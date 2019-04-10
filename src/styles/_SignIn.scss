@@ -1,0 +1,17 @@
+.SignIn--div {
+  button {
+    @include button-style();
+    background-color: $color-primary;
+    font-family: $font-bold;
+    display: block;
+    margin: 10px 25px 0 auto;
+    height: 30px;
+    width: 200px;
+    color: $color-secondary;
+  }
+}
+
+.SignIn--img {
+  height: 500px;
+  margin-top: 40px;
+}

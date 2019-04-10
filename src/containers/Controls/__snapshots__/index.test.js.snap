@@ -11,7 +11,7 @@ exports[`Controls Controls component should match the snapshot 1`] = `
     className="Controls--section"
   >
     <Dropdown
-      handleOptionChange={[Function]}
+      handleChange={[Function]}
       label="Program"
       options={
         Array [
@@ -21,7 +21,7 @@ exports[`Controls Controls component should match the snapshot 1`] = `
       }
     />
     <Dropdown
-      handleOptionChange={[Function]}
+      handleChange={[Function]}
       label="Module"
       options={
         Array [
@@ -33,18 +33,15 @@ exports[`Controls Controls component should match the snapshot 1`] = `
       }
     />
     <Dropdown
-      handleOptionChange={[Function]}
+      handleChange={[Function]}
       label="Date"
       options={
         Array [
-          "Wed Apr 10 2019",
           "Thu Apr 11 2019",
           "Fri Apr 12 2019",
           "Mon Apr 15 2019",
           "Tue Apr 16 2019",
           "Wed Apr 17 2019",
-          "Thu Apr 18 2019",
-          "Fri Apr 19 2019",
         ]
       }
     />

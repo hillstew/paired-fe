@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import { Controls, mapStateToProps, mapDispatchToProps } from './index';
 import { mockAvailPairings } from '../../mockData';
 import { setError } from '../../actions';
+import * as helpers from '../../helpers';
 
 describe('Controls', () => {
   describe('Controls component', () => {
@@ -14,8 +15,16 @@ describe('Controls', () => {
       setAvailPairings: mockSetAvailPairings,
       availPairings: mockAvailPairings
     }
+
     beforeEach(() => {
       wrapper = shallow(<Controls {...mockProps} />);
+      helpers.getDatesToDisplay = jest.fn(() => [
+        'Mon Apr 15 2019',
+        'Tue Apr 16 2019',
+        'Wed Apr 17 2019',
+        'Thu Apr 18 2019',
+        'Fri Apr 19 2019'
+      ]);
     });
 
     it('should match the snapshot', () => {

@@ -24,6 +24,13 @@
       border-radius: 50%;
       margin: auto;
       display: block;
+      &:hover:after {
+        content: '';
+        height: 90px;
+        width: 90px;
+        z-index: 10;
+        position: fixed;
+      }
     }
 
     .StudentCard-pronouns,
@@ -34,7 +41,6 @@
 
   .StudentCard--div--rows {
     display: flex;
-    width: 400px;
     justify-content: space-around;
     align-items: center;
 
@@ -50,9 +56,8 @@
     }
 
     button {
+      @include button-style();
       background-color: $color-primary;
-      border-radius: 10px;
-      cursor: pointer;
       font-family: $font-bold;
     }
 

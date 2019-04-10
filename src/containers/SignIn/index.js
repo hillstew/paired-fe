@@ -5,6 +5,7 @@ import 'firebase/auth';
 import { setError } from '../../actions';
 import { signInUser } from '../../thunks/signInUser';
 import Profile from '../Profile';
+import codesvg from '../../images/code-typing.svg';
 
 export class SignIn extends Component {
   constructor() {
@@ -35,9 +36,16 @@ export class SignIn extends Component {
     const { isNewUser } = this.props.user;
     const { user } = this.state;
     return (
-      <div>
+      <div className='SignIn--div'>
         {!user.name && (
           <button onClick={this.handleSignIn}>Sign In with GitHub</button>
+        )}
+        {!user.firebaseID && (
+          <img
+            className='SignIn--img'
+            src={codesvg}
+            alt='Two people coding'
+          />
         )}
         {isNewUser && user.firebaseID && <Profile {...user} />}
       </div>
