@@ -1,0 +1,46 @@
+.Availability {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  padding: 16px 48px;
+}
+
+.day--container {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 12px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.button--container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 12px;
+}
+
+.button--availability {
+  outline: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-family: $font-medium;
+  width: 80%;
+  margin: auto;
+}
+
+.button--true {
+  @extend .button--availability;
+  background-color: green;
+}
+
+.button--false {
+  @extend .button--availability;
+  background-color: tomato;
+}
+
+.Availability--submit {
+  grid-column: 2/3;
+  width: 20%;
+  margin: 12px auto;
+}

@@ -147,3 +147,15 @@ export const getUserByFirebaseID = id => ({
   }
 }`
 });
+
+export const createPairings = pairingsString => ({
+  query: `mutation {
+    createPairings(
+      pairings: ${pairingsString}
+    ) {
+      pairer
+      date
+      time
+    }
+  }`
+});
