@@ -1,5 +1,6 @@
 @import 'normalize';
 @import 'variables';
+@import 'mixins';
 @import 'App';
 @import 'Sidebar';
 @import 'Controls';
@@ -8,3 +9,7 @@
 @import 'Schedule';
 @import 'ScheduleCard';
 @import 'CurrentOpenings';
+@import 'Profile';
+@import 'SignIn';
+@import 'Confirmation';
+@import 'ConfirmCard';

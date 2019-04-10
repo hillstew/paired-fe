@@ -11,4 +11,16 @@
     font-family: $font-light;
     margin: 10px 0;
   }
+  
+  button {
+    @include button-style();
+    background-color: $color-secondary;
+    font-family: $font-medium;
+    font-size: 12px;
+    display: block;
+    margin: 10px auto;
+    height: 25px;
+    width: 80px;
+    color: $color-accent;
+  }
 }

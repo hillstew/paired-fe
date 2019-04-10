@@ -19,8 +19,8 @@ export class Profile extends Component {
   }
 
   checkDropdowns = () => {
-    const { program, module } = this.state;
-    return !program || !module;
+    const { program, module, email, name, pronouns, slack } = this.state;
+    return !program || !module || !email || !name || !pronouns || !slack;
   };
 
   handleChange = event => {
@@ -42,6 +42,12 @@ export class Profile extends Component {
       skill1,
       skill2
     } = this.state;
+    let pronounsToSave = pronouns;
+
+    if ( pronouns === 'prefer not to answer' ) {
+      pronounsToSave = '';
+    }
+
     const user = {
       name,
       email,
@@ -49,7 +55,7 @@ export class Profile extends Component {
       firebaseID,
       module,
       program,
-      pronouns,
+      pronouns: pronounsToSave,
       slack,
       skill1,
       skill2
@@ -78,13 +84,16 @@ export class Profile extends Component {
       'sinatra'
     ];
     return (
-      <div>
-        <label htmlFor='name'>Provide your name</label>
-        <input value={name} name='name' onChange={this.handleChange} />
-        <label htmlFor='email'>Provide your email handle</label>
-        <input value={email} name='email' onChange={this.handleChange} />
-        <label htmlFor='slack'>Provide your slack handle</label>
-        <input value={slack} name='slack' onChange={this.handleChange} />
+      <form onSubmit={this.handleSubmit} className='Profile--form'>
+        <h3>Please complete your profile</h3>
+        <div className='Profile--div--flex'>
+          <label htmlFor='name'>Provide your name</label>
+          <input value={name} name='name' onChange={this.handleChange} />
+          <label htmlFor='email'>Provide your email</label>
+          <input value={email} name='email' onChange={this.handleChange} />
+          <label htmlFor='slack'>Provide your slack handle</label>
+          <input value={slack} name='slack' onChange={this.handleChange} />
+        </div>
         <Dropdown
           options={[
             'she/her',
@@ -116,10 +125,8 @@ export class Profile extends Component {
           label='Skill2'
           handleChange={this.handleChange}
         />
-        <button onClick={this.handleSubmit} disabled={this.checkDropdowns()}>
-          submit
-        </button>
-      </div>
+        <button disabled={this.checkDropdowns()}>Submit</button>
+      </form>
     );
   }
 }
