@@ -1,5 +1,6 @@
-export const fetchData = async (body) => {
-  const response = await fetch(process.env.REACT_APP_BACKEND_URL, {
+export const fetchData = async body => {
+  const url = 'https://paired-api.herokuapp.com/graphql';
+  const response = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -12,5 +13,5 @@ export const fetchData = async (body) => {
     throw new Error(result.errors[0].message);
   }
 
-  return result.data
-}
+  return result.data;
+};
