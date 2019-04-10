@@ -141,6 +141,7 @@ exports[`Schedule Schedule component should match the snapshot 1`] = `
             "time": "lunch",
           }
         }
+        deletePairing={[MockFunction]}
         key="5caa7eebfdebb8348e53a490"
         person={null}
       />

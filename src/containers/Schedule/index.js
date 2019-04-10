@@ -5,10 +5,17 @@ import { deletePairingThunk } from '../../thunks/deletePairingThunk';
 
 export class Schedule extends Component {
   filterOpenings = () => {
-    const { schedule } = this.props;
+    const { schedule, deletePairingThunk } = this.props;
     const openings = schedule.filter(pairing => pairing.pairee === null);
     return openings.map(booking => {
-      return <ScheduleCard booking={booking} person={null} key={booking.id} />;
+      return (
+        <ScheduleCard
+          booking={booking}
+          person={null}
+          key={booking.id}
+          deletePairing={deletePairingThunk}
+        />
+      );
     });
   };
 
