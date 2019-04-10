@@ -24,13 +24,13 @@ describe('createUser', () => {
     expect(utils.fetchData).toHaveBeenCalledWith(expected);
   });
 
-  it('should dispatch setUser with a user', async () => {
+  it.skip('should dispatch setUser with a user', async () => {
     const expected = setUser(mockUser)
     await thunk(mockDispatch);
     expect(mockDispatch).toHaveBeenCalledWith(expected);
   });
 
-  it('should dispatch getSchedule with an id', async () => {
+  it.skip('should dispatch getSchedule with an id', async () => {
     const expected = getSchedule(mockUser.id);
     await thunk(mockDispatch);
     expect(mockDispatch).toHaveBeenCalledWith(expected);
