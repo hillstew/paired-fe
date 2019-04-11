@@ -26,13 +26,15 @@ export class Controls extends Component {
 
   handleClick = async () => {
     const { program, module, date } = this.state;
+    const { setAvailPairings } = this.props;
     try {
       const body = gql.getAvailablePairings(program, parseInt(module), date);
       const response = await fetch.fetchData(body);
       if (response.getAvailablePairings.length) {
+        setAvailPairings(response.getAvailablePairings);
         this.setState({ message: '' });
-        this.props.setAvailPairings(response.getAvailablePairings);
       } else {
+        setAvailPairings([]);
         this.setState({
           message: `Sorry no pairings are available for ${program} Mod ${module} on ${date}`
         });
@@ -48,7 +50,7 @@ export class Controls extends Component {
   };
 
   render() {
-    const dates = getDatesToDisplay(5);
+    const dates = getDatesToDisplay(15);
     const { availPairings } = this.props;
     const { message } = this.state;
     return (
@@ -77,7 +79,7 @@ export class Controls extends Component {
           disabled={this.checkDropdowns()}>
           Show Available Pairings
         </button>
-        {message !== '' && <p>{message}</p>}
+        {message !== '' && <p className='Controls-error'>{message}</p>}
         {availPairings.length !== 0 && (
           <Pairings openPairings={availPairings} history={this.props.history} />
         )}
