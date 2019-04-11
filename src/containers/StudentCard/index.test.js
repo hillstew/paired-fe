@@ -4,7 +4,8 @@ import { StudentCard, mapDispatchToProps } from './index';
 import {
   mockStudentForStudentCard,
   mockStudForStudentCardNoAvail,
-  mockStudForStudentCardAllAvail
+  mockStudForStudentCardAllAvail,
+  mockUser
 } from '../../mockData';
 import { setPairingId } from '../../actions';
 
@@ -21,6 +22,7 @@ describe('StudentCard', () => {
           student={mockPropsAllTimesAvail}
           setPairingId={mockSetPairingId}
           history={mockHistory}
+          user={mockUser}
         />
       );
     });
@@ -34,6 +36,7 @@ describe('StudentCard', () => {
         <StudentCard
           student={mockStudentForStudentCard}
           setPairingId={mockSetPairingId}
+          user={mockUser}
         />
       );
       expect(wrapper).toMatchSnapshot();
@@ -54,7 +57,7 @@ describe('StudentCard', () => {
       const instance = wrapper.instance();
       jest.spyOn(instance, 'handleClick');
       wrapper.find('#morning').simulate('click');
-      expect(instance.handleClick).toHaveBeenCalledWith(expectedId); 
+      expect(instance.handleClick).toHaveBeenCalledWith(expectedId);
     });
 
     it('should call handleClick when the Book It button for lunch is clicked', () => {
