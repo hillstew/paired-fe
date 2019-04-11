@@ -1,8 +1,10 @@
 @mixin button-style() {
+  border: none;
   border-radius: 10px;
   cursor: pointer;
+  outline: none;
   &:disabled {
-    color:#808080;
+    color: #808080;
     cursor: not-allowed;
   }
 }

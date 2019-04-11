@@ -3,6 +3,7 @@ import React from 'react';
 export const Availability = ({ handleClick, availabilities }) => {
   return (
     <section className='Availability'>
+      <h3>Please set when you are available to give help to others</h3>
       <ul className='day--container'>
         <li />
         <li>Monday</li>
@@ -20,7 +21,7 @@ export const Availability = ({ handleClick, availabilities }) => {
             <button
               key={i}
               className={'button--' + availability}
-              onClick={(event) => handleClick(event, i)}>
+              onClick={event => handleClick(event, i)}>
               {availability ? 'available' : 'unavailable'}
             </button>
           );

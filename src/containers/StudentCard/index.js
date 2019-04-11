@@ -11,6 +11,7 @@ export class StudentCard extends Component {
 
   render() {
     const {
+      id,
       name,
       image,
       pronouns,
@@ -19,14 +20,12 @@ export class StudentCard extends Component {
       afternoon: afternoonId,
       lunch: lunchId
     } = this.props.student;
+    const { user } = this.props;
     return (
       <section className='StudentCard'>
         <div className='StudentCard--div--cols'>
           <h3>{name}</h3>
-          <img
-            src={image}
-            alt={name}
-          />
+          <img src={image} alt={name} />
           <p className='StudentCard-pronouns'>Pronouns: {pronouns}</p>
           <p className='StudentCard-skills'>
             Skills: {skills.map(skill => `${skill} `)}
@@ -36,7 +35,11 @@ export class StudentCard extends Component {
           <div>
             <p className='StudentCard-time-text'>8:00 - 8:50 a.m.</p>
             {morningId && (
-              <button className='StudentCard--btn' id='morning' onClick={() => this.handleClick(morningId)}>
+              <button
+                className='StudentCard--btn'
+                id='morning'
+                onClick={() => this.handleClick(morningId)}
+                disabled={id === user.id}>
                 Book It
               </button>
             )}
@@ -45,7 +48,11 @@ export class StudentCard extends Component {
           <div>
             <p className='StudentCard-time-text'>12:00 - 12:50 p.m.</p>
             {lunchId && (
-              <button className='StudentCard--btn' id='lunch' onClick={() => this.handleClick(lunchId)}>
+              <button
+                className='StudentCard--btn'
+                id='lunch'
+                onClick={() => this.handleClick(lunchId)}
+                disabled={id === user.id}>
                 Book It
               </button>
             )}
@@ -54,7 +61,11 @@ export class StudentCard extends Component {
           <div>
             <p className='StudentCard-time-text'>4:00 - 4:50 p.m.</p>
             {afternoonId && (
-              <button className='StudentCard--btn' id='afternoon' onClick={() => this.handleClick(afternoonId)}>
+              <button
+                className='StudentCard--btn'
+                id='afternoon'
+                onClick={() => this.handleClick(afternoonId)}
+                disabled={id === user.id}>
                 Book It
               </button>
             )}
@@ -66,11 +77,15 @@ export class StudentCard extends Component {
   }
 }
 
+export const mapStateToProps = state => ({
+  user: state.user
+});
+
 export const mapDispatchToProps = dispatch => ({
   setPairingId: id => dispatch(setPairingId(id))
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(StudentCard);
