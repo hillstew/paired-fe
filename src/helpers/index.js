@@ -11,34 +11,32 @@ export const determineDisplayTime = time => {
   }
 };
 
-export const getDatesToDisplay = (num) => {
-         let dates = [];
-         let counter = 1;
-         while (dates.length < num) {
-           let nextDate = new Date();
-           nextDate.setDate(nextDate.getDate() + counter);
-           if (nextDate.getDay() !== 0 && nextDate.getDay() !== 6) {
-             dates.push(nextDate.toString().slice(0, 15));
-           }
-           counter += 1;
-         }
-         return [
-           ...dates,
-         ];
-       };
+export const getDatesToDisplay = num => {
+  let dates = [];
+  let counter = 1;
+  while (dates.length < num) {
+    let nextDate = new Date();
+    nextDate.setDate(nextDate.getDate() + counter);
+    if (nextDate.getDay() !== 0 && nextDate.getDay() !== 6) {
+      dates.push(nextDate.toString().slice(0, 15));
+    }
+    counter += 1;
+  }
+  return [...dates];
+};
 
 export const getDatesToDisplayFancy = (startDate, num) => {
-    let dates = [];
-    let counter = 1;
-    while (dates.length < num) {
-      let nextDate = new Date(startDate);
-      nextDate.setDate(nextDate.getDate() + counter);
-      if (nextDate.getDay() !== 0 && nextDate.getDay() !== 6) {
-        dates.push(nextDate.toString().slice(0, 15));
-      }
-      counter += 1;
+  let dates = [];
+  let counter = 1;
+  while (dates.length < num) {
+    let nextDate = new Date(startDate);
+    nextDate.setDate(nextDate.getDate() + counter);
+    if (nextDate.getDay() !== 0 && nextDate.getDay() !== 6) {
+      dates.push(nextDate.toString().slice(0, 15));
     }
-    return [startDate, ...dates];
+    counter += 1;
+  }
+  return [startDate, ...dates];
 };
 
 export const determineDay = index => {
@@ -76,7 +74,7 @@ export const determineDay = index => {
     default:
       return;
   }
-}
+};
 
 export const makeAvailPairings = (pairings, time, pairerId) => {
   return pairings.map(pairing => {
@@ -88,12 +86,12 @@ export const makeAvailPairings = (pairings, time, pairerId) => {
   });
 };
 
-export const formatPairingsForQuery = (arr) => {
+export const formatPairingsForQuery = arr => {
   return JSON.stringify(arr)
     .replace(/"pairer"/g, 'pairer')
     .replace(/"date"/g, 'date')
     .replace(/"time"/g, 'time');
-}
+};
 
 export const createPairingsForQuery = (chosenAvails, inning, pairerId) => {
   return chosenAvails.reduce((acc, curr, index) => {
