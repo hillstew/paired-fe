@@ -37,7 +37,6 @@ exports[`Controls Controls component should match the snapshot 1`] = `
       label="Date"
       options={
         Array [
-          "Thu Apr 11 2019",
           "Fri Apr 12 2019",
           "Mon Apr 15 2019",
           "Tue Apr 16 2019",
@@ -52,6 +51,7 @@ exports[`Controls Controls component should match the snapshot 1`] = `
           "Mon Apr 29 2019",
           "Tue Apr 30 2019",
           "Wed May 01 2019",
+          "Thu May 02 2019",
         ]
       }
     />
