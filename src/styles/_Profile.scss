@@ -1,18 +1,25 @@
 .Profile--form {
   color: $color-secondary;
-  width: 400px;
+  width: 1000px;
   margin: auto;
 
-  h3 {
-    font-family: $font-bold;
+  .Profile--div {
+    margin: auto;
+    width: 500px;
   }
 
-  button {
+  h2 {
+    font-family: $font-bold;
+    margin: 0;
+  }
+
+  .Profile--button {
     @include button-style();
     background-color: $color-primary;
     font-family: $font-bold;
-    height: 30px;
-    width: 100px;
+    height: 40px;
+    margin: auto;
+    width: 120px;
   }
 
   input {
@@ -23,7 +30,7 @@
 .Profile--div--flex {
   display: flex;
   flex-direction: column;
-  font-family: "Cereal-med";
+  font-family: 'Cereal-med';
   margin-bottom: 10px;
   padding-left: 4px;
   text-align: left;

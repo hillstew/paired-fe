@@ -2,7 +2,7 @@
   background-color: #fafafa;
   display: grid;
   grid-template-columns: 300px 1fr;
-  height: 100vh;
+  min-height: 100vh;
   text-align: center;
 
   h1 {
@@ -36,5 +36,4 @@
   height: 30px;
   width: 200px;
   color: $color-secondary;
-
 }
