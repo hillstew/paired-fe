@@ -398,3 +398,15 @@ export const mockParingHillRecievingHelp = {
   id: '5caa7eebfdebb84098er4',
   notes: null
 };
+
+export const mockPairingsQuery = {
+  "query": `mutation {
+    createPairings(
+      pairings: [{date:\"Mon Apr 29 2019\",time:\"morning\",pairer:\"5caa7eebfdebb8348e53a48e\"},{date:\"Mon May 06 2019\",time:\"morning\",pairer:\"5caa7eebfdebb8348e53a48e\"},{date:\"Mon May 13 2019\",time:\"morning\",pairer:\"5caa7eebfdebb8348e53a48e\"},{date:\"Mon May 20 2019\",time:\"morning\",pairer:\"5caa7eebfdebb8348e53a48e\"},{date:\"Mon May 27 2019\",time:\"morning\",pairer:\"5caa7eebfdebb8348e53a48e\"},{date:\"Mon Jun 03 2019\",time:\"morning\",pairer:\"5caa7eebfdebb8348e53a48e\"},{date:\"Mon Apr 29 2019\",time:\"afternoon\",pairer:\"5caa7eebfdebb8348e53a48e\"},{date:\"Mon May 06 2019\",time:\"afternoon\",pairer:\"5caa7eebfdebb8348e53a48e\"},{date:\"Mon May 13 2019\",time:\"afternoon\",pairer:\"5caa7eebfdebb8348e53a48e\"},{date:\"Mon May 20 2019\",time:\"afternoon\",pairer:\"5caa7eebfdebb8348e53a48e\"},{date:\"Mon May 27 2019\",time:\"afternoon\",pairer:\"5caa7eebfdebb8348e53a48e\"},{date:\"Mon Jun 03 2019\",time:\"afternoon\",pairer:\"5caa7eebfdebb8348e53a48e\"}]
+    ) {
+      pairer
+      date
+      time
+    }
+  }`
+};

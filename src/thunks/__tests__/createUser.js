@@ -3,12 +3,13 @@ import * as utils from '../../utils';
 import * as gql from '../../queries';
 import { setError, setLoading, setUser } from '../../actions';
 import { getSchedule } from '../getSchedule';
-import { mockUser } from '../../mockData';
+import { mockUser, mockPairingsQuery } from '../../mockData';
 
 jest.mock('../getSchedule');
 
 describe('createUser', () => {
-  const thunk = createUser(mockUser);
+  const mockAvailabilities = [true, false, true, false];
+  const thunk = createUser(mockUser, mockAvailabilities);
   const mockDispatch = jest.fn();
   utils.fetchData = jest.fn(() => ({ user: mockUser}));
 
@@ -18,19 +19,24 @@ describe('createUser', () => {
     expect(mockDispatch).toHaveBeenCalledWith(expected);
   });
 
-  it('should call fetchData with the correct params', async () => {
+  it('should call fetchData with a user query', async () => {
     const expected = gql.createUser(mockUser);
     await thunk(mockDispatch);
     expect(utils.fetchData).toHaveBeenCalledWith(expected);
   });
 
-  it.skip('should dispatch setUser with a user', async () => {
+  it('should call fetchData with a pairings query', async () => {
+    await thunk(mockDispatch);
+    expect(utils.fetchData).toHaveBeenCalledWith(mockPairingsQuery);
+  });
+
+  it('should dispatch setUser with a user', async () => {
     const expected = setUser(mockUser)
     await thunk(mockDispatch);
     expect(mockDispatch).toHaveBeenCalledWith(expected);
   });
 
-  it.skip('should dispatch getSchedule with an id', async () => {
+  it('should dispatch getSchedule with an id', async () => {
     const expected = getSchedule(mockUser.id);
     await thunk(mockDispatch);
     expect(mockDispatch).toHaveBeenCalledWith(expected);
