@@ -59,7 +59,7 @@ export class App extends Component {
                   )}
                 />
                 <Route
-                  render={() => <div>Uh oh! Sorrypage not found</div>}
+                  render={() => <div>Uh oh! Sorry, page not found.</div>}
                 />
               </Switch>
             </React.Fragment>
