@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Controls, mapStateToProps, mapDispatchToProps } from './index';
 import { mockAvailPairings } from '../../mockData';
-import { setError } from '../../actions';
+import { setError, setAvailPairings } from '../../actions';
 import * as helpers from '../../helpers';
 
 describe('Controls', () => {
@@ -14,7 +14,10 @@ describe('Controls', () => {
       setError: mockSetError,
       setAvailPairings: mockSetAvailPairings,
       availPairings: mockAvailPairings
-    }
+    };
+    const mockProgram = 'FE';
+    const mockDate = 'Thu Apr 25 2019';
+    const mockModule = 4;
 
     beforeEach(() => {
       wrapper = shallow(<Controls {...mockProps} />);
@@ -29,6 +32,18 @@ describe('Controls', () => {
 
     it('should match the snapshot', () => {
       expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should call handleClick when the Show available pairings button is clicked', () => {
+      const instance = wrapper.instance();
+      jest.spyOn(instance, 'handleClick');
+      wrapper.setState({
+        date: mockDate,
+        module: mockModule,
+        program: mockProgram
+      });
+      wrapper.find('.Controls--avail-btn').simulate('click');
+      expect(instance.handleClick).toHaveBeenCalled();
     });
   });
 
@@ -47,12 +62,18 @@ describe('Controls', () => {
   });
 
   describe('mapDispatchToProps', () => {
-    const mockDispatch = jest.fn()
-    it('should call dispatch with setError when setErro is called', () => {
+    const mockDispatch = jest.fn();
+    it('should call dispatch with setError when setError is called', () => {
       const mockError = 'Error loading';
       const actionToDispatch = setError(mockError);
       const mappedProps = mapDispatchToProps(mockDispatch);
       mappedProps.setError(mockError);
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+    it('should call dispatch with setAvailPairings when setAvailPairings is called', () => {
+      const actionToDispatch = setAvailPairings(mockAvailPairings);
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.setAvailPairings(mockAvailPairings);
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     });
   });
