@@ -1,33 +1,54 @@
-# Paired  
-Paired is a application to streamline pair programming between [Turing](https://turing.io/) students through out their 7 month program.  
+# Paired
 
-### See it Live:   
-#### Front End  
+Paired is a application to improve pair programming between [Turing](https://turing.io/) students throughout their 7 month immersive program. This application was inspired by the current process of pairing with fellow peers which includes a clunky google sheet. As a team, we sought to understand the current pain points through user focused research and used the feedback to guide our iterations. Paired allows students to pair across modules and programs, set and modify their availabliity, and book pairings with fellow Turing students.
 
-#### Back End 
+### See it Live:
+
+https://paired-turing.firebaseapp.com/
+
+### Setting up the development environment:
+
+#### Front End
+
+`git clone https://github.com/hillstew/paired-fe.git`  
+Run `npm install` from the root directory  
+Run `npm start` and visit localhost:3000 in your browser
+
+#### Back End
+
 Associated backend repo can be found [here](https://github.com/dForDeveloper/paired-api)
 
-### Preview:
-
-
 ### Primary Technologies Used:
-* React 
-* Redux
-* React Router
-* SCSS
 
-## Testing  
-Jest and Enzyme for front end and back end testing   
+- React
+- Redux
+- React Router
+- SCSS
 
-## Original Assesment  
-[Cross Pollination](http://frontend.turing.io/projects/capstone.html) project from Turing School of Software & Design  
+### Testing
 
-## Contributors  
+- Jest
+- Enzyme
+
+### Preview of Paired:
+
+![gif](./public/paired-preview.gif)
+
+#### Wireframes:
+
+![made with figma](./public/schedule-view.png)
+![made with figma](./public/available-pairings-view.png)
+
+## Original Assesment
+
+[Cross Pollination Spec](http://frontend.turing.io/projects/capstone.html) project from Turing School of Software & Design.
+
+## Contributors
+
 **Front End Team**  
 [Hillary Stewart](https://github.com/hillstew)  
-[Tiffany Bachmann](https://github.com/trbachmann)  
+[Tiffany Bachmann](https://github.com/trbachmann)
+
 **Back End Team**  
 [Jeo D](https://github.com/dForDeveloper)  
-[Aaron Roberts](https://github.com/jaaronbr)  
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Aaron Roberts](https://github.com/jaaronbr)
