@@ -6,18 +6,18 @@ export default class ConfirmCard extends Component {
     super();
     this.state = {
       notes: ''
-    }
+    };
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
-  }
+  };
 
   handleCancel = () => {
     const { history } = this.props;
     history.push('/book-pairing');
-  }
+  };
 
   handleConfirm = () => {
     const { notes } = this.state;
@@ -35,15 +35,10 @@ export default class ConfirmCard extends Component {
       deletePairingThunk(pairingInConflictId);
     }
     history.push('/');
-  }
+  };
 
   render() {
-    const {
-      date,
-      time,
-      name,
-      hasOpeningAlready
-    } = this.props;
+    const { date, time, name, hasOpeningAlready } = this.props;
 
     return (
       <div className='ConfirmCard'>
@@ -51,9 +46,7 @@ export default class ConfirmCard extends Component {
         <p>
           {date} at {determineDisplayTime(time)}
         </p>
-        <label htmlFor='notes'>
-          Tell {name} what you'd like to pair on:{' '}
-        </label>
+        <label htmlFor='notes'>Tell {name} what you'd like to pair on: </label>
         <input
           name='notes'
           value={this.state.notes}
@@ -62,12 +55,10 @@ export default class ConfirmCard extends Component {
         {hasOpeningAlready && (
           <Fragment>
             <p>
-              Please note you have an opening on your availability for this
-              date and time
+              Please note you have an opening on your availability for this date
+              and time
             </p>
-            <p>
-              Click confirm to continue and your opening will be removed
-            </p>
+            <p>Click confirm to continue and your opening will be removed</p>
             <p>Or click cancel to choose a different pairing</p>
           </Fragment>
         )}
