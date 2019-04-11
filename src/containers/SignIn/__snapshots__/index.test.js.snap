@@ -1,6 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SignIn SignIn component should match the snapshot 1`] = `
+exports[`SignIn SignIn component should match the snapshot when there is a new user 1`] = `
+<div
+  className="SignIn--div"
+>
+  <button
+    onClick={[Function]}
+  >
+    Sign In with GitHub
+  </button>
+  <img
+    alt="Two people coding"
+    className="SignIn--img"
+    src="code-typing.svg"
+  />
+</div>
+`;
+
+exports[`SignIn SignIn component should match the snapshot when there is an existing user 1`] = `
+<div
+  className="SignIn--div"
+>
+  <button
+    onClick={[Function]}
+  >
+    Sign In with GitHub
+  </button>
+  <img
+    alt="Two people coding"
+    className="SignIn--img"
+    src="code-typing.svg"
+  />
+</div>
+`;
+
+exports[`SignIn SignIn component should match the snapshot when there is no user 1`] = `
 <div
   className="SignIn--div"
 >
