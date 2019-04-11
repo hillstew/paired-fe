@@ -31,4 +31,9 @@ describe('scheduleReducer', () => {
     const result = scheduleReducer(initialState, addToSchedule(mockPairing));
     expect(result).toEqual(expected);
   });
+
+  it('should return an empty array when the action is SIGN_USER_OUT', () => {
+    const result = scheduleReducer(undefined, { type: 'SIGN_USER_OUT'});
+    expect(result).toEqual([]);
+  });
 });

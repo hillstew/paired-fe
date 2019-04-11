@@ -14,4 +14,9 @@ describe('selectedPairingsReducer', () => {
     const result = selectedPairingReducer(initialState, setPairingId(mockPairingId));
     expect(result).toEqual(mockPairingId);
   });
+
+  it('should return an empty string when the action is SIGN_USER_OUT', () => {
+    const result = selectedPairingReducer(undefined, { type: 'SIGN_USER_OUT'});
+    expect(result).toEqual('');
+  });
 });
