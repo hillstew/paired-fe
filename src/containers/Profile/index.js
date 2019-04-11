@@ -32,7 +32,7 @@ export class Profile extends Component {
   };
 
   handleClick = (event, i) => {
-    event.preventDefault()
+    event.preventDefault();
     const { availabilities } = this.state;
     const newAvailabilities = availabilities.map((availability, j) => {
       return i === j ? !availability : availability;
@@ -56,7 +56,7 @@ export class Profile extends Component {
     } = this.state;
     let pronounsToSave = pronouns;
 
-    if ( pronouns === 'prefer not to answer' ) {
+    if (pronouns === 'prefer not to answer') {
       pronounsToSave = '';
     }
 
@@ -73,7 +73,6 @@ export class Profile extends Component {
       skill2
     };
     await this.props.createUser(user, availabilities);
-
   };
 
   render() {
@@ -98,55 +97,63 @@ export class Profile extends Component {
     ];
     return (
       <form onSubmit={this.handleSubmit} className='Profile--form'>
-        <h3>Please complete your profile</h3>
-        <div className='Profile--div--flex'>
-          <label htmlFor='name'>Provide your name</label>
-          <input value={name} name='name' onChange={this.handleChange} />
-          <label htmlFor='email'>Provide your email</label>
-          <input value={email} name='email' onChange={this.handleChange} />
-          <label htmlFor='slack'>Provide your slack handle</label>
-          <input value={slack} name='slack' onChange={this.handleChange} />
+        <h2>Please complete your profile</h2>
+        <div className='Profile--div'>
+          <div className='Profile--div--flex'>
+            <label htmlFor='name'>Provide your name</label>
+            <input value={name} name='name' onChange={this.handleChange} />
+            <label htmlFor='email'>Provide your email</label>
+            <input value={email} name='email' onChange={this.handleChange} />
+            <label htmlFor='slack'>Provide your slack handle</label>
+            <input value={slack} name='slack' onChange={this.handleChange} />
+          </div>
+          <Dropdown
+            options={[
+              'she/her',
+              'he/him',
+              'they/them',
+              'ze/zir',
+              'prefer not to answer'
+            ]}
+            label='Pronouns'
+            handleChange={this.handleChange}
+          />
+          <Dropdown
+            options={['FE', 'BE']}
+            label='Program'
+            handleChange={this.handleChange}
+          />
+          <Dropdown
+            options={[1, 2, 3, 4]}
+            label='Module'
+            handleChange={this.handleChange}
+          />
+          <Dropdown
+            options={skills}
+            label='Skill1'
+            handleChange={this.handleChange}
+          />
+          <Dropdown
+            options={skills}
+            label='Skill2'
+            handleChange={this.handleChange}
+          />
         </div>
-        <Dropdown
-          options={[
-            'she/her',
-            'he/him',
-            'they/them',
-            'ze/zir',
-            'prefer not to answer'
-          ]}
-          label='Pronouns'
-          handleChange={this.handleChange}
+        <Availability
+          availabilities={availabilities}
+          handleClick={this.handleClick}
         />
-        <Dropdown
-          options={['FE', 'BE']}
-          label='Program'
-          handleChange={this.handleChange}
-        />
-        <Dropdown
-          options={[1, 2, 3, 4]}
-          label='Module'
-          handleChange={this.handleChange}
-        />
-        <Dropdown
-          options={skills}
-          label='Skill1'
-          handleChange={this.handleChange}
-        />
-        <Dropdown
-          options={skills}
-          label='Skill2'
-          handleChange={this.handleChange}
-        />
-        <Availability availabilities={availabilities} handleClick={this.handleClick}/>
-        <button disabled={this.checkDropdowns()}>Submit</button>
+        <button disabled={this.checkDropdowns()} className='Profile--button'>
+          Submit
+        </button>
       </form>
     );
   }
 }
 
 export const mapDispatchToProps = dispatch => ({
-  createUser: (user, availabilities) => dispatch(createUser(user, availabilities))
+  createUser: (user, availabilities) =>
+    dispatch(createUser(user, availabilities))
 });
 
 export default connect(
