@@ -42,6 +42,16 @@ exports[`Controls Controls component should match the snapshot 1`] = `
           "Mon Apr 15 2019",
           "Tue Apr 16 2019",
           "Wed Apr 17 2019",
+          "Thu Apr 18 2019",
+          "Fri Apr 19 2019",
+          "Mon Apr 22 2019",
+          "Tue Apr 23 2019",
+          "Wed Apr 24 2019",
+          "Thu Apr 25 2019",
+          "Fri Apr 26 2019",
+          "Mon Apr 29 2019",
+          "Tue Apr 30 2019",
+          "Wed May 01 2019",
         ]
       }
     />

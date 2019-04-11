@@ -19,8 +19,7 @@ exports[`ConfirmCard should match the snapshot 1`] = `
   >
     Tell 
     Tiffany
-     what you'd like to pair on:
-     
+     what you'd like to pair on: 
   </label>
   <input
     name="notes"
@@ -61,8 +60,7 @@ exports[`ConfirmCard should match the snapshot if the user has an opening alread
   >
     Tell 
     Tiffany
-     what you'd like to pair on:
-     
+     what you'd like to pair on: 
   </label>
   <input
     name="notes"

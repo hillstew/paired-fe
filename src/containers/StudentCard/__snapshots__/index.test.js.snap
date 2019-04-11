@@ -39,6 +39,7 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
       </p>
       <button
         className="StudentCard--btn"
+        disabled={false}
         id="morning"
         onClick={[Function]}
       >
@@ -53,6 +54,7 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
       </p>
       <button
         className="StudentCard--btn"
+        disabled={false}
         id="lunch"
         onClick={[Function]}
       >
@@ -67,6 +69,7 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
       </p>
       <button
         className="StudentCard--btn"
+        disabled={false}
         id="afternoon"
         onClick={[Function]}
       >
@@ -191,6 +194,7 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
       </p>
       <button
         className="StudentCard--btn"
+        disabled={false}
         id="lunch"
         onClick={[Function]}
       >
