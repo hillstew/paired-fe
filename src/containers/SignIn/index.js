@@ -6,6 +6,7 @@ import { setError } from '../../actions';
 import { signInUser } from '../../thunks/signInUser';
 import Profile from '../Profile';
 import codesvg from '../../images/code-typing.svg';
+import PropTypes from 'prop-types';
 
 export class SignIn extends Component {
   constructor() {
@@ -66,3 +67,10 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(SignIn);
+
+SignIn.propTypes = {
+  history: PropTypes.object,
+  setError: PropTypes.func,
+  signInUser: PropTypes.func,
+  user: PropTypes.object,
+};

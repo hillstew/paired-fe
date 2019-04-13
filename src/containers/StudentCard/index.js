@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { setPairingId } from '../../actions';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 export class StudentCard extends Component {
   handleClick = id => {
@@ -89,3 +90,10 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(StudentCard);
+
+StudentCard.propTypes = {
+  history: PropTypes.object,
+  setPairingId: PropTypes.func,
+  student: PropTypes.object,
+  user: PropTypes.object,
+};

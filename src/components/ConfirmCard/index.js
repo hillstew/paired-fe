@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { determineDisplayTime } from '../../helpers';
+import PropTypes from 'prop-types';
 
 export default class ConfirmCard extends Component {
   constructor() {
@@ -76,3 +77,15 @@ export default class ConfirmCard extends Component {
     );
   }
 }
+
+ConfirmCard.propTypes = {
+  confirmPairing: PropTypes.func,
+  date: PropTypes.string,
+  deletePairingThunk: PropTypes.func,
+  hasOpeningAlready: PropTypes.bool,
+  history: PropTypes.object,
+  name: PropTypes.string,
+  selectedPairing: PropTypes.string,
+  time: PropTypes.string,
+  userId: PropTypes.string,
+};

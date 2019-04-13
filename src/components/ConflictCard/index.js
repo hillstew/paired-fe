@@ -1,5 +1,6 @@
 import React from 'react';
 import { determineDisplayTime } from '../../helpers';
+import PropTypes from 'prop-types';
 
 export const ConflictCard = ({ date, time, history }) => {
   return (
@@ -15,4 +16,10 @@ export const ConflictCard = ({ date, time, history }) => {
       <button className='ConflictCard--button--schedule' onClick={() => history.push('/schedule')}>View Schedule</button>
     </div>
   );
+};
+
+ConflictCard.propTypes = {
+  date: PropTypes.string,
+  history: PropTypes.object,
+  time: PropTypes.string,
 };

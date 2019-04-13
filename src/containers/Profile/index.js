@@ -3,6 +3,7 @@ import { Dropdown } from '../../components/Dropdown';
 import { createUser } from '../../thunks/createUser';
 import { connect } from 'react-redux';
 import { Availability } from '../../components/Availability';
+import PropTypes from 'prop-types';
 
 export class Profile extends Component {
   constructor(props) {
@@ -160,3 +161,11 @@ export default connect(
   null,
   mapDispatchToProps
 )(Profile);
+
+Profile.propTypes = {
+  createUser: PropTypes.func,
+  email: PropTypes.string,
+  firebaseID: PropTypes.string,
+  image: PropTypes.string,
+  name: PropTypes.string,
+};
