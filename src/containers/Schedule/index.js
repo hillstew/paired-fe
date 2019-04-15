@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ScheduleCard } from '../../components/ScheduleCard';
 import { deletePairingThunk } from '../../thunks/deletePairingThunk';
+import PropTypes from 'prop-types';
 
 export class Schedule extends Component {
   filterOpenings = () => {
@@ -93,3 +94,12 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Schedule);
+
+Schedule.propTypes = {
+  deletePairingThunk: PropTypes.func,
+  history: PropTypes.object,
+  location: PropTypes.object,
+  match: PropTypes.object,
+  schedule: PropTypes.array,
+  user: PropTypes.object,
+};

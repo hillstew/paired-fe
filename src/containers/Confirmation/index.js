@@ -4,6 +4,7 @@ import ConfirmCard from '../../components/ConfirmCard';
 import { ConflictCard } from '../../components/ConflictCard';
 import { confirmPairing } from '../../thunks/confirmPairing';
 import { deletePairingThunk } from '../../thunks/deletePairingThunk';
+import PropTypes from 'prop-types';
 
 export class Confirmation extends Component {
   constructor() {
@@ -101,3 +102,15 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Confirmation);
+
+Confirmation.propTypes = {
+  availPairings: PropTypes.array,
+  confirmPairing: PropTypes.func,
+  deletePairingThunk: PropTypes.func,
+  history: PropTypes.object,
+  location: PropTypes.object,
+  match: PropTypes.object,
+  schedule: PropTypes.array,
+  selectedPairing: PropTypes.string,
+  user: PropTypes.object,
+};

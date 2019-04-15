@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { determineDisplayTime } from '../../helpers';
+import PropTypes from 'prop-types';
 
 export const ScheduleCard = ({ booking, person, deletePairing }) => {
   const { notes, time, date } = booking;
@@ -25,4 +26,10 @@ export const ScheduleCard = ({ booking, person, deletePairing }) => {
       )}
     </div>
   );
+};
+
+ScheduleCard.propTypes = {
+  booking: PropTypes.object,
+  deletePairing: PropTypes.func,
+  person: PropTypes.object,
 };

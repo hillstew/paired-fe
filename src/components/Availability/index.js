@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const Availability = ({ handleClick, availabilities }) => {
   return (
@@ -29,4 +30,9 @@ export const Availability = ({ handleClick, availabilities }) => {
       </div>
     </section>
   );
+};
+
+Availability.propTypes = {
+  availabilities: PropTypes.array,
+  handleClick: PropTypes.func,
 };

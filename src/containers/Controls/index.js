@@ -6,6 +6,7 @@ import { setError, setAvailPairings } from '../../actions';
 import { connect } from 'react-redux';
 import { Pairings } from '../../components/Pairings';
 import { getDatesToDisplay } from '../../helpers';
+import PropTypes from 'prop-types';
 
 export class Controls extends Component {
   constructor() {
@@ -101,3 +102,12 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Controls);
+
+Controls.propTypes = {
+  availPairings: PropTypes.array,
+  history: PropTypes.object,
+  location: PropTypes.object,
+  match: PropTypes.object,
+  setAvailPairings: PropTypes.func,
+  setError: PropTypes.func,
+};

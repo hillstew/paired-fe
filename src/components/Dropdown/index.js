@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const Dropdown = ({ options, label, handleChange }) => {
   return (
@@ -17,4 +18,10 @@ export const Dropdown = ({ options, label, handleChange }) => {
       </select>
     </div>
   );
+};
+
+Dropdown.propTypes = {
+  handleChange: PropTypes.func,
+  label: PropTypes.string,
+  options: PropTypes.array,
 };

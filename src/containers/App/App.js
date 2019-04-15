@@ -11,6 +11,7 @@ import { signInUser } from '../../thunks/signInUser';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import codesvg from '../../images/code-typing.svg';
+import PropTypes from 'prop-types';
 
 export class App extends Component {
   componentDidMount() {
@@ -88,3 +89,14 @@ export default withRouter(
     mapDispatchToProps
   )(App)
 );
+
+App.propTypes = {
+  hasError: PropTypes.string,
+  history: PropTypes.object,
+  isLoading: PropTypes.bool,
+  location: PropTypes.object,
+  match: PropTypes.object,
+  signInUser: PropTypes.func,
+  signUserOut: PropTypes.func,
+  user: PropTypes.object,
+};

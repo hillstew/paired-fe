@@ -1,5 +1,6 @@
 import React from 'react';
 import StudentCard from '../../containers/StudentCard';
+import PropTypes from 'prop-types';
 
 export const createStudents = openPairings => {
   return openPairings.reduce((acc, curr) => {
@@ -32,4 +33,9 @@ export const Pairings = ({ openPairings, history }) => {
   });
 
   return <div className="Pairings">{studentRows}</div>;
+};
+
+Pairings.propTypes = {
+  history: PropTypes.object,
+  openPairings: PropTypes.array,
 };
