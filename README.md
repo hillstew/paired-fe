@@ -1,6 +1,6 @@
 # Paired
 
-Paired is a application to improve pair programming between [Turing](https://turing.io/) students throughout their 7 month immersive program. This application was inspired by the current process of pairing with fellow peers which includes a clunky google sheet. As a team, we sought to understand the current pain points through user focused research and used the feedback to guide our iterations. Paired allows students to pair across modules and programs, set and modify their availabliity, and book pairings with fellow Turing students.
+Paired is an application to improve pair programming between [Turing](https://turing.io/) students throughout their 7 month immersive program. This application was inspired by the current process of pairing with fellow peers which includes a clunky google sheet. As a team, we sought to understand the current pain points through user focused research and used the feedback to guide our iterations. Paired allows students to pair across modules and programs, set and modify their availabliity, and book pairings with fellow Turing students.
 
 ### See it Live:
 
