@@ -19,7 +19,6 @@ export class Confirmation extends Component {
 
   componentDidMount = () => {
     const { availPairings, selectedPairing, schedule } = this.props;
-
     const {
       date,
       time,
@@ -29,14 +28,19 @@ export class Confirmation extends Component {
     const pairingInConflict = schedule.find(pairing => {
       return pairing.date === date && pairing.time === time;
     });
-
     this.setState({ pairingInConflict, date, time, name });
   };
-  
+
   determineConflict = () => {
     const { pairee, id } = this.state.pairingInConflict;
     const { date, time, name } = this.state;
-    const { selectedPairing, history, user, confirmPairing, deletePairingThunk } = this.props;
+    const {
+      selectedPairing,
+      history,
+      user,
+      confirmPairing,
+      deletePairingThunk
+    } = this.props;
     if (pairee === null) {
       return (
         <ConfirmCard
@@ -54,7 +58,7 @@ export class Confirmation extends Component {
       );
     }
 
-    return <ConflictCard date={date} time={time} history={history}/>;
+    return <ConflictCard date={date} time={time} history={history} />;
   };
 
   render() {
@@ -101,7 +105,10 @@ export const mapDispatchToProps = dispatch => ({
   deletePairingThunk: pairingId => dispatch(deletePairingThunk(pairingId))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Confirmation);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Confirmation);
 
 Confirmation.propTypes = {
   availPairings: PropTypes.array,
@@ -112,5 +119,5 @@ Confirmation.propTypes = {
   match: PropTypes.object,
   schedule: PropTypes.array,
   selectedPairing: PropTypes.string,
-  user: PropTypes.object,
+  user: PropTypes.object
 };

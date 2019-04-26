@@ -37,7 +37,7 @@ export class Controls extends Component {
       } else {
         setAvailPairings([]);
         this.setState({
-          message: `Sorry no pairings are available for ${program} Mod ${module} on ${date}`
+          message: `Oh bummer! 😰 There are no pairings available for ${program} module ${module} on ${date}, try a different date or module 😀`
         });
       }
     } catch (error) {
