@@ -12,6 +12,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import codesvg from '../../images/code-typing.svg';
 import PropTypes from 'prop-types';
+import Availability from '../../components/Availability';
 
 export class App extends Component {
   componentDidMount() {
@@ -19,12 +20,12 @@ export class App extends Component {
   }
 
   checkUser = () => {
-    firebase.auth().onAuthStateChanged(async (user) => {
+    firebase.auth().onAuthStateChanged(async user => {
       if (user) {
         this.props.signInUser(user.uid);
       }
     });
-  }
+  };
 
   handleSignOut = async () => {
     await firebase.auth().signOut();
@@ -55,7 +56,11 @@ export class App extends Component {
                   render={() => (
                     <div>
                       <h2>Welcome {user.name}</h2>
-                      <img className='App--img' src={codesvg} alt='Two people coding'/>
+                      <img
+                        className='App--img'
+                        src={codesvg}
+                        alt='Two people coding'
+                      />
                     </div>
                   )}
                 />
@@ -65,7 +70,17 @@ export class App extends Component {
               </Switch>
             </React.Fragment>
           )}
-          {!user.id && <SignIn history={this.props.history} />}
+          {!user.id && (
+            <Switch>
+              <Route
+                exact
+                path='/'
+                render={() => <SignIn history={this.props.history} />}
+              />
+              <Route path='/set-availability' render={() => <Availability />} />
+              <Route render={() => <div>Uh oh! Sorry, page not found.</div>} />
+            </Switch>
+          )}
         </div>
       </div>
     );
@@ -79,7 +94,7 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  signInUser: (id) => dispatch(signInUser(id)),
+  signInUser: id => dispatch(signInUser(id)),
   signUserOut: () => dispatch(signUserOut())
 });
 
@@ -98,5 +113,5 @@ App.propTypes = {
   match: PropTypes.object,
   signInUser: PropTypes.func,
   signUserOut: PropTypes.func,
-  user: PropTypes.object,
+  user: PropTypes.object
 };
