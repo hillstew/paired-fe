@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const Dropdown = ({ options, label, handleChange }) => {
+export const Dropdown = ({ options, label, handleChange, required }) => {
   return (
     <div className='Dropdown--div'>
-      <label htmlFor={label}>{label}</label>
+      <label htmlFor={label}>
+        {label}
+        {required && <span>*</span>}
+      </label>
       <select
         className='Dropdown--select'
         name={label}
@@ -23,5 +26,5 @@ export const Dropdown = ({ options, label, handleChange }) => {
 Dropdown.propTypes = {
   handleChange: PropTypes.func,
   label: PropTypes.string,
-  options: PropTypes.array,
+  options: PropTypes.array
 };
