@@ -8,8 +8,9 @@ export const setAvailability = (userId, availabilities) => {
   return async dispatch => {
     dispatch(setLoading(true));
     try {
-      const startDate = 'Mon Apr 29 2019';
-      const inning = helpers.getDatesToDisplayFancy(startDate, 29);
+      const currentDay = new Date();
+      const daysRemaining = helpers.getDaysRemaining();
+      const inning = helpers.getDatesToDisplay(currentDay, daysRemaining);
       const unformattedPairings = helpers.createPairingsForQuery(
         availabilities,
         inning,

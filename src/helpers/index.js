@@ -11,11 +11,11 @@ export const determineDisplayTime = time => {
   }
 };
 
-export const getDatesToDisplay = num => {
-  let dates = [];
+export const getDatesToDisplay = (currentDay, daysRemaining) => {
+  const dates = [currentDay.toString().slice(0, 15)];
   let counter = 1;
-  while (dates.length < num) {
-    let nextDate = new Date();
+  for (let i = 0; i < daysRemaining; i++) {
+    let nextDate = new Date(currentDay);
     nextDate.setDate(nextDate.getDate() + counter);
     if (nextDate.getDay() !== 0 && nextDate.getDay() !== 6) {
       dates.push(nextDate.toString().slice(0, 15));
@@ -23,20 +23,6 @@ export const getDatesToDisplay = num => {
     counter += 1;
   }
   return [...dates];
-};
-
-export const getDatesToDisplayFancy = (startDate, num) => {
-  let dates = [];
-  let counter = 1;
-  while (dates.length < num) {
-    let nextDate = new Date(startDate);
-    nextDate.setDate(nextDate.getDate() + counter);
-    if (nextDate.getDay() !== 0 && nextDate.getDay() !== 6) {
-      dates.push(nextDate.toString().slice(0, 15));
-    }
-    counter += 1;
-  }
-  return [startDate, ...dates];
 };
 
 export const determineDay = index => {
@@ -111,4 +97,25 @@ export const createPairingsForQuery = (chosenAvails, inning, pairerId) => {
     acc = [...acc, ...arrayOfPairings];
     return acc;
   }, []);
+};
+
+export const getDaysRemaining = () => {
+  const endDates = [
+    new Date('Thu June 6 2019'),
+    new Date('Thu August 1 2019'),
+    new Date('Thu September 19 2019'),
+    new Date('Thu November 7 2019')
+  ];
+  const today = new Date();
+  const nextEndDate = endDates.find(date => {
+    return today.getTime() - date.getTime() < 0;
+  });
+  return (nextEndDate.getTime() - today.getTime()) / (24 * 60 * 60 * 1000);
+};
+
+export const filterPastPairings = pairing => {
+  return (
+    new Date(pairing.date).getTime() - new Date().getTime() >
+    -24 * 60 * 60 * 1000
+  );
 };
