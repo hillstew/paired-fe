@@ -28,8 +28,10 @@ export class App extends Component {
   };
 
   handleSignOut = async () => {
+    const { history, signUserOut } = this.props;
     await firebase.auth().signOut();
-    this.props.signUserOut();
+    signUserOut();
+    history.push('/');
   };
 
   render() {
