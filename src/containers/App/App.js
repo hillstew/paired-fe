@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { withRouter, Route, Switch } from 'react-router-dom';
+import React, { Component, Fragment } from 'react';
+import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Header from '../../components/Header';
 import { connect } from 'react-redux';
 import Controls from '../Controls';
@@ -11,6 +11,7 @@ import { signInUser } from '../../thunks/signInUser';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import codesvg from '../../images/code-typing.svg';
+import notfoundsvg from '../../images/not_found.svg';
 import PropTypes from 'prop-types';
 import Availability from '../Availability';
 
@@ -40,7 +41,6 @@ export class App extends Component {
       <div className='App'>
         <Header user={user} handleSignOut={this.handleSignOut} />
         <div>
-          <header />
           {user.id && (
             <React.Fragment>
               <Switch>
@@ -67,7 +67,16 @@ export class App extends Component {
                   )}
                 />
                 <Route
-                  render={() => <div>Uh oh! Sorry, page not found.</div>}
+                  render={() => (
+                    <Fragment>
+                      <p>Sorry, page not found.</p>
+                      <img
+                        className='App--img'
+                        src={notfoundsvg}
+                        alt='Eyes representing people looking around leaves'
+                      />
+                    </Fragment>
+                  )}
                 />
               </Switch>
             </React.Fragment>
@@ -80,7 +89,20 @@ export class App extends Component {
                 render={() => <SignIn history={this.props.history} />}
               />
               <Route path='/set-availability' render={() => <Availability />} />
-              <Route render={() => <div>Uh oh! Sorry, page not found.</div>} />
+              <Route path='/schedule' render={() => <Redirect to='/' />} />
+              <Route path='/book-pairing' render={() => <Redirect to='/' />} />
+              <Route
+                render={() => (
+                  <Fragment>
+                    <p>Sorry, page not found.</p>
+                    <img
+                      className='App--img'
+                      src={notfoundsvg}
+                      alt='Eyes representing people looking around leaves'
+                    />
+                  </Fragment>
+                )}
+              />
             </Switch>
           )}
         </div>
