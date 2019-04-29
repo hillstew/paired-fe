@@ -12,7 +12,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import codesvg from '../../images/code-typing.svg';
 import PropTypes from 'prop-types';
-import Availability from '../../components/Availability';
+import Availability from '../Availability';
 
 export class App extends Component {
   componentDidMount() {
