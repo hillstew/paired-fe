@@ -1,0 +1,48 @@
+.Header {
+  background-color: #12f1fc;
+  display: flex;
+  justify-content: space-between;
+  font-family: $font-medium;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+
+  a {
+    text-decoration: none;
+    margin: auto 15px auto 0;
+  }
+
+  div a {
+    color: $color-secondary;
+    border-bottom: 2px solid transparent; 
+    &:hover {
+      border-bottom: 2px solid $color-secondary;
+    }
+  }
+
+  h1 {
+    padding-left: 20px;
+  }
+}
+
+.Header--controls {
+  margin: 18px 10px;
+}
+
+.Header--button--signout {
+  background-color: $color-primary;
+  border-radius: 0;
+  cursor: pointer;
+  font-family: $font-medium;
+  display: inline-block;
+  height: 27px;
+  width: 91px;
+  padding: 0;
+  margin-right: 20px;
+  text-transform: uppercase;
+  color: $color-secondary;
+  border-bottom: 2px solid transparent; 
+
+  &:hover {
+    border-bottom: 2px solid $color-secondary;
+  }
+}
