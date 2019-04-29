@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter, Route, Switch } from 'react-router-dom';
-import Sidebar from '../../components/Sidebar';
+import Header from '../../components/Header';
 import { connect } from 'react-redux';
 import Controls from '../Controls';
 import Schedule from '../Schedule';
@@ -38,16 +38,11 @@ export class App extends Component {
     const { user } = this.props;
     return (
       <div className='App'>
-        <Sidebar />
+        <Header user={user} handleSignOut={this.handleSignOut} />
         <div>
           <header />
           {user.id && (
             <React.Fragment>
-              <button
-                className='App--button--signout'
-                onClick={this.handleSignOut}>
-                Sign Out
-              </button>
               <Switch>
                 <Route path='/schedule' component={Schedule} />
                 <Route path='/book-pairing' component={Controls} />
@@ -57,7 +52,12 @@ export class App extends Component {
                   path='/'
                   render={() => (
                     <div>
-                      <h2>Welcome {user.name}</h2>
+                      <h2>
+                        Welcome {user.name}{' '}
+                        <span role='img' aria-label='hand waving emoji'>
+                          👋
+                        </span>
+                      </h2>
                       <img
                         className='App--img'
                         src={codesvg}
