@@ -4,11 +4,14 @@ import { ScheduleCard } from '../../components/ScheduleCard';
 import { deletePairingThunk } from '../../thunks/deletePairingThunk';
 import { TemplateCard } from '../../components/TemplateCard';
 import PropTypes from 'prop-types';
+import { filterPastPairings } from '../../helpers';
 
 export class Schedule extends Component {
   filterOpenings = () => {
     const { schedule, deletePairingThunk } = this.props;
-    const openings = schedule.filter(pairing => pairing.pairee === null);
+    const openings = schedule.filter(pairing => {
+      return pairing.pairee === null && filterPastPairings(pairing);
+    });
     const cards = openings.map(booking => {
       return (
         <ScheduleCard
@@ -19,14 +22,18 @@ export class Schedule extends Component {
         />
       );
     });
-    return cards.length ? cards : <TemplateCard type='openings' />;
+    return cards.length ? cards.slice(0, 15) : <TemplateCard type='openings' />;
   };
 
   filterPaireeBookings = () => {
     const { schedule, user } = this.props;
-    const bookings = schedule.filter(
-      pairing => pairing.pairee !== null && pairing.pairee.name === user.name
-    );
+    const bookings = schedule.filter(pairing => {
+      return (
+        pairing.pairee !== null &&
+        pairing.pairee.name === user.name &&
+        filterPastPairings(pairing)
+      );
+    });
     const cards = bookings.map(booking => {
       return (
         <ScheduleCard
@@ -36,14 +43,22 @@ export class Schedule extends Component {
         />
       );
     });
-    return cards.length ? cards : <TemplateCard type='receiving-help' />;
+    return cards.length ? (
+      cards.slice(0, 15)
+    ) : (
+      <TemplateCard type='receiving-help' />
+    );
   };
 
   filterPairerBookings = () => {
     const { schedule, user } = this.props;
-    const bookings = schedule.filter(
-      pairing => pairing.pairee !== null && pairing.pairer.name === user.name
-    );
+    const bookings = schedule.filter(pairing => {
+      return (
+        pairing.pairee !== null &&
+        pairing.pairer.name === user.name &&
+        filterPastPairings(pairing)
+      );
+    });
     const cards = bookings.map(booking => {
       return (
         <ScheduleCard
@@ -53,7 +68,11 @@ export class Schedule extends Component {
         />
       );
     });
-    return cards.length ? cards : <TemplateCard type='giving-help' />;
+    return cards.length ? (
+      cards.slice(0, 15)
+    ) : (
+      <TemplateCard type='giving-help' />
+    );
   };
 
   render() {
@@ -105,5 +124,5 @@ Schedule.propTypes = {
   location: PropTypes.object,
   match: PropTypes.object,
   schedule: PropTypes.array,
-  user: PropTypes.object,
+  user: PropTypes.object
 };
