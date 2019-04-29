@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ScheduleCard } from '../../components/ScheduleCard';
 import { deletePairingThunk } from '../../thunks/deletePairingThunk';
+import { TemplateCard } from '../../components/TemplateCard';
 import PropTypes from 'prop-types';
 
 export class Schedule extends Component {
   filterOpenings = () => {
     const { schedule, deletePairingThunk } = this.props;
     const openings = schedule.filter(pairing => pairing.pairee === null);
-    return openings.map(booking => {
+    const cards = openings.map(booking => {
       return (
         <ScheduleCard
           booking={booking}
@@ -18,6 +19,7 @@ export class Schedule extends Component {
         />
       );
     });
+    return cards.length ? cards : <TemplateCard type='openings' />;
   };
 
   filterPaireeBookings = () => {
@@ -25,7 +27,7 @@ export class Schedule extends Component {
     const bookings = schedule.filter(
       pairing => pairing.pairee !== null && pairing.pairee.name === user.name
     );
-    return bookings.map(booking => {
+    const cards = bookings.map(booking => {
       return (
         <ScheduleCard
           booking={booking}
@@ -34,6 +36,7 @@ export class Schedule extends Component {
         />
       );
     });
+    return cards.length ? cards : <TemplateCard type='receiving-help' />;
   };
 
   filterPairerBookings = () => {
@@ -41,7 +44,7 @@ export class Schedule extends Component {
     const bookings = schedule.filter(
       pairing => pairing.pairee !== null && pairing.pairer.name === user.name
     );
-    return bookings.map(booking => {
+    const cards = bookings.map(booking => {
       return (
         <ScheduleCard
           booking={booking}
@@ -50,6 +53,7 @@ export class Schedule extends Component {
         />
       );
     });
+    return cards.length ? cards : <TemplateCard type='giving-help' />;
   };
 
   render() {
