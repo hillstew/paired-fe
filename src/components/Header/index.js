@@ -18,8 +18,6 @@ export default class Header extends Component {
             </button>
           </div>
         )}
-        {/* {!user.id && 
-          } */}
       </header>
     );
   }
