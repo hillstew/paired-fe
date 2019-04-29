@@ -4,7 +4,12 @@
     font-family: $font-bold;
     margin-left: 20px;
     text-align: left;
+
+    span {
+      font-family: $font-bold;
+    }
   }
+
   .ScheduleCards--div {
     display: flex;
     justify-content: space-evenly;
