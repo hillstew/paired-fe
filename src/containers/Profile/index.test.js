@@ -32,25 +32,9 @@ describe('Profile', () => {
         module: '',
         pronouns: '',
         slack: '',
-        skill1: '',
-        skill2: '',
-        availabilities: [
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-        ]
+        submitted: false,
+        'skill 1': '',
+        'skill 2': ''
       };
       expect(wrapper.state()).toEqual(expected);
     });
@@ -67,48 +51,6 @@ describe('Profile', () => {
       wrapper.instance().forceUpdate();
       wrapper.find('form').simulate('submit', { preventDefault: jest.fn() });
       expect(instance.handleSubmit).toHaveBeenCalled();
-    });
-
-    it('should toggle true/false the correct index in availabilities when handleClick is called', () => {
-      const mockEvent = { preventDefault: jest.fn() };
-      const mockIndex = 2;
-      const mockInitialAvailability = [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
-      ];
-      const expected = [
-        false,
-        false,
-        true,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
-      ];
-      expect(wrapper.state('availabilities')).toEqual(mockInitialAvailability);
-      wrapper.instance().handleClick(mockEvent, mockIndex);
-      expect(wrapper.state('availabilities')).toEqual(expected);
     });
 
     it('should call handleChange when a user types in the input', () => {
