@@ -4,7 +4,12 @@
     font-family: $font-bold;
     margin-left: 20px;
     text-align: left;
+
+    span {
+      font-family: $font-bold;
+    }
   }
+
   .ScheduleCards--div {
     display: flex;
     justify-content: space-evenly;
@@ -13,6 +18,21 @@
       color: $color-secondary;
       font-family: $font-medium;
       text-transform: uppercase;
+    }
+  }
+
+  .Schedule--edit-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: top;
+    cursor: pointer;
+    background-image: url('../images/edit.svg');
+    transition-duration: .25s;
+    
+    &:hover {
+      background-image: url('../images/edithover.svg');
+      transition-duration: .25s;
     }
   }
 }

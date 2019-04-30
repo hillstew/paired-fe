@@ -26,7 +26,10 @@ describe('App', () => {
     isLoading: false,
     user: { id: 'abc123' },
     signInUser: jest.fn(),
-    signUserOut: jest.fn()
+    signUserOut: jest.fn(),
+    history: {
+      push: jest.fn()
+    }
   };
 
   beforeEach(() => {
@@ -56,13 +59,6 @@ describe('App', () => {
       wrapper = shallow(<App {...mockProps} user={{}}/>);
       expect(wrapper).toMatchSnapshot();
     });
-
-    it('should call handleSignOut when the sign out button is clicked', () => {
-      jest.spyOn(wrapper.instance(), 'handleSignOut');
-      wrapper.instance().forceUpdate();
-      wrapper.find('.App--button--signout').simulate('click');
-      expect(wrapper.instance().handleSignOut).toHaveBeenCalled();
-    });
   });
 
   describe('componentDidMount', () => {
@@ -75,8 +71,8 @@ describe('App', () => {
   });
 
   describe('handleSignOut', () => {
-    it('should call signUserOut', () => {
-      wrapper.instance().handleSignOut();
+    it('should call signUserOut', async () => {
+      await wrapper.instance().handleSignOut();
       expect(mockProps.signUserOut).toHaveBeenCalled();
     });
   });

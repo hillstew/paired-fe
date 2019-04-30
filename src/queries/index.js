@@ -159,3 +159,11 @@ export const createPairings = pairingsString => ({
     }
   }`
 });
+
+export const deletePairings = userId => ({
+  query: `mutation {
+    deletePairings(id: "${userId}") {
+      pairer
+    }
+  }`
+});

@@ -1,39 +1,27 @@
 .App {
   background-color: #fafafa;
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-rows: 64px 1fr;
   min-height: 100vh;
   text-align: center;
 
   h1 {
     color: $color-secondary;
     font-family: $font-bold;
-    font-size: 3rem;
+    font-size: 2.3rem;
     margin: 0;
     padding-right: 20px;
-    text-align: right;
     text-transform: uppercase;
   }
 
   h2 {
     font-family: $font-bold;
     color: $color-secondary;
+    height: 30px;
   }
 
-  img {
+  .App--img {
     margin-top: 40px;
     height: 500px;
   }
-}
-
-.App--button--signout {
-  background-color: $color-primary;
-  border-radius: 10px;
-  cursor: pointer;
-  font-family: $font-bold;
-  display: block;
-  margin: 10px 25px 0 auto;
-  height: 30px;
-  width: 200px;
-  color: $color-secondary;
 }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { Dropdown } from '../../components/Dropdown';
 import { createUser } from '../../thunks/createUser';
 import { connect } from 'react-redux';
-import { Availability } from '../../components/Availability';
 import PropTypes from 'prop-types';
 
 export class Profile extends Component {
@@ -15,9 +15,9 @@ export class Profile extends Component {
       module: '',
       pronouns: '',
       slack: '',
-      skill1: '',
-      skill2: '',
-      availabilities: Array(15).fill(false)
+      submitted: false,
+      'skill 1': '',
+      'skill 2': ''
     };
   }
 
@@ -32,17 +32,12 @@ export class Profile extends Component {
     this.setState({ [name]: value });
   };
 
-  handleClick = (event, i) => {
+  handleSubmit = event => {
     event.preventDefault();
-    const { availabilities } = this.state;
-    const newAvailabilities = availabilities.map((availability, j) => {
-      return i === j ? !availability : availability;
-    });
-    this.setState({ availabilities: newAvailabilities });
+    this.setState({ submitted: true });
   };
 
-  handleSubmit = async event => {
-    event.preventDefault();
+  formatUserData = () => {
     const { image, firebaseID } = this.props;
     const {
       module,
@@ -52,8 +47,7 @@ export class Profile extends Component {
       pronouns,
       slack,
       skill1,
-      skill2,
-      availabilities
+      skill2
     } = this.state;
     let pronounsToSave = pronouns;
 
@@ -73,11 +67,11 @@ export class Profile extends Component {
       skill1,
       skill2
     };
-    await this.props.createUser(user, availabilities);
+    return user;
   };
 
   render() {
-    const { name, slack, email, availabilities } = this.state;
+    const { name, slack, email } = this.state;
     const skills = [
       'grid',
       'flexbox',
@@ -96,59 +90,84 @@ export class Profile extends Component {
       'SQL',
       'sinatra'
     ];
-    return (
-      <form onSubmit={this.handleSubmit} className='Profile--form'>
-        <h2>Please complete your profile</h2>
-        <div className='Profile--div'>
-          <div className='Profile--div--flex'>
-            <label htmlFor='name'>Provide your name</label>
-            <input value={name} name='name' onChange={this.handleChange} />
-            <label htmlFor='email'>Provide your email</label>
-            <input value={email} name='email' onChange={this.handleChange} />
-            <label htmlFor='slack'>Provide your slack handle</label>
-            <input value={slack} name='slack' onChange={this.handleChange} />
+    if (!this.state.submitted) {
+      return (
+        <form onSubmit={this.handleSubmit} className='Profile--form'>
+          <h2>Please complete your profile</h2>
+          <div className='Profile--div'>
+            <div className='Profile--div--flex'>
+              <label htmlFor='name'>
+                Provide your name<span>*</span>
+              </label>
+              <input value={name} name='name' onChange={this.handleChange} />
+              <label htmlFor='email'>
+                Provide your email<span>*</span>
+              </label>
+              <input value={email} name='email' onChange={this.handleChange} />
+              <label htmlFor='slack'>
+                Provide your slack handle<span>*</span>
+              </label>
+              <input
+                value={slack}
+                name='slack'
+                onChange={this.handleChange}
+                placeholder='@'
+              />
+            </div>
+            <Dropdown
+              options={[
+                'she/her',
+                'he/him',
+                'they/them',
+                'ze/zir',
+                'prefer not to answer'
+              ]}
+              label='Pronouns'
+              handleChange={this.handleChange}
+              required={true}
+            />
+            <Dropdown
+              options={['FE', 'BE']}
+              label='Program'
+              handleChange={this.handleChange}
+              required={true}
+            />
+            <Dropdown
+              options={[1, 2, 3, 4]}
+              label='Module'
+              handleChange={this.handleChange}
+              required={true}
+            />
+            <h4>
+              Select skills that you feel comfortable helping others with
+              (optional)
+            </h4>
+            <Dropdown
+              options={skills}
+              label='Skill 1'
+              handleChange={this.handleChange}
+            />
+            <Dropdown
+              options={skills}
+              label='Skill 2'
+              handleChange={this.handleChange}
+            />
           </div>
-          <Dropdown
-            options={[
-              'she/her',
-              'he/him',
-              'they/them',
-              'ze/zir',
-              'prefer not to answer'
-            ]}
-            label='Pronouns'
-            handleChange={this.handleChange}
-          />
-          <Dropdown
-            options={['FE', 'BE']}
-            label='Program'
-            handleChange={this.handleChange}
-          />
-          <Dropdown
-            options={[1, 2, 3, 4]}
-            label='Module'
-            handleChange={this.handleChange}
-          />
-          <Dropdown
-            options={skills}
-            label='Skill1'
-            handleChange={this.handleChange}
-          />
-          <Dropdown
-            options={skills}
-            label='Skill2'
-            handleChange={this.handleChange}
-          />
-        </div>
-        <Availability
-          availabilities={availabilities}
-          handleClick={this.handleClick}
+          <button disabled={this.checkDropdowns()} className='Profile--button'>
+            Submit
+          </button>
+        </form>
+      );
+    } else {
+      return (
+        <Redirect
+          to={{
+            pathname: '/set-availability',
+            state: { user: this.formatUserData() }
+          }}
         />
-        <button disabled={this.checkDropdowns()} className='Profile--button'>
-          Submit
-        </button>
-      </form>
-    );
+      );
+    }
   }
 }
 
@@ -167,5 +186,5 @@ Profile.propTypes = {
   email: PropTypes.string,
   firebaseID: PropTypes.string,
   image: PropTypes.string,
-  name: PropTypes.string,
+  name: PropTypes.string
 };

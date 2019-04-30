@@ -51,7 +51,8 @@ export class Controls extends Component {
   };
 
   render() {
-    const dates = getDatesToDisplay(15);
+    const currentDay = new Date();
+    const dates = getDatesToDisplay(currentDay, 15);
     const { availPairings } = this.props;
     const { message } = this.state;
     return (
