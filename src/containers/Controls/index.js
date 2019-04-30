@@ -65,7 +65,7 @@ export class Controls extends Component {
             handleChange={this.handleChange}
           />
           <Dropdown
-            options={['1', '2', '3', '4']}
+            options={['1', '2', '3', '4', '5']}
             label='Module'
             handleChange={this.handleChange}
           />
