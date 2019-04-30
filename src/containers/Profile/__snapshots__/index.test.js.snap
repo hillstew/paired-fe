@@ -18,6 +18,9 @@ exports[`Profile Profile component should match the snapshot 1`] = `
         htmlFor="name"
       >
         Provide your name
+        <span>
+          *
+        </span>
       </label>
       <input
         name="name"
@@ -28,6 +31,9 @@ exports[`Profile Profile component should match the snapshot 1`] = `
         htmlFor="email"
       >
         Provide your email
+        <span>
+          *
+        </span>
       </label>
       <input
         name="email"
@@ -38,10 +44,14 @@ exports[`Profile Profile component should match the snapshot 1`] = `
         htmlFor="slack"
       >
         Provide your slack handle
+        <span>
+          *
+        </span>
       </label>
       <input
         name="slack"
         onChange={[Function]}
+        placeholder="@"
         value=""
       />
     </div>
@@ -57,6 +67,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
           "prefer not to answer",
         ]
       }
+      required={true}
     />
     <Dropdown
       handleChange={[Function]}
@@ -67,6 +78,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
           "BE",
         ]
       }
+      required={true}
     />
     <Dropdown
       handleChange={[Function]}
@@ -79,10 +91,14 @@ exports[`Profile Profile component should match the snapshot 1`] = `
           4,
         ]
       }
+      required={true}
     />
+    <h4>
+      Select skills that you feel comfortable helping others with (optional)
+    </h4>
     <Dropdown
       handleChange={[Function]}
-      label="Skill1"
+      label="Skill 1"
       options={
         Array [
           "grid",
@@ -106,7 +122,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
     />
     <Dropdown
       handleChange={[Function]}
-      label="Skill2"
+      label="Skill 2"
       options={
         Array [
           "grid",
@@ -129,28 +145,6 @@ exports[`Profile Profile component should match the snapshot 1`] = `
       }
     />
   </div>
-  <Availability
-    availabilities={
-      Array [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-      ]
-    }
-    handleClick={[Function]}
-  />
   <button
     className="Profile--button"
     disabled={true}
