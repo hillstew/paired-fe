@@ -6,6 +6,7 @@ import { TemplateCard } from '../../components/TemplateCard';
 import PropTypes from 'prop-types';
 import { filterPastPairings } from '../../helpers';
 import { Redirect } from 'react-router-dom';
+import ReactTooltip from 'react-tooltip';
 
 export class Schedule extends Component {
   state = {
@@ -108,7 +109,9 @@ export class Schedule extends Component {
                   <div
                     className='Schedule--edit-icon'
                     onClick={() => this.setState({ shouldRedirect: true })}
+                    data-tip='Edit availability'
                   />
+                  <ReactTooltip />
                 </h2>
                 {this.filterOpenings()}
               </div>
