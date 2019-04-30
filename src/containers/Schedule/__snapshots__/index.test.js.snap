@@ -44,7 +44,14 @@ exports[`Schedule Schedule component should match the snapshot 1`] = `
          
         <div
           className="Schedule--edit-icon"
+          data-tip="Edit availability"
           onClick={[Function]}
+        />
+        <ReactTooltip
+          clickable={false}
+          insecure={true}
+          resizeHide={true}
+          wrapper="div"
         />
       </h2>
       <TemplateCard
