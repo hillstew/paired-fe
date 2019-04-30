@@ -20,4 +20,19 @@
       text-transform: uppercase;
     }
   }
+
+  .Schedule--edit-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: top;
+    cursor: pointer;
+    background-image: url('../images/edit.svg');
+    transition-duration: .25s;
+    
+    &:hover {
+      background-image: url('../images/edithover.svg');
+      transition-duration: .25s;
+    }
+  }
 }

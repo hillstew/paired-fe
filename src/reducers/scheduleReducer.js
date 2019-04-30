@@ -5,8 +5,8 @@ export const scheduleReducer = (state = [], action) => {
         return new Date(a.date).getTime() - new Date(b.date).getTime();
       });
     case 'DELETE_PAIRING':
-      return state.filter(booking => {
-        return booking.id !== action.id;
+      return state.filter(pairing => {
+        return pairing.id !== action.id;
       });
     case 'ADD_TO_SCHEDULE':
       return [...state, action.pairing];

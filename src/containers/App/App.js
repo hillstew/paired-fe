@@ -47,6 +47,7 @@ export class App extends Component {
                 <Route path='/schedule' component={Schedule} />
                 <Route path='/book-pairing' component={Controls} />
                 <Route path='/confirm' component={Confirmation} />
+                <Route path='/edit-availability' component={Availability} />
                 <Route
                   exact
                   path='/'
