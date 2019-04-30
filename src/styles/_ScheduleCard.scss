@@ -6,6 +6,10 @@
   padding: 0 15px;
   text-align: left;
 
+  h3 {
+    color: $color-secondary;
+  }
+  
   p {
     color: $color-secondary;
     font-family: $font-light;
@@ -22,5 +26,9 @@
     height: 25px;
     width: 80px;
     color: $color-accent;
+  }
+  
+  .ScheduleCard--date {
+    font-family: $font-medium;
   }
 }
