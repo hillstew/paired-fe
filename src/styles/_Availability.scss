@@ -3,7 +3,16 @@
 
   .Availability--table {
     margin: auto;
-    padding: 24px 0;
+    padding: 24px 130px 24px 0;
+
+    td {
+      width: 215px;
+      height: 38px;
+    }
+
+    .row-name {
+      width: 130px;
+    }
   }
 
   h3 {
