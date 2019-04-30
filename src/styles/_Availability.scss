@@ -3,6 +3,7 @@
 
   .Availability--table {
     margin: auto;
+    padding: 24px 0;
   }
 
   h3 {
@@ -41,10 +42,12 @@
     @extend .button--availability;
     background-color: tomato;
   }
+}
 
-  .Availability--submit {
-    grid-column: 2/3;
-    width: 20%;
-    margin: 12px auto;
-  }
+#set--button, #edit--button {
+  marginu-right: 24px;
+}
+
+#skip--button, #cancel--button {
+  marginu-left: 24px;
 }
