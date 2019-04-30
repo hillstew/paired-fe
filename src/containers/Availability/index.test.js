@@ -40,4 +40,46 @@ describe('Availability', () => {
     wrapper = shallow(<Availability {...mockProps} match={{ path: '/edit-availability' }} />);    
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should toggle true/false the correct index in availabilities when handleClick is called', () => {
+    const mockEvent = { preventDefault: jest.fn() };
+    const mockIndex = 2;
+    const mockInitialAvailability = [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ];
+    const expected = [
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ];
+    expect(wrapper.state('availabilities')).toEqual(mockInitialAvailability);
+    wrapper.instance().handleClick(mockEvent, mockIndex);
+    expect(wrapper.state('availabilities')).toEqual(expected);
+  });
 });
