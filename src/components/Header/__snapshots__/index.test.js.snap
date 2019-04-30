@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Sidebar should match the snapshot 1`] = `
-<aside
-  className="Sidebar"
+exports[`Header should match the snapshot when the user is not signed in 1`] = `
+<header
+  className="Header"
 >
   <Link
     to="/"
@@ -11,15 +11,39 @@ exports[`Sidebar should match the snapshot 1`] = `
       Paired
     </h1>
   </Link>
-  <NavLink
-    to="/schedule"
+</header>
+`;
+
+exports[`Header should match the snapshot when the user is signed in 1`] = `
+<header
+  className="Header"
+>
+  <Link
+    to="/"
   >
-    View Schedule
-  </NavLink>
-  <NavLink
-    to="/book-pairing"
+    <h1>
+      Paired
+    </h1>
+  </Link>
+  <div
+    className="Header--controls"
   >
-    Book a Pairing
-  </NavLink>
-</aside>
+    <NavLink
+      to="/schedule"
+    >
+      View Schedule
+    </NavLink>
+    <NavLink
+      to="/book-pairing"
+    >
+      Book a Pairing
+    </NavLink>
+    <button
+      className="Header--button--signout"
+      onClick={[MockFunction]}
+    >
+      Sign Out
+    </button>
+  </div>
+</header>
 `;
