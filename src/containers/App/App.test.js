@@ -27,7 +27,9 @@ describe('App', () => {
     user: { id: 'abc123' },
     signInUser: jest.fn(),
     signUserOut: jest.fn(),
-    history: []
+    history: {
+      push: jest.fn()
+    }
   };
 
   beforeEach(() => {
