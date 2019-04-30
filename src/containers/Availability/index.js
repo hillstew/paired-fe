@@ -1,12 +1,26 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createUser } from '../../thunks/createUser';
+import { deleteAvailability } from '../../thunks/deleteAvailability';
+import { setAvailability } from '../../thunks/setAvailability';
 
 export class Availability extends Component {
   state = {
     availabilities: Array(15).fill(false)
+  };
+
+  editAvailability = async event => {
+    const { id } = event.target;
+    const { deleteAvailability, setAvailability, history } = this.props;
+    const { user } = this.props.location.state;
+    const { availabilities } = this.state;
+    if (id === 'edit--button') {
+      await deleteAvailability(user.id);
+      setAvailability(user.id, availabilities);
+    }
+    history.push('/schedule');
   };
 
   handleClick = (event, i) => {
@@ -18,7 +32,7 @@ export class Availability extends Component {
     this.setState({ availabilities: newAvailabilities });
   };
 
-  handleSubmit = (event) => {
+  setAvailability = event => {
     const { id } = event.target;
     const { createUser, history } = this.props;
     const { user } = this.props.location.state;
@@ -33,6 +47,7 @@ export class Availability extends Component {
 
   render() {
     const { availabilities } = this.state;
+    const { path } = this.props.match;
     return (
       <section className='Availability'>
         <h3>Please set when you are available to give help to others</h3>
@@ -53,14 +68,33 @@ export class Availability extends Component {
               <button
                 key={i}
                 className={'button--' + availability}
-                onClick={event => this.handleClick(event, i)}>
+                onClick={event => this.handleClick(event, i)}
+              >
                 {availability ? 'available' : 'unavailable'}
               </button>
             );
           })}
         </div>
-        <button onClick={this.handleSubmit} id="set--button">Set Availability</button>
-        <button onClick={this.handleSubmit} id="skip--button">Skip</button>
+        {path === '/set-availability' && (
+          <Fragment>
+            <button onClick={this.setAvailability} id='set--button'>
+              Set Availability
+            </button>
+            <button onClick={this.setAvailability} id='skip--button'>
+              Skip
+            </button>
+          </Fragment>
+        )}
+        {path === '/edit-availability' && (
+          <Fragment>
+            <button onClick={this.editAvailability} id='edit--button'>
+              Edit Availability
+            </button>
+            <button onClick={this.editAvailability} id='cancel--button'>
+              Cancel
+            </button>
+          </Fragment>
+        )}
       </section>
     );
   }
@@ -68,16 +102,20 @@ export class Availability extends Component {
 
 export const mapDispatchToProps = dispatch => ({
   createUser: (user, availabilities) =>
-    dispatch(createUser(user, availabilities))
+    dispatch(createUser(user, availabilities)),
+  deleteAvailability: userId => dispatch(deleteAvailability(userId)),
+  setAvailability: (userId, availabilities) =>
+    dispatch(setAvailability(userId, availabilities))
 });
 
 Availability.propTypes = {
-  availabilities: PropTypes.array,
   handleClick: PropTypes.func,
   createUser: PropTypes.func,
   history: PropTypes.object,
   location: PropTypes.object,
-  match: PropTypes.object
+  match: PropTypes.object,
+  deleteAvailability: PropTypes.func,
+  setAvailability: PropTypes.func
 };
 
 export default withRouter(
