@@ -3,7 +3,6 @@ import {
   formatPairingsForQuery,
   makeAvailPairings,
   getDatesToDisplay,
-  getDatesToDisplayFancy
 } from './index';
 
 describe('helpers', () => {
@@ -68,25 +67,18 @@ describe('helpers', () => {
   });
 
   describe('getDatesToDisplay', () => {
-    it('should return an array of numbers the same length as the num passed in', () => {
-      const expectedLength = 5;
-      const result = getDatesToDisplay(expectedLength);
-      expect(result.length).toEqual(expectedLength);
-    });
-  });
-
-  describe('getDatesToDisplayFancy', () => {
-    it('should return an array of numbers with a length  one larger than the num passed in', () => {
-      const expectedLength = 10;
+    it('should return an array with a length equal to all the weekdays between the start and end date', () => {
+      const daysRemaining = 12;
       const mockStartDate = 'Mon Apr 29 2019';
-      const result = getDatesToDisplayFancy(mockStartDate, expectedLength);
-      expect(result.length).toEqual(expectedLength + 1);
+      const result = getDatesToDisplay(mockStartDate, daysRemaining);
+      const expectedLength = 10;
+      expect(result.length).toEqual(expectedLength);
     });
 
     it('should return an array of numbers with the first number equaling the start date', () => {
       const mockLength = 10;
       const mockStartDate = 'Mon Apr 29 2019';
-      const result = getDatesToDisplayFancy(
+      const result = getDatesToDisplay(
         mockStartDate,
         mockLength
       );

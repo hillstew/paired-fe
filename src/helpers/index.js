@@ -22,7 +22,7 @@ export const getDatesToDisplay = (currentDay, daysRemaining) => {
     }
     counter += 1;
   }
-  return [...dates];
+  return dates;
 };
 
 export const determineDay = index => {
