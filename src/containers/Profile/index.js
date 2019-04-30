@@ -45,9 +45,7 @@ export class Profile extends Component {
       name,
       email,
       pronouns,
-      slack,
-      skill1,
-      skill2
+      slack
     } = this.state;
     let pronounsToSave = pronouns;
 
@@ -64,8 +62,8 @@ export class Profile extends Component {
       program,
       pronouns: pronounsToSave,
       slack,
-      skill1,
-      skill2
+      skill1: this.state['skill 1'],
+      skill2: this.state['skill 2']
     };
     return user;
   };
