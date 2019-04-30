@@ -1,9 +1,9 @@
 .Availability {
-  display: grid;
-  grid-template-columns: 1fr 6fr;
-  grid-template-rows: 80px 1fr;
-  // height: 400px;
   padding: 16px 48px;
+
+  .Availability--table {
+    margin: auto;
+  }
 
   h3 {
     grid-column: 1/3;

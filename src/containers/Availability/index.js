@@ -45,36 +45,62 @@ export class Availability extends Component {
     history.push('/');
   };
 
+  renderButton = (availability, i) => {
+    return (
+      <button
+        key={i}
+        className={'button--' + availability}
+        onClick={event => this.handleClick(event, i)}
+      >
+        {availability ? 'available' : 'unavailable'}
+      </button>
+    );
+  };
+
   render() {
     const { availabilities } = this.state;
     const { path } = this.props.match;
     return (
       <section className='Availability'>
         <h3>Please set when you are available to give help to others</h3>
-        <ul className='day--container'>
-          <li />
-          <li>Monday</li>
-          <li>Tuesday</li>
-          <li>Wednesday</li>
-          <li>Thursday</li>
-          <li>Friday</li>
-        </ul>
-        <div className='button--container'>
-          <span>morning</span>
-          <span>lunch</span>
-          <span>afternoon</span>
-          {availabilities.map((availability, i) => {
-            return (
-              <button
-                key={i}
-                className={'button--' + availability}
-                onClick={event => this.handleClick(event, i)}
-              >
-                {availability ? 'available' : 'unavailable'}
-              </button>
-            );
-          })}
-        </div>
+        <table className="Availability--table">
+          <tr>
+            <th />
+            <th>8:00 - 8:50 a.m.</th>
+            <th>12:00 - 12:50 p.m.</th>
+            <th>4:10 - 5:00 p.m.</th>
+          </tr>
+          <tr>
+            <td>Monday</td>
+            <td>{this.renderButton(availabilities[0], 0)}</td>
+            <td>{this.renderButton(availabilities[1], 1)}</td>
+            <td>{this.renderButton(availabilities[2], 2)}</td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td>{this.renderButton(availabilities[3], 3)}</td>
+            <td>{this.renderButton(availabilities[4], 4)}</td>
+            <td>{this.renderButton(availabilities[5], 5)}</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>{this.renderButton(availabilities[6], 6)}</td>
+            <td>{this.renderButton(availabilities[7], 7)}</td>
+            <td>{this.renderButton(availabilities[8], 8)}</td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+            <td>{this.renderButton(availabilities[9], 9)}</td>
+            <td>{this.renderButton(availabilities[10], 10)}</td>
+            <td>{this.renderButton(availabilities[11], 11)}</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>{this.renderButton(availabilities[12], 12)}</td>
+            <td>{this.renderButton(availabilities[13], 13)}</td>
+            <td>{this.renderButton(availabilities[14], 14)}</td>
+          </tr>
+        </table>
         {path === '/set-availability' && (
           <Fragment>
             <button onClick={this.setAvailability} id='set--button'>
