@@ -5,7 +5,7 @@ exports[`TemplateCard should match the snapshot when type is giving-help 1`] = `
   className="ScheduleCard"
 >
   <p>
-    You haven't been booked yet. Check back soon.
+    You haven't been booked yet. Check back soon. 
      
     <span
       aria-label="smiley emoji"
@@ -22,7 +22,7 @@ exports[`TemplateCard should match the snapshot when type is openings 1`] = `
   className="ScheduleCard"
 >
   <p>
-    You have no openings.
+    You have no openings. 
      
     <span
       aria-label="crying emoji"
@@ -39,7 +39,7 @@ exports[`TemplateCard should match the snapshot when type is receiving-help 1`] 
   className="ScheduleCard"
 >
   <p>
-    Sign up to pair with others. Coding is better with friends.
+    Sign up to pair. Coding is better with friends. 
      
     <span
       aria-label="100 emoji"
