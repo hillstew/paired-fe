@@ -18,7 +18,7 @@ export class Availability extends Component {
     const { availabilities } = this.state;
     if (id === 'edit--button') {
       await deleteAvailability(user.id);
-      setAvailability(user.id, availabilities);
+      await setAvailability(user.id, availabilities);
     }
     history.push('/schedule');
   };
@@ -74,31 +74,31 @@ export class Availability extends Component {
           </thead>
           <tbody>
             <tr>
-              <td>Monday</td>
+              <td className='row-name'>Monday</td>
               <td>{this.renderButton(availabilities[0], 0)}</td>
               <td>{this.renderButton(availabilities[1], 1)}</td>
               <td>{this.renderButton(availabilities[2], 2)}</td>
             </tr>
             <tr>
-              <td>Tuesday</td>
+              <td className='row-name'>Tuesday</td>
               <td>{this.renderButton(availabilities[3], 3)}</td>
               <td>{this.renderButton(availabilities[4], 4)}</td>
               <td>{this.renderButton(availabilities[5], 5)}</td>
             </tr>
             <tr>
-              <td>Wednesday</td>
+              <td className='row-name'>Wednesday</td>
               <td>{this.renderButton(availabilities[6], 6)}</td>
               <td>{this.renderButton(availabilities[7], 7)}</td>
               <td>{this.renderButton(availabilities[8], 8)}</td>
             </tr>
             <tr>
-              <td>Thursday</td>
+              <td className='row-name'>Thursday</td>
               <td>{this.renderButton(availabilities[9], 9)}</td>
               <td>{this.renderButton(availabilities[10], 10)}</td>
               <td>{this.renderButton(availabilities[11], 11)}</td>
             </tr>
             <tr>
-              <td>Friday</td>
+              <td className='row-name'>Friday</td>
               <td>{this.renderButton(availabilities[12], 12)}</td>
               <td>{this.renderButton(availabilities[13], 13)}</td>
               <td>{this.renderButton(availabilities[14], 14)}</td>

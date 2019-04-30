@@ -7,7 +7,7 @@ export const TemplateCard = ({ type }) => {
     case 'giving-help':
       message = (
         <p>
-          You haven't been booked yet. Check back soon.{' '}
+          You haven't been booked yet. Check back soon. {' '}
           <span role="img" aria-label="smiley emoji">
             🙂
           </span>
@@ -17,7 +17,7 @@ export const TemplateCard = ({ type }) => {
     case 'receiving-help':
       message = (
         <p>
-          Sign up to pair with others. Coding is better with friends.{' '}
+          Sign up to pair. Coding is better with friends. {' '}
           <span role="img" aria-label="100 emoji">
             💯
           </span>
@@ -27,7 +27,7 @@ export const TemplateCard = ({ type }) => {
     case 'openings':
       message = (
         <p>
-          You have no openings.{' '}
+          You have no openings. {' '}
           <span role="img" aria-label="crying emoji">
             😭
           </span>

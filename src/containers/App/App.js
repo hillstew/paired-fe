@@ -89,9 +89,15 @@ export class App extends Component {
                 path='/'
                 render={() => <SignIn history={this.props.history} />}
               />
-              <Route path='/set-availability' render={() => <Availability />} />
+              <Route
+                path='/set-availability'
+                render={() => <Availability />}
+              />
               <Route path='/schedule' render={() => <Redirect to='/' />} />
-              <Route path='/book-pairing' render={() => <Redirect to='/' />} />
+              <Route
+                path='/book-pairing'
+                render={() => <Redirect to='/' />}
+              />
               <Route
                 render={() => (
                   <Fragment>

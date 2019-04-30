@@ -26,7 +26,9 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
     </thead>
     <tbody>
       <tr>
-        <td>
+        <td
+          className="row-name"
+        >
           Monday
         </td>
         <td>
@@ -58,7 +60,9 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
       </tr>
       <tr>
-        <td>
+        <td
+          className="row-name"
+        >
           Tuesday
         </td>
         <td>
@@ -90,7 +94,9 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
       </tr>
       <tr>
-        <td>
+        <td
+          className="row-name"
+        >
           Wednesday
         </td>
         <td>
@@ -122,7 +128,9 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
       </tr>
       <tr>
-        <td>
+        <td
+          className="row-name"
+        >
           Thursday
         </td>
         <td>
@@ -154,7 +162,9 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
       </tr>
       <tr>
-        <td>
+        <td
+          className="row-name"
+        >
           Friday
         </td>
         <td>
@@ -228,7 +238,9 @@ exports[`Availability should match the snapshot when the path is /set-availabili
     </thead>
     <tbody>
       <tr>
-        <td>
+        <td
+          className="row-name"
+        >
           Monday
         </td>
         <td>
@@ -260,7 +272,9 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
       </tr>
       <tr>
-        <td>
+        <td
+          className="row-name"
+        >
           Tuesday
         </td>
         <td>
@@ -292,7 +306,9 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
       </tr>
       <tr>
-        <td>
+        <td
+          className="row-name"
+        >
           Wednesday
         </td>
         <td>
@@ -324,7 +340,9 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
       </tr>
       <tr>
-        <td>
+        <td
+          className="row-name"
+        >
           Thursday
         </td>
         <td>
@@ -356,7 +374,9 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
       </tr>
       <tr>
-        <td>
+        <td
+          className="row-name"
+        >
           Friday
         </td>
         <td>

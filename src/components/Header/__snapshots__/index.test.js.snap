@@ -4,13 +4,26 @@ exports[`Header should match the snapshot when the user is not signed in 1`] = `
 <header
   className="Header"
 >
-  <Link
-    to="/"
+  <div
+    className="Header--div"
   >
-    <h1>
-      Paired
-    </h1>
-  </Link>
+    <Link
+      className="Header--h1--link"
+      to="/"
+    >
+      <h1>
+        Paired
+      </h1>
+    </Link>
+    <a
+      className="Header--github-link"
+      href="https://github.com/hillstew/paired-fe/issues/new"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Submit an issue
+    </a>
+  </div>
 </header>
 `;
 
@@ -18,22 +31,37 @@ exports[`Header should match the snapshot when the user is signed in 1`] = `
 <header
   className="Header"
 >
-  <Link
-    to="/"
+  <div
+    className="Header--div"
   >
-    <h1>
-      Paired
-    </h1>
-  </Link>
+    <Link
+      className="Header--h1--link"
+      to="/"
+    >
+      <h1>
+        Paired
+      </h1>
+    </Link>
+    <a
+      className="Header--github-link"
+      href="https://github.com/hillstew/paired-fe/issues/new"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Submit an issue
+    </a>
+  </div>
   <div
     className="Header--controls"
   >
     <NavLink
+      className="Header--link"
       to="/schedule"
     >
       View Schedule
     </NavLink>
     <NavLink
+      className="Header--link"
       to="/book-pairing"
     >
       Book a Pairing
