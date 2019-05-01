@@ -1,10 +1,22 @@
 @mixin button-style() {
   border: none;
   border-radius: 10px;
+  box-shadow: $light-shadow;
   cursor: pointer;
+  font-family: $font-medium;
   outline: none;
+  transition-duration: 0.3s;
+
   &:disabled {
     color: #808080;
     cursor: not-allowed;
+    box-shadow: none;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &:hover {
+    box-shadow: $heavy-shadow;
   }
 }

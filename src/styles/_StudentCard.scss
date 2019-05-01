@@ -58,7 +58,6 @@
     button {
       @include button-style();
       background-color: $color-primary;
-      font-family: $font-bold;
     }
 
     p {

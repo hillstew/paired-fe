@@ -38,8 +38,13 @@
 
   .button--availability {
     @include button-style();
+    box-shadow: none;
     font-family: $font-medium;
     margin: auto;
+
+    &:hover {
+      box-shadow: none;
+    }
   }
 
   .button--true {
@@ -53,10 +58,14 @@
   }
 }
 
-#set--button, #edit--button {
-  margin-right: 24px;
+#set--button,
+#edit--button,
+#skip--button,
+#cancel--button {
+  margin: 5px;
 }
 
-#skip--button, #cancel--button {
-  margin-left: 24px;
+#skip--button,
+#cancel--button {
+  background-color: $color-accent;
 }

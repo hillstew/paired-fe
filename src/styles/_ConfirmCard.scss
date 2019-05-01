@@ -3,15 +3,21 @@
   button {
     @include button-style();
     background-color: $color-primary;
-    font-family: $font-bold;
+    font-family: $font-medium;
     height: 30px;
     width: 200px;
     margin: 5px;
   }
-  
+
   input {
     display: block;
     margin: 15px auto;
-    width: 200px;
+    width: 250px;
+  }
+
+  .ConfirmCard--div-buttons {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
 }
