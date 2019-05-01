@@ -35,7 +35,7 @@ export default class ConfirmCard extends Component {
       const { pairingInConflictId } = this.props;
       deletePairingThunk(pairingInConflictId);
     }
-    history.push('/');
+    history.push('/schedule');
   };
 
   render() {
@@ -87,5 +87,5 @@ ConfirmCard.propTypes = {
   name: PropTypes.string,
   selectedPairing: PropTypes.string,
   time: PropTypes.string,
-  userId: PropTypes.string,
+  userId: PropTypes.string
 };
