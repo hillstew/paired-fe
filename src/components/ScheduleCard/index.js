@@ -6,6 +6,9 @@ export const ScheduleCard = ({ booking, person, deletePairing }) => {
   const { notes, time, date } = booking;
   return (
     <div className='ScheduleCard'>
+      <p className='ScheduleCard--date'>
+        {date} at {determineDisplayTime(time)}
+      </p>
       {person && (
         <Fragment>
           <h3>{person.name}</h3>
@@ -17,18 +20,15 @@ export const ScheduleCard = ({ booking, person, deletePairing }) => {
           <p>Notes: {notes ? notes : 'no notes'}</p>
         </Fragment>
       )}
-      <p className='ScheduleCard--date'>
-        {date} at {determineDisplayTime(time)}
-      </p>
       {!person && (
         <button onClick={() => deletePairing(booking.id)}>Cancel</button>
       )}
     </div>
   );
- };
+};
 
 ScheduleCard.propTypes = {
   booking: PropTypes.object,
   deletePairing: PropTypes.func,
-  person: PropTypes.object,
+  person: PropTypes.object
 };

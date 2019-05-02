@@ -6,16 +6,18 @@
   padding: 0 15px;
   text-align: left;
   max-width: 407px;
+  word-break: break-all;
+
   h3 {
     color: $color-secondary;
   }
-  
+
   p {
     color: $color-secondary;
     font-family: $font-light;
     margin: 10px 0;
   }
-  
+
   button {
     @include button-style();
     background-color: $color-secondary;
@@ -27,8 +29,11 @@
     width: 80px;
     color: $color-accent;
   }
-  
+
   .ScheduleCard--date {
+    background-color: $color-accent;
     font-family: $font-medium;
+    padding: 5px;
+    text-align: center;
   }
 }

@@ -17,6 +17,7 @@
 .Header--link {
   color: $color-secondary;
   border-bottom: 2px solid transparent;
+  transition-duration: 0.3s;
   &:hover {
     border-bottom: 2px solid $color-secondary;
   }
@@ -29,6 +30,7 @@
 .Header--button--signout {
   background-color: $color-primary;
   border-radius: 0;
+  box-shadow: none;
   cursor: pointer;
   font-family: $font-medium;
   display: inline-block;
@@ -42,6 +44,7 @@
 
   &:hover {
     border-bottom: 2px solid $color-secondary;
+    box-shadow: none;
   }
 }
 

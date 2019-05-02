@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { determineDisplayTime } from '../../helpers';
 import PropTypes from 'prop-types';
 
@@ -35,44 +35,35 @@ export default class ConfirmCard extends Component {
       const { pairingInConflictId } = this.props;
       deletePairingThunk(pairingInConflictId);
     }
-    history.push('/');
+    history.push('/schedule');
   };
 
   render() {
-    const { date, time, name, hasOpeningAlready } = this.props;
-
+    const { date, time, name } = this.props;
     return (
       <div className='ConfirmCard'>
         <h3>Booking {name}:</h3>
         <p>
           {date} at {determineDisplayTime(time)}
         </p>
-        <label htmlFor='notes'>Tell {name} what you'd like to pair on: </label>
+        <label htmlFor='notes'>What would you like to pair on?</label>
         <input
           name='notes'
           value={this.state.notes}
           onChange={this.handleChange}
         />
-        {hasOpeningAlready && (
-          <Fragment>
-            <p>
-              Please note you have an opening on your availability for this date
-              and time
-            </p>
-            <p>Click confirm to continue and your opening will be removed</p>
-            <p>Or click cancel to choose a different pairing</p>
-          </Fragment>
-        )}
-        <button
-          className='ConfirmCard--button--confirm'
-          onClick={this.handleConfirm}>
-          Confirm Booking
-        </button>
-        <button
-          className='ConfirmCard--button--cancel'
-          onClick={this.handleCancel}>
-          Cancel
-        </button>
+        <div className='ConfirmCard--div-buttons'>
+          <button
+            className='ConfirmCard--button--confirm'
+            onClick={this.handleConfirm}>
+            Confirm Booking
+          </button>
+          <button
+            className='ConfirmCard--button--cancel'
+            onClick={this.handleCancel}>
+            Cancel
+          </button>
+        </div>
       </div>
     );
   }
@@ -87,5 +78,5 @@ ConfirmCard.propTypes = {
   name: PropTypes.string,
   selectedPairing: PropTypes.string,
   time: PropTypes.string,
-  userId: PropTypes.string,
+  userId: PropTypes.string
 };

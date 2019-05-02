@@ -50,8 +50,7 @@ export class Availability extends Component {
       <button
         key={i}
         className={'button--' + availability}
-        onClick={event => this.handleClick(event, i)}
-      >
+        onClick={event => this.handleClick(event, i)}>
         {availability ? 'available' : 'unavailable'}
       </button>
     );
@@ -63,7 +62,7 @@ export class Availability extends Component {
     return (
       <section className='Availability'>
         <h3>Please set when you are available to give help to others</h3>
-        <table className="Availability--table">
+        <table className='Availability--table'>
           <thead>
             <tr>
               <th />
@@ -107,21 +106,21 @@ export class Availability extends Component {
         </table>
         {path === '/set-availability' && (
           <Fragment>
-            <button onClick={this.setAvailability} id='set--button'>
-              Set Availability
-            </button>
             <button onClick={this.setAvailability} id='skip--button'>
               Skip
+            </button>
+            <button onClick={this.setAvailability} id='set--button'>
+              Set Availability
             </button>
           </Fragment>
         )}
         {path === '/edit-availability' && (
           <Fragment>
-            <button onClick={this.editAvailability} id='edit--button'>
-              Edit Availability
-            </button>
             <button onClick={this.editAvailability} id='cancel--button'>
               Cancel
+            </button>
+            <button onClick={this.editAvailability} id='edit--button'>
+              Edit Availability
             </button>
           </Fragment>
         )}
