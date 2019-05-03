@@ -11,15 +11,15 @@ jest.mock('../../thunks/deletePairingThunk');
 describe('Confirmation', () => {
   describe('Confirmation component', () => {
     let wrapper;
-    const mockDeletePairingThiunk = jest.fn();
+    const mockDeletePairingThunk = jest.fn();
     const mockConfirmPairing = jest.fn();
     const mockPropsNoConflict = {
-      selectedPairing: '5caa7eebfdebb8348e53a4a4',
       availPairings: data.mockAvailPairings,
       schedule: data.mockSchedule,
       user: data.mockUser,
       confirmPairing: mockConfirmPairing,
-      deletePairingThunk: mockDeletePairingThiunk
+      deletePairingThunk: mockDeletePairingThunk,
+      match: { params: { id: '5caa7eebfdebb8348e53a4a4'}}
     };
     beforeEach(() => {
       wrapper = shallow(<Confirmation {...mockPropsNoConflict} />);

@@ -103,8 +103,8 @@ describe('ConfirmCard', () => {
       );
     });
 
-    it('should redirect user to / ', () => {
-      const expectedPath = '/';
+    it('should redirect user to /schedule ', () => {
+      const expectedPath = '/schedule';
       wrapper.instance().handleConfirm();
       expect(mockHistoryPush).toHaveBeenCalledWith(expectedPath);
     });

@@ -6,12 +6,12 @@ exports[`Confirmation Confirmation component should match the snapshot 1`] = `
 >
   <ConfirmCard
     confirmPairing={[MockFunction]}
-    date="Thu Apr 18 2019"
+    date=""
     deletePairingThunk={[MockFunction]}
     hasOpeningAlready={false}
-    name="Tiffany"
+    name=""
     selectedPairing="5caa7eebfdebb8348e53a4a4"
-    time="morning"
+    time=""
     userId="5caa7eebfdebb8348e53a48e"
   />
 </section>

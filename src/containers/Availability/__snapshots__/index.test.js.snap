@@ -198,16 +198,16 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
     </tbody>
   </table>
   <button
-    id="edit--button"
-    onClick={[Function]}
-  >
-    Edit Availability
-  </button>
-  <button
     id="cancel--button"
     onClick={[Function]}
   >
     Cancel
+  </button>
+  <button
+    id="edit--button"
+    onClick={[Function]}
+  >
+    Edit Availability
   </button>
 </section>
 `;
@@ -410,16 +410,16 @@ exports[`Availability should match the snapshot when the path is /set-availabili
     </tbody>
   </table>
   <button
-    id="set--button"
-    onClick={[Function]}
-  >
-    Set Availability
-  </button>
-  <button
     id="skip--button"
     onClick={[Function]}
   >
     Skip
+  </button>
+  <button
+    id="set--button"
+    onClick={[Function]}
+  >
+    Set Availability
   </button>
 </section>
 `;

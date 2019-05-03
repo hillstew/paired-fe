@@ -46,7 +46,7 @@ export class App extends Component {
               <Switch>
                 <Route path='/schedule' component={Schedule} />
                 <Route path='/book-pairing' component={Controls} />
-                <Route path='/confirm' component={Confirmation} />
+                <Route path='/confirm/:id' component={Confirmation} />
                 <Route path='/edit-availability' component={Availability} />
                 <Route
                   exact

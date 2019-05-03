@@ -4,6 +4,13 @@ exports[`ScheduleCard should match the snapshot when there are no notes 1`] = `
 <div
   className="ScheduleCard"
 >
+  <p
+    className="ScheduleCard--date"
+  >
+    Thu Apr 18 2019
+     at 
+    8:00 - 8:50 a.m.
+  </p>
   <h3>
     Tiffany
   </h3>
@@ -25,13 +32,6 @@ exports[`ScheduleCard should match the snapshot when there are no notes 1`] = `
     Notes: 
     no notes
   </p>
-  <p
-    className="ScheduleCard--date"
-  >
-    Thu Apr 18 2019
-     at 
-    8:00 - 8:50 a.m.
-  </p>
 </div>
 `;
 
@@ -39,6 +39,13 @@ exports[`ScheduleCard should match the snapshot when there are notes 1`] = `
 <div
   className="ScheduleCard"
 >
+  <p
+    className="ScheduleCard--date"
+  >
+    Thu Apr 18 2019
+     at 
+    8:00 - 8:50 a.m.
+  </p>
   <h3>
     Tiffany
   </h3>
@@ -59,13 +66,6 @@ exports[`ScheduleCard should match the snapshot when there are notes 1`] = `
   <p>
     Notes: 
     Help with JSFun problemset
-  </p>
-  <p
-    className="ScheduleCard--date"
-  >
-    Thu Apr 18 2019
-     at 
-    8:00 - 8:50 a.m.
   </p>
 </div>
 `;

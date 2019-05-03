@@ -3,12 +3,20 @@
 exports[`ConflictCard should match the snapshot 1`] = `
 <div>
   <h3>
-    Sorry you have a conflict
+    Sorry, you have a conflict
+     
+    <span
+      aria-label="grimacing emoji"
+      role="img"
+    >
+      😬
+    </span>
   </h3>
   <p>
     You already have a pairing scheduled for 
     Wed Apr 17 2019
-     from 
+     from
+     
     8:00 - 8:50 a.m.
   </p>
   <p>
