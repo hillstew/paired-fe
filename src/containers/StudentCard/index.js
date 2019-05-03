@@ -5,9 +5,7 @@ import PropTypes from 'prop-types';
 
 export class StudentCard extends Component {
   handleClick = id => {
-    const { history, setPairingId } = this.props;
-    setPairingId(id);
-    history.push('/confirm');
+    this.props.history.push(`/confirm/${id}`);
   };
 
   render() {
@@ -29,7 +27,7 @@ export class StudentCard extends Component {
           <img src={image} alt={name} />
           <p className='StudentCard-pronouns'>Pronouns: {pronouns}</p>
           <p className='StudentCard-skills'>
-            Skills: {skills.map(skill => `${skill} `)}
+            Skills: {skills[0]} & {skills[1]}
           </p>
         </div>
         <div className='StudentCard--div--rows'>
@@ -44,7 +42,7 @@ export class StudentCard extends Component {
                 Book It
               </button>
             )}
-            {!morningId && <p>Not available</p>}
+            {!morningId && <p>NOT AVAILABLE</p>}
           </div>
           <div>
             <p className='StudentCard-time-text'>12:00 - 12:50 p.m.</p>
@@ -57,7 +55,7 @@ export class StudentCard extends Component {
                 Book It
               </button>
             )}
-            {!lunchId && <p>Not available</p>}
+            {!lunchId && <p>NOT AVAILABLE</p>}
           </div>
           <div>
             <p className='StudentCard-time-text'>4:00 - 4:50 p.m.</p>
@@ -70,7 +68,7 @@ export class StudentCard extends Component {
                 Book It
               </button>
             )}
-            {!afternoonId && <p>Not available</p>}
+            {!afternoonId && <p>NOT AVAILABLE</p>}
           </div>
         </div>
       </section>
