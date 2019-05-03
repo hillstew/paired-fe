@@ -24,7 +24,7 @@ exports[`App render should match the snapshot when there is a user id 1`] = `
       />
       <Route
         component={[Function]}
-        path="/confirm"
+        path="/confirm/:id"
       />
       <Route
         component={[Function]}

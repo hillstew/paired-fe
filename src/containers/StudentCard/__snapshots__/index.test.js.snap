@@ -24,8 +24,9 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
       className="StudentCard-skills"
     >
       Skills: 
-      react 
-      redux 
+      react
+       & 
+      redux
     </p>
   </div>
   <div
@@ -104,8 +105,9 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
       className="StudentCard-skills"
     >
       Skills: 
-      react 
-      redux 
+      react
+       & 
+      redux
     </p>
   </div>
   <div
@@ -118,7 +120,7 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
         8:00 - 8:50 a.m.
       </p>
       <p>
-        Not available
+        NOT AVAILABLE
       </p>
     </div>
     <div>
@@ -128,7 +130,7 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
         12:00 - 12:50 p.m.
       </p>
       <p>
-        Not available
+        NOT AVAILABLE
       </p>
     </div>
     <div>
@@ -138,7 +140,7 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
         4:00 - 4:50 p.m.
       </p>
       <p>
-        Not available
+        NOT AVAILABLE
       </p>
     </div>
   </div>
@@ -169,8 +171,9 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
       className="StudentCard-skills"
     >
       Skills: 
-      react 
-      redux 
+      react
+       & 
+      redux
     </p>
   </div>
   <div
@@ -183,7 +186,7 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
         8:00 - 8:50 a.m.
       </p>
       <p>
-        Not available
+        NOT AVAILABLE
       </p>
     </div>
     <div>
@@ -208,7 +211,7 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
         4:00 - 4:50 p.m.
       </p>
       <p>
-        Not available
+        NOT AVAILABLE
       </p>
     </div>
   </div>
