@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Dropdown } from '../../components/Dropdown';
 import * as gql from '../../queries';
-import * as fetch from '../../utils';
+import { fetchData } from '../../utils';
 import { setError, setAvailPairings } from '../../actions';
 import { connect } from 'react-redux';
 import { Pairings } from '../../components/Pairings';
@@ -30,7 +30,7 @@ export class Controls extends Component {
     const { setAvailPairings } = this.props;
     try {
       const body = gql.getAvailablePairings(program, parseInt(module), date);
-      const response = await fetch.fetchData(body);
+      const response = await fetchData(body);
       if (response.getAvailablePairings.length) {
         setAvailPairings(response.getAvailablePairings);
         this.setState({ message: '' });
