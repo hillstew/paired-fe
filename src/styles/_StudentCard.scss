@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     margin-right: 20px;
+    width: 150px;
 
     p,
     h3 {
@@ -36,6 +37,7 @@
     .StudentCard-pronouns,
     .StudentCard-skills {
       font-family: $font-light;
+      word-break: break-all;
     }
   }
 
@@ -62,7 +64,7 @@
 
     p {
       font-family: $font-medium;
-      text-transform: uppercase;
+      line-height: 1.9;
     }
   }
 }

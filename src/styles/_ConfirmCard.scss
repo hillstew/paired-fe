@@ -20,4 +20,8 @@
     display: flex;
     flex-direction: column;
   }
+
+  .ConfirmCard--button--cancel {
+    background-color: $color-accent;
+  }
 }
