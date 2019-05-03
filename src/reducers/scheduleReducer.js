@@ -9,7 +9,9 @@ export const scheduleReducer = (state = [], action) => {
         return pairing.id !== action.id;
       });
     case 'ADD_TO_SCHEDULE':
-      return [...state, action.pairing];
+      return [...state, action.pairing].sort((a, b) => {
+        return new Date(a.date).getTime() - new Date(b.date).getTime();
+      });
     case 'SIGN_USER_OUT':
       return [];
     default:
