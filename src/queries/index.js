@@ -167,3 +167,26 @@ export const deletePairings = userId => ({
     }
   }`
 });
+
+export const getPairing = (id) => ({
+  query: `{
+    getPairing(id: "${id}") {
+      pairer {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      }
+      pairee {
+        name
+      }
+      date
+      time
+      id
+    }
+  }`
+});
