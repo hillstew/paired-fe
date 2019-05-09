@@ -17,7 +17,8 @@ export class Profile extends Component {
       slack: '',
       submitted: false,
       'skill 1': '',
-      'skill 2': ''
+      'skill 2': '',
+      'skill 3': ''
     };
   }
 
@@ -39,19 +40,7 @@ export class Profile extends Component {
 
   formatUserData = () => {
     const { image, firebaseID } = this.props;
-    const {
-      module,
-      program,
-      name,
-      email,
-      pronouns,
-      slack
-    } = this.state;
-    let pronounsToSave = pronouns;
-
-    if (pronouns === 'prefer not to answer') {
-      pronounsToSave = '';
-    }
+    const { module, program, name, email, pronouns, slack } = this.state;
 
     const user = {
       name,
@@ -60,16 +49,17 @@ export class Profile extends Component {
       firebaseID,
       module,
       program,
-      pronouns: pronounsToSave,
+      pronouns,
       slack,
       skill1: this.state['skill 1'],
-      skill2: this.state['skill 2']
+      skill2: this.state['skill 2'],
+      skill3: this.state['skill 3']
     };
     return user;
   };
 
   render() {
-    const { name, slack, email } = this.state;
+    const { name, slack, email, pronouns } = this.state;
     const skills = [
       'grid',
       'flexbox',
@@ -95,15 +85,23 @@ export class Profile extends Component {
           <div className='Profile--div'>
             <div className='Profile--div--flex'>
               <label htmlFor='name'>
-                Provide your name<span>*</span>
+                Name<span>*</span>
               </label>
               <input value={name} name='name' onChange={this.handleChange} />
+              <label htmlFor='Pronouns'>Pronouns</label>
+              <input
+                value={pronouns}
+                label='Pronouns'
+                name='pronouns'
+                onChange={this.handleChange}
+                placeholder='e.g. she/her, he/him, they/them, etc.'
+              />
               <label htmlFor='email'>
-                Provide your email<span>*</span>
+                Email<span>*</span>
               </label>
               <input value={email} name='email' onChange={this.handleChange} />
               <label htmlFor='slack'>
-                Provide your slack handle<span>*</span>
+                Slack handle<span>*</span>
               </label>
               <input
                 value={slack}
@@ -112,18 +110,6 @@ export class Profile extends Component {
                 placeholder='@'
               />
             </div>
-            <Dropdown
-              options={[
-                'she/her',
-                'he/him',
-                'they/them',
-                'ze/zir',
-                'prefer not to answer'
-              ]}
-              label='Pronouns'
-              handleChange={this.handleChange}
-              required={true}
-            />
             <Dropdown
               options={['FE', 'BE']}
               label='Program'
@@ -136,10 +122,7 @@ export class Profile extends Component {
               handleChange={this.handleChange}
               required={true}
             />
-            <h4>
-              Select skills that you feel comfortable helping others with
-              (optional)
-            </h4>
+            <h4>Provide skills you can help others with (optional)</h4>
             <Dropdown
               options={skills}
               label='Skill 1'
@@ -150,6 +133,16 @@ export class Profile extends Component {
               label='Skill 2'
               handleChange={this.handleChange}
             />
+            <div className='Profile--div--flex'>
+              <label htmlFor='Skill 3'>Skill 3</label>
+              <input
+                name='Skill 3'
+                value={this.state['skill 3']}
+                placeholder='Additional skill - max 20 characters'
+                maxLength='20'
+                onChange={this.handleChange}
+              />
+            </div>
           </div>
           <button disabled={this.checkDropdowns()} className='Profile--button'>
             Submit

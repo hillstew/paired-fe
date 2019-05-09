@@ -4,30 +4,47 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
 <section
   className="StudentCard"
 >
-  <div
-    className="StudentCard--div--cols"
+  <h3
+    className="StudentCard--header"
   >
-    <h3>
-      Hillary
-    </h3>
+    Hillary
+     (
+    she/her
+    )
+  </h3>
+  <div
+    className="StudentCard--profile"
+  >
     <img
       alt="Hillary"
+      className="StudentCard--image"
       src="http://www.image.com/hill.jpeg"
     />
-    <p
-      className="StudentCard-pronouns"
+    <div
+      className="StudentCard--skills-div"
     >
-      Pronouns: 
-      she/her
-    </p>
-    <p
-      className="StudentCard-skills"
-    >
-      Skills: 
-      react
-       & 
-      redux
-    </p>
+      <p
+        className="StudentCard--skills-p"
+      >
+        Skills
+      </p>
+      <ul
+        className="StudentCard--ul"
+      >
+        <li
+          className="StudentCard-li"
+          key="0"
+        >
+          react
+        </li>
+        <li
+          className="StudentCard-li"
+          key="1"
+        >
+          redux
+        </li>
+      </ul>
+    </div>
   </div>
   <div
     className="StudentCard--div--rows"
@@ -44,7 +61,7 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
         id="morning"
         onClick={[Function]}
       >
-        Book It
+        Book
       </button>
     </div>
     <div>
@@ -59,7 +76,7 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
         id="lunch"
         onClick={[Function]}
       >
-        Book It
+        Book
       </button>
     </div>
     <div>
@@ -74,7 +91,7 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
         id="afternoon"
         onClick={[Function]}
       >
-        Book It
+        Book
       </button>
     </div>
   </div>
@@ -85,30 +102,47 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
 <section
   className="StudentCard"
 >
-  <div
-    className="StudentCard--div--cols"
+  <h3
+    className="StudentCard--header"
   >
-    <h3>
-      Hillary
-    </h3>
+    Hillary
+     (
+    she/her
+    )
+  </h3>
+  <div
+    className="StudentCard--profile"
+  >
     <img
       alt="Hillary"
+      className="StudentCard--image"
       src="http://www.image.com/hill.jpeg"
     />
-    <p
-      className="StudentCard-pronouns"
+    <div
+      className="StudentCard--skills-div"
     >
-      Pronouns: 
-      she/her
-    </p>
-    <p
-      className="StudentCard-skills"
-    >
-      Skills: 
-      react
-       & 
-      redux
-    </p>
+      <p
+        className="StudentCard--skills-p"
+      >
+        Skills
+      </p>
+      <ul
+        className="StudentCard--ul"
+      >
+        <li
+          className="StudentCard-li"
+          key="0"
+        >
+          react
+        </li>
+        <li
+          className="StudentCard-li"
+          key="1"
+        >
+          redux
+        </li>
+      </ul>
+    </div>
   </div>
   <div
     className="StudentCard--div--rows"
@@ -151,30 +185,47 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
 <section
   className="StudentCard"
 >
-  <div
-    className="StudentCard--div--cols"
+  <h3
+    className="StudentCard--header"
   >
-    <h3>
-      Hillary
-    </h3>
+    Hillary
+     (
+    she/her
+    )
+  </h3>
+  <div
+    className="StudentCard--profile"
+  >
     <img
       alt="Hillary"
+      className="StudentCard--image"
       src="http://www.image.com/hill.jpeg"
     />
-    <p
-      className="StudentCard-pronouns"
+    <div
+      className="StudentCard--skills-div"
     >
-      Pronouns: 
-      she/her
-    </p>
-    <p
-      className="StudentCard-skills"
-    >
-      Skills: 
-      react
-       & 
-      redux
-    </p>
+      <p
+        className="StudentCard--skills-p"
+      >
+        Skills
+      </p>
+      <ul
+        className="StudentCard--ul"
+      >
+        <li
+          className="StudentCard-li"
+          key="0"
+        >
+          react
+        </li>
+        <li
+          className="StudentCard-li"
+          key="1"
+        >
+          redux
+        </li>
+      </ul>
+    </div>
   </div>
   <div
     className="StudentCard--div--rows"
@@ -201,7 +252,7 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
         id="lunch"
         onClick={[Function]}
       >
-        Book It
+        Book
       </button>
     </div>
     <div>

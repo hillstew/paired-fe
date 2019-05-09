@@ -111,7 +111,8 @@ export const createUser = ({
   pronouns,
   slack,
   skill1,
-  skill2
+  skill2,
+  skill3
 }) => ({
   query: `mutation {
     user: createUser(
@@ -124,7 +125,7 @@ export const createUser = ({
         program: "${program}"
         pronouns: "${pronouns}"
         slack: "${slack}"
-        skills: ["${skill1}", "${skill2}"]
+        skills: ["${skill1}", "${skill2}", "${skill3}"]
       }
     ) {
       name

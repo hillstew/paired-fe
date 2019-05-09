@@ -17,7 +17,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
       <label
         htmlFor="name"
       >
-        Provide your name
+        Name
         <span>
           *
         </span>
@@ -28,9 +28,21 @@ exports[`Profile Profile component should match the snapshot 1`] = `
         value="Hillary"
       />
       <label
+        htmlFor="Pronouns"
+      >
+        Pronouns
+      </label>
+      <input
+        label="Pronouns"
+        name="pronouns"
+        onChange={[Function]}
+        placeholder="e.g. she/her, he/him, they/them, etc."
+        value=""
+      />
+      <label
         htmlFor="email"
       >
-        Provide your email
+        Email
         <span>
           *
         </span>
@@ -43,7 +55,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
       <label
         htmlFor="slack"
       >
-        Provide your slack handle
+        Slack handle
         <span>
           *
         </span>
@@ -55,20 +67,6 @@ exports[`Profile Profile component should match the snapshot 1`] = `
         value=""
       />
     </div>
-    <Dropdown
-      handleChange={[Function]}
-      label="Pronouns"
-      options={
-        Array [
-          "she/her",
-          "he/him",
-          "they/them",
-          "ze/zir",
-          "prefer not to answer",
-        ]
-      }
-      required={true}
-    />
     <Dropdown
       handleChange={[Function]}
       label="Program"
@@ -95,7 +93,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
       required={true}
     />
     <h4>
-      Select skills that you feel comfortable helping others with (optional)
+      Provide skills you can help others with (optional)
     </h4>
     <Dropdown
       handleChange={[Function]}
@@ -145,6 +143,22 @@ exports[`Profile Profile component should match the snapshot 1`] = `
         ]
       }
     />
+    <div
+      className="Profile--div--flex"
+    >
+      <label
+        htmlFor="Skill 3"
+      >
+        Skill 3
+      </label>
+      <input
+        maxLength="20"
+        name="Skill 3"
+        onChange={[Function]}
+        placeholder="Additional skill - max 20 characters"
+        value=""
+      />
+    </div>
   </div>
   <button
     className="Profile--button"
