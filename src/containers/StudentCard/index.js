@@ -8,6 +8,16 @@ export class StudentCard extends Component {
     this.props.history.push(`/confirm/${id}`);
   };
 
+  createList = skills => {
+    return skills.map((skill, i) => {
+      return (
+        <li key={i} className='StudentCard-li'>
+          {skill}
+        </li>
+      );
+    });
+  };
+
   render() {
     const {
       id,
@@ -22,13 +32,15 @@ export class StudentCard extends Component {
     const { user } = this.props;
     return (
       <section className='StudentCard'>
-        <div className='StudentCard--div--cols'>
-          <h3>{name}</h3>
-          <img src={image} alt={name} />
-          <p className='StudentCard-pronouns'>Pronouns: {pronouns}</p>
-          <p className='StudentCard-skills'>
-            Skills: {skills[0]} & {skills[1]}
-          </p>
+        <h3 className='StudentCard--header'>
+          {name} ({pronouns})
+        </h3>
+        <div className='StudentCard--profile'>
+          <img src={image} alt={name} className='StudentCard--image' />
+          <div className='StudentCard--skills-div'>
+            <p className='StudentCard--skills-p'>Skills</p>
+            <ul className='StudentCard--ul'>{this.createList(skills)}</ul>
+          </div>
         </div>
         <div className='StudentCard--div--rows'>
           <div>
@@ -39,7 +51,7 @@ export class StudentCard extends Component {
                 id='morning'
                 onClick={() => this.handleClick(morningId)}
                 disabled={id === user.id}>
-                Book It
+                Book
               </button>
             )}
             {!morningId && <p>NOT AVAILABLE</p>}
@@ -52,7 +64,7 @@ export class StudentCard extends Component {
                 id='lunch'
                 onClick={() => this.handleClick(lunchId)}
                 disabled={id === user.id}>
-                Book It
+                Book
               </button>
             )}
             {!lunchId && <p>NOT AVAILABLE</p>}
@@ -65,7 +77,7 @@ export class StudentCard extends Component {
                 id='afternoon'
                 onClick={() => this.handleClick(afternoonId)}
                 disabled={id === user.id}>
-                Book It
+                Book
               </button>
             )}
             {!afternoonId && <p>NOT AVAILABLE</p>}
@@ -93,5 +105,5 @@ StudentCard.propTypes = {
   history: PropTypes.object,
   setPairingId: PropTypes.func,
   student: PropTypes.object,
-  user: PropTypes.object,
+  user: PropTypes.object
 };
