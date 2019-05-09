@@ -51,7 +51,7 @@ export class StudentCard extends Component {
                 id='morning'
                 onClick={() => this.handleClick(morningId)}
                 disabled={id === user.id}>
-                Book
+                Book Pairing
               </button>
             )}
             {!morningId && <p>NOT AVAILABLE</p>}
@@ -64,7 +64,7 @@ export class StudentCard extends Component {
                 id='lunch'
                 onClick={() => this.handleClick(lunchId)}
                 disabled={id === user.id}>
-                Book
+                Book Pairing
               </button>
             )}
             {!lunchId && <p>NOT AVAILABLE</p>}
@@ -77,7 +77,7 @@ export class StudentCard extends Component {
                 id='afternoon'
                 onClick={() => this.handleClick(afternoonId)}
                 disabled={id === user.id}>
-                Book
+                Book Pairing
               </button>
             )}
             {!afternoonId && <p>NOT AVAILABLE</p>}
