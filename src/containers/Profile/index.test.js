@@ -14,7 +14,7 @@ describe('Profile', () => {
       image: 'https://avatars1.githubusercontent.com/u/49459620?v=4',
       name: 'Hillary'
     };
-    
+
     beforeEach(() => {
       wrapper = shallow(<Profile {...mockProps} />);
       window.fetch = jest.fn();
@@ -34,7 +34,8 @@ describe('Profile', () => {
         slack: '',
         submitted: false,
         'skill 1': '',
-        'skill 2': ''
+        'skill 2': '',
+        'skill 3': ''
       };
       expect(wrapper.state()).toEqual(expected);
     });
@@ -75,5 +76,5 @@ describe('Profile', () => {
       mappedProps.createUser({}, []);
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     });
-  })
+  });
 });
