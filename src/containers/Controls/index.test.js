@@ -4,6 +4,7 @@ import { Controls, mapStateToProps, mapDispatchToProps } from './index';
 import { mockAvailPairings } from '../../mockData';
 import { setError, setAvailPairings } from '../../actions';
 import * as helpers from '../../helpers';
+import MockDate from 'mockdate';
 
 describe('Controls', () => {
   describe('Controls component', () => {
@@ -20,6 +21,7 @@ describe('Controls', () => {
     const mockModule = 4;
 
     beforeEach(() => {
+      MockDate.set('5/8/2019');
       wrapper = shallow(<Controls {...mockProps} />);
       helpers.getDatesToDisplay = jest.fn(() => [
         'Mon Apr 15 2019',

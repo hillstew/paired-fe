@@ -51,6 +51,8 @@ export default class ConfirmCard extends Component {
           name='notes'
           value={this.state.notes}
           onChange={this.handleChange}
+          autoFocus={true}
+          className='ConfirmCard--input'
         />
         <div className='ConfirmCard--div-buttons'>
           <button

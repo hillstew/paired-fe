@@ -61,7 +61,7 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
         id="morning"
         onClick={[Function]}
       >
-        Book
+        Book Pairing
       </button>
     </div>
     <div>
@@ -76,14 +76,14 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
         id="lunch"
         onClick={[Function]}
       >
-        Book
+        Book Pairing
       </button>
     </div>
     <div>
       <p
         className="StudentCard-time-text"
       >
-        4:00 - 4:50 p.m.
+        4:10 - 5:00 p.m.
       </p>
       <button
         className="StudentCard--btn"
@@ -91,7 +91,7 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
         id="afternoon"
         onClick={[Function]}
       >
-        Book
+        Book Pairing
       </button>
     </div>
   </div>
@@ -171,7 +171,7 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
       <p
         className="StudentCard-time-text"
       >
-        4:00 - 4:50 p.m.
+        4:10 - 5:00 p.m.
       </p>
       <p>
         NOT AVAILABLE
@@ -252,14 +252,14 @@ exports[`StudentCard StudentCard component should match the snapshot when the st
         id="lunch"
         onClick={[Function]}
       >
-        Book
+        Book Pairing
       </button>
     </div>
     <div>
       <p
         className="StudentCard-time-text"
       >
-        4:00 - 4:50 p.m.
+        4:10 - 5:00 p.m.
       </p>
       <p>
         NOT AVAILABLE

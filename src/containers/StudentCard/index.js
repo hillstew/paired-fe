@@ -70,7 +70,7 @@ export class StudentCard extends Component {
             {!lunchId && <p>NOT AVAILABLE</p>}
           </div>
           <div>
-            <p className='StudentCard-time-text'>4:00 - 4:50 p.m.</p>
+            <p className='StudentCard-time-text'>4:10 - 5:00 p.m.</p>
             {afternoonId && (
               <button
                 className='StudentCard--btn'

@@ -5,6 +5,7 @@ exports[`Dropdown should match the snapshot 1`] = `
   className="Dropdown--div"
 >
   <label
+    className="Dropdown--label"
     htmlFor="Module"
   >
     Module
