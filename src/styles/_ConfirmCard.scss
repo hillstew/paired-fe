@@ -1,27 +1,30 @@
 .ConfirmCard {
   font-family: $font-medium;
-  button {
-    @include button-style();
-    background-color: $color-primary;
-    font-family: $font-medium;
-    height: 30px;
-    width: 200px;
-    margin: 5px;
-  }
+}
 
-  input {
-    display: block;
-    margin: 15px auto;
-    width: 250px;
-  }
+.ConfirmCard--button--confirm,
+.ConfirmCard--button--cancel {
+  @include button-style();
+  background-color: $color-primary;
+  font-family: $font-medium;
+  height: 30px;
+  width: 200px;
+  margin: 5px;
+}
 
-  .ConfirmCard--div-buttons {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
+.ConfirmCard--input {
+  display: block;
+  margin: 15px auto;
+  width: 250px;
+  outline: none;
+}
 
-  .ConfirmCard--button--cancel {
-    background-color: $color-accent;
-  }
+.ConfirmCard--div-buttons {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.ConfirmCard--button--cancel {
+  background-color: $color-accent;
 }

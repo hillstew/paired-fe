@@ -20,6 +20,8 @@ exports[`ConfirmCard should match the snapshot 1`] = `
     What would you like to pair on?
   </label>
   <input
+    autoFocus={true}
+    className="ConfirmCard--input"
     name="notes"
     onChange={[Function]}
     value=""
@@ -63,6 +65,8 @@ exports[`ConfirmCard should match the snapshot if the user has an opening alread
     What would you like to pair on?
   </label>
   <input
+    autoFocus={true}
+    className="ConfirmCard--input"
     name="notes"
     onChange={[Function]}
     value=""

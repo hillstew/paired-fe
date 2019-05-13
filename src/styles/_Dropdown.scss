@@ -1,18 +1,18 @@
 .Dropdown--div {
-
   display: flex;
   flex-direction: column;
   margin: 10px;
+}
 
-  label {
-    font-family: $font-medium;
-    margin-bottom: 2px;
-    padding-left: 4px;
-    text-align: left;
-  }
+.Dropdown--label {
+  font-family: $font-medium;
+  margin-bottom: 2px;
+  padding-left: 4px;
+  text-align: left;
+}
 
-  select {
-    font-family: $font-light;
-    color: $color-secondary;
-  }
+.Dropdown--select {
+  font-family: $font-light;
+  color: $color-secondary;
+  outline: none;
 }

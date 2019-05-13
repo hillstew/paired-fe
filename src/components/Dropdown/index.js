@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export const Dropdown = ({ options, label, handleChange, required }) => {
   return (
     <div className='Dropdown--div'>
-      <label htmlFor={label}>
+      <label htmlFor={label} className='Dropdown--label'>
         {label}
         {required && <span>*</span>}
       </label>

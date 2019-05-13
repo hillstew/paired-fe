@@ -23,8 +23,8 @@ export class Profile extends Component {
   }
 
   checkDropdowns = () => {
-    const { program, module, email, name, pronouns, slack } = this.state;
-    return !program || !module || !email || !name || !pronouns || !slack;
+    const { program, module, email, name, slack } = this.state;
+    return !program || !module || !email || !name || !slack;
   };
 
   handleChange = event => {
@@ -95,6 +95,7 @@ export class Profile extends Component {
                 name='pronouns'
                 onChange={this.handleChange}
                 placeholder='e.g. she/her, he/him, they/them, etc.'
+                maxLength='10'
               />
               <label htmlFor='email'>
                 Email<span>*</span>
