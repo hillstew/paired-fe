@@ -5,6 +5,7 @@
   font-family: $font-medium;
   font-size: 1.2rem;
   text-transform: uppercase;
+  box-shadow: $heavy-shadow;
 }
 
 .Header--link,
@@ -28,6 +29,7 @@
 }
 
 .Header--button--signout {
+  @include button-style();
   background-color: $color-primary;
   border-radius: 0;
   box-shadow: none;
@@ -37,6 +39,7 @@
   height: 27px;
   width: 91px;
   padding: 0;
+  margin-left: 0;
   margin-right: 20px;
   text-transform: uppercase;
   color: $color-secondary;

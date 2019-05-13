@@ -4,7 +4,9 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
 <section
   className="Availability"
 >
-  <h3>
+  <h3
+    className="h3"
+  >
     Please set when you are available to give help to others
   </h3>
   <table
@@ -33,7 +35,7 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="0"
             onClick={[Function]}
           >
@@ -42,7 +44,7 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="1"
             onClick={[Function]}
           >
@@ -51,7 +53,7 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="2"
             onClick={[Function]}
           >
@@ -67,7 +69,7 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="3"
             onClick={[Function]}
           >
@@ -76,7 +78,7 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="4"
             onClick={[Function]}
           >
@@ -85,7 +87,7 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="5"
             onClick={[Function]}
           >
@@ -101,7 +103,7 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="6"
             onClick={[Function]}
           >
@@ -110,7 +112,7 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="7"
             onClick={[Function]}
           >
@@ -119,7 +121,7 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="8"
             onClick={[Function]}
           >
@@ -135,7 +137,7 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="9"
             onClick={[Function]}
           >
@@ -144,7 +146,7 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="10"
             onClick={[Function]}
           >
@@ -153,7 +155,7 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="11"
             onClick={[Function]}
           >
@@ -169,7 +171,7 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="12"
             onClick={[Function]}
           >
@@ -178,7 +180,7 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="13"
             onClick={[Function]}
           >
@@ -187,7 +189,7 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="14"
             onClick={[Function]}
           >
@@ -216,7 +218,9 @@ exports[`Availability should match the snapshot when the path is /set-availabili
 <section
   className="Availability"
 >
-  <h3>
+  <h3
+    className="h3"
+  >
     Please set when you are available to give help to others
   </h3>
   <table
@@ -245,7 +249,7 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="0"
             onClick={[Function]}
           >
@@ -254,7 +258,7 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="1"
             onClick={[Function]}
           >
@@ -263,7 +267,7 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="2"
             onClick={[Function]}
           >
@@ -279,7 +283,7 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="3"
             onClick={[Function]}
           >
@@ -288,7 +292,7 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="4"
             onClick={[Function]}
           >
@@ -297,7 +301,7 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="5"
             onClick={[Function]}
           >
@@ -313,7 +317,7 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="6"
             onClick={[Function]}
           >
@@ -322,7 +326,7 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="7"
             onClick={[Function]}
           >
@@ -331,7 +335,7 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="8"
             onClick={[Function]}
           >
@@ -347,7 +351,7 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="9"
             onClick={[Function]}
           >
@@ -356,7 +360,7 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="10"
             onClick={[Function]}
           >
@@ -365,7 +369,7 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="11"
             onClick={[Function]}
           >
@@ -381,7 +385,7 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="12"
             onClick={[Function]}
           >
@@ -390,7 +394,7 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="13"
             onClick={[Function]}
           >
@@ -399,7 +403,7 @@ exports[`Availability should match the snapshot when the path is /set-availabili
         </td>
         <td>
           <button
-            className="button--false"
+            className="button--availability button--false"
             key="14"
             onClick={[Function]}
           >

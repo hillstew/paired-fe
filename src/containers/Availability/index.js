@@ -49,7 +49,7 @@ export class Availability extends Component {
     return (
       <button
         key={i}
-        className={'button--' + availability}
+        className={'button--availability button--' + availability}
         onClick={event => this.handleClick(event, i)}>
         {availability ? 'available' : 'unavailable'}
       </button>
@@ -61,7 +61,7 @@ export class Availability extends Component {
     const { path } = this.props.match;
     return (
       <section className='Availability'>
-        <h3>Please set when you are available to give help to others</h3>
+        <h3 className='h3'>Please set when you are available to give help to others</h3>
         <table className='Availability--table'>
           <thead>
             <tr>
