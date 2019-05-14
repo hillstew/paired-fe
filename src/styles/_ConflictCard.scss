@@ -1,8 +1,13 @@
-button {
+.ConflictCard--button {
   @include button-style();
   background-color: $color-primary;
   font-family: $font-medium;
   height: 30px;
   margin: 5px;
   width: 200px;
+}
+
+.ConflictCard--button--schedule {
+  @extend .ConflictCard--button;
+  background-color: $color-accent;
 }
