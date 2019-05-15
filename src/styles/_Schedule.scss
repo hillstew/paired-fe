@@ -1,38 +1,66 @@
-.Schedule {
-  .Schedule-h2 {
-    color: $color-secondary;
+.Schedule--h2 {
+  color: $color-secondary;
+  font-family: $font-bold;
+  margin-left: 20px;
+  text-align: left;
+
+  span {
     font-family: $font-bold;
-    margin-left: 20px;
-    text-align: left;
-
-    span {
-      font-family: $font-bold;
-    }
   }
+}
 
-  .ScheduleCards--div {
-    display: flex;
-    justify-content: space-evenly;
+.ScheduleCards--div {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 
-    h2 {
-      color: $color-secondary;
-      font-family: $font-medium;
-      text-transform: uppercase;
-    }
+}
+
+.ScheduleCards--h2 {
+  color: $color-secondary;
+  font-family: $font-medium;
+  text-transform: uppercase;
+}
+
+.Schedule--edit-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: top;
+  cursor: pointer;
+  background-image: url('../images/edit.svg');
+  background-position: center;
+  transition-duration: .25s;
+  
+  &:hover {
+    background-image: url('../images/edithover.svg');
+    transition-duration: .25s;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Schedule--h2,
+  .ScheduleCards--h2 {
+    font-size: 1.2rem;
   }
 
   .Schedule--edit-icon {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    vertical-align: top;
-    cursor: pointer;
-    background-image: url('../images/edit.svg');
-    transition-duration: .25s;
-    
-    &:hover {
-      background-image: url('../images/edithover.svg');
-      transition-duration: .25s;
-    }
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .Schedule--h2,
+  .ScheduleCards--h2 {
+    font-size: 1rem;
+  }
+
+  .Schedule--h2 {
+    margin-left: 13px;
+  }
+
+  .Schedule--edit-icon {
+    vertical-align: initial;
   }
 }
