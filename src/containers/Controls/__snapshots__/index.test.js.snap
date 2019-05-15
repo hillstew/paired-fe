@@ -4,7 +4,9 @@ exports[`Controls Controls component should match the snapshot 1`] = `
 <div
   className="Controls"
 >
-  <h2>
+  <h2
+    className="Controls--h2"
+  >
     Book a Pairing
   </h2>
   <section

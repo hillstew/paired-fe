@@ -5,7 +5,7 @@ exports[`Schedule Schedule component should match the snapshot 1`] = `
   className="Schedule"
 >
   <h2
-    className="Schedule-h2"
+    className="Schedule--h2"
   >
     <span>
       Hillary
@@ -23,7 +23,9 @@ exports[`Schedule Schedule component should match the snapshot 1`] = `
     className="ScheduleCards--div"
   >
     <div>
-      <h2>
+      <h2
+        className="ScheduleCards--h2"
+      >
         Giving help
       </h2>
       <TemplateCard
@@ -31,7 +33,9 @@ exports[`Schedule Schedule component should match the snapshot 1`] = `
       />
     </div>
     <div>
-      <h2>
+      <h2
+        className="ScheduleCards--h2"
+      >
         Receiving help
       </h2>
       <TemplateCard
@@ -39,7 +43,9 @@ exports[`Schedule Schedule component should match the snapshot 1`] = `
       />
     </div>
     <div>
-      <h2>
+      <h2
+        className="ScheduleCards--h2"
+      >
         Open to pair
          
         <div

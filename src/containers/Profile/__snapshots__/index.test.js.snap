@@ -5,7 +5,9 @@ exports[`Profile Profile component should match the snapshot 1`] = `
   className="Profile--form"
   onSubmit={[Function]}
 >
-  <h2>
+  <h2
+    className="Profile--h2"
+  >
     Please complete your profile
   </h2>
   <div
@@ -23,6 +25,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
         </span>
       </label>
       <input
+        className="Profile--input"
         name="name"
         onChange={[Function]}
         value="Hillary"
@@ -33,6 +36,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
         Pronouns
       </label>
       <input
+        className="Profile--input"
         label="Pronouns"
         maxLength="10"
         name="pronouns"
@@ -49,6 +53,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
         </span>
       </label>
       <input
+        className="Profile--input"
         name="email"
         onChange={[Function]}
         value="Hill@gmail.com"
@@ -62,6 +67,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
         </span>
       </label>
       <input
+        className="Profile--input"
         name="slack"
         onChange={[Function]}
         placeholder="@"
@@ -69,6 +75,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
       />
     </div>
     <Dropdown
+      className="Profile--Dropdown"
       handleChange={[Function]}
       label="Program"
       options={
@@ -80,6 +87,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
       required={true}
     />
     <Dropdown
+      className="Profile--Dropdown"
       handleChange={[Function]}
       label="Module"
       options={
@@ -97,6 +105,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
       Provide skills you can help others with (optional)
     </h4>
     <Dropdown
+      className="Profile--Dropdown"
       handleChange={[Function]}
       label="Skill 1"
       options={
@@ -121,6 +130,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
       }
     />
     <Dropdown
+      className="Profile--Dropdown"
       handleChange={[Function]}
       label="Skill 2"
       options={
@@ -153,6 +163,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
         Skill 3
       </label>
       <input
+        className="Profile--input"
         maxLength="20"
         name="Skill 3"
         onChange={[Function]}
