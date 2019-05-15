@@ -8,27 +8,40 @@ exports[`ScheduleCard should match the snapshot when there are no notes 1`] = `
     className="ScheduleCard--date"
   >
     Thu Apr 18 2019
-     at 
+  </p>
+  <p
+    className="ScheduleCard--time"
+  >
     8:00 - 8:50 a.m.
   </p>
-  <h3>
+  <h3
+    className="ScheduleCard--name"
+  >
     Tiffany
   </h3>
-  <p>
+  <p
+    className="ScheduleCard--p"
+  >
     Pronouns: 
     she/her
   </p>
-  <p>
+  <p
+    className="ScheduleCard--p"
+  >
     Slack: 
     @tiffany
   </p>
-  <p>
+  <p
+    className="ScheduleCard--p"
+  >
     Program: 
     FE
      Mod 
     4
   </p>
-  <p>
+  <p
+    className="ScheduleCard--p"
+  >
     Notes: 
     no notes
   </p>
@@ -43,27 +56,40 @@ exports[`ScheduleCard should match the snapshot when there are notes 1`] = `
     className="ScheduleCard--date"
   >
     Thu Apr 18 2019
-     at 
+  </p>
+  <p
+    className="ScheduleCard--time"
+  >
     8:00 - 8:50 a.m.
   </p>
-  <h3>
+  <h3
+    className="ScheduleCard--name"
+  >
     Tiffany
   </h3>
-  <p>
+  <p
+    className="ScheduleCard--p"
+  >
     Pronouns: 
     she/her
   </p>
-  <p>
+  <p
+    className="ScheduleCard--p"
+  >
     Slack: 
     @tiffany
   </p>
-  <p>
+  <p
+    className="ScheduleCard--p"
+  >
     Program: 
     FE
      Mod 
     4
   </p>
-  <p>
+  <p
+    className="ScheduleCard--p"
+  >
     Notes: 
     Help with JSFun problemset
   </p>

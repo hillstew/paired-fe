@@ -88,3 +88,42 @@
     line-height: 1.9;
   }
 }
+
+@media screen and (max-width: 830px) {
+  .StudentCard {
+    grid-template-columns: 480px;
+    grid-template-rows: 36px 92px 92px;
+    width: 512px;
+  }
+
+  .StudentCard--header {
+    text-align: center;
+  }
+  
+  .StudentCard--profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column: 1/2;
+  }
+
+  .StudentCard--image {
+    margin: 0;
+    justify-self: right;
+  }
+
+  .StudentCard--div--rows {
+    grid-column: 1/2;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .StudentCard {
+    grid-template-columns: 270px;
+    grid-template-rows: 36px 112px 250px;
+    width: 302px;
+  }
+
+  .StudentCard--div--rows {
+    flex-direction: column;
+  }
+}

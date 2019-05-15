@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const Dropdown = ({ options, label, handleChange, required }) => {
+export const Dropdown = ({ options, label, handleChange, required, className }) => {
+  const conditionalClassName = className || 'Dropdown--select';
   return (
     <div className='Dropdown--div'>
       <label htmlFor={label} className='Dropdown--label'>
@@ -9,7 +10,7 @@ export const Dropdown = ({ options, label, handleChange, required }) => {
         {required && <span>*</span>}
       </label>
       <select
-        className='Dropdown--select'
+        className={conditionalClassName}
         name={label}
         onChange={event => handleChange(event)}>
         <option value=''>Please choose an option</option>

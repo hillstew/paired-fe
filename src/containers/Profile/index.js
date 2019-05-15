@@ -81,15 +81,21 @@ export class Profile extends Component {
     if (!this.state.submitted) {
       return (
         <form onSubmit={this.handleSubmit} className='Profile--form'>
-          <h2>Please complete your profile</h2>
+          <h2 className='Profile--h2'>Please complete your profile</h2>
           <div className='Profile--div'>
             <div className='Profile--div--flex'>
               <label htmlFor='name'>
                 Name<span>*</span>
               </label>
-              <input value={name} name='name' onChange={this.handleChange} />
+              <input
+                className='Profile--input'
+                value={name}
+                name='name'
+                onChange={this.handleChange}
+              />
               <label htmlFor='Pronouns'>Pronouns</label>
               <input
+                className='Profile--input'
                 value={pronouns}
                 label='Pronouns'
                 name='pronouns'
@@ -100,11 +106,17 @@ export class Profile extends Component {
               <label htmlFor='email'>
                 Email<span>*</span>
               </label>
-              <input value={email} name='email' onChange={this.handleChange} />
+              <input
+                className='Profile--input'
+                value={email}
+                name='email'
+                onChange={this.handleChange}
+              />
               <label htmlFor='slack'>
                 Slack handle<span>*</span>
               </label>
               <input
+                className='Profile--input'
                 value={slack}
                 name='slack'
                 onChange={this.handleChange}
@@ -112,12 +124,14 @@ export class Profile extends Component {
               />
             </div>
             <Dropdown
+              className='Profile--Dropdown'
               options={['FE', 'BE']}
               label='Program'
               handleChange={this.handleChange}
               required={true}
             />
             <Dropdown
+              className='Profile--Dropdown'
               options={[1, 2, 3, 4, 5]}
               label='Module'
               handleChange={this.handleChange}
@@ -125,11 +139,13 @@ export class Profile extends Component {
             />
             <h4>Provide skills you can help others with (optional)</h4>
             <Dropdown
+              className='Profile--Dropdown'
               options={skills}
               label='Skill 1'
               handleChange={this.handleChange}
             />
             <Dropdown
+              className='Profile--Dropdown'
               options={skills}
               label='Skill 2'
               handleChange={this.handleChange}
@@ -137,6 +153,7 @@ export class Profile extends Component {
             <div className='Profile--div--flex'>
               <label htmlFor='Skill 3'>Skill 3</label>
               <input
+                className='Profile--input'
                 name='Skill 3'
                 value={this.state['skill 3']}
                 placeholder='Additional skill - max 20 characters'

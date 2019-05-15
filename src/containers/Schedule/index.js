@@ -88,7 +88,7 @@ export class Schedule extends Component {
       <div className='Schedule'>
         {!shouldRedirect && (
           <Fragment>
-            <h2 className='Schedule-h2'>
+            <h2 className='Schedule--h2'>
               <span>{user.name}</span>, here is your pairing schedule{' '}
               <span role='img' aria-label='rocket ship emoji'>
                 🚀
@@ -96,15 +96,15 @@ export class Schedule extends Component {
             </h2>
             <div className='ScheduleCards--div'>
               <div>
-                <h2>Giving help</h2>
+                <h2 className='ScheduleCards--h2'>Giving help</h2>
                 {this.filterPairerBookings()}
               </div>
               <div>
-                <h2>Receiving help</h2>
+                <h2 className='ScheduleCards--h2'>Receiving help</h2>
                 {this.filterPaireeBookings()}
               </div>
               <div>
-                <h2>
+                <h2 className='ScheduleCards--h2'>
                   Open to pair{' '}
                   <div
                     className='Schedule--edit-icon'

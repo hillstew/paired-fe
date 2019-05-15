@@ -53,7 +53,7 @@ export class App extends Component {
                   path='/'
                   render={() => (
                     <div>
-                      <h2>
+                      <h2 className='App--h2'>
                         Welcome {user.name}{' '}
                         <span role='img' aria-label='hand waving emoji'>
                           👋

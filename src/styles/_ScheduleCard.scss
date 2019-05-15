@@ -5,35 +5,51 @@
   margin: 10px 0;
   padding: 0 15px;
   text-align: left;
-  max-width: 407px;
+  width: 300px;
   word-break: break-all;
+  color: $color-secondary;
+}
 
-  h3 {
-    color: $color-secondary;
-  }
+.ScheduleCard--name {
+  color: $color-secondary;
+}
 
-  p {
-    color: $color-secondary;
-    font-family: $font-light;
-    margin: 10px 0;
-  }
+.ScheduleCard--p {
+  color: $color-secondary;
+  font-family: $font-light;
+  margin: 10px 0;
+}
 
-  button {
-    @include button-style();
-    background-color: $color-secondary;
-    font-family: $font-medium;
-    font-size: 12px;
-    display: block;
-    margin: 10px auto;
-    height: 25px;
-    width: 80px;
-    color: $color-accent;
-  }
+.ScheduleCard--button {
+  @include button-style();
+  background-color: $color-secondary;
+  font-family: $font-medium;
+  font-size: 12px;
+  display: block;
+  margin: 10px auto;
+  height: 25px;
+  width: 80px;
+  color: $color-accent;
+}
 
-  .ScheduleCard--date {
-    background-color: $color-accent;
-    font-family: $font-medium;
-    padding: 5px;
-    text-align: center;
-  }
+.ScheduleCard--date {
+  background-color: $color-accent;
+  font-family: $font-medium;
+  padding: 5px;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 5px;
+}
+
+.ScheduleCard--time {
+  background-color: $color-accent;
+  font-family: $font-medium;
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 16px;
+  margin-top: 5px;
+}
+
+.TemplateCard {
+  text-align: center;
 }

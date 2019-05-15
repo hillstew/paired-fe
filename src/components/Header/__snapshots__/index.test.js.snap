@@ -11,7 +11,9 @@ exports[`Header should match the snapshot when the user is not signed in 1`] = `
       className="Header--h1--link"
       to="/"
     >
-      <h1>
+      <h1
+        className="Header--h1"
+      >
         Paired
       </h1>
     </Link>
@@ -38,7 +40,9 @@ exports[`Header should match the snapshot when the user is signed in 1`] = `
       className="Header--h1--link"
       to="/"
     >
-      <h1>
+      <h1
+        className="Header--h1"
+      >
         Paired
       </h1>
     </Link>

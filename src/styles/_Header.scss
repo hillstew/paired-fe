@@ -8,6 +8,15 @@
   box-shadow: $heavy-shadow;
 }
 
+.Header--h1 {
+  color: $color-secondary;
+  font-family: $font-bold;
+  font-size: 2.2rem;
+  margin: 0;
+  padding-right: 20px;
+  text-transform: uppercase;
+}
+
 .Header--link,
 .Header--h1--link,
 .Header--github-link {

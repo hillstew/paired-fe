@@ -37,7 +37,7 @@ export const TemplateCard = ({ type }) => {
     default:
       break;
   }
-  return <div className="ScheduleCard">{message}</div>;
+  return <div className="ScheduleCard TemplateCard">{message}</div>;
 };
 
 TemplateCard.propTypes = {

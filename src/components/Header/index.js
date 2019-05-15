@@ -30,7 +30,7 @@ export default class Header extends Component {
       <header className='Header'>
         <div className='Header--div'>
           <Link to='/' className='Header--h1--link'>
-            <h1>Paired</h1>
+            <h1 className='Header--h1'>Paired</h1>
           </Link>
           <a
             href='https://github.com/hillstew/paired-fe/issues/new'
@@ -41,7 +41,7 @@ export default class Header extends Component {
             Submit an issue
           </a>
         </div>
-        {user.id && windowInnerWidth >= 659 && (
+        {user.id && windowInnerWidth >= 740 && (
           <div className='Header--controls'>
             <NavLink to='/schedule' className='Header--link'>
               View Schedule
@@ -54,7 +54,7 @@ export default class Header extends Component {
             </button>
           </div>
         )}
-        {user.id && windowInnerWidth < 659 && (
+        {user.id && windowInnerWidth < 740 && (
           <HamburgerMenu handleSignOut={handleSignOut} />
         )}
       </header>

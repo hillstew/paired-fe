@@ -2,7 +2,7 @@
 
 exports[`TemplateCard should match the snapshot when type is giving-help 1`] = `
 <div
-  className="ScheduleCard"
+  className="ScheduleCard TemplateCard"
 >
   <p>
     You haven't been booked yet. Check back soon. 
@@ -19,7 +19,7 @@ exports[`TemplateCard should match the snapshot when type is giving-help 1`] = `
 
 exports[`TemplateCard should match the snapshot when type is openings 1`] = `
 <div
-  className="ScheduleCard"
+  className="ScheduleCard TemplateCard"
 >
   <p>
     You have no openings. 
@@ -36,7 +36,7 @@ exports[`TemplateCard should match the snapshot when type is openings 1`] = `
 
 exports[`TemplateCard should match the snapshot when type is receiving-help 1`] = `
 <div
-  className="ScheduleCard"
+  className="ScheduleCard TemplateCard"
 >
   <p>
     Sign up to pair. Coding is better with friends. 
