@@ -57,7 +57,7 @@ export class Controls extends Component {
     const { message } = this.state;
     return (
       <div className='Controls'>
-        <h2>Book a Pairing</h2>
+        <h2 className='Controls--h2'>Book a Pairing</h2>
         <section className='Controls--section'>
           <Dropdown
             options={['FE', 'BE']}
