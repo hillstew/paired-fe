@@ -1,6 +1,6 @@
 .Profile--form {
   color: $color-secondary;
-  width: 1000px;
+  width: 320px;
   margin: 20px auto;
 
   span {
@@ -8,34 +8,37 @@
     margin-left: 3px;
   }
 
-  .Profile--div {
-    margin: auto;
-    width: 500px;
-  }
-
-  h2 {
-    font-family: $font-bold;
-    margin: 0;
-  }
-
-  .Profile--button {
-    @include button-style();
-    background-color: $color-primary;
-    font-family: $font-bold;
-    height: 40px;
-    margin: auto;
-    width: 120px;
-  }
-
-  input {
-    margin-bottom: 10px;
-    padding: 3px 5px;
-    outline: none;
-  }
-
   label {
     padding-left: 4px;
+    width: 280px;
   }
+}
+
+.Profile--div {
+  margin: auto;
+  width: 300px;
+}
+
+.Profile--h2 {
+  font-family: $font-bold;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.Profile--button {
+  @include button-style();
+  background-color: $color-primary;
+  font-family: $font-bold;
+  height: 40px;
+  margin: auto;
+  width: 120px;
+}
+
+.Profile--input {
+  margin-bottom: 10px;
+  padding: 3px 5px;
+  outline: none;
+  width: 280px;
 }
 
 .Profile--div--flex {
@@ -46,4 +49,9 @@
   padding-left: 4px;
   text-align: left;
   padding: 10px;
+}
+
+.Profile--Dropdown {
+  @extend .Dropdown--select;
+  width: 280px;
 }
