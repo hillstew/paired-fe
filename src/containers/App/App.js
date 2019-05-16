@@ -16,8 +16,25 @@ import PropTypes from 'prop-types';
 import Availability from '../Availability';
 
 export class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      windowInnerWidth: 0
+    };
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions = () => {
+    this.setState({ windowInnerWidth: window.innerWidth });
+  };
+
   componentDidMount() {
+    this.updateWindowDimensions();
     this.checkUser();
+    window.addEventListener('resize', this.updateWindowDimensions);
   }
 
   checkUser = () => {
@@ -37,9 +54,14 @@ export class App extends Component {
 
   render() {
     const { user } = this.props;
+    const { windowInnerWidth } = this.state;
     return (
       <div className='App'>
-        <Header user={user} handleSignOut={this.handleSignOut} />
+        <Header
+          user={user}
+          handleSignOut={this.handleSignOut}
+          windowInnerWidth={windowInnerWidth}
+        />
         <div>
           {user.id && (
             <React.Fragment>
@@ -47,7 +69,12 @@ export class App extends Component {
                 <Route path='/schedule' component={Schedule} />
                 <Route path='/book-pairing' component={Controls} />
                 <Route path='/confirm/:id' component={Confirmation} />
-                <Route path='/edit-availability' component={Availability} />
+                <Route
+                  path='/edit-availability'
+                  render={() => (
+                    <Availability windowInnerWidth={windowInnerWidth} />
+                  )}
+                />
                 <Route
                   exact
                   path='/'
@@ -91,13 +118,12 @@ export class App extends Component {
               />
               <Route
                 path='/set-availability'
-                render={() => <Availability />}
+                render={() => (
+                  <Availability windowInnerWidth={windowInnerWidth} />
+                )}
               />
               <Route path='/schedule' render={() => <Redirect to='/' />} />
-              <Route
-                path='/book-pairing'
-                render={() => <Redirect to='/' />}
-              />
+              <Route path='/book-pairing' render={() => <Redirect to='/' />} />
               <Route
                 render={() => (
                   <Fragment>

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -46,22 +46,33 @@ export class Availability extends Component {
   };
 
   renderButton = (availability, i) => {
+    const { windowInnerWidth } = this.props;
+    const buttonText =
+      windowInnerWidth > 560 ? ['available', 'unavailable'] : ['✓', ''];
     return (
       <button
         key={i}
         className={'button--availability button--' + availability}
-        onClick={event => this.handleClick(event, i)}>
-        {availability ? 'available' : 'unavailable'}
+        onClick={event => this.handleClick(event, i)}
+      >
+        {availability ? buttonText[0] : buttonText[1]}
       </button>
     );
   };
 
   render() {
     const { availabilities } = this.state;
-    const { path } = this.props.match;
+    const { match, windowInnerWidth } = this.props;
+    const { path } = match;
+    const rowNames =
+      windowInnerWidth > 560
+        ? ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+        : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
     return (
       <section className='Availability'>
-        <h3 className='h3'>Please set when you are available to give help to others</h3>
+        <h2 className='Availability--h2'>
+          When are you available to help to others?
+        </h2>
         <table className='Availability--table'>
           <thead>
             <tr>
@@ -73,31 +84,31 @@ export class Availability extends Component {
           </thead>
           <tbody>
             <tr>
-              <td className='row-name'>Monday</td>
+              <td className='row-name'>{rowNames[0]}</td>
               <td>{this.renderButton(availabilities[0], 0)}</td>
               <td>{this.renderButton(availabilities[1], 1)}</td>
               <td>{this.renderButton(availabilities[2], 2)}</td>
             </tr>
             <tr>
-              <td className='row-name'>Tuesday</td>
+              <td className='row-name'>{rowNames[1]}</td>
               <td>{this.renderButton(availabilities[3], 3)}</td>
               <td>{this.renderButton(availabilities[4], 4)}</td>
               <td>{this.renderButton(availabilities[5], 5)}</td>
             </tr>
             <tr>
-              <td className='row-name'>Wednesday</td>
+              <td className='row-name'>{rowNames[2]}</td>
               <td>{this.renderButton(availabilities[6], 6)}</td>
               <td>{this.renderButton(availabilities[7], 7)}</td>
               <td>{this.renderButton(availabilities[8], 8)}</td>
             </tr>
             <tr>
-              <td className='row-name'>Thursday</td>
+              <td className='row-name'>{rowNames[3]}</td>
               <td>{this.renderButton(availabilities[9], 9)}</td>
               <td>{this.renderButton(availabilities[10], 10)}</td>
               <td>{this.renderButton(availabilities[11], 11)}</td>
             </tr>
             <tr>
-              <td className='row-name'>Friday</td>
+              <td className='row-name'>{rowNames[4]}</td>
               <td>{this.renderButton(availabilities[12], 12)}</td>
               <td>{this.renderButton(availabilities[13], 13)}</td>
               <td>{this.renderButton(availabilities[14], 14)}</td>
@@ -105,24 +116,24 @@ export class Availability extends Component {
           </tbody>
         </table>
         {path === '/set-availability' && (
-          <Fragment>
+          <div className='Availability--div-buttons'>
             <button onClick={this.setAvailability} id='skip--button'>
               Skip
             </button>
             <button onClick={this.setAvailability} id='set--button'>
               Set Availability
             </button>
-          </Fragment>
+          </div>
         )}
         {path === '/edit-availability' && (
-          <Fragment>
+          <div className='Availability--div-buttons'>
             <button onClick={this.editAvailability} id='cancel--button'>
               Cancel
             </button>
             <button onClick={this.editAvailability} id='edit--button'>
               Edit Availability
             </button>
-          </Fragment>
+          </div>
         )}
       </section>
     );
@@ -144,7 +155,8 @@ Availability.propTypes = {
   location: PropTypes.object,
   match: PropTypes.object,
   deleteAvailability: PropTypes.func,
-  setAvailability: PropTypes.func
+  setAvailability: PropTypes.func,
+  windowInnerWidth: PropTypes.number
 };
 
 export default withRouter(
