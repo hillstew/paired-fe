@@ -97,7 +97,7 @@ export class App extends Component {
                 <Route
                   render={() => (
                     <Fragment>
-                      <p>Sorry, page not found.</p>
+                      <h2 className='App--h2'>Sorry, page not found.</h2>
                       <img
                         className='App--img'
                         src={notfoundsvg}

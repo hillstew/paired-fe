@@ -96,7 +96,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
           2,
           3,
           4,
-          5,
+          "Graduate",
         ]
       }
       required={true}

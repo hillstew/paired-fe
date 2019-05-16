@@ -41,16 +41,17 @@ export class Profile extends Component {
   formatUserData = () => {
     const { image, firebaseID } = this.props;
     const { module, program, name, email, pronouns, slack } = this.state;
-
+    let moduleToSave = module;
+    if (module === 'Graduate') moduleToSave = '5';
     const user = {
       name,
       email,
       image,
       firebaseID,
-      module,
       program,
       pronouns,
       slack,
+      module: moduleToSave,
       skill1: this.state['skill 1'],
       skill2: this.state['skill 2'],
       skill3: this.state['skill 3']
@@ -132,7 +133,7 @@ export class Profile extends Component {
             />
             <Dropdown
               className='Profile--Dropdown'
-              options={[1, 2, 3, 4, 5]}
+              options={[1, 2, 3, 4, 'Graduate']}
               label='Module'
               handleChange={this.handleChange}
               required={true}
