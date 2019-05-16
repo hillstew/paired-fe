@@ -96,16 +96,16 @@ export class Schedule extends Component {
             </h2>
             <div className='ScheduleCards--div'>
               <div>
-                <h2 className='ScheduleCards--h2'>Giving help</h2>
+                <h2 className='ScheduleCards--h2'>Giving Help</h2>
                 {this.filterPairerBookings()}
               </div>
               <div>
-                <h2 className='ScheduleCards--h2'>Receiving help</h2>
+                <h2 className='ScheduleCards--h2'>Receiving Help</h2>
                 {this.filterPaireeBookings()}
               </div>
               <div>
                 <h2 className='ScheduleCards--h2'>
-                  Open to pair{' '}
+                  Open to Pair{' '}
                   <div
                     className='Schedule--edit-icon'
                     onClick={() => this.setState({ shouldRedirect: true })}

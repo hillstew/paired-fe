@@ -2,12 +2,13 @@
   font-family: $font-medium;
   border: 2px solid $color-primary;
   box-shadow: $light-shadow;
-  margin: 10px 0;
-  padding: 0 15px;
+  margin: 10px;
+  padding: 0 16px;
   text-align: left;
   width: 300px;
-  word-break: break-all;
+  word-break: break-word;
   color: $color-secondary;
+  border-radius: 10px;
 }
 
 .ScheduleCard--name {
@@ -39,6 +40,7 @@
   text-align: center;
   margin-top: 16px;
   margin-bottom: 5px;
+  border-radius: 10px;
 }
 
 .ScheduleCard--time {
@@ -48,6 +50,7 @@
   text-align: center;
   margin-bottom: 16px;
   margin-top: 5px;
+  border-radius: 10px;
 }
 
 .TemplateCard {

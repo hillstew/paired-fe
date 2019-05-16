@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export const ConflictCard = ({ date, time, history }) => {
   return (
-    <div>
+    <div className='ConfirmCard'>
       <h3>
         Sorry, you have a conflict{' '}
         <span role='img' aria-label='grimacing emoji'>

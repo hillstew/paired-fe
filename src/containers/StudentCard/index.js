@@ -54,7 +54,7 @@ export class StudentCard extends Component {
                 Book Pairing
               </button>
             )}
-            {!morningId && <p>NOT AVAILABLE</p>}
+            {!morningId && <p>Not Available</p>}
           </div>
           <div>
             <p className='StudentCard-time-text'>12:00 - 12:50 p.m.</p>
@@ -67,7 +67,7 @@ export class StudentCard extends Component {
                 Book Pairing
               </button>
             )}
-            {!lunchId && <p>NOT AVAILABLE</p>}
+            {!lunchId && <p>Not Available</p>}
           </div>
           <div>
             <p className='StudentCard-time-text'>4:10 - 5:00 p.m.</p>
@@ -80,7 +80,7 @@ export class StudentCard extends Component {
                 Book Pairing
               </button>
             )}
-            {!afternoonId && <p>NOT AVAILABLE</p>}
+            {!afternoonId && <p>Not Available</p>}
           </div>
         </div>
       </section>

@@ -1,10 +1,17 @@
 .Confirmation {
-  width: 90%;
-  margin: auto;
+  color: $color-secondary;
+  padding-top: 20px;
 }
 
 .ConfirmCard {
   font-family: $font-medium;
+  border: 2px solid $color-primary;
+  box-shadow: $light-shadow;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  padding: 0 16px 16px;
 }
 
 .ConfirmCard--button--confirm,
@@ -22,6 +29,7 @@
   margin: 15px auto;
   width: 250px;
   outline: none;
+  border: 1px solid $color-secondary;
 }
 
 .ConfirmCard--div-buttons {
