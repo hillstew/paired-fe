@@ -1,8 +1,8 @@
 .Schedule--h2 {
   color: $color-secondary;
   font-family: $font-bold;
-  margin-left: 20px;
-  text-align: left;
+  margin: 20px;
+  text-align: center;
 
   span {
     font-family: $font-bold;
@@ -13,13 +13,11 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-
 }
 
 .ScheduleCards--h2 {
   color: $color-secondary;
-  font-family: $font-medium;
-  text-transform: uppercase;
+  font-family: $font-bold;
 }
 
 .Schedule--edit-icon {
@@ -35,32 +33,5 @@
   &:hover {
     background-image: url('../images/edithover.svg');
     transition-duration: .25s;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .Schedule--h2,
-  .ScheduleCards--h2 {
-    font-size: 1.2rem;
-  }
-
-  .Schedule--edit-icon {
-    width: 18px;
-    height: 18px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .Schedule--h2,
-  .ScheduleCards--h2 {
-    font-size: 1rem;
-  }
-
-  .Schedule--h2 {
-    margin-left: 13px;
-  }
-
-  .Schedule--edit-icon {
-    vertical-align: initial;
   }
 }

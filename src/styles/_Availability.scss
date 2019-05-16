@@ -1,23 +1,29 @@
 .Availability {
-  padding: 16px 48px;
+  color: $color-secondary;
 }
 
-.h3 {
-  grid-column: 1/3;
-  margin-bottom: 0;
+.Availability--h2 {
+  font-family: $font-bold;
+  margin: 20px 10px;
 }
 
 .Availability--table {
   margin: auto;
   padding: 24px 130px 24px 0;
 
+  th {
+    padding: 0 5px;
+  }
+
   td {
     width: 215px;
     height: 38px;
+    padding: 0;
   }
 
   .row-name {
-    width: 130px;
+    min-width: 130px;
+    padding: 0 5px;
   }
 }
 
@@ -59,4 +65,37 @@
 #skip--button,
 #cancel--button {
   background-color: $color-accent;
+}
+
+@media screen and (max-width: 915px) {
+  .Availability--table {
+    margin: auto;
+    padding: 24px 0px 24px;
+  }
+}
+
+@media screen and (max-width: 785px) {
+  .button--availability {
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .button--availability {
+    width: 30px;
+  }
+
+  .Availability--table {
+    .row-name {
+      min-width: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .Availability--div-buttons {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }

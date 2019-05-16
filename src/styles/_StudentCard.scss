@@ -5,9 +5,9 @@
   width: 812px;
   margin: 16px auto;
   padding: 16px;
-  background-color: $color-accent;
   box-shadow: $light-shadow;
   border-radius: 10px;
+  border: 2px solid $color-primary;
 }
 
 .StudentCard--header {
@@ -80,7 +80,6 @@
   button {
     @include button-style();
     background-color: $color-primary;
-    text-transform: uppercase;
   }
 
   p {

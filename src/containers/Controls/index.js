@@ -26,7 +26,8 @@ export class Controls extends Component {
   };
 
   handleClick = async () => {
-    const { program, module, date } = this.state;
+    let { program, module, date } = this.state;
+    if (module === 'Graduate') module = '5';
     const { setAvailPairings } = this.props;
     try {
       const body = gql.getAvailablePairings(program, parseInt(module), date);
@@ -65,7 +66,7 @@ export class Controls extends Component {
             handleChange={this.handleChange}
           />
           <Dropdown
-            options={['1', '2', '3', '4', '5']}
+            options={['1', '2', '3', '4', 'Graduate']}
             label='Module'
             handleChange={this.handleChange}
           />

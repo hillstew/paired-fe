@@ -26,7 +26,7 @@ exports[`Schedule Schedule component should match the snapshot 1`] = `
       <h2
         className="ScheduleCards--h2"
       >
-        Giving help
+        Giving Help
       </h2>
       <TemplateCard
         type="giving-help"
@@ -36,7 +36,7 @@ exports[`Schedule Schedule component should match the snapshot 1`] = `
       <h2
         className="ScheduleCards--h2"
       >
-        Receiving help
+        Receiving Help
       </h2>
       <TemplateCard
         type="receiving-help"
@@ -46,7 +46,7 @@ exports[`Schedule Schedule component should match the snapshot 1`] = `
       <h2
         className="ScheduleCards--h2"
       >
-        Open to pair
+        Open to Pair
          
         <div
           className="Schedule--edit-icon"

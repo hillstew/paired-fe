@@ -119,3 +119,8 @@ export const filterPastPairings = pairing => {
     -24 * 60 * 60 * 1000
   );
 };
+
+export const determineProgram = (program, module) => {
+  if (module === 5) return `${program} Graduate`;
+  return `${program} Mod ${module}`;
+}

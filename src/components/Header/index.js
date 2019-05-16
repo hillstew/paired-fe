@@ -1,31 +1,11 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { HamburgerMenu } from '../HamburgerMenu';
+import PropTypes from 'prop-types';
 
 export default class Header extends Component {
-  constructor() {
-    super();
-    this.state = {
-      windowInnerWidth: 0
-    };
-  }
-
-  componentDidMount() {
-    this.updateWindowDimensions();
-    window.addEventListener('resize', this.updateWindowDimensions);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowDimensions);
-  }
-
-  updateWindowDimensions = () => {
-    this.setState({ windowInnerWidth: window.innerWidth });
-  };
-
   render() {
-    const { user, handleSignOut } = this.props;
-    const { windowInnerWidth } = this.state;
+    const { user, handleSignOut, windowInnerWidth } = this.props;
     return (
       <header className='Header'>
         <div className='Header--div'>
@@ -41,7 +21,7 @@ export default class Header extends Component {
             Submit an issue
           </a>
         </div>
-        {user.id && windowInnerWidth >= 740 && (
+        {user.id && windowInnerWidth > 740 && (
           <div className='Header--controls'>
             <NavLink to='/schedule' className='Header--link'>
               View Schedule
@@ -54,10 +34,16 @@ export default class Header extends Component {
             </button>
           </div>
         )}
-        {user.id && windowInnerWidth < 740 && (
+        {user.id && windowInnerWidth <= 740 && (
           <HamburgerMenu handleSignOut={handleSignOut} />
         )}
       </header>
     );
   }
 }
+
+Header.propTypes = {
+  user: PropTypes.object,
+  handleSignOut: PropTypes.func,
+  windowInnerWidth: PropTypes.number
+};

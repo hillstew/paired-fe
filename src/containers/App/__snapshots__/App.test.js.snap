@@ -11,6 +11,7 @@ exports[`App render should match the snapshot when there is a user id 1`] = `
         "id": "abc123",
       }
     }
+    windowInnerWidth={1024}
   />
   <div>
     <Switch>
@@ -27,8 +28,8 @@ exports[`App render should match the snapshot when there is a user id 1`] = `
         path="/confirm/:id"
       />
       <Route
-        component={[Function]}
         path="/edit-availability"
+        render={[Function]}
       />
       <Route
         exact={true}
@@ -50,6 +51,7 @@ exports[`App render should match the snapshot when there is no user id 1`] = `
   <Header
     handleSignOut={[Function]}
     user={Object {}}
+    windowInnerWidth={1024}
   />
   <div>
     <Switch>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export class HamburgerMenu extends Component {
   constructor() {
@@ -60,3 +61,7 @@ export class HamburgerMenu extends Component {
     );
   }
 }
+
+HamburgerMenu.propTypes = {
+  handleSignOut: PropTypes.func
+};
