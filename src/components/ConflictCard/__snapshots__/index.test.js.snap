@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ConflictCard should match the snapshot 1`] = `
-<div>
+<div
+  className="ConfirmCard"
+>
   <h3>
     Sorry, you have a conflict
      

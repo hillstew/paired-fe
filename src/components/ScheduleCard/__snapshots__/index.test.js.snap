@@ -35,9 +35,7 @@ exports[`ScheduleCard should match the snapshot when there are no notes 1`] = `
     className="ScheduleCard--p"
   >
     Program: 
-    FE
-     Mod 
-    4
+    FE Mod 4
   </p>
   <p
     className="ScheduleCard--p"
@@ -83,9 +81,7 @@ exports[`ScheduleCard should match the snapshot when there are notes 1`] = `
     className="ScheduleCard--p"
   >
     Program: 
-    FE
-     Mod 
-    4
+    FE Mod 4
   </p>
   <p
     className="ScheduleCard--p"

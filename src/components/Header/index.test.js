@@ -6,7 +6,8 @@ describe('Header', () => {
   let wrapper;
   const mockProps = {
     user: { id: 'asdf' },
-    handleSignOut: jest.fn()
+    handleSignOut: jest.fn(),
+    windowInnerWidth: 1440
   };
 
   beforeEach(() => {
