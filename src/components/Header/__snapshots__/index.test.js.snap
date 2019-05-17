@@ -70,12 +70,10 @@ exports[`Header should match the snapshot when the user is signed in 1`] = `
     >
       Book a Pairing
     </NavLink>
-    <button
-      className="Header--button--signout"
-      onClick={[MockFunction]}
-    >
-      Sign Out
-    </button>
+    <img
+      className="Header--image"
+      onClick={[Function]}
+    />
   </div>
 </header>
 `;

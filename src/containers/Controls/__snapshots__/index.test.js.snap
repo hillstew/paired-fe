@@ -9,6 +9,16 @@ exports[`Controls Controls component should match the snapshot 1`] = `
   >
     Book a Pairing
   </h2>
+  <p
+    className="Controls--explanation"
+  >
+    Choose options to find more experienced students to pair with
+  </p>
+  <p
+    className="Controls--explanation light"
+  >
+    e.g. Mod 1 students would likely search for Mod 2 students
+  </p>
   <section
     className="Controls--section"
   >
