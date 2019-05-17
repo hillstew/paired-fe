@@ -27,16 +27,25 @@ export class Profile extends Component {
     return !program || !module || !email || !name || !slack;
   };
 
-  handleChange = event => {
-    let { value, name } = event.target;
-    name = name.toLowerCase();
-    this.setState({ [name]: value });
-  };
-
-  handleSubmit = event => {
-    event.preventDefault();
-    this.setState({ submitted: true });
-  };
+  componentDidMount() {
+    const { match, user } = this.props;
+    if (match.path === '/edit-profile') {
+      const { name, email, pronouns, slack, program, module, skills } = user;
+      let moduleToSave = module.toString();
+      if (module === 5) moduleToSave = 'Graduate';
+      this.setState({
+        name,
+        email,
+        pronouns,
+        slack,
+        program,
+        module: moduleToSave,
+        'skill 1': skills[0] || '',
+        'skill 2': skills[1] || '',
+        'skill 3': skills[2] || ''
+      });
+    }
+  }
 
   formatUserData = () => {
     const { image, firebaseID } = this.props;
@@ -59,8 +68,19 @@ export class Profile extends Component {
     return user;
   };
 
+  handleChange = event => {
+    let { value, name } = event.target;
+    name = name.toLowerCase();
+    this.setState({ [name]: value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    this.setState({ submitted: true });
+  };
+
   render() {
-    const { name, slack, email, pronouns } = this.state;
+    const { name, slack, email, pronouns, module, program } = this.state;
     const skills = [
       'grid',
       'flexbox',
@@ -130,6 +150,7 @@ export class Profile extends Component {
               label='Program'
               handleChange={this.handleChange}
               required={true}
+              selectedItem={program}
             />
             <Dropdown
               className='Profile--Dropdown'
@@ -137,6 +158,7 @@ export class Profile extends Component {
               label='Module'
               handleChange={this.handleChange}
               required={true}
+              selectedItem={module}
             />
             <h4>Provide skills you can help others with (optional)</h4>
             <Dropdown
@@ -144,12 +166,14 @@ export class Profile extends Component {
               options={skills}
               label='Skill 1'
               handleChange={this.handleChange}
+              selectedItem={this.state['skill 1']}
             />
             <Dropdown
               className='Profile--Dropdown'
               options={skills}
               label='Skill 2'
               handleChange={this.handleChange}
+              selectedItem={this.state['skill 2']}
             />
             <div className='Profile--div--flex'>
               <label htmlFor='Skill 3'>Skill 3</label>
@@ -181,13 +205,17 @@ export class Profile extends Component {
   }
 }
 
+export const mapStateToProps = state => ({
+  user: state.user
+});
+
 export const mapDispatchToProps = dispatch => ({
   createUser: (user, availabilities) =>
     dispatch(createUser(user, availabilities))
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Profile);
 
