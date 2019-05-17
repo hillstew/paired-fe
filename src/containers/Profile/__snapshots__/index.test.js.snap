@@ -67,7 +67,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
         </span>
       </label>
       <input
-        className="Profile--input"
+        className="Profile--input Profile--input-slack"
         name="slack"
         onChange={[Function]}
         placeholder="@"
@@ -85,6 +85,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
         ]
       }
       required={true}
+      selectedItem=""
     />
     <Dropdown
       className="Profile--Dropdown"
@@ -100,9 +101,10 @@ exports[`Profile Profile component should match the snapshot 1`] = `
         ]
       }
       required={true}
+      selectedItem=""
     />
     <h4>
-      Provide skills you can help others with (optional)
+      Provide skills you can help others with
     </h4>
     <Dropdown
       className="Profile--Dropdown"
@@ -128,6 +130,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
           "sinatra",
         ]
       }
+      selectedItem=""
     />
     <Dropdown
       className="Profile--Dropdown"
@@ -153,6 +156,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
           "sinatra",
         ]
       }
+      selectedItem=""
     />
     <div
       className="Profile--div--flex"
@@ -172,6 +176,9 @@ exports[`Profile Profile component should match the snapshot 1`] = `
       />
     </div>
   </div>
+  <p
+    className="Profile--message"
+  />
   <button
     className="Profile--button"
     disabled={true}

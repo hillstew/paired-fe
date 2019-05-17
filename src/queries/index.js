@@ -145,6 +145,10 @@ export const getUserByFirebaseID = id => ({
     module
     id
     image
+    pronouns
+    email
+    slack
+    skills
   }
 }`
 });
@@ -169,7 +173,7 @@ export const deletePairings = userId => ({
   }`
 });
 
-export const getPairing = (id) => ({
+export const getPairing = id => ({
   query: `{
     getPairing(id: "${id}") {
       pairer {
@@ -188,6 +192,44 @@ export const getPairing = (id) => ({
       date
       time
       id
+    }
+  }`
+});
+
+export const updateUser = ({
+  id,
+  name,
+  email,
+  module,
+  program,
+  pronouns,
+  slack,
+  skill1,
+  skill2,
+  skill3
+}) => ({
+  query: `mutation {
+    user: updateUser(
+      user: {
+        id: "${id}"
+        name: "${name}"
+        email: "${email}"
+        module: ${module}
+        program: "${program}"
+        pronouns: "${pronouns}"
+        slack: "${slack}"
+        skills: ["${skill1}", "${skill2}", "${skill3}"]
+      }
+    ) {
+      name
+      program
+      module
+      id
+      image
+      pronouns
+      email
+      slack
+      skills
     }
   }`
 });

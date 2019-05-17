@@ -21,7 +21,7 @@
 .Header--h1--link,
 .Header--github-link {
   text-decoration: none;
-  margin: auto 15px auto 0;
+  margin: auto 20px auto 0;
 }
 
 .Header--link {
@@ -34,7 +34,7 @@
 }
 
 .Header--controls {
-  margin: 18px 10px;
+  margin: 8px 20px;
 }
 
 .Header--button--signout {
@@ -72,4 +72,19 @@
   padding-left: 20px;
   align-items: flex-start;
   margin-bottom: 5px;
+}
+
+.Header--image {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  margin: auto;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.Header--dropdown {
+  @extend .HamburgerMenu--dropdown;
+  height: 81px;
+  width: 162px;
 }

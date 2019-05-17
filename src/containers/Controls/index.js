@@ -59,6 +59,12 @@ export class Controls extends Component {
     return (
       <div className='Controls'>
         <h2 className='Controls--h2'>Book a Pairing</h2>
+        <p className='Controls--explanation'>
+          Choose options to find more experienced students to pair with
+        </p>
+        <p className='Controls--explanation light'>
+          e.g. Mod 1 students would likely search for Mod 2 students
+        </p>
         <section className='Controls--section'>
           <Dropdown
             options={['FE', 'BE']}
@@ -79,7 +85,8 @@ export class Controls extends Component {
         <button
           onClick={this.handleClick}
           className='Controls--avail-btn'
-          disabled={this.checkDropdowns()}>
+          disabled={this.checkDropdowns()}
+        >
           Show Available Pairings
         </button>
         {message !== '' && <p className='Controls-error'>{message}</p>}
@@ -111,5 +118,5 @@ Controls.propTypes = {
   location: PropTypes.object,
   match: PropTypes.object,
   setAvailPairings: PropTypes.func,
-  setError: PropTypes.func,
+  setError: PropTypes.func
 };
