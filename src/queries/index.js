@@ -145,6 +145,10 @@ export const getUserByFirebaseID = id => ({
     module
     id
     image
+    pronouns
+    email
+    slack
+    skills
   }
 }`
 });
@@ -169,7 +173,7 @@ export const deletePairings = userId => ({
   }`
 });
 
-export const getPairing = (id) => ({
+export const getPairing = id => ({
   query: `{
     getPairing(id: "${id}") {
       pairer {
