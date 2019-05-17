@@ -4,8 +4,40 @@ import { HamburgerMenu } from '../HamburgerMenu';
 import PropTypes from 'prop-types';
 
 export default class Header extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isExpanded: false
+    };
+  }
+
+  componentDidMount() {
+    document.addEventListener('click', this.handleEventListener);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.handleEventListener);
+  }
+
+  handleClick = () => {
+    console.log('here');
+    this.setState({ isExpanded: !this.state.isExpanded });
+  };
+
+  handleEventListener = event => {
+    const dropdownWasClicked = event.target
+      .closest('div')
+      .classList.contains('Header--dropdown');
+    const imgWasClicked = event.target.classList.contains('Header--image');
+    if (!dropdownWasClicked && !imgWasClicked) {
+      this.setState({ isExpanded: false });
+    }
+  };
+
   render() {
+    const { isExpanded } = this.state;
     const { user, handleSignOut, windowInnerWidth } = this.props;
+    const { image, name } = user;
     return (
       <header className='Header'>
         <div className='Header--div'>
@@ -29,9 +61,35 @@ export default class Header extends Component {
             <NavLink to='/book-pairing' className='Header--link'>
               Book a Pairing
             </NavLink>
-            <button className='Header--button--signout' onClick={handleSignOut}>
-              Sign Out
-            </button>
+            <img
+              src={image}
+              alt={name}
+              className='Header--image'
+              onClick={this.handleClick}
+            />
+          </div>
+        )}
+        {user.id && windowInnerWidth > 740 && isExpanded && (
+          <div className='Header--dropdown'>
+            <ul className='HamburgerMenu--ul'>
+              <li className='HamburgerMenu--li'>
+                <NavLink
+                  to='/edit-profile'
+                  className='Header--link'
+                  onClick={this.handleClick}
+                >
+                  Edit Profile
+                </NavLink>
+              </li>
+              <li className='HamburgerMenu--li'>
+                <button
+                  className='Header--button--signout'
+                  onClick={handleSignOut}
+                >
+                  Sign Out
+                </button>
+              </li>
+            </ul>
           </div>
         )}
         {user.id && windowInnerWidth <= 740 && (

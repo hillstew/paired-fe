@@ -10,8 +10,28 @@ export class HamburgerMenu extends Component {
     };
   }
 
+  componentDidMount() {
+    document.addEventListener('click', this.handleEventListener);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.handleEventListener);
+  }
+
   handleClick = () => {
     this.setState({ isExpanded: !this.state.isExpanded });
+  };
+
+  handleEventListener = event => {
+    const dropdownWasClicked = event.target
+      .closest('div')
+      .classList.contains('HamburgerMenu--dropdown');
+    const hamburgerWasClicked = event.target
+      .closest('div')
+      .classList.contains('HamburgerMenu');
+    if (!dropdownWasClicked && !hamburgerWasClicked) {
+      this.setState({ isExpanded: false });
+    }
   };
 
   render() {
@@ -41,9 +61,22 @@ export class HamburgerMenu extends Component {
                   View Schedule
                 </NavLink>
               </li>
-              <li className='HamburgerMenu--li' onClick={this.handleClick}>
-                <NavLink to='/book-pairing' className='Header--link'>
+              <li className='HamburgerMenu--li'>
+                <NavLink
+                  to='/book-pairing'
+                  className='Header--link'
+                  onClick={this.handleClick}
+                >
                   Book a Pairing
+                </NavLink>
+              </li>
+              <li className='HamburgerMenu--li'>
+                <NavLink
+                  to='/edit-profile'
+                  className='Header--link'
+                  onClick={this.handleClick}
+                >
+                  Edit Profile
                 </NavLink>
               </li>
               <li className='HamburgerMenu--li'>
