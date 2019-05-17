@@ -12,7 +12,8 @@ describe('Profile', () => {
       email: 'Hill@gmail.com',
       firebaseID: 'bAzN8PSfQSPL9rg4pMhTha8zewn2',
       image: 'https://avatars1.githubusercontent.com/u/49459620?v=4',
-      name: 'Hillary'
+      name: 'Hillary',
+      match: { patch: '/profile' }
     };
 
     beforeEach(() => {
