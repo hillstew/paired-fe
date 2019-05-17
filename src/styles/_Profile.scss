@@ -43,17 +43,25 @@
   border-radius: 6px;
 }
 
+.Profile--input-slack {
+  margin: 0;
+}
+
 .Profile--div--flex {
   display: flex;
   flex-direction: column;
   font-family: $font-light;
-  margin-bottom: 10px;
-  padding-left: 4px;
+  margin-bottom: 0;
   text-align: left;
-  padding: 10px;
+  padding: 10px 10px 0;
 }
 
 .Profile--Dropdown {
   @extend .Dropdown--select;
   width: 280px;
+}
+
+.Profile--message {
+  margin-top: 0;
+  height: 16px;
 }

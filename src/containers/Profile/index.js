@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Dropdown } from '../../components/Dropdown';
 import { createUser } from '../../thunks/createUser';
+import { updateUser } from '../../thunks/updateUser';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -63,7 +64,8 @@ export class Profile extends Component {
       module: moduleToSave,
       skill1: this.state['skill 1'],
       skill2: this.state['skill 2'],
-      skill3: this.state['skill 3']
+      skill3: this.state['skill 3'],
+      message: ''
     };
     return user;
   };
@@ -74,13 +76,19 @@ export class Profile extends Component {
     this.setState({ [name]: value });
   };
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     event.preventDefault();
-    this.setState({ submitted: true });
+    const { match, user, updateUser } = this.props;
+    if (match.path !== '/edit-profile') {
+      this.setState({ submitted: true });
+    } else {
+      await updateUser({...this.formatUserData(), id: user.id });
+      this.setState({ message: 'Profile updated'})
+    }
   };
 
   render() {
-    const { name, slack, email, pronouns, module, program } = this.state;
+    const { name, slack, email, pronouns, module, program, message, submitted } = this.state;
     const skills = [
       'grid',
       'flexbox',
@@ -99,7 +107,7 @@ export class Profile extends Component {
       'SQL',
       'sinatra'
     ];
-    if (!this.state.submitted) {
+    if (!submitted) {
       return (
         <form onSubmit={this.handleSubmit} className='Profile--form'>
           <h2 className='Profile--h2'>Please complete your profile</h2>
@@ -137,7 +145,7 @@ export class Profile extends Component {
                 Slack handle<span>*</span>
               </label>
               <input
-                className='Profile--input'
+                className='Profile--input Profile--input-slack'
                 value={slack}
                 name='slack'
                 onChange={this.handleChange}
@@ -160,7 +168,7 @@ export class Profile extends Component {
               required={true}
               selectedItem={module}
             />
-            <h4>Provide skills you can help others with (optional)</h4>
+            <h4>Provide skills you can help others with</h4>
             <Dropdown
               className='Profile--Dropdown'
               options={skills}
@@ -187,6 +195,7 @@ export class Profile extends Component {
               />
             </div>
           </div>
+          <p className='Profile--message'>{message}</p>
           <button disabled={this.checkDropdowns()} className='Profile--button'>
             Submit
           </button>
@@ -211,7 +220,8 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   createUser: (user, availabilities) =>
-    dispatch(createUser(user, availabilities))
+    dispatch(createUser(user, availabilities)),
+  updateUser: user => dispatch(updateUser(user))
 });
 
 export default connect(
@@ -224,5 +234,7 @@ Profile.propTypes = {
   email: PropTypes.string,
   firebaseID: PropTypes.string,
   image: PropTypes.string,
-  name: PropTypes.string
+  name: PropTypes.string,
+  user: PropTypes.object,
+  updateUser: PropTypes.func
 };
