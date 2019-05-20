@@ -54,7 +54,7 @@ export class App extends Component {
   };
 
   render() {
-    const { user } = this.props;
+    const { user, match, history } = this.props;
     const { windowInnerWidth } = this.state;
     return (
       <div className='App'>
@@ -116,7 +116,7 @@ export class App extends Component {
               <Route
                 exact
                 path='/'
-                render={() => <SignIn history={this.props.history} />}
+                render={() => <SignIn history={history} match={match} />}
               />
               <Route
                 path='/set-availability'

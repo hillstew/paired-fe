@@ -48,7 +48,7 @@ export class SignIn extends Component {
             alt='Two people coding'
           />
         )}
-        {isNewUser && user.firebaseID && <Profile {...user} />}
+        {isNewUser && user.firebaseID && <Profile {...user} match={this.props.match} />}
       </div>
     );
   }

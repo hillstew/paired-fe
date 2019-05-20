@@ -20,7 +20,6 @@ export default class Header extends Component {
   }
 
   handleClick = () => {
-    console.log('here');
     this.setState({ isExpanded: !this.state.isExpanded });
   };
 
