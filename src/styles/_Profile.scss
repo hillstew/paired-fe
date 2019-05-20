@@ -3,15 +3,16 @@
   width: 320px;
   margin: 20px auto;
 
-  span {
-    color: tomato;
-    margin-left: 3px;
-  }
-
   label {
     padding-left: 4px;
     width: 280px;
   }
+}
+
+.Profile--asterisk,
+.Dropdown--asterisk {
+  color: tomato;
+  margin-left: 3px;
 }
 
 .Profile--div {

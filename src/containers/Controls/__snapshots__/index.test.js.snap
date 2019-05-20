@@ -31,6 +31,7 @@ exports[`Controls Controls component should match the snapshot 1`] = `
           "BE",
         ]
       }
+      required={true}
     />
     <Dropdown
       handleChange={[Function]}
@@ -44,6 +45,7 @@ exports[`Controls Controls component should match the snapshot 1`] = `
           "Graduate",
         ]
       }
+      required={true}
     />
     <Dropdown
       handleChange={[Function]}
@@ -64,6 +66,7 @@ exports[`Controls Controls component should match the snapshot 1`] = `
           "Thu May 23 2019",
         ]
       }
+      required={true}
     />
   </section>
   <button
