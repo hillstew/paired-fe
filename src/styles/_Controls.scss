@@ -12,6 +12,10 @@
   height: 30px;
   margin-top: 10px;
   width: 220px;
+
+  &:disabled {
+    background-color: $color-accent;
+  }
 }
 
 .Controls-error {
