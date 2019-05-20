@@ -133,6 +133,10 @@ export const createUser = ({
       module
       id
       image
+      pronouns
+      email
+      slack
+      skills
     }
   }`
 });

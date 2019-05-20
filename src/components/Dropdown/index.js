@@ -15,7 +15,7 @@ export const Dropdown = props => {
     <div className='Dropdown--div'>
       <label htmlFor={label} className='Dropdown--label'>
         {label}
-        {required && <span>*</span>}
+        {required && <span className='Dropdown--asterisk'>*</span>}
       </label>
       <select
         className={conditionalClassName}

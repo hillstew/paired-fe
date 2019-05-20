@@ -70,16 +70,19 @@ export class Controls extends Component {
             options={['FE', 'BE']}
             label='Program'
             handleChange={this.handleChange}
+            required={true}
           />
           <Dropdown
             options={['1', '2', '3', '4', 'Graduate']}
             label='Module'
             handleChange={this.handleChange}
+            required={true}
           />
           <Dropdown
             options={dates}
             label='Date'
             handleChange={this.handleChange}
+            required={true}
           />
         </section>
         <button

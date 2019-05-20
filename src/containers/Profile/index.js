@@ -83,9 +83,15 @@ export class Profile extends Component {
       this.setState({ submitted: true });
     } else {
       await updateUser({...this.formatUserData(), id: user.id });
-      this.setState({ message: 'Profile updated'})
+      this.setState({ message: 'Profile updated'}, () => {
+        setTimeout(this.removeMessage, 1000);
+      });
     }
   };
+
+  removeMessage = () => {
+    this.setState({ message: ''});
+  }
 
   render() {
     const { name, slack, email, pronouns, module, program, message, submitted } = this.state;
@@ -114,7 +120,7 @@ export class Profile extends Component {
           <div className='Profile--div'>
             <div className='Profile--div--flex'>
               <label htmlFor='name'>
-                Name<span>*</span>
+                Name<span className='Profile--asterisk'>*</span>
               </label>
               <input
                 className='Profile--input'
@@ -133,7 +139,7 @@ export class Profile extends Component {
                 maxLength='10'
               />
               <label htmlFor='email'>
-                Email<span>*</span>
+                Email<span className='Profile--asterisk'>*</span>
               </label>
               <input
                 className='Profile--input'
@@ -142,7 +148,7 @@ export class Profile extends Component {
                 onChange={this.handleChange}
               />
               <label htmlFor='slack'>
-                Slack handle<span>*</span>
+                Slack handle<span className='Profile--asterisk'>*</span>
               </label>
               <input
                 className='Profile--input Profile--input-slack'
