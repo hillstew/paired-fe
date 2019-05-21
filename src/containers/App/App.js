@@ -41,7 +41,7 @@ export class App extends Component {
   checkUser = () => {
     firebase.auth().onAuthStateChanged(async user => {
       if (user) {
-        this.props.signInUser(user.uid);
+        this.props.signInUser(user.uid, user.photoURL);
       }
     });
   };
@@ -153,7 +153,7 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  signInUser: id => dispatch(signInUser(id)),
+  signInUser: (id, photoURL) => dispatch(signInUser(id, photoURL)),
   signUserOut: () => dispatch(signUserOut())
 });
 
