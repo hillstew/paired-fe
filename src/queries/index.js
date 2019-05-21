@@ -210,7 +210,7 @@ export const updateUser = ({
   slack,
   skill1,
   skill2,
-  skill3
+  skill3,
 }) => ({
   query: `mutation {
     user: updateUser(
@@ -223,6 +223,30 @@ export const updateUser = ({
         pronouns: "${pronouns}"
         slack: "${slack}"
         skills: ["${skill1}", "${skill2}", "${skill3}"]
+      }
+    ) {
+      name
+      program
+      module
+      id
+      image
+      pronouns
+      email
+      slack
+      skills
+    }
+  }`
+});
+
+export const updateUserImage = ({
+  id,
+  image
+}) => ({
+  query: `mutation {
+    user: updateUser(
+      user: {
+        id: "${id}"
+        image: "${image}"
       }
     ) {
       name
