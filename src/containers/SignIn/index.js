@@ -27,7 +27,7 @@ export class SignIn extends Component {
       const { name, email, avatar_url: image } = additionalUserInfo.profile;
       const firebaseID = user.uid;
       this.setState({ user: { name, email, image, firebaseID } });
-      await this.props.signInUser(firebaseID);
+      await this.props.signInUser(firebaseID, image);
     } catch (error) {
       this.props.setError(error.message);
     }
@@ -60,7 +60,7 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   setError: message => dispatch(setError(message)),
-  signInUser: id => dispatch(signInUser(id))
+  signInUser: (id, photoURL) => dispatch(signInUser(id, photoURL))
 });
 
 export default connect(
