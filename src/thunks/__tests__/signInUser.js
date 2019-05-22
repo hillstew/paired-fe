@@ -8,7 +8,7 @@ import { mockUser } from '../../mockData';
 jest.mock('../getSchedule');
 
 describe('signInUser', () => {
-  const thunk = signInUser(mockUser);
+  const thunk = signInUser(mockUser.firebaseID, mockUser.image);
   const mockDispatch = jest.fn();
   utils.fetchData = jest.fn(() => ({ user: mockUser}));
 
@@ -19,7 +19,7 @@ describe('signInUser', () => {
   });
 
   it('should call fetchData with the correct params', async () => {
-    const expected = gql.getUserByFirebaseID(mockUser);
+    const expected = gql.getUserByFirebaseID(mockUser.firebaseID);
     await thunk(mockDispatch);
     expect(utils.fetchData).toHaveBeenCalledWith(expected);
   });
