@@ -454,3 +454,21 @@ export const mockUserWithNewImg = {
   slack: '@hillstew',
   skills: [ 'react', 'flexbox', 'paired' ] 
 };
+
+export const mockAvailabilities = [
+  true,
+  false,
+  false,
+  true,
+  false,
+  false,
+  true,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+]
