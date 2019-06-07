@@ -410,3 +410,65 @@ export const mockPairingsQuery = {
     }
   }`
 };
+
+export const mockUserToUpdate = {
+  name: 'Hillary',
+  email: 'hill@gmail.com',
+  image: 'https://avatars1.githubusercontent.com/u/40586291?v=',
+  firebaseID: 'abc123',
+  program: 'FE',
+  pronouns: 'she/her',
+  slack: '@hillstew',
+  module: 5,
+  id: '5caa7eebfdebb8348e53a48e',
+  skill1: 'react',
+  skill2: 'flexbox',
+  skill3: 'paired',
+};
+
+export const mockUpdatedUser = {
+  name: 'Hillary',
+  program: 'FE',
+  module: 5,
+  id: '5caa7eebfdebb8348e53a48e',
+  image: 'https://avatars1.githubusercontent.com/u/40586291?v=',
+  pronouns: 'she, her',
+  email: 'hill@gmail.com',
+  slack: '@hillstew',
+  skills: [ 'react', 'flexbox', 'paired' ] 
+};
+
+export const mockUserImgToUpdate = {
+  image: 'https://avatars1.githubusercontent.com/u/40586291?v=58fjs',
+  id: '5caa7eebfdebb8348e53a48e',
+};
+
+export const mockUserWithNewImg = {
+  name: 'Hillary',
+  program: 'FE',
+  module: 5,
+  id: '5caa7eebfdebb8348e53a48e',
+  image: 'https://avatars1.githubusercontent.com/u/40586291?v=58fjs',
+  pronouns: 'she, her',
+  email: 'hill@gmail.com',
+  slack: '@hillstew',
+  skills: [ 'react', 'flexbox', 'paired' ] 
+};
+
+export const mockAvailabilities = [
+  true,
+  false,
+  false,
+  true,
+  false,
+  false,
+  true,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+]

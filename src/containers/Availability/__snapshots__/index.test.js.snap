@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Availability should match the snapshot when the path is /edit-availability 1`] = `
+exports[`Availability Availability component should match the snapshot when the path is /edit-availability 1`] = `
 <section
   className="Availability"
 >
@@ -188,7 +188,7 @@ exports[`Availability should match the snapshot when the path is /edit-availabil
 </section>
 `;
 
-exports[`Availability should match the snapshot when the path is /set-availability 1`] = `
+exports[`Availability Availability component should match the snapshot when the path is /set-availability 1`] = `
 <section
   className="Availability"
 >
