@@ -53,8 +53,7 @@ export class Availability extends Component {
       <button
         key={i}
         className={'button--availability button--' + availability}
-        onClick={event => this.handleClick(event, i)}
-      >
+        onClick={event => this.handleClick(event, i)}>
         {availability ? buttonText[0] : buttonText[1]}
       </button>
     );
@@ -77,9 +76,9 @@ export class Availability extends Component {
           <thead>
             <tr>
               <th />
-              <th>8:00 - 8:50 a.m.</th>
-              <th>12:00 - 12:50 p.m.</th>
-              <th>4:10 - 5:00 p.m.</th>
+              <th>8:00 - 8:30 a.m.</th>
+              <th>12:00 - 12:30 p.m.</th>
+              <th>4:10 - 4:40 p.m.</th>
             </tr>
           </thead>
           <tbody>

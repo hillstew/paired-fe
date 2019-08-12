@@ -2,28 +2,28 @@ import {
   determineDisplayTime,
   formatPairingsForQuery,
   makeAvailPairings,
-  getDatesToDisplay,
+  getDatesToDisplay
 } from './index';
 
 describe('helpers', () => {
   describe('determineDisplayTime', () => {
     it('should return the correct time if passed param of morning', () => {
       const mockTime = 'morning';
-      const expected = '8:00 - 8:50 a.m.';
+      const expected = '8:00 - 8:30 a.m.';
       const result = determineDisplayTime(mockTime);
       expect(result).toEqual(expected);
     });
 
     it('should return the correct time if passed param of lunch', () => {
       const mockTime = 'lunch';
-      const expected = '12:00 - 12:50 p.m.';
+      const expected = '12:00 - 12:30 p.m.';
       const result = determineDisplayTime(mockTime);
       expect(result).toEqual(expected);
     });
 
     it('should return the correct time if passed param of afternoon', () => {
       const mockTime = 'afternoon';
-      const expected = '4:10 - 5:00 p.m.';
+      const expected = '4:10 - 4:40 p.m.';
       const result = determineDisplayTime(mockTime);
       expect(result).toEqual(expected);
     });
@@ -78,10 +78,7 @@ describe('helpers', () => {
     it('should return an array of numbers with the first number equaling the start date', () => {
       const mockLength = 10;
       const mockStartDate = 'Mon Apr 29 2019';
-      const result = getDatesToDisplay(
-        mockStartDate,
-        mockLength
-      );
+      const result = getDatesToDisplay(mockStartDate, mockLength);
       expect(result[0]).toEqual(mockStartDate);
     });
   });
