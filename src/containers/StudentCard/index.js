@@ -44,7 +44,7 @@ export class StudentCard extends Component {
         </div>
         <div className='StudentCard--div--rows'>
           <div>
-            <p className='StudentCard-time-text'>8:00 - 8:50 a.m.</p>
+            <p className='StudentCard-time-text'>8:00 - 8:30 a.m.</p>
             {morningId && (
               <button
                 className='StudentCard--btn'
@@ -57,7 +57,7 @@ export class StudentCard extends Component {
             {!morningId && <p>Not Available</p>}
           </div>
           <div>
-            <p className='StudentCard-time-text'>12:00 - 12:50 p.m.</p>
+            <p className='StudentCard-time-text'>12:00 - 12:30 p.m.</p>
             {lunchId && (
               <button
                 className='StudentCard--btn'
@@ -70,7 +70,7 @@ export class StudentCard extends Component {
             {!lunchId && <p>Not Available</p>}
           </div>
           <div>
-            <p className='StudentCard-time-text'>4:10 - 5:00 p.m.</p>
+            <p className='StudentCard-time-text'>4:10 - 4:40 p.m.</p>
             {afternoonId && (
               <button
                 className='StudentCard--btn'
