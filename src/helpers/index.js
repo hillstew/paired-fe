@@ -124,3 +124,48 @@ export const determineProgram = (program, module) => {
   if (module === 5) return `${program} Graduate`;
   return `${program} Mod ${module}`;
 };
+
+export const formatDate = (date) => {
+  const dayOfTheWeek = date.split('').slice(0, 3).join('')
+  let fullDay;
+  switch (dayOfTheWeek) {
+    case 'Mon':
+      fullDay = 'Monday';
+      break;
+    case 'Tue':
+      fullDay = 'Tuesday';
+      break;
+    case 'Wed':
+      fullDay = 'Wednesday';
+      break;
+    case 'Thu':
+      fullDay = 'Thursday';
+      break;
+    case 'Fri':
+      fullDay = 'Friday';
+      break;
+    case 'Sat':
+      fullDay = 'Saturday';
+      break;
+    case 'Sun':
+      fullDay = 'Sunday';
+      break;
+    default:
+      fullDay = '';
+      break;
+  }
+  const formattedDate = date.split(' ');
+  formattedDate.splice(0, 1, fullDay);
+  formattedDate[2] = formattedDate[2] + ',';
+  return formattedDate.join(' ');
+};
+
+export const formatTime = (time) => {
+  const [ startDateTime ] = time[0].split(' ');
+  const [ endDateTime, endMeridiem ] = time[1].split(' ');
+  return `${startDateTime} - ${endDateTime} ${formatMeridiem(endMeridiem)}`
+};
+
+export const formatMeridiem = (meridiem) => {
+  return meridiem === 'a' ? 'AM' : 'PM';
+};
