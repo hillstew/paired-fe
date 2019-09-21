@@ -60,6 +60,9 @@ export default class Header extends Component {
             <NavLink to='/book-pairing' className='Header--link'>
               Book a Pairing
             </NavLink>
+            <NavLink to='/groups' className='Header--link'>
+              Groups
+            </NavLink>
             <img
               src={image}
               alt={name}
