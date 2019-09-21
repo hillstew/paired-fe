@@ -30,6 +30,23 @@ export const getUser = id => ({
 }`
 });
 
+export const getGroups = () => ({
+  query: `{
+  getGroups {
+    id
+    name
+    location
+    lead
+    coLead
+    category
+    attendees
+    agenda
+    date
+    time
+  }
+}`
+});
+
 export const getUserPairings = userId => ({
   query: `{
     getUserPairings(
