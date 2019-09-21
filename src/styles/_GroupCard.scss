@@ -1,0 +1,30 @@
+.GroupCard {
+  border: 2px solid $color-primary;
+  padding: 20px;
+  text-align: left;
+}
+
+.GroupCard--header {
+  margin-top: 0;
+  border-bottom: 2px solid $color-secondary;
+  text-align: center;
+  padding-bottom: 7px;
+}
+
+.GroupCard--button {
+  @include button-style;
+  display: block;
+  margin: 0 auto;
+  height: 35px;
+  width: 100px;
+}
+
+.GroupCard--date {
+  margin-bottom: 0;
+}
+
+.GroupCard--time {
+  margin-top: 4px;
+  font-size: 1.3rem;
+  font-family: $font-bold;
+}
