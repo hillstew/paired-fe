@@ -12,7 +12,7 @@ exports[`ScheduleCard should match the snapshot when there are no notes 1`] = `
   <p
     className="ScheduleCard--time"
   >
-    8:00 - 8:50 a.m.
+    8:00 - 8:30 a.m.
   </p>
   <h3
     className="ScheduleCard--name"
@@ -58,7 +58,7 @@ exports[`ScheduleCard should match the snapshot when there are notes 1`] = `
   <p
     className="ScheduleCard--time"
   >
-    8:00 - 8:50 a.m.
+    8:00 - 8:30 a.m.
   </p>
   <h3
     className="ScheduleCard--name"
