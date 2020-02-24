@@ -105,6 +105,7 @@ export const createUser = ({
   name,
   email,
   image,
+  phoneNumber,
   firebaseID,
   module,
   program,
@@ -119,6 +120,7 @@ export const createUser = ({
       user: {
         name: "${name}"
         email: "${email}"
+        phoneNumber: "${phoneNumber}"
         image: "${image}"
         firebaseID: "${firebaseID}"
         module: ${module}
@@ -135,6 +137,7 @@ export const createUser = ({
       image
       pronouns
       email
+      phoneNumber
       slack
       skills
     }
@@ -204,6 +207,7 @@ export const updateUser = ({
   id,
   name,
   email,
+  phoneNumber,
   module,
   program,
   pronouns,
@@ -218,6 +222,7 @@ export const updateUser = ({
         id: "${id}"
         name: "${name}"
         email: "${email}"
+        phoneNumber: "${phoneNumber}"
         module: ${module}
         program: "${program}"
         pronouns: "${pronouns}"
@@ -232,6 +237,7 @@ export const updateUser = ({
       image
       pronouns
       email
+      phoneNumber
       slack
       skills
     }

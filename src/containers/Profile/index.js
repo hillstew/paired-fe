@@ -12,6 +12,7 @@ export class Profile extends Component {
     this.state = {
       name: this.props.name || '',
       email: this.props.email || '',
+      phoneNumber: this.props.phoneNumber || '',
       program: '',
       module: '',
       pronouns: '',
@@ -24,19 +25,20 @@ export class Profile extends Component {
   }
 
   checkDropdowns = () => {
-    const { program, module, email, name, slack } = this.state;
-    return !program || !module || !email || !name || !slack;
+    const { program, module, email, phoneNumber, name, slack } = this.state;
+    return !program || !module || !email || !phoneNumber || !name || !slack;
   };
 
   componentDidMount() {
     const { match, user } = this.props;
     if (match.path === '/edit-profile') {
-      const { name, email, pronouns, slack, program, module, skills } = user;
+      const { name, email, phoneNumber, pronouns, slack, program, module, skills } = user;
       let moduleToSave = module.toString();
       if (module === 5) moduleToSave = 'Graduate';
       this.setState({
         name,
         email,
+        phoneNumber,
         pronouns,
         slack,
         program,
@@ -50,12 +52,13 @@ export class Profile extends Component {
 
   formatUserData = () => {
     const { image, firebaseID } = this.props;
-    const { module, program, name, email, pronouns, slack } = this.state;
+    const { module, program, name, email, phoneNumber, pronouns, slack } = this.state;
     let moduleToSave = module;
     if (module === 'Graduate') moduleToSave = '5';
     const user = {
       name,
       email,
+      phoneNumber,
       image,
       firebaseID,
       program,
@@ -94,7 +97,7 @@ export class Profile extends Component {
   }
 
   render() {
-    const { name, slack, email, pronouns, module, program, message, submitted } = this.state;
+    const { name, slack, email, phoneNumber, pronouns, module, program, message, submitted } = this.state;
     const skills = [
       'grid',
       'flexbox',
@@ -145,6 +148,15 @@ export class Profile extends Component {
                 className='Profile--input'
                 value={email}
                 name='email'
+                onChange={this.handleChange}
+              />
+              <label htmlFor='phoneNumber'>
+                Phone Number<span className='Profile--asterisk'>*</span>
+              </label>
+              <input
+                className='Profile--input'
+                value={phoneNumber}
+                name='phoneNumber'
                 onChange={this.handleChange}
               />
               <label htmlFor='slack'>
@@ -238,6 +250,7 @@ export default connect(
 Profile.propTypes = {
   createUser: PropTypes.func,
   email: PropTypes.string,
+  phoneNumber: PropTypes.string,
   firebaseID: PropTypes.string,
   image: PropTypes.string,
   name: PropTypes.string,
