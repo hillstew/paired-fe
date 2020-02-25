@@ -154,6 +154,7 @@ export const getUserByFirebaseID = id => ({
     image
     pronouns
     email
+    phoneNumber
     slack
     skills
   }
