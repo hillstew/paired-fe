@@ -62,7 +62,8 @@ export const getUserPairings = userId => ({
 
 export const updatePairing = (pairingId, paireeId, notes) => ({
   query: `mutation {
-    updatePairing(pairing: {
+    updatePairing(
+      input: {
         id: "${pairingId}"
         pairee: "${paireeId}"
         notes: "${notes}"
@@ -117,7 +118,7 @@ export const createUser = ({
 }) => ({
   query: `mutation {
     user: createUser(
-      user: {
+      input: {
         name: "${name}"
         email: "${email}"
         phoneNumber: "${phoneNumber}"
@@ -154,6 +155,7 @@ export const getUserByFirebaseID = id => ({
     image
     pronouns
     email
+    phoneNumber
     slack
     skills
   }
@@ -218,7 +220,7 @@ export const updateUser = ({
 }) => ({
   query: `mutation {
     user: updateUser(
-      user: {
+      input: {
         id: "${id}"
         name: "${name}"
         email: "${email}"
@@ -250,7 +252,7 @@ export const updateUserImage = ({
 }) => ({
   query: `mutation {
     user: updateUser(
-      user: {
+      input: {
         id: "${id}"
         image: "${image}"
       }
