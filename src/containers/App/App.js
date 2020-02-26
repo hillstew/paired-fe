@@ -15,6 +15,7 @@ import notfoundsvg from '../../images/not_found.svg';
 import PropTypes from 'prop-types';
 import Availability from '../Availability';
 import Profile from '../Profile';
+import Stats from '../Stats';
 
 export class App extends Component {
   constructor() {
@@ -70,7 +71,8 @@ export class App extends Component {
                 <Route path='/schedule' component={Schedule} />
                 <Route path='/book-pairing' component={Controls} />
                 <Route path='/confirm/:id' component={Confirmation} />
-                <Route path='/edit-profile' component={Profile} />                
+                <Route path='/edit-profile' component={Profile} />
+                <Route path='/stats-profile' component={Stats} />
                 <Route
                   path='/edit-availability'
                   render={() => (
