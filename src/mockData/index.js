@@ -277,7 +277,8 @@ export const mockQueryFromgetUserPairings = {
 
 export const mockQueryFromupdatePairing = {
          query: `mutation {
-    updatePairing(pairing: {
+    updatePairing(
+      input: {
         id: "6t6t6t"
         pairee: "7b7b7b"
         notes: "Mythical Creatures"

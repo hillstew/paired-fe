@@ -32,6 +32,10 @@ exports[`App render should match the snapshot when there is a user id 1`] = `
         path="/edit-profile"
       />
       <Route
+        component={[Function]}
+        path="/stats-profile"
+      />
+      <Route
         path="/edit-availability"
         render={[Function]}
       />
