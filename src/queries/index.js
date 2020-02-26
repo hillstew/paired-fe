@@ -18,6 +18,20 @@ export const getAvailablePairings = (program, mod, date) => ({
   }`
 });
 
+export const getUserStats = id => ({
+  query: `{
+    getUserStats(id: ${id}) {
+      name
+      totalBookings
+      totalMentorHours
+      totalHoursMentored
+      mentees {
+        name
+      }
+    }
+  }`
+});
+
 export const getUser = id => ({
   query: `{
   getUser(id: "${id}") {
