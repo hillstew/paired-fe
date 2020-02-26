@@ -80,6 +80,15 @@ export class HamburgerMenu extends Component {
                 </NavLink>
               </li>
               <li className='HamburgerMenu--li'>
+                <NavLink
+                  to='/stats-profile'
+                  className='Header--link'
+                  onClick={this.handleClick}
+                >
+                  View Stats
+                </NavLink>
+              </li>
+              <li className='HamburgerMenu--li'>
                 <button
                   className='Header--button--signout'
                   onClick={handleSignOut}
