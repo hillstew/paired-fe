@@ -1,5 +1,5 @@
 export const fetchData = async body => {
-  const url = 'http://localhost:3001/graphql';
+  const url = 'https://paired-be.herokuapp.com/graphql';
   const response = await fetch(url, {
     method: 'POST',
     headers: {
