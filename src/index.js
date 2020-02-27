@@ -12,8 +12,11 @@ import './styles/main.scss';
 import firebase from 'firebase/app';
 
 firebase.initializeApp({
-  apiKey: "AIzaSyBZztEJm_KxmHfMGaxYgLIFah2XAdS5mh0",
-  authDomain: "paired-turing.firebaseapp.com"
+  // Original Paired app Firebase config options
+  // apiKey: "AIzaSyBZztEJm_KxmHfMGaxYgLIFah2XAdS5mh0",
+  // authDomain: "paired-turing.firebaseapp.com"
+  apiKey: "AIzaSyDryiKswDwY6L5AODmMvw5I8Wb6cm3PweU",
+  authDomain: "landslide-57f9a.firebaseapp.com"
 });
 
 const devTools = composeWithDevTools(applyMiddleware(thunk));
