@@ -168,8 +168,8 @@ export const getUserByFirebaseID = id => ({
     id
     image
     pronouns
-    email
     phoneNumber
+    email
     slack
     skills
   }
@@ -178,20 +178,22 @@ export const getUserByFirebaseID = id => ({
 
 export const createPairings = pairingsString => ({
   query: `mutation {
-    createPairings(
+    createPairings(input: {
       pairings: ${pairingsString}
-    ) {
-      pairer
+    } ) {
+      unbookedPairings {
+      pairer { id }
       date
       time
     }
+   }
   }`
 });
 
 export const deletePairings = userId => ({
   query: `mutation {
-    deletePairings(id: "${userId}") {
-      pairer
+    deletePairings(input: { id: "${userId}"} ) {
+      pairer { id }
     }
   }`
 });
