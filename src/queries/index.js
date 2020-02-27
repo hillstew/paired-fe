@@ -110,9 +110,10 @@ export const updatePairing = (pairingId, paireeId, notes) => ({
 
 export const deletePairing = pairingId => ({
   query: `mutation {
-    deletePairing(id: "${pairingId}") {
-      date
-    }
+    deletePairing( input: { id: "${pairingId}" })
+      {
+        date
+      }
   }`
 });
 
