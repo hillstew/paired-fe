@@ -1,12 +1,14 @@
-# Description
-Please include a summary of the change and which issue is fixed:
+### Sidebar Checklist
 
-List any dependencies that are required for this change:
+- [ ] Request reviewers
+- [ ] Assign yourself and other contributors
+- [ ] Link to project
 
-Fixes or Closes # (issue)
+### Issues Resolved
+Resolves #
 
-## Where should the reviewer start?:
+### Problem Addressed
 
-## image or gif (optional):
+### Solution Implemented
 
-## Additional information for the reviewer:
+### Other Notes
