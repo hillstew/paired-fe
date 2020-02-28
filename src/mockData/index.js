@@ -311,9 +311,10 @@ export const mockQueryFromupdatePairing = {
 
 export const mockQueryFromdeletePairing = {
          query: `mutation {
-    deletePairing(id: "45dtl") {
-      date
-    }
+    deletePairing( input: { id: "45dtl" })
+      {
+        date
+      }
   }`
        };
 

@@ -30,7 +30,7 @@ describe('Profile', () => {
       const expected = {
         name: mockProps.name,
         email: mockProps.email,
-        phoneNumber: mockProps.phoneNumber,
+        phoneNumber: '',
         program: '',
         module: '',
         pronouns: '',
