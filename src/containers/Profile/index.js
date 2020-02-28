@@ -12,7 +12,7 @@ export class Profile extends Component {
     this.state = {
       name: this.props.name || '',
       email: this.props.email || '',
-      phoneNumber: this.props.phoneNumber || '',
+      phoneNumber: '',
       program: '',
       module: '',
       pronouns: '',
@@ -75,7 +75,9 @@ export class Profile extends Component {
 
   handleChange = event => {
     let { value, name } = event.target;
-    name = name.toLowerCase();
+    if (name != 'phoneNumber') {
+      name = name.toLowerCase();
+    }
     this.setState({ [name]: value });
   };
 
