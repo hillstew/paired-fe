@@ -75,7 +75,7 @@ export class Profile extends Component {
 
   handleChange = event => {
     let { value, name } = event.target;
-    if (name != 'phoneNumber') {
+    if (name !== 'phoneNumber') {
       name = name.toLowerCase();
     }
     this.setState({ [name]: value });
