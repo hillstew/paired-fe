@@ -25,8 +25,8 @@ export class Profile extends Component {
   }
 
   checkDropdowns = () => {
-    const { program, module, email, phoneNumber, name, slack } = this.state;
-    return !program || !module || !email || !phoneNumber || !name || !slack;
+    const { program, module, email, name, slack } = this.state;
+    return !program || !module || !email || !name || !slack;
   };
 
   componentDidMount() {
@@ -153,7 +153,7 @@ export class Profile extends Component {
                 onChange={this.handleChange}
               />
               <label htmlFor='phoneNumber'>
-                Phone Number<span className='Profile--asterisk'>*</span>
+                Phone Number
               </label>
               <input
                 className='Profile--input'
