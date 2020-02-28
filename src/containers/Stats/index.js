@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-// import { Redirect } from 'react-router-dom';
-// import { Dropdown } from '../../components/Dropdown';
-// import { getUserStats } from '../../thunks/createUser';
+// import { Stats } from '../../components/Stats';
+// import { TemplateCard } from '../../components/TemplateCard';
 import * as gql from '../../queries';
 import { fetchData } from '../../utils';
 import { connect } from 'react-redux';
@@ -45,30 +44,34 @@ export class Stats extends Component {
   render() {
     const stats = this.state.stats;
     return (
-      <section id="stats-card">
-        <h1>Stats for {stats.name}</h1>
-        <ul>
-          <li>
-            Total Paired Sessions Booked: { stats.totalBookings }
-          </li>
-          <li>
-            Total Hours As a Paired Mentor: {stats.totalMentorHours}
-          </li>
-          <li>
-            Total Hours As Paired Mentee: {stats.totalHoursMentored}
-          </li>
-          <li>
-            Students You've Mentored:
-            <ul>
-              {stats.mentees.map(
-                function(mentee){
-                  return <li>{mentee.name}</li>;
-                }
-              )}
-            </ul>
-          </li>
-        </ul>
-      </section>
+      <div className='Stats'>
+        <h2 className='Stats--h2'>Stats for {stats.name}   <span role='img' aria-label='upward chart emoji'>
+        📈 </span></h2>
+          <section className="StatsCards--section">
+            <div className='StatsCard'>
+            <h2>
+              Total Paired Sessions Booked</h2> <p className='StatsCard--p'>{ stats.totalBookings }</p>
+            </div>
+            <div className='StatsCard'>
+              <h2>
+                Total Hours As a Paired Mentor</h2> <p className='StatsCard--p'>{stats.totalMentorHours}</p>
+            </div>
+            <div className='StatsCard'>
+              <h2>
+                Total Hours As Paired Mentee</h2> <p className='StatsCard--p'>{stats.totalHoursMentored}</p>
+            </div>
+            <div className='StatsCard'>
+              <h2>
+              Students You've Mentored
+              </h2>
+                <p>{stats.mentees.map(
+                  function(mentee){
+                    return <p className='StatsCard--name'>{mentee.name}</p>;
+                  }
+                )}</p>
+            </div>
+        </section>
+      </div>
     )
   };
 }
