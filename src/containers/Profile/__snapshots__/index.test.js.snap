@@ -76,7 +76,7 @@ exports[`Profile Profile component should match the snapshot 1`] = `
         className="Profile--input"
         name="phoneNumber"
         onChange={[Function]}
-        value="1234567890"
+        value=""
       />
       <label
         htmlFor="slack"
