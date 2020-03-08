@@ -20,9 +20,8 @@ export const getAvailablePairings = (program, mod, date) => ({
 
 export const cancelMenteePairing = (id) => ({
   query:
-    `{
-      mutation {
-        cancelMenteePairing(input: {
+    `  mutation {
+         cancelMenteePairing(input: {
                 id: "${id}"
                 }) {
           pairer {
@@ -37,14 +36,12 @@ export const cancelMenteePairing = (id) => ({
             time
             id
           }
-        }
       }`
     });
 
     export const cancelMentorPairing = (id) => ({
       query:
-        `{
-          mutation {
+        ` mutation {
             cancelMentorPairing(input: {
               id: "${id}"
               }) {
@@ -60,7 +57,6 @@ export const cancelMenteePairing = (id) => ({
                   time
                   id
                 }
-              }
             }`
         });
 

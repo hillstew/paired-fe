@@ -9,7 +9,7 @@ export const setError = error => ({
 });
 
 export const cancelPairing = id => ({
-  type: 'CANCEL_PAIRING'
+  type: 'CANCEL_PAIRING',
   id
 });
 
