@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { ScheduleCard } from '../../components/ScheduleCard';
 import { deletePairingThunk } from '../../thunks/deletePairingThunk';
 import { cancelMentorPairing } from '../../thunks/cancelMentorPairing';
+import { cancelMenteePairing } from '../../thunks/cancelMenteePairing';
 import { TemplateCard } from '../../components/TemplateCard';
 import PropTypes from 'prop-types';
 import { filterPastPairings } from '../../helpers';
@@ -59,7 +60,7 @@ export class Schedule extends Component {
   };
 
   filterPairerBookings = () => {
-    const { schedule, user } = this.props;
+    const { schedule, user, cancelMenteePairing } = this.props;
     const bookings = schedule.filter(pairing => {
       return (
         pairing.pairee !== null &&
@@ -73,7 +74,7 @@ export class Schedule extends Component {
           booking={booking}
           person={booking.pairee}
           key={booking.id}
-          cancelPairing={cancelMentorPairing}
+          cancelPairing={cancelMenteePairing}
         />
       );
     });
@@ -141,7 +142,8 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   deletePairingThunk: id => dispatch(deletePairingThunk(id)),
-  cancelMentorPairing: id => dispatch(cancelMentorPairing(id))
+  cancelMentorPairing: id => dispatch(cancelMentorPairing(id)),
+  cancelMenteePairing: id => dispatch(cancelMenteePairing(id))
 });
 
 export default connect(
