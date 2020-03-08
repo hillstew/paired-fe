@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { determineDisplayTime, determineProgram } from '../../helpers';
 import PropTypes from 'prop-types';
 
-export const ScheduleCard = ({ booking, person, deletePairing }) => {
+export const ScheduleCard = ({ booking, person, deletePairing, cancelPairing }) => {
   const { notes, time, date, id } = booking;
   return (
     <div className='ScheduleCard'>
@@ -17,6 +17,11 @@ export const ScheduleCard = ({ booking, person, deletePairing }) => {
             Program: {determineProgram(person.program, person.module)}
           </p>
           <p className='ScheduleCard--p'>Notes: {notes ? notes : 'no notes'}</p>
+          <button
+            onClick={() => cancelPairing(id)}
+            className='ScheduleCard--button'>
+            Cancel
+          </button>
         </Fragment>
       )}
       {!person && (
@@ -33,5 +38,6 @@ export const ScheduleCard = ({ booking, person, deletePairing }) => {
 ScheduleCard.propTypes = {
   booking: PropTypes.object,
   deletePairing: PropTypes.func,
+  cancelPairing: PropTypes.func,
   person: PropTypes.object
 };
