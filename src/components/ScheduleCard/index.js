@@ -18,7 +18,7 @@ export const ScheduleCard = ({ booking, person, deletePairing, cancelPairing }) 
           </p>
           <p className='ScheduleCard--p'>Notes: {notes ? notes : 'no notes'}</p>
           <button
-            onClick={() => cancelPairing(id)}
+            onClick={() => cancelPairing(id) }
             className='ScheduleCard--button'>
             Cancel
           </button>
@@ -26,7 +26,7 @@ export const ScheduleCard = ({ booking, person, deletePairing, cancelPairing }) 
       )}
       {!person && (
         <button
-          onClick={() => deletePairing(id)}
+          onClick={() => deletePairing(id) }
           className='ScheduleCard--button'>
           Cancel
         </button>
