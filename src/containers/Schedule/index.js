@@ -153,6 +153,8 @@ export default connect(
 
 Schedule.propTypes = {
   deletePairingThunk: PropTypes.func,
+  cancelMenteePairing: PropTypes.func,
+  cancelMentorPairing: PropTypes.func,
   history: PropTypes.object,
   location: PropTypes.object,
   match: PropTypes.object,
