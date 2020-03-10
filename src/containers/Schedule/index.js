@@ -16,7 +16,7 @@ export class Schedule extends Component {
   };
 
   filterOpenings = () => {
-    const { schedule, deletePairingThunk } = this.props;
+    const { schedule, deletePairingThunk, user } = this.props;
     const openings = schedule.filter(pairing => {
       return pairing.pairee === null && filterPastPairings(pairing);
     });
@@ -25,6 +25,7 @@ export class Schedule extends Component {
         <ScheduleCard
           booking={booking}
           person={null}
+          user={user}
           key={booking.id}
           deletePairing={deletePairingThunk}
         />
@@ -48,6 +49,7 @@ export class Schedule extends Component {
           booking={booking}
           person={booking.pairer}
           key={booking.id}
+          user={user}
           cancelPairing={cancelMentorPairing}
         />
       );
@@ -74,6 +76,7 @@ export class Schedule extends Component {
           booking={booking}
           person={booking.pairee}
           key={booking.id}
+          user={user}
           cancelPairing={cancelMenteePairing}
         />
       );
