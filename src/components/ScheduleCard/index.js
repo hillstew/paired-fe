@@ -2,8 +2,9 @@ import React, { Fragment } from 'react';
 import { determineDisplayTime, determineProgram } from '../../helpers';
 import PropTypes from 'prop-types';
 
-export const ScheduleCard = ({ booking, person, deletePairing, cancelPairing }) => {
+export const ScheduleCard = ({ booking, user, person, deletePairing, cancelPairing }) => {
   const { notes, time, date, id } = booking;
+  const userId = user.id;
   return (
     <div className='ScheduleCard'>
       <p className='ScheduleCard--date'>{date}</p>
@@ -18,7 +19,7 @@ export const ScheduleCard = ({ booking, person, deletePairing, cancelPairing }) 
           </p>
           <p className='ScheduleCard--p'>Notes: {notes ? notes : 'no notes'}</p>
           <button
-            onClick={() => cancelPairing(id) }
+            onClick={() => cancelPairing(id, userId) }
             className='ScheduleCard--button'>
             Cancel
           </button>
