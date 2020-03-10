@@ -43,6 +43,12 @@ exports[`ScheduleCard should match the snapshot when there are no notes 1`] = `
     Notes: 
     no notes
   </p>
+  <button
+    className="ScheduleCard--button"
+    onClick={[Function]}
+  >
+    Cancel
+  </button>
 </div>
 `;
 
@@ -89,5 +95,11 @@ exports[`ScheduleCard should match the snapshot when there are notes 1`] = `
     Notes: 
     Help with JSFun problemset
   </p>
+  <button
+    className="ScheduleCard--button"
+    onClick={[Function]}
+  >
+    Cancel
+  </button>
 </div>
 `;
