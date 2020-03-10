@@ -16,7 +16,7 @@ export class Schedule extends Component {
   };
 
   filterOpenings = () => {
-    const { schedule, deletePairingThunk, user } = this.props;
+    const { schedule, deletePairingThunk } = this.props;
     const openings = schedule.filter(pairing => {
       return pairing.pairee === null && filterPastPairings(pairing);
     });
@@ -25,7 +25,6 @@ export class Schedule extends Component {
         <ScheduleCard
           booking={booking}
           person={null}
-          user={user}
           key={booking.id}
           deletePairing={deletePairingThunk}
         />
@@ -49,7 +48,7 @@ export class Schedule extends Component {
           booking={booking}
           person={booking.pairer}
           key={booking.id}
-          user={user}
+          userId={user.id}
           cancelPairing={cancelMentorPairing}
         />
       );
@@ -76,7 +75,7 @@ export class Schedule extends Component {
           booking={booking}
           person={booking.pairee}
           key={booking.id}
-          user={user}
+          userId={user.id}
           cancelPairing={cancelMenteePairing}
         />
       );
@@ -145,8 +144,8 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   deletePairingThunk: id => dispatch(deletePairingThunk(id)),
-  cancelMentorPairing: id => dispatch(cancelMentorPairing(id)),
-  cancelMenteePairing: id => dispatch(cancelMenteePairing(id))
+  cancelMentorPairing: (pairingId, userId) => dispatch(cancelMentorPairing(pairingId, userId)),
+  cancelMenteePairing: (pairingId, userId) => dispatch(cancelMenteePairing(pairingId, userId))
 });
 
 export default connect(
