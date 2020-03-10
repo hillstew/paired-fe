@@ -8,10 +8,6 @@ export const scheduleReducer = (state = [], action) => {
       return state.filter(pairing => {
         return pairing.id !== action.id;
       });
-    case 'CANCEL_PAIRING':
-      return state.filter(pairing => {
-        return pairing.id !== action.id;
-      });
     case 'ADD_TO_SCHEDULE':
       return [...state, action.pairing].sort((a, b) => {
         return new Date(a.date).getTime() - new Date(b.date).getTime();
