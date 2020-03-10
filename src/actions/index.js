@@ -8,11 +8,6 @@ export const setError = error => ({
   error
 });
 
-export const cancelPairing = id => ({
-  type: 'CANCEL_PAIRING',
-  id
-});
-
 export const setUser = user => ({
   type: 'SET_USER',
   user
