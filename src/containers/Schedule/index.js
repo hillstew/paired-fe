@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { ScheduleCard } from '../../components/ScheduleCard';
 import { deletePairingThunk } from '../../thunks/deletePairingThunk';
+import { cancelMentorPairing } from '../../thunks/cancelMentorPairing';
+import { cancelMenteePairing } from '../../thunks/cancelMenteePairing';
 import { TemplateCard } from '../../components/TemplateCard';
 import PropTypes from 'prop-types';
 import { filterPastPairings } from '../../helpers';
@@ -32,7 +34,7 @@ export class Schedule extends Component {
   };
 
   filterPaireeBookings = () => {
-    const { schedule, user } = this.props;
+    const { schedule, user, cancelMentorPairing  } = this.props;
     const bookings = schedule.filter(pairing => {
       return (
         pairing.pairee !== null &&
@@ -46,6 +48,8 @@ export class Schedule extends Component {
           booking={booking}
           person={booking.pairer}
           key={booking.id}
+          userId={user.id}
+          cancelPairing={cancelMentorPairing}
         />
       );
     });
@@ -57,7 +61,7 @@ export class Schedule extends Component {
   };
 
   filterPairerBookings = () => {
-    const { schedule, user } = this.props;
+    const { schedule, user, cancelMenteePairing } = this.props;
     const bookings = schedule.filter(pairing => {
       return (
         pairing.pairee !== null &&
@@ -71,6 +75,8 @@ export class Schedule extends Component {
           booking={booking}
           person={booking.pairee}
           key={booking.id}
+          userId={user.id}
+          cancelPairing={cancelMenteePairing}
         />
       );
     });
@@ -137,7 +143,9 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  deletePairingThunk: id => dispatch(deletePairingThunk(id))
+  deletePairingThunk: id => dispatch(deletePairingThunk(id)),
+  cancelMentorPairing: (pairingId, userId) => dispatch(cancelMentorPairing(pairingId, userId)),
+  cancelMenteePairing: (pairingId, userId) => dispatch(cancelMenteePairing(pairingId, userId))
 });
 
 export default connect(
@@ -147,6 +155,8 @@ export default connect(
 
 Schedule.propTypes = {
   deletePairingThunk: PropTypes.func,
+  cancelMenteePairing: PropTypes.func,
+  cancelMentorPairing: PropTypes.func,
   history: PropTypes.object,
   location: PropTypes.object,
   match: PropTypes.object,

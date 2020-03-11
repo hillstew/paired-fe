@@ -18,6 +18,49 @@ export const getAvailablePairings = (program, mod, date) => ({
   }`
 });
 
+export const cancelMenteePairing = (id) => ({
+  query:
+    `  mutation {
+         cancelMenteePairing(input: {
+                id: "${id}"
+                }) {
+          pairer {
+            name
+            email
+            phoneNumber
+            id
+          }
+          pairee {
+            name
+          }
+            date
+            time
+            id
+          }
+      }`
+    });
+
+    export const cancelMentorPairing = (id) => ({
+      query:
+        ` mutation {
+            cancelMentorPairing(input: {
+              id: "${id}"
+              }) {
+                pairer {
+                  name
+                }
+                pairee {
+                  name
+                  email
+                  phoneNumber
+                }
+                  date
+                  time
+                  id
+                }
+            }`
+        });
+
 export const getUserStats = id => ({
   query: `{
     getUserStats(id: ${id}) {

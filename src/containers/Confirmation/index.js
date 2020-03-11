@@ -4,6 +4,8 @@ import ConfirmCard from '../../components/ConfirmCard';
 import { ConflictCard } from '../../components/ConflictCard';
 import { confirmPairing } from '../../thunks/confirmPairing';
 import { deletePairingThunk } from '../../thunks/deletePairingThunk';
+import { cancelMentorPairing } from '../../thunks/cancelMentorPairing';
+import { cancelMenteePairing } from '../../thunks/cancelMenteePairing';
 import PropTypes from 'prop-types';
 import * as gql from '../../queries';
 import { fetchData } from '../../utils';
@@ -53,6 +55,8 @@ export class Confirmation extends Component {
       user,
       confirmPairing,
       deletePairingThunk,
+      cancelMenteePairing,
+      cancelMentorPairing,
       match
     } = this.props;
     if (pairee === null) {
@@ -66,6 +70,8 @@ export class Confirmation extends Component {
           history={history}
           confirmPairing={confirmPairing}
           deletePairingThunk={deletePairingThunk}
+          cancelMenteePairing={cancelMenteePairing}
+          cancelMentorPairing={cancelMentorPairing}
           userId={user.id}
           pairingInConflictId={id}
         />
@@ -87,6 +93,8 @@ export class Confirmation extends Component {
       user,
       confirmPairing,
       deletePairingThunk,
+      cancelMenteePairing,
+      cancelMentorPairing,
       match
     } = this.props;
     return (
@@ -102,6 +110,8 @@ export class Confirmation extends Component {
             history={history}
             confirmPairing={confirmPairing}
             deletePairingThunk={deletePairingThunk}
+            cancelMenteePairing={cancelMenteePairing}
+            cancelMentorPairing={cancelMentorPairing}
             userId={user.id}
           />
         )}
@@ -124,6 +134,8 @@ export const mapDispatchToProps = dispatch => ({
   confirmPairing: (pairingId, paireeId, notes) =>
     dispatch(confirmPairing(pairingId, paireeId, notes)),
   deletePairingThunk: pairingId => dispatch(deletePairingThunk(pairingId)),
+  cancelMenteePairing: pairingId => dispatch(cancelMenteePairing(pairingId)),
+  cancelMentorPairing: pairingId => dispatch(cancelMentorPairing(pairingId)),
   setError: error => dispatch(setError(error))
 });
 
@@ -136,6 +148,8 @@ Confirmation.propTypes = {
   availPairings: PropTypes.array,
   confirmPairing: PropTypes.func,
   deletePairingThunk: PropTypes.func,
+  cancelMenteePairing: PropTypes.func,
+  cancelMentorPairing: PropTypes.func,
   history: PropTypes.object,
   location: PropTypes.object,
   match: PropTypes.object,
