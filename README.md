@@ -1,8 +1,22 @@
 # Landslide: Paired 2.0
 
+## Table of Contents
+
+- [Deployed App](#deployed-app)
+- [Local Deployment](#local-deployment)
+- [Dev Team](#dev-team)
+- [Description](#description)
+- [Agile Development](#agile-development)
+- [Technologies & Architectures](#technologies--architecture)
+- [React & Redux Tutorial](#react-and-redux-tutorial)
+- [Testing & Performance](#testing--performance)
+- [PostgreSQL Schema](#postgresql-schema)
+- [GraphQL Endpoints](#graphql-endpoints)
+- [Resource Credits](#resource-credits)
+
 ## Deployed App
 
-Vist the deployed Paired 2.0 app at [http://landslide-57f9a.firebaseapp.com/](http://landslide-57f9a.firebaseapp.com/).
+Vist the deployed Paired 2.0 app at [https://www.paired.tech/](https://www.paired.tech/).
 
 ## Local Deployment
 
@@ -16,13 +30,21 @@ Paired 2.0's dev team is:
  - Matt Simon ([GitHub](https://github.com/msimon42), [LinkedIn](https://www.linkedin.com/in/matt-simon-83aa5380/))
  - Rebecca Robran ([GitHub](https://github.com/rer7891), [LinkedIn](https://www.linkedin.com/in/rebecca-robran/))
 
+The original Paired dev team is:
+- Front End Team
+  - Hillary Stewart ([GitHub](https://github.com/hillstew))
+  - Tiffany Bachmann ([GitHub](https://github.com/trbachmann))
+- Back End Team
+  - Jeo  D ([GitHub](https://github.com/dForDeveloper))
+  - Aaron Roberts ([GitHub](https://github.com/jaaronbr))
+
 ## Description
 
 This repo contains the Paired 2.0 Front-end, a React/Redux app. It derives data and logic from a GraphQL API built with Ruby on Rails and PostgreSQL ([paired-be](https://github.com/DanielEFrampton/paired-be)), which communicates with a Flask micro-service that handles SMS text notifications ([paired-sms](https://github.com/msimon42/paired-sms)).
 
 Together, these micro-services facilitate paired programming and peer mentoring between [Turing](http://turing.io) students throughout their seven-month immersive program. Students later in the program can create available booking slots, and students earlier in the program can browse those and book paired sessions.
 
-Paired 2.0 was built by a team of students in Turing's Back-End Engineering program. It adds SMS and email notifications of bookings and a user statistics dashboard to the [original Paired app](http://paired.tech) ([front-end repo](https://github.com/hillstew/paired-fe), [back-end repo](https://github.com/dForDeveloper/paired-api)) which was built by Front-end students in April of 2019. They graciously allowed contributions to the app and were helpful throughout this process.
+Paired 2.0 was built by a team of students in Turing's Back-End Engineering program. It adds SMS and email notifications of bookings and a user statistics dashboard to the [original Paired app](http://paired.tech) ([front-end repo](https://github.com/hillstew/paired-fe), [back-end repo](https://github.com/dForDeveloper/paired-api)) which was built by Front-end students in April of 2019. They graciously allowed contributions to the app and were helpful throughout this process. You can view the original project's Readme file [here]('original_README.md').
 
 ## Agile Development
 
@@ -115,4 +137,3 @@ To make live queries to the GraphQL endpoint and see live schema information, se
 
 - [Architecture chart created with Lucidchart.com](http://www.lucidchart.com)
 - [Technology logos from Worldvectorlogo.com](http://worldvectorlogo.com/)
-- [Landslide logo from Onlinewebfonts.com](https://www.onlinewebfonts.com/icon/528343)
