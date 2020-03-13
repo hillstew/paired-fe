@@ -1,4 +1,4 @@
-# Landslide: Paired 2.0
+# Paired 2.0
 
 ## Table of Contents
 
@@ -48,9 +48,9 @@ Paired 2.0 was built by a team of students in Turing's Back-End Engineering prog
 
 ## Agile Development
 
-Paired 2.0 was developed over the course of 9 days using accelerated agile practices. After [an initial proposal was written](https://gist.github.com/DanielEFrampton/bb6c6ec2cfa0d466642adf0811d85e16) by the project lead, the team collaboratively participated in an "inception" process. After writing [problem and solution statements](https://gist.github.com/DanielEFrampton/fdc8653e042b7f3d7a6feca8767609eb), the team "brain-dumped" all their feature proposals then went through a feature prioritization process in order to determine which would be part of the "minimum viable product" (MVP).
+Paired 2.0 was developed over the course of 9 days using accelerated agile practices. After [an initial proposal was written](https://gist.github.com/DanielEFrampton/bb6c6ec2cfa0d466642adf0811d85e16) by the project lead, the team collaboratively participated in an "inception" process. After writing [problem and solution statements](https://gist.github.com/DanielEFrampton/fdc8653e042b7f3d7a6feca8767609eb), the team "brain-dumped" all their feature proposals; prioritized which of those features would be part of the "minimum viable product" (MVP); and engaged in a story-grooming process to craft the user stories and tasks necessary to complete that MVP.
 
-Soon thereafter the team had [a "DTR" meeting](https://gist.github.com/DanielEFrampton/78bc2e980c51af7a98ff3aa422ca8902) to establish goals, communication plans, project management conventions, and more. It was agreed upon that the team would use a Kanban system for project management using [Github Projects](https://github.com/DanielEFrampton/paired-be/projects/1), and have daily stand-up meetings and weekly retrospective meetings. The team met with a project manager every three days for check-ins and communicated with her regularly via Slack.
+Soon thereafter the team had a meeting to establish goals, communication plans, project management conventions, and more. It was agreed upon that the team would use a Kanban system for project management using [Github Projects](https://github.com/DanielEFrampton/paired-be/projects/1), and have daily stand-up meetings and weekly retrospective meetings. The team met with a project manager every three days for check-ins and communicated with her regularly via Slack.
 
 ## Technologies & Architecture
 
