@@ -2,9 +2,9 @@
 
 ## Front-end Setup
 
-Clone down the [front-end repo](https://github.com/DanielEFrampton/paired-fe):
+Clone down the [front-end repo](https://github.com/hillstew/paired-fe):
 ```
-git clone git@github.com:DanielEFrampton/paired-fe.git
+git clone git@github.com:hillstew/paired-fe.git
 ```
 
 Install or Update the Xcode application:
