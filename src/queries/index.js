@@ -18,6 +18,63 @@ export const getAvailablePairings = (program, mod, date) => ({
   }`
 });
 
+export const cancelMenteePairing = (id) => ({
+  query:
+    `  mutation {
+         cancelMenteePairing(input: {
+                id: "${id}"
+                }) {
+          pairer {
+            name
+            email
+            phoneNumber
+            id
+          }
+          pairee {
+            name
+          }
+            date
+            time
+            id
+          }
+      }`
+    });
+
+    export const cancelMentorPairing = (id) => ({
+      query:
+        ` mutation {
+            cancelMentorPairing(input: {
+              id: "${id}"
+              }) {
+                pairer {
+                  name
+                }
+                pairee {
+                  name
+                  email
+                  phoneNumber
+                }
+                  date
+                  time
+                  id
+                }
+            }`
+        });
+
+export const getUserStats = id => ({
+  query: `{
+    getUserStats(id: ${id}) {
+      name
+      totalBookings
+      totalMentorHours
+      totalHoursMentored
+      mentees {
+        name
+      }
+    }
+  }`
+});
+
 export const getUser = id => ({
   query: `{
   getUser(id: "${id}") {
@@ -62,7 +119,8 @@ export const getUserPairings = userId => ({
 
 export const updatePairing = (pairingId, paireeId, notes) => ({
   query: `mutation {
-    updatePairing(pairing: {
+    updatePairing(
+      input: {
         id: "${pairingId}"
         pairee: "${paireeId}"
         notes: "${notes}"
@@ -95,9 +153,10 @@ export const updatePairing = (pairingId, paireeId, notes) => ({
 
 export const deletePairing = pairingId => ({
   query: `mutation {
-    deletePairing(id: "${pairingId}") {
-      date
-    }
+    deletePairing( input: { id: "${pairingId}" })
+      {
+        date
+      }
   }`
 });
 
@@ -105,6 +164,7 @@ export const createUser = ({
   name,
   email,
   image,
+  phoneNumber,
   firebaseID,
   module,
   program,
@@ -116,9 +176,10 @@ export const createUser = ({
 }) => ({
   query: `mutation {
     user: createUser(
-      user: {
+      input: {
         name: "${name}"
         email: "${email}"
+        phoneNumber: "${phoneNumber}"
         image: "${image}"
         firebaseID: "${firebaseID}"
         module: ${module}
@@ -135,6 +196,7 @@ export const createUser = ({
       image
       pronouns
       email
+      phoneNumber
       slack
       skills
     }
@@ -150,6 +212,7 @@ export const getUserByFirebaseID = id => ({
     id
     image
     pronouns
+    phoneNumber
     email
     slack
     skills
@@ -159,20 +222,22 @@ export const getUserByFirebaseID = id => ({
 
 export const createPairings = pairingsString => ({
   query: `mutation {
-    createPairings(
+    createPairings(input: {
       pairings: ${pairingsString}
-    ) {
-      pairer
+    } ) {
+      unbookedPairings {
+      pairer { id }
       date
       time
     }
+   }
   }`
 });
 
 export const deletePairings = userId => ({
   query: `mutation {
-    deletePairings(id: "${userId}") {
-      pairer
+    deletePairings(input: { id: "${userId}"} ) {
+      pairer { id }
     }
   }`
 });
@@ -204,6 +269,7 @@ export const updateUser = ({
   id,
   name,
   email,
+  phoneNumber,
   module,
   program,
   pronouns,
@@ -214,10 +280,11 @@ export const updateUser = ({
 }) => ({
   query: `mutation {
     user: updateUser(
-      user: {
+      input: {
         id: "${id}"
         name: "${name}"
         email: "${email}"
+        phoneNumber: "${phoneNumber}"
         module: ${module}
         program: "${program}"
         pronouns: "${pronouns}"
@@ -232,6 +299,7 @@ export const updateUser = ({
       image
       pronouns
       email
+      phoneNumber
       slack
       skills
     }
@@ -244,7 +312,7 @@ export const updateUserImage = ({
 }) => ({
   query: `mutation {
     user: updateUser(
-      user: {
+      input: {
         id: "${id}"
         image: "${image}"
       }

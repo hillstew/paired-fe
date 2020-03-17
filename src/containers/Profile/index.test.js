@@ -10,6 +10,7 @@ describe('Profile', () => {
     const mockProps = {
       createUser: mockCreateUser,
       email: 'Hill@gmail.com',
+      phoneNumber: '1234567890',
       firebaseID: 'bAzN8PSfQSPL9rg4pMhTha8zewn2',
       image: 'https://avatars1.githubusercontent.com/u/49459620?v=4',
       name: 'Hillary',
@@ -29,6 +30,7 @@ describe('Profile', () => {
       const expected = {
         name: mockProps.name,
         email: mockProps.email,
+        phoneNumber: '',
         program: '',
         module: '',
         pronouns: '',

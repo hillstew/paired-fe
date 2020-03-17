@@ -1,0 +1,43 @@
+.Stats--h2 {
+  color: $color-secondary;
+  font-family: $font-bold;
+  margin: 20px;
+  text-align: center;
+
+  span {
+    font-family: $font-bold;
+  }
+}
+
+.StatsCards--section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.StatsCard {
+  font-family: $font-medium;
+  border: 2px solid $color-primary;
+  box-shadow: $light-shadow;
+  margin: 10px 20px;
+  padding: 16px;
+  text-align: center;
+  align-content: center;
+  width: 400px;
+  word-break: break-word;
+  color: $color-secondary;
+  border-radius: 10px;
+}
+
+.StatsCard--p {
+  font-size: 50px;
+  color: $color-primary;
+  -webkit-text-stroke: 1px $color-secondary;
+}
+
+.StatsCard--name {
+  font-size: 30px;
+  color: $color-primary;
+  -webkit-text-stroke: 1px $color-secondary;
+}

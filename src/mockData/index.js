@@ -5,6 +5,7 @@ export const mockUser = {
   id: "5caa7eebfdebb8348e53a48e",
   image: "https://avatars1.githubusercontent.com/u/40586291?v=",
   email: "hill@gmail.com",
+  phoneNumber: "1234567890",
   firebaseID: "abc123"
 }
 
@@ -105,7 +106,7 @@ export const mockAvailPairings = [
     time: "lunch",
     id: "5caa7eebfdebb8348e58076",
   }
-]; 
+];
 
 export const mockPairingToDeleteFromSched = {
   pairer: {
@@ -149,7 +150,7 @@ export const mockScheduleAfterDelete = [
     id: "5caa7eebfdebb8348e53a49d",
     notes: null,
   }
-]; 
+];
 
 export const mockPairingToAddToSched = {
   pairer: {
@@ -276,7 +277,8 @@ export const mockQueryFromgetUserPairings = {
 
 export const mockQueryFromupdatePairing = {
          query: `mutation {
-    updatePairing(pairing: {
+    updatePairing(
+      input: {
         id: "6t6t6t"
         pairee: "7b7b7b"
         notes: "Mythical Creatures"
@@ -309,9 +311,10 @@ export const mockQueryFromupdatePairing = {
 
 export const mockQueryFromdeletePairing = {
          query: `mutation {
-    deletePairing(id: "45dtl") {
-      date
-    }
+    deletePairing( input: { id: "45dtl" })
+      {
+        date
+      }
   }`
        };
 
@@ -414,6 +417,7 @@ export const mockPairingsQuery = {
 export const mockUserToUpdate = {
   name: 'Hillary',
   email: 'hill@gmail.com',
+  phoneNumber: '1234567890',
   image: 'https://avatars1.githubusercontent.com/u/40586291?v=',
   firebaseID: 'abc123',
   program: 'FE',
@@ -434,8 +438,9 @@ export const mockUpdatedUser = {
   image: 'https://avatars1.githubusercontent.com/u/40586291?v=',
   pronouns: 'she, her',
   email: 'hill@gmail.com',
+  phoneNumber: '1234567890',
   slack: '@hillstew',
-  skills: [ 'react', 'flexbox', 'paired' ] 
+  skills: [ 'react', 'flexbox', 'paired' ]
 };
 
 export const mockUserImgToUpdate = {
@@ -451,8 +456,9 @@ export const mockUserWithNewImg = {
   image: 'https://avatars1.githubusercontent.com/u/40586291?v=58fjs',
   pronouns: 'she, her',
   email: 'hill@gmail.com',
+  phoneNumber: '1234567890',
   slack: '@hillstew',
-  skills: [ 'react', 'flexbox', 'paired' ] 
+  skills: [ 'react', 'flexbox', 'paired' ]
 };
 
 export const mockAvailabilities = [

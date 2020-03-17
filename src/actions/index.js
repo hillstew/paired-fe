@@ -28,6 +28,11 @@ export const setSchedule = schedule => ({
   schedule
 });
 
+export const setStats = stats => ({
+  type: 'SET_STATS',
+  stats
+});
+
 export const deletePairing = id => ({
   type: 'DELETE_PAIRING',
   id

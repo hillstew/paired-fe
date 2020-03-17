@@ -63,6 +63,22 @@ exports[`Profile Profile component should match the snapshot 1`] = `
         value="Hill@gmail.com"
       />
       <label
+        htmlFor="phoneNumber"
+      >
+        Phone Number
+        <span
+          className="Profile--asterisk"
+        >
+          *
+        </span>
+      </label>
+      <input
+        className="Profile--input"
+        name="phoneNumber"
+        onChange={[Function]}
+        value=""
+      />
+      <label
         htmlFor="slack"
       >
         Slack handle

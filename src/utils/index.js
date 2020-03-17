@@ -1,5 +1,7 @@
 export const fetchData = async body => {
-  const url = 'https://paired-api.herokuapp.com/graphql';
+  const url = 'https://paired-be.herokuapp.com/graphql';
+  // When deployed locally alongside BE for testing or development, use:
+  // const url = 'http://localhost:3001/graphql';
   const response = await fetch(url, {
     method: 'POST',
     headers: {

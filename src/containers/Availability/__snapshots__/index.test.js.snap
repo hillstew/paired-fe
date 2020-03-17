@@ -16,13 +16,13 @@ exports[`Availability Availability component should match the snapshot when the 
       <tr>
         <th />
         <th>
-          8:00 - 8:50 a.m.
+          8:00 - 8:30 a.m.
         </th>
         <th>
-          12:00 - 12:50 p.m.
+          12:00 - 12:30 p.m.
         </th>
         <th>
-          4:10 - 5:00 p.m.
+          4:10 - 4:40 p.m.
         </th>
       </tr>
     </thead>
@@ -204,13 +204,13 @@ exports[`Availability Availability component should match the snapshot when the 
       <tr>
         <th />
         <th>
-          8:00 - 8:50 a.m.
+          8:00 - 8:30 a.m.
         </th>
         <th>
-          12:00 - 12:50 p.m.
+          12:00 - 12:30 p.m.
         </th>
         <th>
-          4:10 - 5:00 p.m.
+          4:10 - 4:40 p.m.
         </th>
       </tr>
     </thead>
