@@ -31,6 +31,7 @@ describe('Profile', () => {
         name: mockProps.name,
         email: mockProps.email,
         phoneNumber: '',
+        phoneNumberError: '',
         program: '',
         module: '',
         pronouns: '',
