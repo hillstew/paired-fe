@@ -86,9 +86,9 @@ export class Profile extends Component {
   isPhoneNumberValid = () => {
     let phone = this.state.phoneNumber
     let validNumbers = /\d+/g;
-    let updatedPhone = ""
+    let updatedPhone = ''
     let phoneNumberError = 'Please enter a valid 10 digit phone number with no dashes or parentheses.'
-      if (phone === "") {
+      if (phone === '') {
         return true;
       }
       else if (phone != null) {
@@ -103,7 +103,7 @@ export class Profile extends Component {
             return false;
           } else {
             this.setState({ phoneNumber: updatedPhone})
-            this.setState({ phoneNumberError: ' '});
+            this.setState({ phoneNumberError: ''});
             return true;
           }
         }
@@ -189,7 +189,9 @@ export class Profile extends Component {
               <label htmlFor='phoneNumber'>
                 Phone Number
               </label>
-              <center style = {{color: 'red'}}> {this.state.phoneNumberError} </center>
+              <div id= 'phone-number-error'>
+              {this.state.phoneNumberError}
+              </div>
               <input
                 className='Profile--input'
                 value={phoneNumber}
