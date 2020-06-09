@@ -67,16 +67,9 @@ exports[`Profile Profile component should match the snapshot 1`] = `
       >
         Phone Number
       </label>
-      <center
-        style={
-          Object {
-            "color": "red",
-          }
-        }
-      >
-         
-         
-      </center>
+      <div
+        id="phone-number-error"
+      />
       <input
         className="Profile--input"
         name="phoneNumber"
