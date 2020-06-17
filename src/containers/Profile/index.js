@@ -20,7 +20,8 @@ export class Profile extends Component {
       submitted: false,
       'skill 1': '',
       'skill 2': '',
-      'skill 3': ''
+      'skill 3': '',
+      phoneNumberError: ""
     };
   }
 
@@ -32,7 +33,7 @@ export class Profile extends Component {
   componentDidMount() {
     const { match, user } = this.props;
     if (match.path === '/edit-profile') {
-      const { name, email, phoneNumber, pronouns, slack, program, module, skills } = user;
+      const { name, email, phoneNumber, pronouns, slack, program, module, skills, phoneNumberError } = user;
       let moduleToSave = module.toString();
       if (module === 5) moduleToSave = 'Graduate';
       this.setState({
@@ -45,7 +46,8 @@ export class Profile extends Component {
         module: moduleToSave,
         'skill 1': skills[0] || '',
         'skill 2': skills[1] || '',
-        'skill 3': skills[2] || ''
+        'skill 3': skills[2] || '',
+        phoneNumberError
       });
     }
   }
@@ -81,16 +83,48 @@ export class Profile extends Component {
     this.setState({ [name]: value });
   };
 
+  isPhoneNumberValid = () => {
+    let phone = this.state.phoneNumber
+    let validNumbers = /\d+/g;
+    let updatedPhone = ''
+    let phoneNumberError = 'Please enter a valid 10 digit phone number with no dashes or parentheses.'
+      if (phone === '') {
+        return true;
+      }
+      else if (phone != null) {
+        if (phone.match(validNumbers) === null) {
+          this.setState({ phoneNumberError })
+          return false;
+        }
+        else if (phone.match(validNumbers) != null) {
+          updatedPhone = phone.match(validNumbers).join('')
+          if (updatedPhone.length !== 10) {
+            this.setState({ phoneNumberError });
+            return false;
+          } else {
+            this.setState({ phoneNumber: updatedPhone})
+            this.setState({ phoneNumberError: ''});
+            return true;
+          }
+        }
+      }
+    };
+
   handleSubmit = async event => {
     event.preventDefault();
     const { match, user, updateUser } = this.props;
+    let canUpdate = await this.isPhoneNumberValid();
     if (match.path !== '/edit-profile') {
-      this.setState({ submitted: true });
+        if (canUpdate) {
+          this.setState({ submitted: true });
+        }
     } else {
-      await updateUser({...this.formatUserData(), id: user.id });
-      this.setState({ message: 'Profile updated'}, () => {
-        setTimeout(this.removeMessage, 1000);
-      });
+        if (canUpdate) {
+          await updateUser({...this.formatUserData(), id: user.id });
+          this.setState({ message: 'Profile updated'}, () => {
+            setTimeout(this.removeMessage, 1000);
+          });
+        }
     }
   };
 
@@ -155,10 +189,14 @@ export class Profile extends Component {
               <label htmlFor='phoneNumber'>
                 Phone Number
               </label>
+              <div id= 'phone-number-error'>
+              {this.state.phoneNumberError}
+              </div>
               <input
                 className='Profile--input'
                 value={phoneNumber}
                 name='phoneNumber'
+                placeholder='e.g. 3031234567'
                 onChange={this.handleChange}
               />
               <label htmlFor='slack'>
