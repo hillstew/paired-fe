@@ -1,0 +1,89 @@
+.RockAndPebble {
+  color: $color-secondary;
+}
+
+.RockAndPebble--h2 {
+  font-family: $font-bold;
+}
+
+.RockAndPebble--explanation {
+  margin: 5px 10px;
+}
+
+.light {
+  font-family: $font-light;
+}
+
+.RockAndPebble--section {
+  padding: 20px 10px 0 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+@mixin header-div($content) {
+  height: 15%;
+  width: 100%;
+  border-bottom: 2px solid $color-primary;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: $content;
+}
+
+.RockAndPebble--header--div {
+  @include header-div(center)
+}
+
+.RockAndPebble--header--div--pebble {
+  @include header-div(space-evenly)
+}
+
+.RockAndPebble--header--h2 {
+  color: $color-secondary;
+  font-family: $font-bold;
+}
+
+.RockAndPebble--div {
+  margin: 10px 20px;
+  padding: 16px;
+  height: 500px;
+  width: 500px;
+  border: 2px solid $color-primary;
+  border-radius: 10px;
+  box-shadow: $light-shadow;
+  @media (max-width: 550px) {
+    width: 400px;
+  }
+}
+
+.RockAndPebble--btn {
+  @include button-style();
+  background-color: $color-primary;
+  height: 30px;
+  margin-top: 10px;
+  width: 220px;
+  &:disabled {
+    background-color: $color-accent;
+  }
+}
+
+.RockAndPebble--opt--btn {
+  @include button-style();
+  background-color: $color-secondary;
+  color: $color-accent;
+  height: 30px;
+  width: 110px;
+  &:disabled {
+    background-color: $color-primary;
+  }
+}
+
+
+.RockAndPebble--opt--div {
+  // height: 100%;
+  // width: 30%;
+}
+
