@@ -28,7 +28,7 @@ const RockAndPebble = ({ user, setError }) => {
   
   useEffect(() => {
     getUserRockAndPebble()
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
   
   return (
     <div className='RockAndPebble'>
