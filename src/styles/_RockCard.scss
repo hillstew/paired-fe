@@ -1,0 +1,42 @@
+.RockCard--image {
+  grid-column: 1/2;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin: auto;
+  display: block;
+}
+
+.RockCard--skills-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.RockCard--skills-p {
+  padding-left: 0px;
+  text-decoration: underline;
+  margin: 0;
+}
+
+.RockCard--ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.RockCard-li {
+  font-family: $font-light;
+}
+
+.RockCard--discon-btn {
+  @include button-style();
+  background-color: $color-primary;
+  height: 30px;
+  margin-top: 10px;
+  width: 220px;
+  &:disabled {
+    background-color: $color-accent;
+  }
+}

@@ -52,13 +52,16 @@ export default class Header extends Component {
             Submit an issue
           </a>
         </div>
-        {user.id && windowInnerWidth > 740 && (
+        {user.id && windowInnerWidth > 800 && (
           <div className='Header--controls'>
             <NavLink to='/schedule' className='Header--link'>
               View Schedule
             </NavLink>
             <NavLink to='/book-pairing' className='Header--link'>
               Book a Pairing
+            </NavLink>
+            <NavLink to='/rock-pebble' className='Header--link'>
+              Rock & Pebble
             </NavLink>
             <img
               src={image}
@@ -68,7 +71,7 @@ export default class Header extends Component {
             />
           </div>
         )}
-        {user.id && windowInnerWidth > 740 && isExpanded && (
+        {user.id && windowInnerWidth > 800 && isExpanded && (
           <div className='Header--dropdown'>
             <ul className='HamburgerMenu--ul'>
               <li className='HamburgerMenu--li'>
@@ -100,7 +103,7 @@ export default class Header extends Component {
             </ul>
           </div>
         )}
-        {user.id && windowInnerWidth <= 740 && (
+        {user.id && windowInnerWidth <= 800 && (
           <HamburgerMenu handleSignOut={handleSignOut} />
         )}
       </header>

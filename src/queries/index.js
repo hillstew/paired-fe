@@ -1,3 +1,31 @@
+export const getUserRockAndPebble = (id) => ({
+  query: `{
+    getUserRockAndPebble(id: "${id}") {
+      rockOptIn
+      rocks {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      }
+      pebbles {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      }
+    }
+  }`
+});
+
 export const getAvailablePairings = (program, mod, date) => ({
   query: `{
     getAvailablePairings(filter: { program: "${program}", module: ${mod}, date: "${date}" }) {

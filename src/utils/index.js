@@ -4,7 +4,7 @@ export const fetchData = async body => {
   // Staging backend:
   const url = 'https://paired-staging-be.herokuapp.com/graphql';
   // When deployed locally alongside BE for testing or development, use:
-  // const url = 'http://localhost:3001/graphql';
+  //   const url = 'http://localhost:3001/graphql';
   const response = await fetch(url, {
     method: 'POST',
     headers: {
