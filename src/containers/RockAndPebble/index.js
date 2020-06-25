@@ -66,7 +66,11 @@ const RockAndPebble = ({ user, setError }) => {
           </div>
           {pebbles.length === 0 ? 
             <>
-              <p>🥺You don't have any pebbles right now. 🥺</p>
+              <p>        
+                <span role='img' aria-label='pleading face emoji'>🥺</span>
+                You don't have any pebbles right now. 
+                <span role='img' aria-label='pleading face emoji'>🥺</span>
+              </p>
               <p className='RockAndPebble--explanation light'>If you have opted in, keep waiting. If not, opt-in!</p>
             </>
             :
