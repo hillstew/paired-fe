@@ -66,16 +66,15 @@ exports[`Profile Profile component should match the snapshot 1`] = `
         htmlFor="phoneNumber"
       >
         Phone Number
-        <span
-          className="Profile--asterisk"
-        >
-          *
-        </span>
       </label>
+      <div
+        id="phone-number-error"
+      />
       <input
         className="Profile--input"
         name="phoneNumber"
         onChange={[Function]}
+        placeholder="e.g. 3031234567"
         value=""
       />
       <label
