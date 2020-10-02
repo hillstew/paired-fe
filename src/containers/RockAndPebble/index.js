@@ -6,8 +6,10 @@ import { setError } from '../../actions'
 import RockCard from '../../components/RockCard'
 import PebbleCard from '../../components/PebbleCard'
 import PropTypes from 'prop-types'
+import { NavLink } from 'react-router-dom';
 
 const RockAndPebble = ({ user, setError }) => {
+  // in these arrays, first arg is variable, second is action used to update state
   const [rocks, setRocks] = useState([])
   const [pebbles, setPebbles] = useState([])
   const [rockOptIn, setRocksOptIn] = useState('')
@@ -26,6 +28,8 @@ const RockAndPebble = ({ user, setError }) => {
     }
   }
   
+  // componentDidMount and componentWillMount (or some other combination of 2 stages)
+  // can have multiple; second argument has function variable, if it changes, function is run
   useEffect(() => {
     getUserRockAndPebble()
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
@@ -47,7 +51,13 @@ const RockAndPebble = ({ user, setError }) => {
             {rocks.length === 0 ? 
               <>
                 <p>You don't have a rock. Let's find one!</p>
-                <button className='RockAndPebble--btn'>Get Rockin'</button>
+                <NavLink
+                  to='rock-listing'
+                  className='RockAndPebble--btn'
+                  activeClassName=''
+                >
+                  Get Rockin'
+                </NavLink>
               </>
               :
               <RockCard rocks={rocks}/>
