@@ -13,6 +13,12 @@ export const setUser = user => ({
   user
 });
 
+export const setRockAndPebble = rock_and_pebble => ({
+  type: 'SET_ROCK_AND_PEBBLE',
+  rock_and_pebble
+});
+
+
 export const setPairingId = id => ({
   type: 'SET_ID',
   id
