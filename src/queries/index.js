@@ -1,7 +1,7 @@
 export const getUserRockAndPebble = (id) => ({
   query: `{
     getUserRockAndPebble(id: "${id}") {
-      rocks {
+      myRocks {
         name
         module
         program
@@ -11,7 +11,7 @@ export const getUserRockAndPebble = (id) => ({
         slack
         image
       }
-      pebbles {
+      myPebbles {
         name
         module
         program
@@ -21,6 +21,16 @@ export const getUserRockAndPebble = (id) => ({
         slack
         image
       }
+      pendingPebbles {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      }  
     }
   }`
 });
