@@ -4,31 +4,21 @@ import { fetchData } from '../../utils'
 import { connect } from 'react-redux'
 import { setError } from '../../actions'
 import RockCard from '../../components/RockCard'
+import { rockOptInOut } from '../../thunks/rockOptOut'
 import PebbleCard from '../../components/PebbleCard'
 import PropTypes from 'prop-types'
 
-const RockAndPebble = ({ user, setError }) => {
-  const [rocks, setRocks] = useState([])
-  const [pebbles, setPebbles] = useState([])
-  const [rockOptIn, setRocksOptIn] = useState('')
+const RockAndPebble = ({ user, rockandpebbles, setError, rockOptInOut }) => {
 
-  const getUserRockAndPebble = async () => {
-    const id = user.id;
-    const userRockAndPebbleQuery = gql.getUserRockAndPebble(id)
-    try {
-      const userRockAndPebbleResponse = await fetchData(userRockAndPebbleQuery)
-      const userRockAndPebble = userRockAndPebbleResponse.getUserRockAndPebble
-      setRocks(userRockAndPebble.rocks)
-      setPebbles(userRockAndPebble.pebbles)
-      setRocksOptIn(userRockAndPebble.rockOptIn)
-    } catch (error) {
-      setError(error.message)
-    }
+  const rockOptIn = user.rockOptIn
+  const id = user.id
+  const pebbles = rockandpebbles.pebbles
+  const rocks = rockandpebbles.rocks
+
+
+  const handleSubmit = async () => {
+    await rockOptInOut(id)
   }
-  
-  useEffect(() => {
-    getUserRockAndPebble()
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
   
   return (
     <div className='RockAndPebble'>
@@ -44,7 +34,7 @@ const RockAndPebble = ({ user, setError }) => {
           <div className='RockAndPebble--header--div'>
             <h2 className='RockAndPebble--header--h2'>Your Rock</h2>
           </div>
-            {rocks.length === 0 ? 
+            { !rocks?.length ? 
               <>
                 <p>You don't have a rock. Let's find one!</p>
                 <button className='RockAndPebble--btn'>Get Rockin'</button>
@@ -58,13 +48,13 @@ const RockAndPebble = ({ user, setError }) => {
             <h2 className='RockAndPebble--header--h2'>Your Pebble(s)</h2>
             <div className='RockAndPebble--opt--div'>
             {rockOptIn ? 
-              <button className='RockAndPebble--opt--btn'>Opt-out</button>
+              <button className='RockAndPebble--opt--btn' onClick={() => handleSubmit()}>Opt-out</button>
               :
-              <button className='RockAndPebble--opt--btn'>Opt-in</button>
+              <button className='RockAndPebble--opt--btn'onClick={() => handleSubmit()}>Opt-in</button>
             }
             </div>
           </div>
-          {pebbles.length === 0 ? 
+          { !pebbles?.length ? 
             <>
               <p>        
                 <span role='img' aria-label='pleading face emoji'>🥺</span>
@@ -74,7 +64,7 @@ const RockAndPebble = ({ user, setError }) => {
               <p className='RockAndPebble--explanation light'>If you have opted in, keep waiting. If not, opt-in!</p>
             </>
             :
-            <PebbleCard pebbles={pebbles}/>
+            <PebbleCard pebbles={pebbles}/> 
           } 
           </div>
       </section>
@@ -84,10 +74,12 @@ const RockAndPebble = ({ user, setError }) => {
 
 export const mapStateToProps = state => ({
   user: state.user,
+  rockandpebbles: state.rockandpebbles,
 })
 
 export const mapDispatchToProps = dispatch => ({
   setError: error => dispatch(setError(error)),
+  rockOptInOut: id => dispatch(rockOptInOut(id)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RockAndPebble)
@@ -95,6 +87,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(RockAndPebble)
 RockAndPebble.propTypes = {
   setError: PropTypes.func,
   user: PropTypes.object,
+  rockandpebbles: PropTypes.object,
   rocks: PropTypes.array,
   pebbles: PropTypes.array,
   rockOptIn: PropTypes.string
