@@ -1,7 +1,6 @@
 export const getUserRockAndPebble = (id) => ({
   query: `{
     getUserRockAndPebble(id: "${id}") {
-      rockOptIn
       rocks {
         name
         module
@@ -25,6 +24,47 @@ export const getUserRockAndPebble = (id) => ({
     }
   }`
 });
+
+export const discontinueRockPebbleRelationship = (id, reason, userId) => ({
+  query: `
+    mutation {
+      discontinueRockPebbleRelationship(
+        input: {
+          id: "${id}"
+          reason: "${reason}"
+          userId: "${userId}"
+        }
+      ){
+    
+        myRocks {
+                    id
+                    name
+                    slack
+        }
+        myPebbles {
+                    id 
+                    name
+                    slack
+                  }
+      }
+    }
+
+`
+})
+
+export const rockOptInOut = (id) => ({
+  query: `
+  mutation {
+    updateUserOptinStatus(
+      input: {
+        id: "${id}"
+      })
+      {
+        rockOptIn
+    }
+  }
+  `
+})
 
 export const getAvailablePairings = (program, mod, date) => ({
   query: `{
@@ -111,6 +151,12 @@ export const getUser = id => ({
     module
     id
     image
+    pronouns
+    phoneNumber
+    email
+    slack
+    skills
+    rockOptIn
   }
 }`
 });
@@ -244,6 +290,7 @@ export const getUserByFirebaseID = id => ({
     email
     slack
     skills
+    rockOptIn
   }
 }`
 });
