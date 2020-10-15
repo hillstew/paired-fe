@@ -3,6 +3,7 @@ import { setError, setLoading, setUser } from '../actions';
 import { getSchedule } from './getSchedule';
 import { updateUser } from './updateUser';
 import * as gql from '../queries';
+import { getRockAndPebbles } from './getRockAndPebbles';
 
 export const signInUser = (id, photoURL) => {
   return async dispatch => {
@@ -17,6 +18,7 @@ export const signInUser = (id, photoURL) => {
           dispatch(setUser(user));
         }
         dispatch(getSchedule(user.id));
+        dispatch(getRockAndPebbles(user.id));
       } else {
         dispatch(setUser({ isNewUser: true }));
       }
