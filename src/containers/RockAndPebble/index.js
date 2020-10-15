@@ -6,17 +6,19 @@ import { setError } from '../../actions'
 import RockCard from '../../components/RockCard'
 import { rockOptInOut } from '../../thunks/rockOptOut'
 import PebbleCard from '../../components/PebbleCard'
+import PendingCard from '../../components/PendingCard'
 import PropTypes from 'prop-types'
 
 const RockAndPebble = ({ user, rockandpebbles, setError, rockOptInOut }) => {
 
   const rockOptIn = user.rockOptIn
   const id = user.id
-  const pebbles = rockandpebbles.pebbles
-  const rocks = rockandpebbles.rocks
+  const pebbles = rockandpebbles.myPebbles
+  const rocks = rockandpebbles.myRocks
+  const pendingPebbles = rockandpebbles.pendingPebbles
 
 
-  const handleSubmit = async () => {
+  const handleSubmitRockOptinStatus = async () => {
     await rockOptInOut(id)
   }
   
@@ -43,29 +45,50 @@ const RockAndPebble = ({ user, rockandpebbles, setError, rockOptInOut }) => {
               <RockCard rocks={rocks}/>
             } 
         </div>
+
         <div className='RockAndPebble--div'>
           <div className='RockAndPebble--header--div--pebble'>
+
             <h2 className='RockAndPebble--header--h2'>Your Pebble(s)</h2>
+
             <div className='RockAndPebble--opt--div'>
             {rockOptIn ? 
-              <button className='RockAndPebble--opt--btn' onClick={() => handleSubmit()}>Opt-out</button>
+              <button className='RockAndPebble--opt--btn' onClick={() => handleSubmitRockOptinStatus()}>Opt-out</button>
               :
-              <button className='RockAndPebble--opt--btn'onClick={() => handleSubmit()}>Opt-in</button>
+              <button className='RockAndPebble--opt--btn'onClick={() => handleSubmitRockOptinStatus()}>Opt-in</button>
             }
             </div>
           </div>
-          { !pebbles?.length ? 
-            <>
-              <p>        
-                <span role='img' aria-label='pleading face emoji'>🥺</span>
-                You don't have any pebbles right now. 
-                <span role='img' aria-label='pleading face emoji'>🥺</span>
-              </p>
-              <p className='RockAndPebble--explanation light'>If you have opted in, keep waiting. If not, opt-in!</p>
-            </>
-            :
-            <PebbleCard pebbles={pebbles}/> 
-          } 
+
+            <div className='RockAndPebble--opt--div'>  
+            { !pebbles?.length ? 
+                 <>
+                <p>        
+                  <span role='img' aria-label='pleading face emoji'>🥺</span>
+                  You don't have any pebbles right now. 
+                  <span role='img' aria-label='pleading face emoji'>🥺</span>
+                </p>
+                <p className='RockAndPebble--explanation light'>If you have opted in, keep waiting. If not, opt-in!</p>
+              </>
+              :
+                 <PebbleCard pebbles={pebbles}/> 
+                } 
+            </div>  
+          <div>
+            { pebbles && pebbles.length >= 2 &&
+              <p> Since you already have two pebbles you will no longer be listed as an available Rock. </p> 
+            }
+          </div>
+        </div>
+          <div className='RockAndPebble--div'> 
+         <div className='RockAndPebble--header--div--pebble'> 
+          <h2 className='RockAndPebble--header--h2'>Pending Pebble(s)</h2>
+          </div>
+          <div className='RockAndPebble--opt--div'> 
+            { pendingPebbles && pendingPebbles.length >= 1 && 
+              <PendingCard pendingPebbles={pendingPebbles}/> 
+            }
+            </div>
           </div>
       </section>
     </div>
