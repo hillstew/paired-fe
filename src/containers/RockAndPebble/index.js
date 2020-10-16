@@ -3,12 +3,13 @@ import { connect } from 'react-redux'
 import { setError } from '../../actions'
 import RockCard from '../../components/RockCard'
 import { activateRockAndPebble} from '../../thunks/activateRockAndPebble'
+import { declineRockPebbleRelationship} from '../../thunks/declineRockPebble'
 import { rockOptInOut } from '../../thunks/rockOptOut'
 import PebbleCard from '../../components/PebbleCard'
 import PendingCard from '../../components/PendingCard'
 import PropTypes from 'prop-types'
 
-const RockAndPebble = ({ user, rockandpebbles, setError, rockOptInOut, activateRockAndPebble }) => {
+const RockAndPebble = ({ user, rockandpebbles, rockOptInOut, activateRockAndPebble, declineRockPebbleRelationship}) => {
 
   const rockOptIn = user.rockOptIn
   const id = user.id
@@ -81,7 +82,7 @@ const RockAndPebble = ({ user, rockandpebbles, setError, rockOptInOut, activateR
         </div>
         { pendingPebbles && pendingPebbles.length >= 1 && 
     
-              <PendingCard pendingPebbles={pendingPebbles} userId = {user.id} activateRockAndPebble = {activateRockAndPebble} /> 
+              <PendingCard pendingPebbles={pendingPebbles} userId = {user.id} activateRockAndPebble = {activateRockAndPebble} declineRockPebbleRelationship = {declineRockPebbleRelationship} /> 
                      }
       </section>
     </div>
@@ -96,6 +97,7 @@ export const mapStateToProps = state => ({
 export const mapDispatchToProps = dispatch => ({
   setError: error => dispatch(setError(error)),
   activateRockAndPebble: (rockId, pebbleId) => dispatch(activateRockAndPebble(rockId, pebbleId)),
+  declineRockPebbleRelationship: (rockId, pebbleId, reason) => dispatch(declineRockPebbleRelationship(rockId, pebbleId, reason)),
   rockOptInOut: id => dispatch(rockOptInOut(id)),
 })
 
