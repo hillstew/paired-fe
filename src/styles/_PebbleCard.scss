@@ -54,3 +54,19 @@
     background-color: $color-accent;
   }
 }
+
+.PebbleCard--reason-btn {
+  @include button-style();
+  background-color: $color-primary;
+  height: 50px;
+  padding-top: 10px;
+  padding-right: 1px;
+  padding-left: 10px;
+  padding-bottom: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+  &:disabled {
+    background-color: $color-accent;
+  }
+}
