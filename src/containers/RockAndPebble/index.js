@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import * as gql from '../../queries'
-import { fetchData } from '../../utils'
+import React from 'react'
 import { connect } from 'react-redux'
 import { setError } from '../../actions'
 import RockCard from '../../components/RockCard'
+import { activateRockAndPebble} from '../../thunks/activateRockAndPebble'
 import { rockOptInOut } from '../../thunks/rockOptOut'
 import PebbleCard from '../../components/PebbleCard'
 import PendingCard from '../../components/PendingCard'
 import PropTypes from 'prop-types'
 
-const RockAndPebble = ({ user, rockandpebbles, setError, rockOptInOut }) => {
+const RockAndPebble = ({ user, rockandpebbles, setError, rockOptInOut, activateRockAndPebble }) => {
 
   const rockOptIn = user.rockOptIn
   const id = user.id
@@ -80,16 +79,10 @@ const RockAndPebble = ({ user, rockandpebbles, setError, rockOptInOut }) => {
             }
           </div>
         </div>
-          <div className='RockAndPebble--div'> 
-         <div className='RockAndPebble--header--div--pebble'> 
-          <h2 className='RockAndPebble--header--h2'>Pending Pebble(s)</h2>
-          </div>
-          <div className='RockAndPebble--opt--div'> 
-            { pendingPebbles && pendingPebbles.length >= 1 && 
-              <PendingCard pendingPebbles={pendingPebbles}/> 
-            }
-            </div>
-          </div>
+        { pendingPebbles && pendingPebbles.length >= 1 && 
+    
+              <PendingCard pendingPebbles={pendingPebbles} userId = {user.id} activateRockAndPebble = {activateRockAndPebble} /> 
+                     }
       </section>
     </div>
   )
@@ -102,6 +95,7 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   setError: error => dispatch(setError(error)),
+  activateRockAndPebble: (rockId, pebbleId) => dispatch(activateRockAndPebble(rockId, pebbleId)),
   rockOptInOut: id => dispatch(rockOptInOut(id)),
 })
 
