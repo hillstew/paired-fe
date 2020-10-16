@@ -117,6 +117,44 @@ export const activateRockPebbleRelationship = (rockId, pebbleId) => ({
       } 
     }
   }
+  `})
+
+export const declineRockPebbleRelationship = (rockId, pebbleId, reason) => ({
+  query: `
+  mutation {
+    declineRockPebbleRelationship(
+      input: {
+        rockId: "${rockId}"
+        pebbleId: "${pebbleId}"
+        reason: "${reason}"
+      }
+    ){
+      myRocks { 
+        id
+        name
+        pronouns
+        program
+        module
+        slack
+     }
+      myPebbles {
+        id
+        name
+        pronouns
+        program
+        module
+        slack 
+      }
+      pendingPebbles {
+        id
+        name
+        pronouns
+        program
+        module
+        slack 
+      }
+    }
+  }
   `
 }
 
