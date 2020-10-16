@@ -76,6 +76,52 @@ export const rockOptInOut = (id) => ({
   `
 })
 
+export const activateRockPebbleRelationship = (rockId, pebbleId) => ({
+  query: `
+  mutation {
+    activateRockPebbleRelationship(
+    input: {
+    rockId: "${rockId}"
+    pebbleId: "${pebbleId}"
+    })
+    {
+      myRocks {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      }
+      myPebbles {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      }
+      pendingPebbles {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      } 
+    }
+  }
+  `
+}
+
+)
+
 export const getAvailablePairings = (program, mod, date) => ({
   query: `{
     getAvailablePairings(filter: { program: "${program}", module: ${mod}, date: "${date}" }) {
