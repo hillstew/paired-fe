@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-// import DenyReasons from '../../components/DenyReasons'
+import DenyReasons from '../../components/DenyReasons'
 
-const PendingCard = ({ pendingPebbles, userId, activateRockAndPebble }) => {
-  const { denyPebble, setdenyPebble } = useState(false);
+const PendingCard = ({ pendingPebbles, userId, activateRockAndPebble, declineRockPebbleRelationship }) => {
+  const [ denyPebble, setdenyPebble ] = useState(false);
 
   const createList = skills => {
     return skills.map((skill, i) => {
@@ -24,7 +24,7 @@ const PendingCard = ({ pendingPebbles, userId, activateRockAndPebble }) => {
 
   const pendingDisplay = pendingPebbles.map((pebble, i) => 
     <div key={i}>
-
+        {console.log(pebble)}
       <h2>{pebble.name} ({pebble.pronouns})</h2>
       <img src={pebble.image} alt={pebble.name} className='PebbleCard--image' />
       <p>{pebble.program} - Mod {pebble.module}</p>
@@ -33,19 +33,22 @@ const PendingCard = ({ pendingPebbles, userId, activateRockAndPebble }) => {
         <p className='PebbleCard--skills-p'>Skills</p>
         <ul className='PebbleCard--ul'>{createList(pebble.skills)}</ul>
       </div>
-      { !denyPebble ? 
-        <div> 
+
+      <div className='RockAndPebble--opt--div'>  
+      { !denyPebble &&
+        <div>
            <button className='PebbleCard--discon-btn' onClick={() => handleSubmitDeny()}>Say No To Relationship</button> 
            <p> </p>
          <button className='PebbleCard--discon-btn' onClick={() => handleSubmitAccept(pebble.id)}>Say Yes To Relationship</button>
          </div>
-         :
-         <div>
-       
+      }
         </div>
 
-
-      }
+        <div className='RockAndPebble--opt--div'>  
+        <div>
+            <DenyReasons userId = {userId} declineRockPebbleRelationship= {declineRockPebbleRelationship} pebbleId ={pebble.id}/>
+         </div>
+        </div> 
 
     </div>
   )
