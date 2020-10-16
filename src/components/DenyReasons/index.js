@@ -16,7 +16,6 @@ const DenyReasons = ({ userId, pebbleId, declineRockPebbleRelationship }) => {
         <button className='PebbleCard--reason-btn' onClick={() => handleSubmit(reasonTwo)} >{reasonTwo}</button>
          <p></p>
         <button className='PebbleCard--reason-btn' onClick={() => handleSubmit(reasonThree)} >{reasonThree}</button>
-
   </section>
   )
 }
