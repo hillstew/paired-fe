@@ -1,6 +1,5 @@
 import { fetchData } from '../utils';
 import { setError, setLoading, setUser } from '../actions';
-// import { setUser } from './getSchedule';
 import * as gql from '../queries';
 
 export const rockOptInOut = (id) => {
