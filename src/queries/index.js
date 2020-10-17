@@ -35,33 +35,6 @@ export const getUserRockAndPebble = (id) => ({
   }`
 });
 
-export const discontinueRockPebbleRelationship = (id, reason, userId) => ({
-  query: `
-    mutation {
-      discontinueRockPebbleRelationship(
-        input: {
-          id: "${id}"
-          reason: "${reason}"
-          userId: "${userId}"
-        }
-      ){
-    
-        myRocks {
-                    id
-                    name
-                    slack
-        }
-        myPebbles {
-                    id 
-                    name
-                    slack
-                  }
-      }
-    }
-
-`
-})
-
 export const rockOptInOut = (id) => ({
   query: `
   mutation {
@@ -74,7 +47,7 @@ export const rockOptInOut = (id) => ({
     }
   }
   `
-})
+});
 
 export const activateRockPebbleRelationship = (rockId, pebbleId) => ({
   query: `
@@ -117,7 +90,7 @@ export const activateRockPebbleRelationship = (rockId, pebbleId) => ({
       } 
     }
   }
-  `})
+  `});
 
 export const declineRockPebbleRelationship = (rockId, pebbleId, reason) => ({
   query: `
@@ -130,35 +103,83 @@ export const declineRockPebbleRelationship = (rockId, pebbleId, reason) => ({
       }
     ){
       myRocks { 
-        id
         name
-        pronouns
-        program
         module
+        program
+        id
+        pronouns
+        skills
         slack
+        image
      }
       myPebbles {
-        id
         name
-        pronouns
-        program
         module
-        slack 
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
       }
       pendingPebbles {
-        id
         name
-        pronouns
-        program
         module
-        slack 
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
       }
     }
   }
-  `
-}
+  `});
 
-)
+export const discontinueRockPebbleRelationship = (rockId, pebbleId, reason) => ({
+  query: `
+  mutation {
+     discontinueRockPebbleRelationship(
+      input: {
+        rockId: "${rockId}"
+        pebbleId: "${pebbleId}"
+        reason: "${reason}"
+      }
+    ){
+
+      myRocks { 
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+     }
+      myPebbles {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      }
+      pendingPebbles {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      }
+    }
+  }`
+  });
 
 export const getAvailablePairings = (program, mod, date) => ({
   query: `{
