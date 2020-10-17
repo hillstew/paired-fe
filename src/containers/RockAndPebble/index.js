@@ -4,12 +4,18 @@ import { setError } from '../../actions'
 import RockCard from '../../components/RockCard'
 import { activateRockAndPebble} from '../../thunks/activateRockAndPebble'
 import { declineRockPebbleRelationship} from '../../thunks/declineRockPebble'
+import { discontinueRockPebbleRelationship} from '../../thunks/discontinueRockPebble'
 import { rockOptInOut } from '../../thunks/rockOptOut'
 import PebbleCard from '../../components/PebbleCard'
 import PendingCard from '../../components/PendingCard'
 import PropTypes from 'prop-types'
 
-const RockAndPebble = ({ user, rockandpebbles, rockOptInOut, activateRockAndPebble, declineRockPebbleRelationship}) => {
+const RockAndPebble = ({ user, 
+                         rockandpebbles, 
+                         rockOptInOut, 
+                         activateRockAndPebble,
+                         declineRockPebbleRelationship, 
+                         discontinueRockPebbleRelationship}) => {
 
   const rockOptIn = user.rockOptIn
   const id = user.id
@@ -42,7 +48,7 @@ const RockAndPebble = ({ user, rockandpebbles, rockOptInOut, activateRockAndPebb
                 <button className='RockAndPebble--btn'>Get Rockin'</button>
               </>
               :
-              <RockCard rocks={rocks}/>
+              <RockCard rocks={rocks} userId = {user.id} discontinueRockPebbleRelationship = {discontinueRockPebbleRelationship}/>
             } 
         </div>
 
@@ -59,8 +65,6 @@ const RockAndPebble = ({ user, rockandpebbles, rockOptInOut, activateRockAndPebb
             }
             </div>
           </div>
-
-            <div className='RockAndPebble--opt--div'>  
             { !pebbles?.length ? 
                  <>
                 <p>        
@@ -71,19 +75,22 @@ const RockAndPebble = ({ user, rockandpebbles, rockOptInOut, activateRockAndPebb
                 <p className='RockAndPebble--explanation light'>If you have opted in, keep waiting. If not, opt-in!</p>
               </>
               :
-                 <PebbleCard pebbles={pebbles}/> 
-                } 
-            </div>  
-          <div>
-            { pebbles && pebbles.length >= 2 &&
-              <p> Since you already have two pebbles you will no longer be listed as an available Rock. </p> 
-            }
+                 <PebbleCard pebbles={pebbles} userId = {user.id} discontinueRockPebbleRelationship = {discontinueRockPebbleRelationship}/> 
+                }  
+            <div className='RockAndPebble--opt--div'>
+              { pebbles && pebbles.length >= 2 &&
+                <p> Since you already have two pebbles you will no longer be listed as an available Rock. </p> 
+              }
           </div>
         </div>
-        { pendingPebbles && pendingPebbles.length >= 1 && 
-    
-              <PendingCard pendingPebbles={pendingPebbles} userId = {user.id} activateRockAndPebble = {activateRockAndPebble} declineRockPebbleRelationship = {declineRockPebbleRelationship} /> 
-                     }
+          { pendingPebbles && pendingPebbles.length >= 1 && 
+          <>
+            <div className='RockAndPebble--div'>        
+            <h2 className='RockAndPebble--header--h2'>Your Pending Pebble(s)</h2>
+              <PendingCard pendingPebbles={pendingPebbles} userId = {user.id} activateRockAndPebble = {activateRockAndPebble} declineRockPebbleRelationship = {declineRockPebbleRelationship} />
+          </div> 
+              </> 
+            }
       </section>
     </div>
   )
@@ -98,6 +105,7 @@ export const mapDispatchToProps = dispatch => ({
   setError: error => dispatch(setError(error)),
   activateRockAndPebble: (rockId, pebbleId) => dispatch(activateRockAndPebble(rockId, pebbleId)),
   declineRockPebbleRelationship: (rockId, pebbleId, reason) => dispatch(declineRockPebbleRelationship(rockId, pebbleId, reason)),
+  discontinueRockPebbleRelationship: (rockId, pebbleId, reason) => dispatch(discontinueRockPebbleRelationship(rockId, pebbleId, reason)),
   rockOptInOut: id => dispatch(rockOptInOut(id)),
 })
 
