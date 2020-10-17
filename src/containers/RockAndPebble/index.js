@@ -9,6 +9,7 @@ import { rockOptInOut } from '../../thunks/rockOptOut'
 import PebbleCard from '../../components/PebbleCard'
 import PendingCard from '../../components/PendingCard'
 import PropTypes from 'prop-types'
+import { NavLink } from 'react-router-dom';
 
 const RockAndPebble = ({ user, 
                          rockandpebbles, 
@@ -45,7 +46,13 @@ const RockAndPebble = ({ user,
             { !rocks?.length ? 
               <>
                 <p>You don't have a rock. Let's find one!</p>
-                <button className='RockAndPebble--btn'>Get Rockin'</button>
+                <NavLink
+                  to='rock-listing'
+                  className='RockAndPebble--btn'
+                  activeClassName=''
+                >
+                  Get Rockin'
+                </NavLink>
               </>
               :
               <RockCard rocks={rocks} userId = {user.id} discontinueRockPebbleRelationship = {discontinueRockPebbleRelationship}/>

@@ -519,3 +519,18 @@ export const updateUserImage = ({
     }
   }`
 });
+
+export const findAvailableRocks = (program, mod) => ({
+  query: `{
+    findAvailableRocks(filter: { program: "${program}", module: ${mod} }) {
+      name
+      module
+      program
+      id
+      pronouns
+      skills
+      slack
+      image
+    }
+  }`,
+});
