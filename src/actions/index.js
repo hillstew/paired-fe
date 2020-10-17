@@ -50,3 +50,8 @@ export const signUserOut = () => ({
 export const clearAvailPairings = () => ({
   type: 'CLEAR_AVAIL_PAIRINGS'
 });
+
+export const setAvailableRocks = rocks => ({
+  type: 'SET_AVAILABLE_ROCKS',
+  rocks
+})

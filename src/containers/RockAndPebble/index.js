@@ -6,6 +6,7 @@ import { setError } from '../../actions'
 import RockCard from '../../components/RockCard'
 import PebbleCard from '../../components/PebbleCard'
 import PropTypes from 'prop-types'
+import { NavLink } from 'react-router-dom';
 
 const RockAndPebble = ({ user, setError }) => {
   const [rocks, setRocks] = useState([])
@@ -47,7 +48,13 @@ const RockAndPebble = ({ user, setError }) => {
             {rocks.length === 0 ? 
               <>
                 <p>You don't have a rock. Let's find one!</p>
-                <button className='RockAndPebble--btn'>Get Rockin'</button>
+                <NavLink
+                  to='rock-listing'
+                  className='RockAndPebble--btn'
+                  activeClassName=''
+                >
+                  Get Rockin'
+                </NavLink>
               </>
               :
               <RockCard rocks={rocks}/>
