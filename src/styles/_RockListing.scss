@@ -1,5 +1,8 @@
 .RockListing {
   color: $color-secondary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .RockListing--h2 {
@@ -41,6 +44,7 @@
 
 .RockListing--explanation {
   margin: 5px 10px;
+  max-width: 460px;
 }
 
 .light {
