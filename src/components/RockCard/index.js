@@ -3,6 +3,7 @@ import DiscontinueReasons from '../../components/DiscontinueReasons'
 
 const RockCard = ({ rocks, userId, discontinueRockPebbleRelationship }) => {
   const [ discontinue, setDiscontinue ] = useState('')
+  const userRelationship = 'rock'
 
   const handleSubmit = (event) => {
     setTimeout(() => {
@@ -37,7 +38,9 @@ const RockCard = ({ rocks, userId, discontinueRockPebbleRelationship }) => {
         { discontinue !== rock.id ?
          <button className='RockCard--discon-btn' onClick={() => handleSubmit(rock.id)}>Discontinue</button> 
         :
-        <DiscontinueReasons parentCallback={callback} userId = {rock.id} pebbleId = {userId} discontinueRockPebbleRelationship= {discontinueRockPebbleRelationship}/>
+        <DiscontinueReasons parentCallback={callback} userId = {rock.id} 
+        pebbleId = {userId} userRelationship = {userRelationship }
+        discontinueRockPebbleRelationship= {discontinueRockPebbleRelationship}/>
         } 
     </div>
   )

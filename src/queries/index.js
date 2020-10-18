@@ -136,7 +136,7 @@ export const declineRockPebbleRelationship = (rockId, pebbleId, reason) => ({
   }
   `});
 
-export const discontinueRockPebbleRelationship = (rockId, pebbleId, reason) => ({
+export const discontinueRockPebbleRelationship = (rockId, pebbleId, reason, userRelationship) => ({
   query: `
   mutation {
      discontinueRockPebbleRelationship(
@@ -144,9 +144,9 @@ export const discontinueRockPebbleRelationship = (rockId, pebbleId, reason) => (
         rockId: "${rockId}"
         pebbleId: "${pebbleId}"
         reason: "${reason}"
+        userRelationship: "${userRelationship}"
       }
-    ){
-
+    ){ 
       myRocks { 
         name
         module

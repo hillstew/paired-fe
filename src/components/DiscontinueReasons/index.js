@@ -1,13 +1,18 @@
 import React from 'react'
 
-const DiscontinueReasons = ({ parentCallback, userId, pebbleId, discontinueRockPebbleRelationship }) => {
+const DiscontinueReasons = ({ parentCallback, 
+                              userId, 
+                              pebbleId, 
+                              discontinueRockPebbleRelationship, 
+                              userRelationship }) => {
+                            
 
   const reasonOne = "I don’t have as much time anymore but it's been fun working together!"
   const reasonTwo = 'I am no longer interested in pairing together. Best of luck!'
   const reasonThree = "I've graduated and no longer need a mentor. Thanks for all of your help."
 
   const handleSubmit = async (event) => {
-    await discontinueRockPebbleRelationship(userId, pebbleId, event)
+    await discontinueRockPebbleRelationship(userId, pebbleId, event, userRelationship)
   }
 
   const handleSubmitCancel = () => {
