@@ -41,7 +41,20 @@ const RockAndPebble = ({ user,
       <section className='RockAndPebble--section'>
         <div className='RockAndPebble--div'>
           <div className='RockAndPebble--header--div'>
-            <h2 className='RockAndPebble--header--h2'>Your Rock</h2>
+            <h2 className='RockAndPebble--header--h2'>Your Rock(s)</h2>
+            <div className='RockAndPebble--opt--div'>
+            { rocks && rocks.length >= 1 && 
+              <>
+                <NavLink
+                  to='rock-listing'
+                  className='ockAndPebble--opt--btn'
+                  activeClassName=''
+                >
+                  <button style={{marginLeft: '50px'}} className='RockAndPebble--opt--btn'>Find Rocks</button>
+                </NavLink>
+              </>
+            }
+            </div>
           </div>
             { !rocks?.length ? 
               <>
@@ -51,7 +64,7 @@ const RockAndPebble = ({ user,
                   className='RockAndPebble--btn'
                   activeClassName=''
                 >
-                  Get Rockin'
+                  <button className='RockAndPebble--btn'>Get Rockin'</button>
                 </NavLink>
               </>
               :
@@ -112,7 +125,7 @@ export const mapDispatchToProps = dispatch => ({
   setError: error => dispatch(setError(error)),
   activateRockAndPebble: (rockId, pebbleId) => dispatch(activateRockAndPebble(rockId, pebbleId)),
   declineRockPebbleRelationship: (rockId, pebbleId, reason) => dispatch(declineRockPebbleRelationship(rockId, pebbleId, reason)),
-  discontinueRockPebbleRelationship: (rockId, pebbleId, reason) => dispatch(discontinueRockPebbleRelationship(rockId, pebbleId, reason)),
+  discontinueRockPebbleRelationship: (rockId, pebbleId, reason, userRelationship) => dispatch(discontinueRockPebbleRelationship(rockId, pebbleId, reason, userRelationship)),
   rockOptInOut: id => dispatch(rockOptInOut(id)),
 })
 
