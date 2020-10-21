@@ -9,7 +9,8 @@ export class AvailableRockCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      createdRelationship: false
+      createdRelationship: false,
+      message: ''
     };
   }
 
@@ -28,14 +29,10 @@ export class AvailableRockCard extends Component {
     try {
       const body = gql.createRockPebbleRelationship(rock, user);
       const response = await fetchData(body);
-      console.log(response)
-      if (response.createRockPebbleRelationship) {
+      if(response['createRockPebbleRelationship']) {
         this.setState({ createdRelationship: true });
       } else {
-        //     setAvailableRocks([]);
-        //     this.setState({
-        //       message: `Oh bummer! 😰 There are no rocks available for the ${program} program and module ${module}. Try a different program or module. 😀`,
-        //     });
+        this.setState({ message: 'Looks like something went wrong. Try again or submit an issue on GitHub.'})
       }
     } catch (error) {
       this.props.setError(error.message);
@@ -45,7 +42,7 @@ export class AvailableRockCard extends Component {
   render() {
     const { id, name, image, pronouns, skills } = this.props.rock;
     const { user } = this.props;
-    const { createdRelationship } = this.state;
+    const { createdRelationship, message } = this.state;
     return (
       <section className="AvailableRockCard">
         <h3 className="AvailableRockCard--header">
@@ -58,14 +55,17 @@ export class AvailableRockCard extends Component {
             <ul className="AvailableRockCard--ul">{this.createList(skills)}</ul>
           </div>
         </div>
-        <button
-          className="AvailableRockCard--btn"
-          onClick={() => this.handleClick()}
-          disabled={id === user.id}
-        >
-          Ask to be your Rock
-        </button>
-        {createdRelationship && <Redirect to="/rock-pebble" />}
+        <div className="AvailableRockCard--btn-area">
+          <button
+            className="AvailableRockCard--btn"
+            onClick={() => this.handleClick()}
+            disabled={id === user.id}
+          >
+            Ask to be your Rock
+          </button>
+          {createdRelationship && <Redirect to="/rock-pebble" />}
+          {message && <p className="AvailableRockCard--error-p">{message}</p>}
+        </div>
       </section>
     );
   }
