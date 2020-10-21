@@ -47,10 +47,10 @@ const RockAndPebble = ({ user,
               <>
                 <NavLink
                   to='rock-listing'
-                  className='ockAndPebble--opt--btn'
+                  className='RockAndPebble--opt--link'
                   activeClassName=''
                 >
-                  <button style={{marginLeft: '50px'}} className='RockAndPebble--opt--btn'>Find Rocks</button>
+                  <button className='RockAndPebble--opt--btn'>Find Rocks</button>
                 </NavLink>
               </>
             }
