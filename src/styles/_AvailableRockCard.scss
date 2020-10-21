@@ -58,9 +58,23 @@
   font-family: $font-light;
 }
 
+.AvailableRockCard--btn-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .AvailableRockCard--btn {
   @include button-style();
   background-color: $color-primary;
+  height: 30px;
+  margin-top: 10px;
+  width: 220px;
+}
+
+.AvailableRockCard--error-p {
+  text-align: center;
 }
 
 @media screen and (max-width: 830px) {
