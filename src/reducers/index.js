@@ -6,6 +6,7 @@ import { availPairingsReducer } from './availPairingsReducer';
 import { scheduleReducer } from './scheduleReducer';
 import { rockandpebbleReducer } from './rockandpebbleReducer';
 import { statsReducer } from './statsReducer';
+import { availableRocksReducer } from './availableRocksReducer';
 
 export const rootReducer = combineReducers({
   isLoading: loadingReducer,
@@ -15,4 +16,5 @@ export const rootReducer = combineReducers({
   schedule: scheduleReducer,
   rockandpebbles: rockandpebbleReducer,
   stats: statsReducer,
+  availableRocks: availableRocksReducer
 });

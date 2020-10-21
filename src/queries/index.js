@@ -534,3 +534,18 @@ export const findAvailableRocks = (program, mod) => ({
     }
   }`,
 });
+
+export const createRockPebbleRelationship = (rock, pebble) => ({
+  query: `mutation {
+    createRockPebbleRelationship(
+      input: {
+        rockId: ${rock.id}
+        pebbleId: ${pebble.id}
+      }
+    ){
+      id
+      rock { id }
+      pebble { id }
+    }
+  }`,
+});
