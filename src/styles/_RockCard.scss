@@ -40,3 +40,17 @@
     background-color: $color-accent;
   }
 }
+
+.RockCard--section {
+  overflow: hidden;
+  height: 410px;
+  width: 100%;
+}
+
+.RockCard--div {
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}

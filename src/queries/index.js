@@ -1,8 +1,7 @@
 export const getUserRockAndPebble = (id) => ({
   query: `{
     getUserRockAndPebble(id: "${id}") {
-      rockOptIn
-      rocks {
+      myRocks {
         name
         module
         program
@@ -12,7 +11,163 @@ export const getUserRockAndPebble = (id) => ({
         slack
         image
       }
-      pebbles {
+      myPebbles {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      }
+      pendingPebbles {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      }  
+    }
+  }`
+});
+
+export const rockOptInOut = (id) => ({
+  query: `
+  mutation {
+    updateUserOptinStatus(
+      input: {
+        id: "${id}"
+      })
+      {
+        rockOptIn
+    }
+  }
+  `
+});
+
+export const activateRockPebbleRelationship = (rockId, pebbleId) => ({
+  query: `
+  mutation {
+    activateRockPebbleRelationship(
+    input: {
+    rockId: "${rockId}"
+    pebbleId: "${pebbleId}"
+    })
+    {
+      myRocks {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      }
+      myPebbles {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      }
+      pendingPebbles {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      } 
+    }
+  }
+  `});
+
+export const declineRockPebbleRelationship = (rockId, pebbleId, reason) => ({
+  query: `
+  mutation {
+    declineRockPebbleRelationship(
+      input: {
+        rockId: "${rockId}"
+        pebbleId: "${pebbleId}"
+        reason: "${reason}"
+      }
+    ){
+      myRocks { 
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+     }
+      myPebbles {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      }
+      pendingPebbles {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      }
+    }
+  }
+  `});
+
+export const discontinueRockPebbleRelationship = (rockId, pebbleId, reason, userRelationship) => ({
+  query: `
+  mutation {
+     discontinueRockPebbleRelationship(
+      input: {
+        rockId: "${rockId}"
+        pebbleId: "${pebbleId}"
+        reason: "${reason}"
+        userRelationship: "${userRelationship}"
+      }
+    ){ 
+      myRocks { 
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+     }
+      myPebbles {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      }
+      pendingPebbles {
         name
         module
         program
@@ -24,7 +179,7 @@ export const getUserRockAndPebble = (id) => ({
       }
     }
   }`
-});
+  });
 
 export const getAvailablePairings = (program, mod, date) => ({
   query: `{
@@ -111,6 +266,12 @@ export const getUser = id => ({
     module
     id
     image
+    pronouns
+    phoneNumber
+    email
+    slack
+    skills
+    rockOptIn
   }
 }`
 });
@@ -244,6 +405,7 @@ export const getUserByFirebaseID = id => ({
     email
     slack
     skills
+    rockOptIn
   }
 }`
 });

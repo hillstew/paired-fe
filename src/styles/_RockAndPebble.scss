@@ -70,6 +70,10 @@
   }
 }
 
+.RockAndPebble--opt--link {
+  margin-left: 50px;
+}
+
 .RockAndPebble--opt--btn {
   @include button-style();
   background-color: $color-secondary;

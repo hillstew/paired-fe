@@ -1,8 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
+import DiscontinueReasons from '../../components/DiscontinueReasons'
 
-const RockCard = ({ rocks }) => {
-  const rock = rocks[0]
-  
+const RockCard = ({ rocks, userId, discontinueRockPebbleRelationship }) => {
+  const [ discontinue, setDiscontinue ] = useState('')
+  const userRelationship = 'rock'
+
+  const handleSubmit = (event) => {
+    setTimeout(() => {
+      setDiscontinue(event);
+    }, 100);
+  }
+
+  const callback = (cancel) => {
+    setDiscontinue(cancel)
+  }
+
   const createList = skills => {
     return skills.map((skill, i) => {
       return (
@@ -13,8 +25,8 @@ const RockCard = ({ rocks }) => {
     })
   }
 
-  return (
-    <div>
+  const RocksDisplay = rocks.map((rock, i) => 
+    <div key={i}>
       <h2>{rock.name} ({rock.pronouns})</h2>
       <img src={rock.image} alt={rock.name} className='RockCard--image' />
       <p>{rock.program} - Mod {rock.module}</p>
@@ -23,8 +35,22 @@ const RockCard = ({ rocks }) => {
         <p className='RockCard--skills-p'>Skills</p>
         <ul className='RockCard--ul'>{createList(rock.skills)}</ul>
       </div>
-      <button className='RockCard--discon-btn'>Discontinue</button>
+        { discontinue !== rock.id ?
+         <button className='RockCard--discon-btn' onClick={() => handleSubmit(rock.id)}>Discontinue</button> 
+        :
+        <DiscontinueReasons parentCallback={callback} userId = {rock.id} 
+        pebbleId = {userId} userRelationship = {userRelationship }
+        discontinueRockPebbleRelationship= {discontinueRockPebbleRelationship}/>
+        } 
     </div>
+  )
+
+  return (
+      <section className='PebbleCard--section'>
+        <div className='PebbleCard--div'>
+          {RocksDisplay}
+        </div>
+      </section>
   )
 }
 
