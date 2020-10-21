@@ -68,11 +68,13 @@ export class RockListing extends Component {
       <div className='RockListing'>
         <h2 className='RockListing--h2'>Available Rocks</h2>
         <p className='RockListing--explanation'>
-          View available Rocks
+          View available Rocks by program and mod
         </p>
         <p className='RockListing--explanation light'>
-          Rocks are peer mentors to pebbles like yourself, typically a fellow Turing student from a module above yours. 
-          A Mod 2 FE student would likely be a Rock for a Mod 1 FE student, for example.
+          Rocks are fellow Turing students or alumni who have volunteered to be a peer mentor to pebbles like yourself. You can view them by program and module below.
+        </p>
+        <p className='RockListing--explanation light'>
+          Click 'Ask to be your Rock' next to Rock and they will be notified and given a chance to accept or decline your request. You'll be notified when they respond.
         </p>
         <section className='RockListing--section'>
           <Dropdown
