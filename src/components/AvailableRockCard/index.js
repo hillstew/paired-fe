@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import * as gql from "../../queries";
 import { fetchData } from "../../utils";
 import { Redirect } from 'react-router-dom'
+import { setError } from '../../actions'
 
 export class AvailableRockCard extends Component {
   constructor(props) {
@@ -76,6 +77,7 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
+  setError: error => dispatch(setError(error)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AvailableRockCard);
