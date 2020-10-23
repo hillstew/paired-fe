@@ -30,6 +30,16 @@ export const getUserRockAndPebble = (id) => ({
         skills
         slack
         image
+      } 
+      pendingRocks {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
       }  
     }
   }`
@@ -88,6 +98,16 @@ export const activateRockPebbleRelationship = (rockId, pebbleId) => ({
         slack
         image
       } 
+      pendingRocks {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      } 
     }
   }
   `});
@@ -132,6 +152,16 @@ export const declineRockPebbleRelationship = (rockId, pebbleId, reason) => ({
         slack
         image
       }
+      pendingRocks {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      } 
     }
   }
   `});
@@ -177,6 +207,16 @@ export const discontinueRockPebbleRelationship = (rockId, pebbleId, reason, user
         slack
         image
       }
+      pendingRocks {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      } 
     }
   }`
   });

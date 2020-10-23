@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import DiscontinueReasons from '../../components/DiscontinueReasons'
 
-const RockCard = ({ rocks, userId, discontinueRockPebbleRelationship }) => {
+const RockCard = ({ rocks, pendingRocks, userId, discontinueRockPebbleRelationship }) => {
   const [ discontinue, setDiscontinue ] = useState('')
   const userRelationship = 'rock'
 
@@ -45,10 +45,25 @@ const RockCard = ({ rocks, userId, discontinueRockPebbleRelationship }) => {
     </div>
   )
 
+  const PendingRocks = pendingRocks.map((rock, i) =>
+    <div key={i}>
+    <h2>{rock.name} ({rock.pronouns}) - Pending</h2>
+    <img src={rock.image} alt={rock.name} className='RockCard--image' />
+    <p>{rock.program} - Mod {rock.module}</p>
+    <p>Slack: {rock.slack}</p>
+    <div className='RockCard--skills-div'>
+      <p className='RockCard--skills-p'>Skills</p>
+      <ul className='RockCard--ul'>{createList(rock.skills)}</ul>
+    </div>
+  </div>
+  ) 
+
+ 
   return (
       <section className='PebbleCard--section'>
         <div className='PebbleCard--div'>
           {RocksDisplay}
+          {PendingRocks}
         </div>
       </section>
   )

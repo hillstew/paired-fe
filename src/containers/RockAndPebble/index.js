@@ -23,6 +23,7 @@ const RockAndPebble = ({ user,
   const pebbles = rockandpebbles.myPebbles
   const rocks = rockandpebbles.myRocks
   const pendingPebbles = rockandpebbles.pendingPebbles
+  const pendingRocks = rockandpebbles.pendingRocks
 
 
   const handleSubmitRockOptinStatus = async () => {
@@ -43,7 +44,7 @@ const RockAndPebble = ({ user,
           <div className='RockAndPebble--header--div'>
             <h2 className='RockAndPebble--header--h2'>Your Rock(s)</h2>
             <div className='RockAndPebble--opt--div'>
-            { rocks && rocks.length >= 1 && 
+            { rocks && pendingRocks && 
               <>
                 <NavLink
                   to='rock-listing'
@@ -56,7 +57,7 @@ const RockAndPebble = ({ user,
             }
             </div>
           </div>
-            { !rocks?.length ? 
+            { !rocks?.length && !pendingRocks?.length ? 
               <>
                 <p>You don't have a rock. Let's find one!</p>
                 <NavLink
@@ -68,7 +69,9 @@ const RockAndPebble = ({ user,
                 </NavLink>
               </>
               :
-              <RockCard rocks={rocks} userId = {user.id} discontinueRockPebbleRelationship = {discontinueRockPebbleRelationship}/>
+              <>
+              <RockCard rocks={rocks} pendingRocks = {pendingRocks} userId = {user.id} discontinueRockPebbleRelationship = {discontinueRockPebbleRelationship}/>
+              </>
             } 
         </div>
 
