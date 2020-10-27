@@ -14,7 +14,7 @@ export class RockListing extends Component {
       program: this.props.user.program,
       module: this.modAboveUser(this.props.user.module),
       message: "",
-      availableRocks: this.props.availableRocks
+      availableRocks: []
     };
   }
 
@@ -29,17 +29,18 @@ export class RockListing extends Component {
     try {
       const body = gql.findAvailableRocks(program, parseInt(module));
       const response = await fetchData(body);
+      setAvailableRocks(response.findAvailableRocks);
+      this.setState({ availableRocks: this.props.availableRocks });
       if (response.findAvailableRocks.length) {
-        setAvailableRocks(response.findAvailableRocks);
-        this.setState({ message: '', availableRocks: this.props.availableRocks});
+        this.setState({ message: ''});
       } else {
-        setAvailableRocks([]);
         this.setState({
           message: `Oh bummer! 😰 There are no rocks available for the ${program} program and module ${module}. Try a different program or module. 😀`
         });
       }
     } catch (error) {
       this.props.setError(error.message);
+      this.setState({ message: 'Something went wrong when trying to access the available rocks. Try again later.'})
     }
   };
 
