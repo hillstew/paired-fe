@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import * as gql from "../../queries";
 import { fetchData } from "../../utils";
 import { Redirect } from 'react-router-dom'
-import { setError } from '../../actions'
+import { setError, setRockAndPebble } from '../../actions'
 
 export class AvailableRockCard extends Component {
   constructor(props) {
@@ -31,6 +31,7 @@ export class AvailableRockCard extends Component {
       const body = gql.createRockPebbleRelationship(rock, user);
       const response = await fetchData(body);
       if(response['createRockPebbleRelationship']) {
+        this.props.setRockAndPebble(response.createRockPebbleRelationship);
         this.setState({ createdRelationship: true });
       } else {
         this.setState({ message: 'Looks like something went wrong. Try again or submit an issue on GitHub.'})
@@ -78,6 +79,7 @@ export const mapStateToProps = (state) => ({
 
 export const mapDispatchToProps = (dispatch) => ({
   setError: error => dispatch(setError(error)),
+  setRockAndPebble: response => dispatch(setRockAndPebble(response)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AvailableRockCard);
