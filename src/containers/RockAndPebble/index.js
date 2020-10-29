@@ -109,7 +109,7 @@ const RockAndPebble = ({ user,
           { pendingPebbles && pendingPebbles.length >= 1 && 
           <>
             <div className='RockAndPebble--div'>
-              <div class="RockAndPebble--header--div">       
+              <div className="RockAndPebble--header--div">       
                 <h2 className='RockAndPebble--header--h2'>Your Pending Pebble(s)</h2>
               </div> 
               <PendingCard pendingPebbles={pendingPebbles} userId = {user.id} activateRockAndPebble = {activateRockAndPebble} declineRockPebbleRelationship = {declineRockPebbleRelationship} />
