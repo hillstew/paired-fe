@@ -59,6 +59,59 @@ export const rockOptInOut = (id) => ({
   `
 });
 
+export const createRockPebbleRelationship = (rock, pebble) => ({
+  query: `mutation {
+    createRockPebbleRelationship(
+      input: {
+        rockId: ${rock.id}
+        pebbleId: ${pebble.id}
+      }
+    ){
+      myRocks {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      }
+      myPebbles {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      }
+      pendingPebbles {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      } 
+      pendingRocks {
+        name
+        module
+        program
+        id
+        pronouns
+        skills
+        slack
+        image
+      } 
+    }
+  }`,
+});
+
+
 export const activateRockPebbleRelationship = (rockId, pebbleId) => ({
   query: `
   mutation {
@@ -571,21 +624,6 @@ export const findAvailableRocks = (program, mod) => ({
       skills
       slack
       image
-    }
-  }`,
-});
-
-export const createRockPebbleRelationship = (rock, pebble) => ({
-  query: `mutation {
-    createRockPebbleRelationship(
-      input: {
-        rockId: ${rock.id}
-        pebbleId: ${pebble.id}
-      }
-    ){
-      id
-      rock { id }
-      pebble { id }
     }
   }`,
 });
