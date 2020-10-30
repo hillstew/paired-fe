@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import DenyReasons from '../../components/DenyReasons'
+import { useAlert } from 'react-alert'
 
 const PendingCard = ({ pendingPebbles, userId, activateRockAndPebble, declineRockPebbleRelationship }) => {
   const [ denyPebble, setdenyPebble ] = useState('');
+
+  const alert = useAlert()
 
   const handleSubmitDeny = (event) => {
     setTimeout(() => {
@@ -16,6 +19,7 @@ const PendingCard = ({ pendingPebbles, userId, activateRockAndPebble, declineRoc
 
   const handleSubmitAccept = async (pebbleId) => {
       await activateRockAndPebble(userId, pebbleId);
+      alert.show(<div className='Alert'> Your new Pebble will be notified that you have approved this relationship. </div>)
   }
 
   const pendingDisplay = pendingPebbles.map((pebble, i) => 
