@@ -15,12 +15,7 @@ const DiscontinueReasons = ({ parentCallback,
   const rockId = rock.id
 
   const findUser = () => {
-    if (userRelationship === 'rock'){
-      return rock
-    }
-    else {
-      return pebble
-    }
+    return (userRelationship === 'rock' ? rock : pebble)
   }
 
   const alert = useAlert()
