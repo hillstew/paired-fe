@@ -1,17 +1,21 @@
 import React from 'react'
 import { useAlert } from 'react-alert'
 
-const DenyReasons = ({ parentCallback, userId, pebbleId, declineRockPebbleRelationship }) => {
+const DenyReasons = ({ parentCallback, rock, pebble, declineRockPebbleRelationship }) => {
 
   const reasonOne = 'I don’t have the time I had when I signed up.'
   const reasonTwo = 'I am no longer interested in being a rock but forgot to opt out.'
   const reasonThree = 'I already have a pebble and don’t feel comfortable taking on more.'
 
+  const pebbleId = pebble.id
+  const rockId = rock.id
+
   const alert = useAlert()
 
   const handleSubmit = async (event) => {
-    await declineRockPebbleRelationship(userId, pebbleId, event)
-    alert.show(<div className='Alert'> The person that requested this relationship will be notified that you are not able to accept. </div>)
+    await declineRockPebbleRelationship(rockId, pebbleId, event)
+  alert.show(<div className='Alert'> An email has been sent to {pebble.name} letting them know you were not able 
+                                     to accept the Rock request for the reason you indicated. Thanks for using Paired! </div>)
   }
 
   const handleSubmitCancel = () => {
