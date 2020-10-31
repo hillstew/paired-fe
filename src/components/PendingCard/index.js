@@ -19,7 +19,7 @@ const PendingCard = ({ pendingPebbles, user, activateRockAndPebble, declineRockP
 
   const handleSubmitAccept = async (pebbleId, pebbleName) => {
       await activateRockAndPebble(user.id, pebbleId);
-      alert.show(<div className='Alert'> {pebbleName} will be notified that you have approved this relationship. </div>)
+      alert.show(<div className='Alert'> {pebbleName} will be notified that you have approved this relationship. Thanks for using Paired! </div>)
   }
 
   const pendingDisplay = pendingPebbles.map((pebble, i) => 

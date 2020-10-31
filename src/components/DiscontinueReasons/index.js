@@ -28,7 +28,7 @@ const DiscontinueReasons = ({ parentCallback,
   const handleSubmit = async (event) => {
     await discontinueRockPebbleRelationship(rockId, pebbleId, event, userRelationship)
   alert.show(<div className='Alert'>An email has been sent to {findUser().name} letting {findUser().pronouns} know you've discontinued 
-                                    the {userRelationship} relationship. Thanks for  using paired </div>)
+                                    the {userRelationship} relationship. Thanks for using Paired! </div>)
   }
 
   const handleSubmitCancel = () => {
