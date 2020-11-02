@@ -69,3 +69,10 @@
     background-color: $color-accent;
   }
 }
+
+.Alert {
+  color: $color-secondary;
+  font: $font-medium;
+  width: 400px;
+  text-align: center;
+}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import DiscontinueReasons from '../../components/DiscontinueReasons'
 
-const PebbleCard = ({ pebbles, discontinueRockPebbleRelationship, userId }) => {
+const PebbleCard = ({ pebbles, discontinueRockPebbleRelationship, user }) => {
   const [ discontinue, setDiscontinue ] = useState('')
   const userRelationship = 'pebble'
 
@@ -37,9 +37,9 @@ const PebbleCard = ({ pebbles, discontinueRockPebbleRelationship, userId }) => {
         { discontinue !== pebble.id ?
          <button className='PebbleCard--discon-btn' onClick={() => handleSubmit(pebble.id)}>Discontinue</button> 
         :
-        <DiscontinueReasons parentCallback={callback} userId = {userId}
+        <DiscontinueReasons parentCallback={callback} rock = {user}
          discontinueRockPebbleRelationship = {discontinueRockPebbleRelationship} 
-         pebbleId = {pebble.id} userRelationship = {userRelationship}/>
+         pebble = {pebble} userRelationship = {userRelationship}/>
 
         } 
     </div>

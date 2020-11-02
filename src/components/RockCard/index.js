@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import DiscontinueReasons from '../../components/DiscontinueReasons'
 
-const RockCard = ({ rocks, pendingRocks, userId, discontinueRockPebbleRelationship }) => {
+const RockCard = ({ rocks, pendingRocks, user, discontinueRockPebbleRelationship }) => {
   const [ discontinue, setDiscontinue ] = useState('')
   const userRelationship = 'rock'
 
@@ -38,8 +38,8 @@ const RockCard = ({ rocks, pendingRocks, userId, discontinueRockPebbleRelationsh
         { discontinue !== rock.id ?
          <button className='RockCard--discon-btn' onClick={() => handleSubmit(rock.id)}>Discontinue</button> 
         :
-        <DiscontinueReasons parentCallback={callback} userId = {rock.id} 
-        pebbleId = {userId} userRelationship = {userRelationship }
+        <DiscontinueReasons parentCallback={callback} rock = {rock} 
+        pebble = {user} userRelationship = {userRelationship }
         discontinueRockPebbleRelationship= {discontinueRockPebbleRelationship}/>
         } 
     </div>

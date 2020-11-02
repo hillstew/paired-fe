@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import DenyReasons from '../../components/DenyReasons'
+import { useAlert } from 'react-alert'
 
-const PendingCard = ({ pendingPebbles, userId, activateRockAndPebble, declineRockPebbleRelationship }) => {
+const PendingCard = ({ pendingPebbles, user, activateRockAndPebble, declineRockPebbleRelationship }) => {
   const [ denyPebble, setdenyPebble ] = useState('');
+
+  const alert = useAlert()
 
   const handleSubmitDeny = (event) => {
     setTimeout(() => {
@@ -14,8 +17,9 @@ const PendingCard = ({ pendingPebbles, userId, activateRockAndPebble, declineRoc
     setdenyPebble(cancel)
   }
 
-  const handleSubmitAccept = async (pebbleId) => {
-      await activateRockAndPebble(userId, pebbleId);
+  const handleSubmitAccept = async (pebbleId, pebbleName) => {
+      await activateRockAndPebble(user.id, pebbleId);
+      alert.show(<div className='Alert'> {pebbleName} will be notified that you have approved this relationship. Thanks for using Paired! </div>)
   }
 
   const pendingDisplay = pendingPebbles.map((pebble, i) => 
@@ -28,9 +32,9 @@ const PendingCard = ({ pendingPebbles, userId, activateRockAndPebble, declineRoc
             { denyPebble !== pebble.id ? 
           <>
         <button className='PebbleCard--discon-btn' onClick={() => handleSubmitDeny(pebble.id)}>Say No To Relationship</button> <br></br>
-        <button className='PebbleCard--discon-btn' onClick={() => handleSubmitAccept(pebble.id)}>Say Yes To Relationship</button>
+        <button className='PebbleCard--discon-btn' onClick={() => handleSubmitAccept(pebble.id, pebble.name)}>Say Yes To Relationship</button>
         </> :
-         <DenyReasons  parentCallback={callback} userId = {userId} declineRockPebbleRelationship= {declineRockPebbleRelationship} pebbleId = {pebble.id}/>    
+         <DenyReasons  parentCallback={callback} rock = {user} declineRockPebbleRelationship= {declineRockPebbleRelationship} pebble = {pebble}/>    
         }
             </div> 
       </div>

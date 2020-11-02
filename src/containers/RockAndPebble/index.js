@@ -70,7 +70,7 @@ const RockAndPebble = ({ user,
               </>
               :
               <>
-              <RockCard rocks={rocks} pendingRocks = {pendingRocks} userId = {user.id} discontinueRockPebbleRelationship = {discontinueRockPebbleRelationship}/>
+              <RockCard rocks={rocks} pendingRocks = {pendingRocks} user = {user} discontinueRockPebbleRelationship = {discontinueRockPebbleRelationship}/>
               </>
             } 
         </div>
@@ -98,7 +98,7 @@ const RockAndPebble = ({ user,
                 <p className='RockAndPebble--explanation light'>If you have opted in, keep waiting. If not, opt-in!</p>
               </>
               :
-                 <PebbleCard pebbles={pebbles} userId = {user.id} discontinueRockPebbleRelationship = {discontinueRockPebbleRelationship}/> 
+                 <PebbleCard pebbles={pebbles} user = {user} discontinueRockPebbleRelationship = {discontinueRockPebbleRelationship}/> 
                 }  
             <div className='RockAndPebble--opt--div'>
               { pebbles && pebbles.length >= 2 &&
@@ -112,7 +112,7 @@ const RockAndPebble = ({ user,
               <div className="RockAndPebble--header--div">       
                 <h2 className='RockAndPebble--header--h2'>Your Pending Pebble(s)</h2>
               </div> 
-              <PendingCard pendingPebbles={pendingPebbles} userId = {user.id} activateRockAndPebble = {activateRockAndPebble} declineRockPebbleRelationship = {declineRockPebbleRelationship} />
+              <PendingCard pendingPebbles={pendingPebbles} user = {user} activateRockAndPebble = {activateRockAndPebble} declineRockPebbleRelationship = {declineRockPebbleRelationship} />
           </div> 
               </> 
             }
