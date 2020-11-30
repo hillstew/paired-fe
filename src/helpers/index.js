@@ -101,17 +101,11 @@ export const createPairingsForQuery = (chosenAvails, inning, pairerId) => {
 
 export const getDaysRemaining = () => {
   const endDates = [
-    new Date('Thu June 6 2019'),
-    new Date('Thu August 1 2019'),
-    new Date('Thu September 19 2019'),
-    new Date('Thu November 7 2019'),
-    new Date('Thu January 16 2020'),
-    new Date('Thu March 5 2020'),
-    new Date('Thu April 23 2020'),
-    new Date('Thu June 11 2020'),
-    new Date('Thu August 6 2020'),
-    new Date('Thu September 24 2020'),
-    new Date('Thu November 12 2020')
+    new Date('Thu November 12 2020'),
+    new Date('Thu January 21 2021'),
+    new Date('Thu March 11 2021'),
+    new Date('Thu April 29 2021'),
+    new Date('Thu June 17 2021')
   ];
   const today = new Date();
   const nextEndDate = endDates.find(date => {
