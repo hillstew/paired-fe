@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Controls, mapStateToProps, mapDispatchToProps } from './index';
+import { Controls, mapDispatchToProps, mapStateToProps } from '../Controls/index'
 import { mockAvailPairings } from '../../mockData';
 import { setError, setAvailPairings } from '../../actions';
 import * as helpers from '../../helpers';
