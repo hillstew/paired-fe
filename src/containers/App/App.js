@@ -3,6 +3,8 @@ import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Header from '../../components/Header';
 import { connect } from 'react-redux';
 import Controls from '../Controls';
+import RockAndPebble from '../RockAndPebble';
+import RockListing from '../RockListing';
 import Schedule from '../Schedule';
 import Confirmation from '../Confirmation';
 import SignIn from '../SignIn';
@@ -70,6 +72,8 @@ export class App extends Component {
               <Switch>
                 <Route path='/schedule' component={Schedule} />
                 <Route path='/book-pairing' component={Controls} />
+                <Route path='/rock-pebble' component={RockAndPebble} />
+                <Route path='/rock-listing' component={RockListing} />
                 <Route path='/confirm/:id' component={Confirmation} />
                 <Route path='/edit-profile' component={Profile} />
                 <Route path='/stats-profile' component={Stats} />

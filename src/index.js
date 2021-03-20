@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './containers/App/App';
+import { transitions, positions, types, Provider as AlertProvider } from 'react-alert'
+import AlertTemplate from "react-alert-template-mui";
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -19,12 +21,21 @@ firebase.initializeApp({
   // authDomain: "landslide-57f9a.firebaseapp.com"
 });
 
+const options = {
+  position: positions.MIDDLE,
+  timeout: 6000,
+  type: types.SUCCESS,
+  transition: transitions.FADE
+}
+
 const devTools = composeWithDevTools(applyMiddleware(thunk));
 const store = createStore(rootReducer, devTools);
 const provider = (
   <BrowserRouter>
     <Provider store={store}>
+    <AlertProvider template={AlertTemplate} {...options}>
       <App />
+      </AlertProvider>
     </Provider>
   </BrowserRouter>
 );

@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls Controls component should match the snapshot 1`] = `
+<div
+  className="Controls"
+>
+  <h2
+    className="Controls--h2"
+  >
+    Book a Pairing
+  </h2>
+  <p
+    className="Controls--explanation"
+  >
+    Choose options to find more experienced students to pair with
+  </p>
+  <p
+    className="Controls--explanation light"
+  >
+    e.g. Mod 1 students would likely search for Mod 2 students
+  </p>
+  <section
+    className="Controls--section"
+  >
+    <Dropdown
+      handleChange={[Function]}
+      label="Program"
+      options={
+        Array [
+          "FE",
+          "BE",
+        ]
+      }
+      required={true}
+    />
+    <Dropdown
+      handleChange={[Function]}
+      label="Module"
+      options={
+        Array [
+          "1",
+          "2",
+          "3",
+          "4",
+          "Graduate",
+        ]
+      }
+      required={true}
+    />
+    <Dropdown
+      handleChange={[Function]}
+      label="Date"
+      options={
+        Array [
+          "Wed May 08 2019",
+          "Thu May 09 2019",
+          "Fri May 10 2019",
+          "Mon May 13 2019",
+          "Tue May 14 2019",
+          "Wed May 15 2019",
+          "Thu May 16 2019",
+          "Fri May 17 2019",
+          "Mon May 20 2019",
+          "Tue May 21 2019",
+          "Wed May 22 2019",
+          "Thu May 23 2019",
+        ]
+      }
+      required={true}
+    />
+  </section>
+  <button
+    className="Controls--avail-btn"
+    disabled={true}
+    onClick={[Function]}
+  >
+    Show Available Pairings
+  </button>
+  <Pairings
+    openPairings={
+      Array [
+        Object {
+          "date": "Thu Apr 18 2019",
+          "id": "5caa7eebfdebb8348e53a4a4",
+          "pairer": Object {
+            "id": "5caa7eebfdebb8348e53a48d",
+            "image": "https://avatars1.githubusercontent.com/u/40586291?v=",
+            "module": 4,
+            "name": "Tiffany",
+            "program": "FE",
+            "pronouns": "she/her",
+            "skills": Array [
+              "react",
+              "testing",
+            ],
+            "slack": "@tiffany",
+          },
+          "time": "morning",
+        },
+        Object {
+          "date": "Thu Apr 18 2019",
+          "id": "5caa7eebfdebb8348e53a4a5",
+          "pairer": Object {
+            "id": "5caa7eebfdebb8348e53a48d",
+            "image": "https://avatars1.githubusercontent.com/u/40586291?v=",
+            "module": 4,
+            "name": "Tiffany",
+            "program": "FE",
+            "pronouns": "she/her",
+            "skills": Array [
+              "react",
+              "testing",
+            ],
+            "slack": "@tiffany",
+          },
+          "time": "lunch",
+        },
+        Object {
+          "date": "Thu Apr 18 2019",
+          "id": "5caa7eebfdebb8348e58076",
+          "pairer": Object {
+            "id": "5caa7eebfdebb8348e53a48f",
+            "image": "https://avatars1.githubusercontent.com/u/40586291?v=",
+            "name": "Jeo",
+            "program": "FE",
+            "pronouns": "he/him",
+            "skills": Array [
+              "graphql",
+              "testing",
+            ],
+            "slack": "@jeo",
+          },
+          "time": "lunch",
+        },
+      ]
+    }
+  />
+</div>
+`;

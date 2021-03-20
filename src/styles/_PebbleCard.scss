@@ -1,0 +1,78 @@
+.PebbleCard--image {
+  grid-column: 1/2;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin: auto;
+  display: block;
+}
+
+.PebbleCard--section {
+  overflow: hidden;
+  height: 410px;
+  width: 100%;
+}
+
+.PebbleCard--div {
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  padding: 0px 20px 20px;
+}
+
+.PebbleCard--skills-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.PebbleCard--skills-p {
+  padding-left: 0px;
+  text-decoration: underline;
+  margin: 0;
+}
+
+.PebbleCard--ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.PebbleCard-li {
+  font-family: $font-light;
+}
+
+.PebbleCard--discon-btn {
+  @include button-style();
+  background-color: $color-primary;
+  height: 30px;
+  margin-top: 10px;
+  width: 220px;
+  &:disabled {
+    background-color: $color-accent;
+  }
+}
+
+.PebbleCard--reason-btn {
+  @include button-style();
+  background-color: $color-primary;
+  height: 50px;
+  padding-top: 10px;
+  padding-right: 1px;
+  padding-left: 10px;
+  padding-bottom: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+  &:disabled {
+    background-color: $color-accent;
+  }
+}
+
+.Alert {
+  color: $color-secondary;
+  font: $font-medium;
+  width: 400px;
+  text-align: center;
+}

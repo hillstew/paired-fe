@@ -241,6 +241,12 @@ export const mockQueryFromgetUser = {
     module
     id
     image
+    pronouns
+    phoneNumber
+    email
+    slack
+    skills
+    rockOptIn
   }
 }`
        };
