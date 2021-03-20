@@ -25,6 +25,14 @@ exports[`App render should match the snapshot when there is a user id 1`] = `
       />
       <Route
         component={[Function]}
+        path="/rock-pebble"
+      />
+      <Route
+        component={[Function]}
+        path="/rock-listing"
+      />
+      <Route
+        component={[Function]}
         path="/confirm/:id"
       />
       <Route

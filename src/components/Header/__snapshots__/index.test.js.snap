@@ -70,6 +70,12 @@ exports[`Header should match the snapshot when the user is signed in 1`] = `
     >
       Book a Pairing
     </NavLink>
+    <NavLink
+      className="Header--link"
+      to="/rock-pebble"
+    >
+      Rock & Pebble
+    </NavLink>
     <img
       className="Header--image"
       onClick={[Function]}
