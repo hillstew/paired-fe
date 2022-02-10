@@ -9,7 +9,7 @@
     "grpc": "^1.24.2",
     "jest-haste-map": "^25.1.0",
     "mockdate": "^2.0.2",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-alert": "^7.0.2",
